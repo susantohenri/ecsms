@@ -10,11 +10,11 @@
 			},
 			{
 				"name": "jangka_waktu",
-				"type": "number"
+				"type": "int"
 			},
 			{
 				"name": "jumlah_laporan_bulanan",
-				"type": "number"
+				"type": "int"
 			},
 			{
 				"name": "peserta",
@@ -31,7 +31,7 @@
 		]
 	},
 	{
-		"controller": "Proyek",
+		"controller": "PesertaProyek",
 		"fields": [
 			{
 				"name": "proyek",
@@ -64,11 +64,11 @@
 			},
 			{
 				"name": "progress",
-				"type": "number"
+				"type": "int"
 			},
 			{
 				"name": "lock",
-				"type": "number"
+				"type": "boolean"
 			},
 			{
 				"name": "1a",
@@ -76,6 +76,7 @@
 			},
 			{
 				"name": "1a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -84,6 +85,7 @@
 			},
 			{
 				"name": "1b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -92,6 +94,7 @@
 			},
 			{
 				"name": "1c_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -100,6 +103,7 @@
 			},
 			{
 				"name": "2a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -108,6 +112,7 @@
 			},
 			{
 				"name": "2b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -116,6 +121,7 @@
 			},
 			{
 				"name": "2c_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -124,6 +130,7 @@
 			},
 			{
 				"name": "2d_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -132,6 +139,7 @@
 			},
 			{
 				"name": "3a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -140,6 +148,7 @@
 			},
 			{
 				"name": "3b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -148,6 +157,7 @@
 			},
 			{
 				"name": "4a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -156,6 +166,7 @@
 			},
 			{
 				"name": "4b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -164,6 +175,7 @@
 			},
 			{
 				"name": "4c_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -172,6 +184,7 @@
 			},
 			{
 				"name": "4d_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -180,6 +193,7 @@
 			},
 			{
 				"name": "5a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -188,6 +202,7 @@
 			},
 			{
 				"name": "5b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -196,6 +211,7 @@
 			},
 			{
 				"name": "5c_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -204,6 +220,7 @@
 			},
 			{
 				"name": "5d_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -212,6 +229,7 @@
 			},
 			{
 				"name": "6a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -220,6 +238,7 @@
 			},
 			{
 				"name": "6b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -228,6 +247,7 @@
 			},
 			{
 				"name": "6c_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -236,6 +256,7 @@
 			},
 			{
 				"name": "6d_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -244,6 +265,7 @@
 			},
 			{
 				"name": "6e_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -252,6 +274,7 @@
 			},
 			{
 				"name": "6f_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -260,6 +283,7 @@
 			},
 			{
 				"name": "6g_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -268,6 +292,7 @@
 			},
 			{
 				"name": "6h_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -276,6 +301,7 @@
 			},
 			{
 				"name": "6i_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -284,6 +310,7 @@
 			},
 			{
 				"name": "6j_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -292,6 +319,7 @@
 			},
 			{
 				"name": "7a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -300,6 +328,7 @@
 			},
 			{
 				"name": "7b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -308,6 +337,7 @@
 			},
 			{
 				"name": "7c_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -316,6 +346,7 @@
 			},
 			{
 				"name": "7d_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -324,6 +355,7 @@
 			},
 			{
 				"name": "8a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -332,6 +364,7 @@
 			},
 			{
 				"name": "8b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -340,6 +373,7 @@
 			},
 			{
 				"name": "8c_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -348,6 +382,7 @@
 			},
 			{
 				"name": "8d_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -356,6 +391,7 @@
 			},
 			{
 				"name": "8e_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -364,6 +400,7 @@
 			},
 			{
 				"name": "9a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -372,6 +409,7 @@
 			},
 			{
 				"name": "9b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -380,6 +418,7 @@
 			},
 			{
 				"name": "9c_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -388,6 +427,7 @@
 			},
 			{
 				"name": "9d_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -396,6 +436,7 @@
 			},
 			{
 				"name": "10a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -404,6 +445,7 @@
 			},
 			{
 				"name": "10b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -412,6 +454,7 @@
 			},
 			{
 				"name": "10c_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -420,6 +463,7 @@
 			},
 			{
 				"name": "10d_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -428,6 +472,7 @@
 			},
 			{
 				"name": "11a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -436,6 +481,7 @@
 			},
 			{
 				"name": "11b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -444,6 +490,7 @@
 			},
 			{
 				"name": "11c_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -452,6 +499,7 @@
 			},
 			{
 				"name": "11d_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -460,6 +508,7 @@
 			},
 			{
 				"name": "12a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -468,6 +517,7 @@
 			},
 			{
 				"name": "12b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -476,6 +526,7 @@
 			},
 			{
 				"name": "12c_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -484,6 +535,7 @@
 			},
 			{
 				"name": "12d_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -492,6 +544,7 @@
 			},
 			{
 				"name": "13a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -500,6 +553,7 @@
 			},
 			{
 				"name": "13b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -508,6 +562,7 @@
 			},
 			{
 				"name": "14a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -516,6 +571,7 @@
 			},
 			{
 				"name": "14b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -524,6 +580,7 @@
 			},
 			{
 				"name": "14c_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -532,6 +589,7 @@
 			},
 			{
 				"name": "15a_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -540,6 +598,7 @@
 			},
 			{
 				"name": "15b_score",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -548,6 +607,7 @@
 			},
 			{
 				"name": "15c_score",
+				"type": "boolean",
 				"label": ""
 			}
 		]
@@ -563,18 +623,20 @@
 			},
 			{
 				"name": "progress",
-				"type": "number"
+				"type": "int"
 			},
 			{
 				"name": "lock",
-				"type": "number"
+				"type": "boolean"
 			},
 			{
 				"name": "1a_isneed",
+				"type": "boolean",
 				"label": "Apakah program HSE sudah masuk dalam rencana kerja kontraktor pelaksana tersebut?"
 			},
 			{
 				"name": "1a_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -583,10 +645,12 @@
 			},
 			{
 				"name": "1b_isneed",
+				"type": "boolean",
 				"label": "Apakah tugas dan tanggung jawab penerapan aspek HSE sudah didefinisikan serta dipahami oleh Kontraktor ?"
 			},
 			{
 				"name": "1b_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -595,10 +659,12 @@
 			},
 			{
 				"name": "2a_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor telah menyusun JHSEA terhadap seluruh tahapan pekerjaan (mulai dari tahapan mobilisasi hingga demobilisasi) yang akan dilaksanakan?"
 			},
 			{
 				"name": "2a_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -607,10 +673,12 @@
 			},
 			{
 				"name": "2b_isneed",
+				"type": "boolean",
 				"label": "Apakah kontraktor telah mengidentifikasi dan menganalisa seluruh pekerjaan yang memiliki potensi bahaya kritis?"
 			},
 			{
 				"name": "2b_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -619,10 +687,12 @@
 			},
 			{
 				"name": "2c_isneed",
+				"type": "boolean",
 				"label": "Apakah kontraktor telah memiliki prosedur operasi (terkait dengan potensi bahaya kritis yang teridentifikasi) dan mengkomunikasikannya sebelum pelaksanaan pekerjaan?"
 			},
 			{
 				"name": "2c_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -631,10 +701,12 @@
 			},
 			{
 				"name": "2d_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor memiliki system untuk mengawasi adanya potensi bahaya selama dalam pelaksanaan pekerjaan kontrak (unsafe act & unsafe condition)?"
 			},
 			{
 				"name": "2d_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -643,10 +715,12 @@
 			},
 			{
 				"name": "3a_isneed",
+				"type": "boolean",
 				"label": "Apakah pekerja Kontraktor telah memahami prosedur keadaan darurat yang berlaku di lokasi pekerjaan kontrak tersebut?"
 			},
 			{
 				"name": "3a_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -655,10 +729,12 @@
 			},
 			{
 				"name": "3b_isneed",
+				"type": "boolean",
 				"label": "Apakah pekerja kontraktor memahami system pengkomunikasian / pelaporan bila terjadi keadaan darurat?"
 			},
 			{
 				"name": "3b_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -667,10 +743,12 @@
 			},
 			{
 				"name": "3c_isneed",
+				"type": "boolean",
 				"label": "Apakah kontraktor memiliki Petugas P3K (First Aider) yang terlatih untuk Pertolongan Pertama?"
 			},
 			{
 				"name": "3c_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -679,10 +757,12 @@
 			},
 			{
 				"name": "3d_isneed",
+				"type": "boolean",
 				"label": "Apakah kontraktor telah menyediakan perlengkapan P3K yang sesuai untuk diletakan di lokasi kerja?"
 			},
 			{
 				"name": "3d_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -691,10 +771,12 @@
 			},
 			{
 				"name": "3e_isneed",
+				"type": "boolean",
 				"label": "Apakah kontraktor telah memiliki emergency call number bila terjadi kondisi darurat?"
 			},
 			{
 				"name": "3e_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -703,10 +785,12 @@
 			},
 			{
 				"name": "3f_isneed",
+				"type": "boolean",
 				"label": "Apakah kontraktor telah menyediakan dokter / Tim Medis?"
 			},
 			{
 				"name": "3f_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -715,10 +799,12 @@
 			},
 			{
 				"name": "4a_isneed",
+				"type": "boolean",
 				"label": "Apakah kontraktor telah melaksanakan Pre Job HSE meeting sebelum pelaksanaan pekerjaan?"
 			},
 			{
 				"name": "4a_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -727,10 +813,12 @@
 			},
 			{
 				"name": "4b_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor telah memiliki program HSE meeting selama pelaksanaan pekerjaan?"
 			},
 			{
 				"name": "4b_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -739,10 +827,12 @@
 			},
 			{
 				"name": "4c_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor telah memiliki program HSE talk / briefing selama pelaksanaan pekerjaan?"
 			},
 			{
 				"name": "4c_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -751,10 +841,12 @@
 			},
 			{
 				"name": "4d_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor telah menyiapkan HSE sign / poster / banner/ spanduk terkait dengan pelaksanaan pekerjaan kontrak?"
 			},
 			{
 				"name": "4d_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -763,10 +855,12 @@
 			},
 			{
 				"name": "4e_isneed",
+				"type": "boolean",
 				"label": "Apakah kontraktor memiliki system reward / punishment terhadap pekerja terkait dengan implementasi aspek HSE?"
 			},
 			{
 				"name": "4e_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -775,10 +869,12 @@
 			},
 			{
 				"name": "5a_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor sudah memiliki surat ijin kerja aman sebelum pelaksanaan pekerjaan?"
 			},
 			{
 				"name": "5a_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -787,10 +883,12 @@
 			},
 			{
 				"name": "5b_isneed",
+				"type": "boolean",
 				"label": "Apakah peralatan yang akan digunakan telah disertifikasi (apabila secara regulasi disyaratkan) dan masih berlaku selama pelaksanaan pekerjaan?"
 			},
 			{
 				"name": "5b_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -799,10 +897,12 @@
 			},
 			{
 				"name": "5c_isneed",
+				"type": "boolean",
 				"label": "Apakah ijin dari institusi / badan terkait telah dipenuhi sebelum pelaksanaan pekerjaan?"
 			},
 			{
 				"name": "5c_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -811,10 +911,12 @@
 			},
 			{
 				"name": "5d_isneed",
+				"type": "boolean",
 				"label": "Apakah pekerja kontraktor telah memahami peraturan dan ketentuan aspek HSE yang berlaku dilokasi pelaksanaan pekerjaan kontrak?"
 			},
 			{
 				"name": "5d_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -823,10 +925,12 @@
 			},
 			{
 				"name": "6a_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor sudah melaksanakan inspeksi dan atau audit HSE sebelum pelaksanaan pekerjaan?"
 			},
 			{
 				"name": "6a_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -835,10 +939,12 @@
 			},
 			{
 				"name": "6b_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor memiliki program inspeksi HSE rutin dan atau audit HSE selama pelaksanaan pekerjaan?"
 			},
 			{
 				"name": "6b_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -847,10 +953,12 @@
 			},
 			{
 				"name": "6c_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor memiliki program inspeksi Tim Management Kontraktor terhadap aspek HSE selama pelaksanaan pekerjaan?"
 			},
 			{
 				"name": "6c_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -859,10 +967,12 @@
 			},
 			{
 				"name": "6d_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor telah menyusun Check list inspeksi HSE untuk pengawasan internal selama pelaksanaan pekerjaan kontrak?"
 			},
 			{
 				"name": "6d_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -871,10 +981,12 @@
 			},
 			{
 				"name": "7a_isneed",
+				"type": "boolean",
 				"label": "Apakah hasil inspeksi dan atau audit sebelum pelaksanaan pekerjaan telah ditindaklanjuti oleh Kontraktor?"
 			},
 			{
 				"name": "7a_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -883,10 +995,12 @@
 			},
 			{
 				"name": "7b_isneed",
+				"type": "boolean",
 				"label": "Apakah tindak lanjut hasil inspeksi dan atau audit tersebut dimonitor dan dikontrol tindaklanjutnya?"
 			},
 			{
 				"name": "7b_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -895,10 +1009,12 @@
 			},
 			{
 				"name": "8a_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor telah melaksanakan Induction Training terhadap pekerjanya sebelum melaksanakan pekerjaan?"
 			},
 			{
 				"name": "8a_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -907,10 +1023,12 @@
 			},
 			{
 				"name": "8b_isneed",
+				"type": "boolean",
 				"label": "Apakah evaluasi terhadap tingkat pemahaman pekerja terhadap materi Inductiopn Training yang diberikan telah dilakukan?"
 			},
 			{
 				"name": "8b_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -919,10 +1037,12 @@
 			},
 			{
 				"name": "8c_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor telah menyediakan pekerja yang bersertifikasi untuk melaksanakan pekerjaan yang secara regulasi disyaratkan untuk bersertifikasi?"
 			},
 			{
 				"name": "8c_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -931,10 +1051,12 @@
 			},
 			{
 				"name": "8d_isneed",
+				"type": "boolean",
 				"label": "Apakah kontraktor memiliki program pelatihan HSE terhadap pekerjanya?"
 			},
 			{
 				"name": "8d_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -943,10 +1065,12 @@
 			},
 			{
 				"name": "8e_isneed",
+				"type": "boolean",
 				"label": "Apakah materi dalam program pelatihan HSE tersebut meliputi namun tidak terbatas pada :<ul><li>Penjelasan Bahaya dan mitigasi pekerjaan yang akan dilaksanakan?</li><li>Pertolongan pertama dan pacu jantung (CPR)?</li><li>Cara memadamkan api?</li><li>Pengelolaan limbah / sampah hasil kerja?</li><li>Tanggap darurat?</li><li>Komitmen aspek HSE terhadap pekerjaan tersebut?</li><li>Kebersihan & kerapihan lokasi kerja?</li><li>MSDS material yang digunakan?</li><li>Petunjuk kerja aman terhadap pekerjaan critical yang dilaksanakan (contoh : working at height, confined space, welding, radiography, excavation, pekerjaan didalam air, electrical, dll ?</li><li>HSE Regulation?</li><li>Penggunaan PPE / APD?</li></ul>"
 			},
 			{
 				"name": "8e_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -955,10 +1079,12 @@
 			},
 			{
 				"name": "8f_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor memiliki system evaluasi terhadap tingkat pemahaman pekerja kontraktor terkait materi training HSE yang diberikan?"
 			},
 			{
 				"name": "8f_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -967,10 +1093,12 @@
 			},
 			{
 				"name": "8g_isneed",
+				"type": "boolean",
 				"label": "Apakah seluruh pekerja Kontraktor yang akan melaksanakan pekerjaan sudah dinyatakan sehat berdasarkan hasil Medical Check Up (untuk pekerjaan critical yang mensyaratkan kondisi fit) atau pemeriksaan kesehatan?"
 			},
 			{
 				"name": "8g_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -979,10 +1107,12 @@
 			},
 			{
 				"name": "9a_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor telah menyusun HSE performance indicator (KPI HSE Kontraktor) terhadap pekerjaan tersebut?"
 			},
 			{
 				"name": "9a_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -991,10 +1121,12 @@
 			},
 			{
 				"name": "9b_isneed",
+				"type": "boolean",
 				"label": "Apakah program dan kinerja HSE yang telah disusun tersebut menjadi bagian dalam pelaporan kinerja internal Kontraktor?"
 			},
 			{
 				"name": "9b_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1003,10 +1135,12 @@
 			},
 			{
 				"name": "9c_isneed",
+				"type": "boolean",
 				"label": "Apakah kontraktor memiliki system untuk mengevaluasi pencapaian kinerja HSE Kontraktor serta melakukan upaya-upaya perbaikan?"
 			},
 			{
 				"name": "9c_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1015,10 +1149,12 @@
 			},
 			{
 				"name": "9d_isneed",
+				"type": "boolean",
 				"label": "Apakah HSE objective & policy kontraktor terhadap pekerjaan tersebut telah tersedia dan dikomunikasikan kepada seluruh pekerja kontraktor terkait?"
 			},
 			{
 				"name": "9d_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1027,10 +1163,12 @@
 			},
 			{
 				"name": "9e_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor telah menyusun struktur organisasi project yang dilengkapi dengan personil yang menjabat beserta tugas dan tanggungjawabnya dalam penerapan aspek HSE?"
 			},
 			{
 				"name": "9e_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1039,10 +1177,12 @@
 			},
 			{
 				"name": "10a_isneed",
+				"type": "boolean",
 				"label": "Apakah semua peralatan Kontraktor yang akan dipakai telah memenuhi criteria kelayakan fungsi?"
 			},
 			{
 				"name": "10a_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1051,10 +1191,12 @@
 			},
 			{
 				"name": "10b_isneed",
+				"type": "boolean",
 				"label": "Apakah kontraktor telah menyediakan peralatan bantu untuk handling material dan prosedurnya telah tersedia?"
 			},
 			{
 				"name": "10b_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1063,10 +1205,12 @@
 			},
 			{
 				"name": "10c_isneed",
+				"type": "boolean",
 				"label": "Apakah material / bahan yang digunakan telah memiliki MSDS (Material Safety Data Sheet) dan dikomunikasikan kepada pekerja terkait?"
 			},
 			{
 				"name": "10c_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1075,10 +1219,12 @@
 			},
 			{
 				"name": "10d_isneed",
+				"type": "boolean",
 				"label": "Apakah kontraktor telah memiliki prosedur pengoperasian peralatan terkait yang mengakomodir petunjuk kerja aman serta mengkomunikasikannya kepada pekerja?"
 			},
 			{
 				"name": "10d_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1087,10 +1233,12 @@
 			},
 			{
 				"name": "10e_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor telah menyediakan peralatan untuk mengelola limbah / sampah hasil pekerjaan?"
 			},
 			{
 				"name": "10e_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1099,10 +1247,12 @@
 			},
 			{
 				"name": "10f_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor telah menyediakan APD / PPE yang dibutuhkan oleh pekerja dengan jumlah yang cukup?"
 			},
 			{
 				"name": "10f_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1111,10 +1261,12 @@
 			},
 			{
 				"name": "11a_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor memiliki prosedur pelaporan insiden, accident & investigasi?"
 			},
 			{
 				"name": "11a_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1123,10 +1275,12 @@
 			},
 			{
 				"name": "11b_isneed",
+				"type": "boolean",
 				"label": "Apakah Kontraktor memiliki program pelaporan kinerja HSE kepada pihak Pengawas Pertamina?"
 			},
 			{
 				"name": "11b_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1135,10 +1289,12 @@
 			},
 			{
 				"name": "12a_isneed",
+				"type": "boolean",
 				"label": "Apakah personil dalam organisasi project Kontraktor (pimpinan tertinggi project hingga pelaksana project) telah memahami tugas dan tanggungjawabnya dalam penerapan aspek HSE?"
 			},
 			{
 				"name": "12a_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1147,10 +1303,12 @@
 			},
 			{
 				"name": "12b_isneed",
+				"type": "boolean",
 				"label": "Apakah personil pengawas HSE Kontraktor telah tersedia dengan jumlah yang cukup?"
 			},
 			{
 				"name": "12b_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1159,10 +1317,12 @@
 			},
 			{
 				"name": "12c_isneed",
+				"type": "boolean",
 				"label": "Apakah posisi personil HSE dalam struktur organisasi project Kontraktor memiliki bargaining position yang kuat dalam penerapan aspek HSE?"
 			},
 			{
 				"name": "12c_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1171,10 +1331,12 @@
 			},
 			{
 				"name": "12d_isneed",
+				"type": "boolean",
 				"label": "Apakah personil HSE telah memenuhi kompetensi minimum & memahami tanggung jawabnya?"
 			},
 			{
 				"name": "12d_isya",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1194,22 +1356,25 @@
 			},
 			{
 				"name": "progress",
-				"type": "number"
+				"type": "int"
 			},
 			{
 				"name": "lock",
-				"type": "number"
+				"type": "boolean"
 			},
 			{
 				"name": "1a_isneed",
+				"type": "boolean",
 				"label": "Seluruh pekerja telah menggunakan APD sesuai dengan persyaratan yang ditentukan"
 			},
 			{
 				"name": "1a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "1a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1218,14 +1383,17 @@
 			},
 			{
 				"name": "1b_isneed",
+				"type": "boolean",
 				"label": "Kondisi APD dalam keadaan baik dan dapat berfungsi"
 			},
 			{
 				"name": "1b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "1b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1234,14 +1402,17 @@
 			},
 			{
 				"name": "1c_isneed",
+				"type": "boolean",
 				"label": "Kontraktor menyediakan APD bagi seluruh pekerja"
 			},
 			{
 				"name": "1c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "1c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1250,14 +1421,17 @@
 			},
 			{
 				"name": "1d_isneed",
+				"type": "boolean",
 				"label": "Jumlah APD telah memenuhi kebutuhan proteksi pekerja"
 			},
 			{
 				"name": "1d_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "1d_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1266,14 +1440,17 @@
 			},
 			{
 				"name": "1e_isneed",
+				"type": "boolean",
 				"label": "Dilakukan pemeriksaan & evaluasi APD maksimum sebulan sekali"
 			},
 			{
 				"name": "1e_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "1e_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1282,14 +1459,17 @@
 			},
 			{
 				"name": "2a_isneed",
+				"type": "boolean",
 				"label": "Pemasangan LOTO telah dikomunikasikan kepada pihak terkait"
 			},
 			{
 				"name": "2a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "2a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1298,14 +1478,17 @@
 			},
 			{
 				"name": "2b_isneed",
+				"type": "boolean",
 				"label": "Tag Out telah dipasang secara jelas dan terpasang pada pemutus arus atau pada peralatan yang diperbaiki"
 			},
 			{
 				"name": "2b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "2b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1314,14 +1497,17 @@
 			},
 			{
 				"name": "2c_isneed",
+				"type": "boolean",
 				"label": "Memasang & melepaskan LOTO hanya dilakukan oleh pihak yang berwenang"
 			},
 			{
 				"name": "2c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "2c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1330,14 +1516,17 @@
 			},
 			{
 				"name": "3a_isneed",
+				"type": "boolean",
 				"label": "HSE sign tersedia di lokasi project"
 			},
 			{
 				"name": "3a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "3a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1346,14 +1535,17 @@
 			},
 			{
 				"name": "3b_isneed",
+				"type": "boolean",
 				"label": "HSE sign relevan dengan pekerjaan yang sedang dilaksanakan"
 			},
 			{
 				"name": "3b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "3b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1362,14 +1554,17 @@
 			},
 			{
 				"name": "3c_isneed",
+				"type": "boolean",
 				"label": "HSE sign mudah dilihat oleh pekerja di lokasi tersebut"
 			},
 			{
 				"name": "3c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "3c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1378,14 +1573,17 @@
 			},
 			{
 				"name": "4a_isneed",
+				"type": "boolean",
 				"label": "Pengalaman minimum 2 tahun dibidang HSE"
 			},
 			{
 				"name": "4a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "4a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1394,14 +1592,17 @@
 			},
 			{
 				"name": "4b_isneed",
+				"type": "boolean",
 				"label": "Memenuhi kompetensi yang butuhkan"
 			},
 			{
 				"name": "4b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "4b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1410,14 +1611,17 @@
 			},
 			{
 				"name": "4c_isneed",
+				"type": "boolean",
 				"label": "Memahami tugas dan tanggung jawabnya sebagai pengawas HSE"
 			},
 			{
 				"name": "4c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "4c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1426,14 +1630,17 @@
 			},
 			{
 				"name": "5a_isneed",
+				"type": "boolean",
 				"label": "Pengalaman minimum 2 tahun dalam project sejenis"
 			},
 			{
 				"name": "5a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "5a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1442,14 +1649,17 @@
 			},
 			{
 				"name": "5b_isneed",
+				"type": "boolean",
 				"label": "Memenuhi kompetensi yang butuhkan"
 			},
 			{
 				"name": "5b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "5b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1458,14 +1668,17 @@
 			},
 			{
 				"name": "5c_isneed",
+				"type": "boolean",
 				"label": "Memahami tugas dan tanggung jawabnya sebagai pengawas pekerjaan"
 			},
 			{
 				"name": "5c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "5c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1474,14 +1687,17 @@
 			},
 			{
 				"name": "6a_isneed",
+				"type": "boolean",
 				"label": "Prosedur keadaan darurat telah disosialisasikan ke seluruh pekerja proyek"
 			},
 			{
 				"name": "6a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "6a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1490,14 +1706,17 @@
 			},
 			{
 				"name": "6b_isneed",
+				"type": "boolean",
 				"label": "Telah dilakukan simulasi keadaan darurat untuk project tersebut"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "6b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "6b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1506,14 +1725,17 @@
 			},
 			{
 				"name": "6c_isneed",
+				"type": "boolean",
 				"label": "Jalur evakuasi telah tersedia & jelas"
 			},
 			{
 				"name": "6c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "6c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1522,14 +1744,17 @@
 			},
 			{
 				"name": "6d_isneed",
+				"type": "boolean",
 				"label": "Alarm keadaan darurat telah tersedia & berfungsi dengan baik"
 			},
 			{
 				"name": "6d_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "6d_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1538,14 +1763,17 @@
 			},
 			{
 				"name": "7a_isneed",
+				"type": "boolean",
 				"label": "Tersedia APAR sesuai standard dengan jumlah yang cukup"
 			},
 			{
 				"name": "7a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "7a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1554,14 +1782,17 @@
 			},
 			{
 				"name": "7b_isneed",
+				"type": "boolean",
 				"label": "Tersedia hydrant sesuai standar dan cukup untuk memadamkan kebakaran"
 			},
 			{
 				"name": "7b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "7b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1570,14 +1801,17 @@
 			},
 			{
 				"name": "7c_isneed",
+				"type": "boolean",
 				"label": "Tersedia Fire detection dilokasi kerja"
 			},
 			{
 				"name": "7c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "7c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1586,14 +1820,17 @@
 			},
 			{
 				"name": "7d_isneed",
+				"type": "boolean",
 				"label": "Dilakukan pemeriksaan & pengetesan performance Fire Protection secara rutin"
 			},
 			{
 				"name": "7d_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "7d_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1601,31 +1838,37 @@
 				"label": ""
 			},
 			{
-				"name": "7d_isneed",
+				"name": "7e_isneed",
+				"type": "boolean",
 				"label": "Pekerja mampu menggunakan fire protection"
 			},
 			{
-				"name": "7d_score_max",
+				"name": "7e_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "7d_score_actual",
+				"name": "7e_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "7d_note",
+				"name": "7e_note",
 				"label": ""
 			},
 			{
 				"name": "8a_isneed",
+				"type": "boolean",
 				"label": "Tersedia kotak P3K & obat-obatan sesuai standar dan tidak kadaluarsa"
 			},
 			{
 				"name": "8a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "8a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1634,14 +1877,17 @@
 			},
 			{
 				"name": "8b_isneed",
+				"type": "boolean",
 				"label": "Tersedia ambulans bila terjadi kondisi darurat"
 			},
 			{
 				"name": "8b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "8b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1650,14 +1896,17 @@
 			},
 			{
 				"name": "8c_isneed",
+				"type": "boolean",
 				"label": "Terdapat personil terlatih sebagai petugas P3K"
 			},
 			{
 				"name": "8c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "8c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1666,14 +1915,17 @@
 			},
 			{
 				"name": "8d_isneed",
+				"type": "boolean",
 				"label": "Seluruh pekerja telah diasuransikan / jamsostek"
 			},
 			{
 				"name": "8d_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "8d_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1682,14 +1934,17 @@
 			},
 			{
 				"name": "8e_isneed",
+				"type": "boolean",
 				"label": "Memiliki daftar lokasi Puskesmas / RS terdekat"
 			},
 			{
 				"name": "8e_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "8e_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1698,14 +1953,17 @@
 			},
 			{
 				"name": "8f_isneed",
+				"type": "boolean",
 				"label": "Menyediakan fasilitas kesehatan / klinik"
 			},
 			{
 				"name": "8f_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "8f_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1714,14 +1972,17 @@
 			},
 			{
 				"name": "9a_isneed",
+				"type": "boolean",
 				"label": "Tersedia tempat penampungan limbah B3 di setiap unit kerja"
 			},
 			{
 				"name": "9a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "9a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1730,14 +1991,17 @@
 			},
 			{
 				"name": "9b_isneed",
+				"type": "boolean",
 				"label": "Identifikasi tempat penampungan limbah B3 telah jelas"
 			},
 			{
 				"name": "9b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "9b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1746,14 +2010,17 @@
 			},
 			{
 				"name": "9c_isneed",
+				"type": "boolean",
 				"label": "Limbah B3 disimpan maksimum 90 hari"
 			},
 			{
 				"name": "9c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "9c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1762,14 +2029,17 @@
 			},
 			{
 				"name": "9d_isneed",
+				"type": "boolean",
 				"label": "Tempat penampungan limbah B3 dalam kondisi yang baik <br>(tidak pecah/berlubang) dan terhindar dari masuknya air"
 			},
 			{
 				"name": "9d_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "9d_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1778,14 +2048,17 @@
 			},
 			{
 				"name": "9e_isneed",
+				"type": "boolean",
 				"label": "Tersedia peralatan untuk penanggulangan & penanganan tumpahan limbah B3 di unit"
 			},
 			{
 				"name": "9e_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "9e_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1794,14 +2067,17 @@
 			},
 			{
 				"name": "9f_isneed",
+				"type": "boolean",
 				"label": "Prosedur penanggulangan dan penanganan tumpahan limbah B3 telah dipahami oleh pekerja"
 			},
 			{
 				"name": "9f_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "9f_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1810,14 +2086,17 @@
 			},
 			{
 				"name": "9g_isneed",
+				"type": "boolean",
 				"label": "Memiliki program untuk meminimalisir limbah B3"
 			},
 			{
 				"name": "9g_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "9g_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1826,14 +2105,17 @@
 			},
 			{
 				"name": "9h_isneed",
+				"type": "boolean",
 				"label": "Semua limbah yang dibuang telah diidentifikasi serta diregister"
 			},
 			{
 				"name": "9h_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "9h_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1842,14 +2124,17 @@
 			},
 			{
 				"name": "10a_isneed",
+				"type": "boolean",
 				"label": "SIKA telah sesuai dengan jenis pekerjaan yang dilakukan"
 			},
 			{
 				"name": "10a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "10a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1858,14 +2143,17 @@
 			},
 			{
 				"name": "10b_isneed",
+				"type": "boolean",
 				"label": "SIKA masih berlaku"
 			},
 			{
 				"name": "10b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "10b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1874,14 +2162,17 @@
 			},
 			{
 				"name": "10c_isneed",
+				"type": "boolean",
 				"label": "Dilakukan pengetesan/pemeriksaan terlebih dahulu sebelum SIKA diterbitkan"
 			},
 			{
 				"name": "10c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "10c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1890,14 +2181,17 @@
 			},
 			{
 				"name": "10d_isneed",
+				"type": "boolean",
 				"label": "Bahaya dan rekomendasi SIKA telah dikomunikasikan ke pekerja yang terkait"
 			},
 			{
 				"name": "10d_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "10d_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1906,14 +2200,17 @@
 			},
 			{
 				"name": "11a_isneed",
+				"type": "boolean",
 				"label": "Bahan & peralatan disimpan ditempat yang teratur"
 			},
 			{
 				"name": "11a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "11a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1922,14 +2219,17 @@
 			},
 			{
 				"name": "11b_isneed",
+				"type": "boolean",
 				"label": "Memisahkan material yang berbahaya, beracun dan mudah terbakar"
 			},
 			{
 				"name": "11b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "11b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1938,14 +2238,17 @@
 			},
 			{
 				"name": "11c_isneed",
+				"type": "boolean",
 				"label": "Sarana & jalur mobilisasi serta evakuasi tidak terhalang"
 			},
 			{
 				"name": "11c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "11c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1954,14 +2257,17 @@
 			},
 			{
 				"name": "11d_isneed",
+				"type": "boolean",
 				"label": "Menjaga kebersihan lokasi kerja"
 			},
 			{
 				"name": "11d_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "11d_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1970,14 +2276,17 @@
 			},
 			{
 				"name": "11e_isneed",
+				"type": "boolean",
 				"label": "Tidak ada bahan berbahaya & beracun yang berserakan dilokasi jalur mobilisasi"
 			},
 			{
 				"name": "11e_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "11e_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -1986,14 +2295,17 @@
 			},
 			{
 				"name": "12a_isneed",
+				"type": "boolean",
 				"label": "Sampah dari pekerjaan tersebut telah di kelompokkan berdasarkan pada jenisnya (B3, Anorganik, Organik dan limbah klinis)"
 			},
 			{
 				"name": "12a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "12a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -2002,14 +2314,17 @@
 			},
 			{
 				"name": "12b_isneed",
+				"type": "boolean",
 				"label": "Identifikasi kategori dari limbah tersebut telah dilakukan sesuai dengan jenis limbah yang ada di tempat penampungan limbah tersebut"
 			},
 			{
 				"name": "12b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
 				"name": "12b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
@@ -2017,1491 +2332,1770 @@
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "12c_isneed",
+				"type": "boolean",
+				"label": "Tempat penampungan limbah dalam kondisi yang baik (tidak bocor / retak / rusak)"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "12c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "12c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "12c_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "13a_isneed",
+				"type": "boolean",
+				"label": "Material memiliki MSDS (Material Safety Data Sheet)"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "13a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "13a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "13a_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "13b_isneed",
+				"type": "boolean",
+				"label": "Prosedur penanggulangan paparan telah dipahami pekerja"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "13b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "13b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "13b_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "13c_isneed",
+				"type": "boolean",
+				"label": "MSDS material yang digunakan telah dipahami pekerja"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "13c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "13c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "13c_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "14a_isneed",
+				"type": "boolean",
+				"label": "Tidak merokok dilokasi yang tidak diperbolehkan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "14a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "14a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "14a_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "15a_isneed",
+				"type": "boolean",
+				"label": "Tidak membawa / mengkonsumsi minuman / obat-obatan terlarang & senjata yang dilarang dilokasi kerja"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "15a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "15a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "15a_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "16a_isneed",
+				"type": "boolean",
+				"label": "Menyediakan penerangan yang cukup"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "16a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "16a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "16a_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "16b_isneed",
+				"type": "boolean",
+				"label": "Seragam pekerja memiliki Fluoresence (berpendar)"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "16b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "16b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "16b_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "16c_isneed",
+				"type": "boolean",
+				"label": "Dilakukan pengawasan yang lebih ketat untuk pekerjaan critical dimalam hari"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "16c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "16c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "16c_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "16d_isneed",
+				"type": "boolean",
+				"label": "Tidak ada pekerja yang rabun senja"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "16d_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "16d_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "16d_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "17a_isneed",
+				"type": "boolean",
+				"label": "Tangan dan kaki tidak dalam kondisi basah"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "17a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "17a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "17a_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "17b_isneed",
+				"type": "boolean",
+				"label": "Pekerja menggunakan alas kaki yang bersifat isolator"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "17b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "17b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "17b_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "17c_isneed",
+				"type": "boolean",
+				"label": "Terdapat tanda bahaya (high voltage) untuk pekerjaan tegangan tinggi"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "17c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "17c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "17c_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "17d_isneed",
+				"type": "boolean",
+				"label": "Tidak ada kabel yang terkelupas"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "17d_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "17d_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "17d_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "17e_isneed",
+				"type": "boolean",
+				"label": "Kabel listrik dalam kondisi yang bagus dan layak"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "17e_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "17e_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "17e_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "17f_isneed",
+				"type": "boolean",
+				"label": "Grounding terpasang dengan baik"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "17f_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "17f_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "17f_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "18a_isneed",
+				"type": "boolean",
+				"label": "Setiap peralatan yang digunakan memiliki SOP"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "18a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "18a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "18a_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "18b_isneed",
+				"type": "boolean",
+				"label": "SOP telah disosialisasikan ke pekerja"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "18b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "18b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "18b_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "18c_isneed",
+				"type": "boolean",
+				"label": "SOP tersedia dan mudah ditemukan dilokasi kerja"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "18c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "18c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "18c_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "19a_isneed",
+				"type": "boolean",
+				"label": "Perkakas tangan hanya boleh digunakan oleh orang yang sudah memiliki kompetensi"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "19a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "19a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "19a_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "19b_isneed",
+				"type": "boolean",
+				"label": "Dilakukan pemeriksaan sebelum digunakan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "19b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "19b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "19b_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "19c_isneed",
+				"type": "boolean",
+				"label": "Operator menggunakan APD yang disyaratkan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "19c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "19c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "19c_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "19d_isneed",
+				"type": "boolean",
+				"label": "Posisi pengoperasian aman dan nyaman"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "19d_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "19d_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "19d_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "19e_isneed",
+				"type": "boolean",
+				"label": "Safety device terpasang pada peralatan perkakas dan berfungsi"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "19e_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "19e_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "19e_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "20a_isneed",
+				"type": "boolean",
+				"label": "Mengkomunikasikan daerah yang akan dilakukan radiography test"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "20a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "20a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "20a_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "20b_isneed",
+				"type": "boolean",
+				"label": "Tidak ada orang di area radiasi X-ray"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "20b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "20b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "20b_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "20c_isneed",
+				"type": "boolean",
+				"label": "Diberikan rambu pembatas area radiasi X-ray"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "20c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "20c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "20c_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "21a_isneed",
+				"type": "boolean",
+				"label": "Lokasi pekerjaan memiliki ventilasi yang cukup untuk sirkulasi udara"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "21a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "21a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "21a_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "21b_isneed",
+				"type": "boolean",
+				"label": "Tidak meletakan bahan berbahaya dan beracun dilokasi ventilasi udara"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "21b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "21b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "21b_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "22a_isneed",
+				"type": "boolean",
+				"label": "Tabung bertekanan telah di inspeksi secara rutin"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "22a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "22a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "22a_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "22b_isneed",
+				"type": "boolean",
+				"label": "Tidak ada kebocoran gas bertekanan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "22b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "22b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "22b_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "23a1_isneed",
+				"type": "boolean",
+				"label": "Welder harus sudah memiliki sertifikasi pengelasan sesuai dengan persyaratan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "23a1_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "23a1_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "23a1_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "23a2_isneed",
+				"type": "boolean",
+				"label": "penempatan peralatan harus dalam kondisi stabil"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "23a2_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "23a2_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "23a2_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "23a3_isneed",
+				"type": "boolean",
+				"label": "Telah dilakukan gas test pada pengelasan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "23a3_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "23a3_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "23a3_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "23a4_isneed",
+				"type": "boolean",
+				"label": "Terdapat APAR di dekat lokasi welding"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "23a4_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "23a4_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "23a4_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "23a5_isneed",
+				"type": "boolean",
+				"label": "Grounding telah dipasang selama pengelasan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "23a5_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "23a5_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "23a5_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "23b1_isneed",
+				"type": "boolean",
+				"label": "Telah dilakukan gas test sebelum pemotongan dengan burner"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "23b1_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "23b1_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "23b1_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "23b2_isneed",
+				"type": "boolean",
+				"label": "Terdapat APAR di dekat lokasi pemotongan dengan burner"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "23b2_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "23b2_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "23b2_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
+				"name": "23b3_isneed",
+				"type": "boolean",
 				"label": "apakah"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "23b3_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "23b3_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "23b3_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "24a_isneed",
+				"type": "boolean",
+				"label": "Pekerja menggunakan Breathing Aparatus"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "24a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "24a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "24a_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "24b_isneed",
+				"type": "boolean",
+				"label": "dilakukan pemeriksaan gas beracun secara berkala"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "24b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "24b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "24b_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "24c_isneed",
+				"type": "boolean",
+				"label": "Pekerja memiliki competency bekerja di confined space"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "24c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "24c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "24c_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25a1_isneed",
+				"type": "boolean",
+				"label": "Tangga terbuat dari material yang kuat dan tahan terhadap cuaca"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25a1_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25a1_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25a1_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25a2_isneed",
+				"type": "boolean",
+				"label": "Kondisi tangga masih baik dan layak difungsikan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25a2_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25a2_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25a2_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25a3_isneed",
+				"type": "boolean",
+				"label": "Tangga diletakkan didasar yang stabil, kuat dan tidak slip"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25a3_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25a3_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25a3_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25a4_isneed",
+				"type": "boolean",
+				"label": "Kemiringan tangga sesuai dengan ketentuan keselamatan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25a4_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25a4_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25a4_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25a5_isneed",
+				"type": "boolean",
+				"label": "Tangga diletakkan ditempat yang aman"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25a5_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25a5_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25a5_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25a6_isneed",
+				"type": "boolean",
+				"label": "Tangga memiliki railing untuk pegangan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25a6_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25a6_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25a6_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25a7_isneed",
+				"type": "boolean",
+				"label": "Pekerja menggunakan tangga secara aman"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25a7_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25a7_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25a7_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25b1_isneed",
+				"type": "boolean",
+				"label": "Perancah terbuat dari bahan yang kuat serta tahan terhadap cuaca"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25b1_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25b1_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25b1_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25b2_isneed",
+				"type": "boolean",
+				"label": "Perancah memiliki bracing untuk menahan gaya kesamping / goyangan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25b2_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25b2_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25b2_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25b3_isneed",
+				"type": "boolean",
+				"label": "Telah dilakukan pemeriksaan sebelum & pada saat perancah digunakan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25b3_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25b3_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25b3_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25b4_isneed",
+				"type": "boolean",
+				"label": "Tangga naik ke perancah sudah disediakan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25b4_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25b4_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25b4_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25b5_isneed",
+				"type": "boolean",
+				"label": "Perancah diletakkan didasar yang kuat dan stabil"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25b5_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25b5_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25b5_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25b6_isneed",
+				"type": "boolean",
+				"label": "Pekerja sudah mengantisipasi kemungkinan jatuhnya benda dari pekerjaan ketinggian"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25b6_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25b6_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25b6_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25b7_isneed",
+				"type": "boolean",
+				"label": "Pekerja yang bekerja diketinggian harus sudah terlatih dan dalam kondisi sehat"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25b7_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25b7_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25b7_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25b8_isneed",
+				"type": "boolean",
+				"label": "Scaffolding memiliki railing dan papan pijakan untuk pekerja"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25b8_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25b8_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25b8_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "25b9_isneed",
+				"type": "boolean",
+				"label": "Terdapat instalasi penangkal petir sementara untuk pekerjaan di ketinggian (yang belum tercover oleh sistem penangkal petir yang ada)"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "25b9_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "25b9_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "25b9_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "26a_isneed",
+				"type": "boolean",
+				"label": "Telah dilakukan pemeriksaan sebelum digunakan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "26a_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "26a_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "26a_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "26b_isneed",
+				"type": "boolean",
+				"label": "Pengemudi telah memiliki kompetensi & ijin mengemudi"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "26b_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "26b_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "26b_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "26c_isneed",
+				"type": "boolean",
+				"label": "Pengemudi mematuhi rambu-rambu yang ada"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "26c_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "26c_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "26c_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "26d_isneed",
+				"type": "boolean",
+				"label": "safety device tersedia pada pesawat / alat angkut & berfungsi"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "26d_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "26d_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "26d_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27a1_isneed",
+				"type": "boolean",
+				"label": "Operator yang mengoperasikan crane harus memenuhi kompetensi yang ditentukan / memiliki surat ijin operasi"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27a1_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27a1_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27a1_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27a2_isneed",
+				"type": "boolean",
+				"label": "Tabel kapasitas beban, informasi bahaya khusus telah terpasang di crane"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27a2_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27a2_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27a2_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27a3_isneed",
+				"type": "boolean",
+				"label": "Operator dibantu oleh minimal satu orang pemandu / helper saat mengoperasikan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27a3_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27a3_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27a3_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27a4_isneed",
+				"type": "boolean",
+				"label": "Daerah yang berada di pada radius putaran crane / dilintasan alat angkat harus diberi rambu dilarang melintas"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27a4_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27a4_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27a4_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27a5_isneed",
+				"type": "boolean",
+				"label": "Kait (hook) memiliki kancing pengaman (safety latches)"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27a5_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27a5_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27a5_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27a6_isneed",
+				"type": "boolean",
+				"label": "Beban yang diangkat sesuai dengan kapasitas kekuatan sling"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27a6_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27a6_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27a6_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27a7_isneed",
+				"type": "boolean",
+				"label": "Melakukan pemeriksaan crane, sling secara periodik"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27a7_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27a7_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27a7_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27a8_isneed",
+				"type": "boolean",
+				"label": "Mobil crane berada diatas landasan yang stabil dan dilengkapi tangkai penahan (Boowe Stop)"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27a8_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27a8_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27a8_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27a9_isneed",
+				"type": "boolean",
+				"label": "Crane telah disertifikasi & masa sertifikasi masih berlaku"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27a9_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27a9_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27a9_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27b1_isneed",
+				"type": "boolean",
+				"label": "Telah dilakukan pengetesan semua fungsi listrik sebelum digunakan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27b1_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27b1_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27b1_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27b2_isneed",
+				"type": "boolean",
+				"label": "Lokasi erection aman dari kejatuhan benda-benda"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27b2_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27b2_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27b2_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27b3_isneed",
+				"type": "boolean",
+				"label": "Pintu masuk / keluar harus dalam keadaan terkunci pada saat lift digunakan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27b3_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27b3_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27b3_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27b4_isneed",
+				"type": "boolean",
+				"label": "Beban penumpang tidak melebihi batas yang diijinkan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27b4_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27b4_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27b4_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27c1_isneed",
+				"type": "boolean",
+				"label": "Telah dilakukan pemeriksaan sebelum excavator digunakan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27c1_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27c1_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27c1_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27c2_isneed",
+				"type": "boolean",
+				"label": "Posisi excavator stabil dan aman dari potensi longsoran"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27c2_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27c2_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27c2_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "27c3_isneed",
+				"type": "boolean",
+				"label": "Tidak ada orang didalam area jangkauan excavator"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "27c3_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "27c3_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "27c3_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "28a1_isneed",
+				"type": "boolean",
+				"label": "Memastikan tidak ada pipa / kabel-kabel /gas di lokasi yang akan digali"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "28a1_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "28a1_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "28a1_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "28a2_isneed",
+				"type": "boolean",
+				"label": "Terdapat rambu yang menunjukan ada pekerjaan penggalian / lubang"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "28a2_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "28a2_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "28a2_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "28a3_isneed",
+				"type": "boolean",
+				"label": "Mengantisipasi dampak kerusakan struktur galian"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "28a3_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "28a3_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "28a3_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "1_isneed",
+				"type": "boolean",
+				"label": "Penerapan Mitigasi JHSEA"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "1_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "1_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "1_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "2_isneed",
+				"type": "boolean",
+				"label": "HSE Meeting (sesuai schedule HSE Plan)"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "2_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "2_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "2_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "3_isneed",
+				"type": "boolean",
+				"label": "HSE Talk / briefing (sesuai schedule HSE Plan)"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "3_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "3_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "3_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "4_isneed",
+				"type": "boolean",
+				"label": "HSE Training / Induction (sesuai schedule HSE Plan)"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "4_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "4_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "4_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "5_isneed",
+				"type": "boolean",
+				"label": "Pelaporan Penerapan HSE ke Pertamina (sesuai schedule HSE Plant)"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "5_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "5_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "5_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "6_isneed",
+				"type": "boolean",
+				"label": "Inspeksi HSE secara rutin oleh level pelaksana (mulai dari Pre mobilization hingga mobilization) sesuai schedule HSE Plan)"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "6_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "6_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "6_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "7_isneed",
+				"type": "boolean",
+				"label": "Inspeksi HSE oleh Managemen kontraktor (sesuai schedule HSE Plan)"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "7_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "7_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "7_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "8_isneed",
+				"type": "boolean",
+				"label": "Incident / accident reporting"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "8_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "8_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "8_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "9_isneed",
+				"type": "boolean",
+				"label": "Investigation report"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "9_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "9_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "9_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "10_isneed",
+				"type": "boolean",
+				"label": "Pekerja paham terhadap HSE Policy & Objective pekerjaan tersebut"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "10_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "10_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "10_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "11_isneed",
+				"type": "boolean",
+				"label": "Pemeriksaan kesehatan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "11_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "11_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "11_note",
 				"label": ""
 			},
 			{
-				"name": "1a_isneed",
-				"label": "apakah"
+				"name": "12_isneed",
+				"type": "boolean",
+				"label": "Tindak lanjut temuan"
 			},
 			{
-				"name": "1a_score_max",
+				"name": "12_score_max",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_score_actual",
+				"name": "12_score_actual",
+				"type": "boolean",
 				"label": ""
 			},
 			{
-				"name": "1a_note",
+				"name": "12_note",
 				"label": ""
 			}
 		]
@@ -3517,11 +4111,11 @@
 			},
 			{
 				"name": "progress",
-				"type": "number"
+				"type": "int"
 			},
 			{
 				"name": "lock",
-				"type": "number"
+				"type": "boolean"
 			}
 		]
 	},
@@ -3536,11 +4130,11 @@
 			},
 			{
 				"name": "progress",
-				"type": "number"
+				"type": "int"
 			},
 			{
 				"name": "lock",
-				"type": "number"
+				"type": "boolean"
 			}
 		]
 	},

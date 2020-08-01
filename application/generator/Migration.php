@@ -12,7 +12,7 @@ class Migration_{{migrationName}} extends CI_Migration {
         `createdAt` datetime DEFAULT NULL,
         `updatedAt` datetime DEFAULT NULL,{{fields}}
         PRIMARY KEY (`uuid`){{indexes}}
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+      ) ROW_FORMAT=DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8
     ");
 
   }
