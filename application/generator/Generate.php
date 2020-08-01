@@ -194,11 +194,17 @@ foreach ($structure as $entity)
 				case 'datetime': 
 					$fields .= "\n        `{$field->name}` DATETIME NOT NULL,";
 					break;
+				case 'number': 
 				case 'int': 
 					$fields .= "\n        `{$field->name}` INT(11) NOT NULL,";
 					break;
+				case 'boolean': 
+					$fields .= "\n        `{$field->name}` TINYINT(1) NOT NULL,";
+					break;
 				case 'string': 
-				default: $fields .= "\n        `{$field->name}` varchar(255) NOT NULL,";
+				default: 
+					$length = $field->index ? 36 : 255;
+					$fields .= "\n        `{$field->name}` varchar({$length}) NOT NULL,";
 					break;
 			}
 		}
