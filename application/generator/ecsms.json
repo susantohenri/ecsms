@@ -1,0 +1,3566 @@
+[
+	{
+		"controller": "Proyek",
+		"fields": [
+			{
+				"name": "nama"
+			},
+			{
+				"name": "lokasi"
+			},
+			{
+				"name": "jangka_waktu",
+				"type": "number"
+			},
+			{
+				"name": "jumlah_laporan_bulanan",
+				"type": "number"
+			},
+			{
+				"name": "peserta",
+				"type": "relation",
+				"model": "Vendors",
+				"field": "nama"
+			}
+		],
+		"childs": [
+			{
+				"controller": "PesertaProyek",
+				"label": "Vendor Peserta"
+			}
+		]
+	},
+	{
+		"controller": "Proyek",
+		"fields": [
+			{
+				"name": "proyek",
+				"type": "relation",
+				"model": "Proyeks",
+				"field": "nama"
+			},
+			{
+				"name": "vendor",
+				"type": "relation",
+				"model": "Vendors",
+				"field": "nama"
+			}
+		]
+	},
+	{
+		"controller": "HSE",
+		"fields": [
+			{
+				"name": "proyek",
+				"type": "relation",
+				"model": "Proyeks",
+				"field": "nama"
+			},
+			{
+				"name": "vendor",
+				"type": "relation",
+				"model": "Vendors",
+				"field": "nama"
+			},
+			{
+				"name": "progress",
+				"type": "number"
+			},
+			{
+				"name": "lock",
+				"type": "number"
+			},
+			{
+				"name": "1a",
+				"label": "Profil Perusahaan"
+			},
+			{
+				"name": "1a_score",
+				"label": ""
+			},
+			{
+				"name": "1b",
+				"label": "Gambaran umum dan lingkup kerja proyek"
+			},
+			{
+				"name": "1b_score",
+				"label": ""
+			},
+			{
+				"name": "1c",
+				"label": "Surat kesanggupan untuk melengkapi dokumen pendukung yang habis masa berlakunya setelah penetapan pemenang"
+			},
+			{
+				"name": "1c_score",
+				"label": ""
+			},
+			{
+				"name": "2a",
+				"label": "Memiliki kebijakan HSE secara tertulis"
+			},
+			{
+				"name": "2a_score",
+				"label": ""
+			},
+			{
+				"name": "2b",
+				"label": "Kebijakan HSE ditandatangani oleh pejabat yang berwenang dan dicantumkan tanggal"
+			},
+			{
+				"name": "2b_score",
+				"label": ""
+			},
+			{
+				"name": "2c",
+				"label": "Kebijakan mencakup seluruh aspek HSSE"
+			},
+			{
+				"name": "2c_score",
+				"label": ""
+			},
+			{
+				"name": "2d",
+				"label": "Memiliki sasaran/objective"
+			},
+			{
+				"name": "2d_score",
+				"label": ""
+			},
+			{
+				"name": "3a",
+				"label": "Memiliki kebijakan Drug & Alcohol secara tertulis"
+			},
+			{
+				"name": "3a_score",
+				"label": ""
+			},
+			{
+				"name": "3b",
+				"label": "Kebijakan HSE ditandatangani oleh pejabat yang berwenang"
+			},
+			{
+				"name": "3b_score",
+				"label": ""
+			},
+			{
+				"name": "4a",
+				"label": "Memiliki struktur organisasi proyek yang disahkan oleh pimpinan perusahaan"
+			},
+			{
+				"name": "4a_score",
+				"label": ""
+			},
+			{
+				"name": "4b",
+				"label": "Job description masing - masing jabatan sesuai dengan struktur organisasi proyek"
+			},
+			{
+				"name": "4b_score",
+				"label": ""
+			},
+			{
+				"name": "4c",
+				"label": "Melampirkan surat penunjukan Manager Proyek yang ditandatangani pimpinan tertinggi"
+			},
+			{
+				"name": "4c_score",
+				"label": ""
+			},
+			{
+				"name": "4d",
+				"label": "Penanggung jawab HSE sudah ditentukan"
+			},
+			{
+				"name": "4d_score",
+				"label": ""
+			},
+			{
+				"name": "5a",
+				"label": "Memiliki KPI yang disetujui oleh pimpinan perusahan atau Manager Proyek yang ditunjuk"
+			},
+			{
+				"name": "5a_score",
+				"label": ""
+			},
+			{
+				"name": "5b",
+				"label": "Sesuai format Pertamina"
+			},
+			{
+				"name": "5b_score",
+				"label": ""
+			},
+			{
+				"name": "5c",
+				"label": "Menetapkan target leading indicator"
+			},
+			{
+				"name": "5c_score",
+				"label": ""
+			},
+			{
+				"name": "5d",
+				"label": "Menetapkan target lagging indicator"
+			},
+			{
+				"name": "5d_score",
+				"label": ""
+			},
+			{
+				"name": "6a",
+				"label": "Perencanaan dan program kerja proyek (S-Curve)"
+			},
+			{
+				"name": "6a_score",
+				"label": ""
+			},
+			{
+				"name": "6b",
+				"label": "Terdapat tahapan proyek"
+			},
+			{
+				"name": "6b_score",
+				"label": ""
+			},
+			{
+				"name": "6c",
+				"label": "Terdapat analisa bahaya tiap tahapan"
+			},
+			{
+				"name": "6c_score",
+				"label": ""
+			},
+			{
+				"name": "6d",
+				"label": "Terdapat mitigasi yang tepat, meliputi :<ul> <li>peralatan</li> <li>prosedur</li> <li>pelatihan</li> <li>perijinan</li> <li>pengawasan</li> <li>alat pelindung diri</li> <li>fire protection</li></ul>"
+			},
+			{
+				"name": "6d_score",
+				"label": ""
+			},
+			{
+				"name": "6e",
+				"label": "Kelengkapan data peralatan kerja"
+			},
+			{
+				"name": "6e_score",
+				"label": ""
+			},
+			{
+				"name": "6f",
+				"label": "Perijinan peralatan kerja"
+			},
+			{
+				"name": "6f_score",
+				"label": ""
+			},
+			{
+				"name": "6g",
+				"label": "Penanganan zat kimia"
+			},
+			{
+				"name": "6g_score",
+				"label": ""
+			},
+			{
+				"name": "6h",
+				"label": "Matriks kebutuhan APD"
+			},
+			{
+				"name": "6h_score",
+				"label": ""
+			},
+			{
+				"name": "6i",
+				"label": "Daftar dan jumlah APD"
+			},
+			{
+				"name": "6i_score",
+				"label": ""
+			},
+			{
+				"name": "6j",
+				"label": "Daftar peralatan penanggulangan kebakaran"
+			},
+			{
+				"name": "6j_score",
+				"label": ""
+			},
+			{
+				"name": "7a",
+				"label": "Memiliki data kebutuhan kendaraan yang dioperasikan selama proyek"
+			},
+			{
+				"name": "7a_score",
+				"label": ""
+			},
+			{
+				"name": "7b",
+				"label": "Semua kendaraan memiliki surat ijin yang masih berlaku"
+			},
+			{
+				"name": "7b_score",
+				"label": ""
+			},
+			{
+				"name": "7c",
+				"label": "Semua pekerja yang mengoperasikan kendaraan harus memilki surat ijin yang masih berlaku"
+			},
+			{
+				"name": "7c_score",
+				"label": ""
+			},
+			{
+				"name": "7d",
+				"label": "Mempunyai checklist pemeriksaan kelayakan kendaraan"
+			},
+			{
+				"name": "7d_score",
+				"label": ""
+			},
+			{
+				"name": "8a",
+				"label": "Kelengkapan prosedur kerja sesuai dengan pekerjaan yang dilakukan"
+			},
+			{
+				"name": "8a_score",
+				"label": ""
+			},
+			{
+				"name": "8b",
+				"label": "Prosedur penggunaan APAR"
+			},
+			{
+				"name": "8b_score",
+				"label": ""
+			},
+			{
+				"name": "8c",
+				"label": "Prosedur penggunaan APD"
+			},
+			{
+				"name": "8c_score",
+				"label": ""
+			},
+			{
+				"name": "8d",
+				"label": "Prosedur P3K"
+			},
+			{
+				"name": "8d_score",
+				"label": ""
+			},
+			{
+				"name": "8e",
+				"label": "Daftar standar yang digunakan"
+			},
+			{
+				"name": "8e_score",
+				"label": ""
+			},
+			{
+				"name": "9a",
+				"label": "Penanggung jawab HSE mempunyai sertifikat nasional  atau internasional yang masih berlaku"
+			},
+			{
+				"name": "9a_score",
+				"label": ""
+			},
+			{
+				"name": "9b",
+				"label": "Safetyman mempunyai sertifikat dari Migas/Disnaker/AK3"
+			},
+			{
+				"name": "9b_score",
+				"label": ""
+			},
+			{
+				"name": "9c",
+				"label": "Tenaga kerja ahli mempunyai sertifikasi sesuai kompetensi (welder, pekerjaan teknik bawah air, operator alat berat, dll)"
+			},
+			{
+				"name": "9c_score",
+				"label": ""
+			},
+			{
+				"name": "9d",
+				"label": "Terdapat program pelatihan pekerja"
+			},
+			{
+				"name": "9d_score",
+				"label": ""
+			},
+			{
+				"name": "10a",
+				"label": "Prosedur Audit"
+			},
+			{
+				"name": "10a_score",
+				"label": ""
+			},
+			{
+				"name": "10b",
+				"label": "Prosedur Inspeksi"
+			},
+			{
+				"name": "10b_score",
+				"label": ""
+			},
+			{
+				"name": "10c",
+				"label": "Program inspeksi"
+			},
+			{
+				"name": "10c_score",
+				"label": ""
+			},
+			{
+				"name": "10d",
+				"label": "Program audit"
+			},
+			{
+				"name": "10d_score",
+				"label": ""
+			},
+			{
+				"name": "11a",
+				"label": "Prosedur pelaporan insiden sesuai organisasi dan lokasi proyek yang ditandatangani oleh pimpinan perusahaan / manager proyek"
+			},
+			{
+				"name": "11a_score",
+				"label": ""
+			},
+			{
+				"name": "11b",
+				"label": "Terdapat alur pelaporan kepada Direksi Pekerjaan Pertamina"
+			},
+			{
+				"name": "11b_score",
+				"label": ""
+			},
+			{
+				"name": "11c",
+				"label": "Prosedur Investigasi Kecelakaan"
+			},
+			{
+				"name": "11c_score",
+				"label": ""
+			},
+			{
+				"name": "11d",
+				"label": "Prosedur sesuai dengan kondisi di lapangan"
+			},
+			{
+				"name": "11d_score",
+				"label": ""
+			},
+			{
+				"name": "12a",
+				"label": "Prosedur keadaan darurat"
+			},
+			{
+				"name": "12a_score",
+				"label": ""
+			},
+			{
+				"name": "12b",
+				"label": "Terdapat organisasi keadaan darurat"
+			},
+			{
+				"name": "12b_score",
+				"label": ""
+			},
+			{
+				"name": "12c",
+				"label": "Daftar nomor kontak emergency"
+			},
+			{
+				"name": "12c_score",
+				"label": ""
+			},
+			{
+				"name": "12d",
+				"label": "Data peralatan P3K sesuai standar"
+			},
+			{
+				"name": "12d_score",
+				"label": ""
+			},
+			{
+				"name": "13a",
+				"label": "Terdapat program komunikasi HSE"
+			},
+			{
+				"name": "13a_score",
+				"label": ""
+			},
+			{
+				"name": "13b",
+				"label": "Item program sesuai KPI"
+			},
+			{
+				"name": "13b_score",
+				"label": ""
+			},
+			{
+				"name": "14a",
+				"label": "Manajemen Sub Kontraktor"
+			},
+			{
+				"name": "14a_score",
+				"label": ""
+			},
+			{
+				"name": "14b",
+				"label": "Kompetensi Sub Kontraktor"
+			},
+			{
+				"name": "14b_score",
+				"label": ""
+			},
+			{
+				"name": "14c",
+				"label": "Aspek HSE Sub Kontraktor"
+			},
+			{
+				"name": "14c_score",
+				"label": ""
+			},
+			{
+				"name": "15a",
+				"label": "Program Medical Check Up (MCU) pekerja"
+			},
+			{
+				"name": "15a_score",
+				"label": ""
+			},
+			{
+				"name": "15b",
+				"label": "Program Daily Check Up (DCU) pekerja"
+			},
+			{
+				"name": "15b_score",
+				"label": ""
+			},
+			{
+				"name": "15c",
+				"label": "Melampirkan hasil MCU (proyek > 6 bulan) atau surat keterangan sehat (proyek < 6 bulan)"
+			},
+			{
+				"name": "15c_score",
+				"label": ""
+			}
+		]
+	},
+	{
+		"controller": "PJA",
+		"fields": [
+			{
+				"name": "proyek",
+				"type": "relation",
+				"model": "Proyeks",
+				"field": "nama"
+			},
+			{
+				"name": "progress",
+				"type": "number"
+			},
+			{
+				"name": "lock",
+				"type": "number"
+			},
+			{
+				"name": "1a_isneed",
+				"label": "Apakah program HSE sudah masuk dalam rencana kerja kontraktor pelaksana tersebut?"
+			},
+			{
+				"name": "1a_isya",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1b_isneed",
+				"label": "Apakah tugas dan tanggung jawab penerapan aspek HSE sudah didefinisikan serta dipahami oleh Kontraktor ?"
+			},
+			{
+				"name": "1b_isya",
+				"label": ""
+			},
+			{
+				"name": "1b_note",
+				"label": ""
+			},
+			{
+				"name": "2a_isneed",
+				"label": "Apakah Kontraktor telah menyusun JHSEA terhadap seluruh tahapan pekerjaan (mulai dari tahapan mobilisasi hingga demobilisasi) yang akan dilaksanakan?"
+			},
+			{
+				"name": "2a_isya",
+				"label": ""
+			},
+			{
+				"name": "2a_note",
+				"label": ""
+			},
+			{
+				"name": "2b_isneed",
+				"label": "Apakah kontraktor telah mengidentifikasi dan menganalisa seluruh pekerjaan yang memiliki potensi bahaya kritis?"
+			},
+			{
+				"name": "2b_isya",
+				"label": ""
+			},
+			{
+				"name": "2b_note",
+				"label": ""
+			},
+			{
+				"name": "2c_isneed",
+				"label": "Apakah kontraktor telah memiliki prosedur operasi (terkait dengan potensi bahaya kritis yang teridentifikasi) dan mengkomunikasikannya sebelum pelaksanaan pekerjaan?"
+			},
+			{
+				"name": "2c_isya",
+				"label": ""
+			},
+			{
+				"name": "2c_note",
+				"label": ""
+			},
+			{
+				"name": "2d_isneed",
+				"label": "Apakah Kontraktor memiliki system untuk mengawasi adanya potensi bahaya selama dalam pelaksanaan pekerjaan kontrak (unsafe act & unsafe condition)?"
+			},
+			{
+				"name": "2d_isya",
+				"label": ""
+			},
+			{
+				"name": "2d_note",
+				"label": ""
+			},
+			{
+				"name": "3a_isneed",
+				"label": "Apakah pekerja Kontraktor telah memahami prosedur keadaan darurat yang berlaku di lokasi pekerjaan kontrak tersebut?"
+			},
+			{
+				"name": "3a_isya",
+				"label": ""
+			},
+			{
+				"name": "3a_note",
+				"label": ""
+			},
+			{
+				"name": "3b_isneed",
+				"label": "Apakah pekerja kontraktor memahami system pengkomunikasian / pelaporan bila terjadi keadaan darurat?"
+			},
+			{
+				"name": "3b_isya",
+				"label": ""
+			},
+			{
+				"name": "3b_note",
+				"label": ""
+			},
+			{
+				"name": "3c_isneed",
+				"label": "Apakah kontraktor memiliki Petugas P3K (First Aider) yang terlatih untuk Pertolongan Pertama?"
+			},
+			{
+				"name": "3c_isya",
+				"label": ""
+			},
+			{
+				"name": "3c_note",
+				"label": ""
+			},
+			{
+				"name": "3d_isneed",
+				"label": "Apakah kontraktor telah menyediakan perlengkapan P3K yang sesuai untuk diletakan di lokasi kerja?"
+			},
+			{
+				"name": "3d_isya",
+				"label": ""
+			},
+			{
+				"name": "3d_note",
+				"label": ""
+			},
+			{
+				"name": "3e_isneed",
+				"label": "Apakah kontraktor telah memiliki emergency call number bila terjadi kondisi darurat?"
+			},
+			{
+				"name": "3e_isya",
+				"label": ""
+			},
+			{
+				"name": "3e_note",
+				"label": ""
+			},
+			{
+				"name": "3f_isneed",
+				"label": "Apakah kontraktor telah menyediakan dokter / Tim Medis?"
+			},
+			{
+				"name": "3f_isya",
+				"label": ""
+			},
+			{
+				"name": "3f_note",
+				"label": ""
+			},
+			{
+				"name": "4a_isneed",
+				"label": "Apakah kontraktor telah melaksanakan Pre Job HSE meeting sebelum pelaksanaan pekerjaan?"
+			},
+			{
+				"name": "4a_isya",
+				"label": ""
+			},
+			{
+				"name": "4a_note",
+				"label": ""
+			},
+			{
+				"name": "4b_isneed",
+				"label": "Apakah Kontraktor telah memiliki program HSE meeting selama pelaksanaan pekerjaan?"
+			},
+			{
+				"name": "4b_isya",
+				"label": ""
+			},
+			{
+				"name": "4b_note",
+				"label": ""
+			},
+			{
+				"name": "4c_isneed",
+				"label": "Apakah Kontraktor telah memiliki program HSE talk / briefing selama pelaksanaan pekerjaan?"
+			},
+			{
+				"name": "4c_isya",
+				"label": ""
+			},
+			{
+				"name": "4c_note",
+				"label": ""
+			},
+			{
+				"name": "4d_isneed",
+				"label": "Apakah Kontraktor telah menyiapkan HSE sign / poster / banner/ spanduk terkait dengan pelaksanaan pekerjaan kontrak?"
+			},
+			{
+				"name": "4d_isya",
+				"label": ""
+			},
+			{
+				"name": "4d_note",
+				"label": ""
+			},
+			{
+				"name": "4e_isneed",
+				"label": "Apakah kontraktor memiliki system reward / punishment terhadap pekerja terkait dengan implementasi aspek HSE?"
+			},
+			{
+				"name": "4e_isya",
+				"label": ""
+			},
+			{
+				"name": "4e_note",
+				"label": ""
+			},
+			{
+				"name": "5a_isneed",
+				"label": "Apakah Kontraktor sudah memiliki surat ijin kerja aman sebelum pelaksanaan pekerjaan?"
+			},
+			{
+				"name": "5a_isya",
+				"label": ""
+			},
+			{
+				"name": "5a_note",
+				"label": ""
+			},
+			{
+				"name": "5b_isneed",
+				"label": "Apakah peralatan yang akan digunakan telah disertifikasi (apabila secara regulasi disyaratkan) dan masih berlaku selama pelaksanaan pekerjaan?"
+			},
+			{
+				"name": "5b_isya",
+				"label": ""
+			},
+			{
+				"name": "5b_note",
+				"label": ""
+			},
+			{
+				"name": "5c_isneed",
+				"label": "Apakah ijin dari institusi / badan terkait telah dipenuhi sebelum pelaksanaan pekerjaan?"
+			},
+			{
+				"name": "5c_isya",
+				"label": ""
+			},
+			{
+				"name": "5c_note",
+				"label": ""
+			},
+			{
+				"name": "5d_isneed",
+				"label": "Apakah pekerja kontraktor telah memahami peraturan dan ketentuan aspek HSE yang berlaku dilokasi pelaksanaan pekerjaan kontrak?"
+			},
+			{
+				"name": "5d_isya",
+				"label": ""
+			},
+			{
+				"name": "5d_note",
+				"label": ""
+			},
+			{
+				"name": "6a_isneed",
+				"label": "Apakah Kontraktor sudah melaksanakan inspeksi dan atau audit HSE sebelum pelaksanaan pekerjaan?"
+			},
+			{
+				"name": "6a_isya",
+				"label": ""
+			},
+			{
+				"name": "6a_note",
+				"label": ""
+			},
+			{
+				"name": "6b_isneed",
+				"label": "Apakah Kontraktor memiliki program inspeksi HSE rutin dan atau audit HSE selama pelaksanaan pekerjaan?"
+			},
+			{
+				"name": "6b_isya",
+				"label": ""
+			},
+			{
+				"name": "6b_note",
+				"label": ""
+			},
+			{
+				"name": "6c_isneed",
+				"label": "Apakah Kontraktor memiliki program inspeksi Tim Management Kontraktor terhadap aspek HSE selama pelaksanaan pekerjaan?"
+			},
+			{
+				"name": "6c_isya",
+				"label": ""
+			},
+			{
+				"name": "6c_note",
+				"label": ""
+			},
+			{
+				"name": "6d_isneed",
+				"label": "Apakah Kontraktor telah menyusun Check list inspeksi HSE untuk pengawasan internal selama pelaksanaan pekerjaan kontrak?"
+			},
+			{
+				"name": "6d_isya",
+				"label": ""
+			},
+			{
+				"name": "6d_note",
+				"label": ""
+			},
+			{
+				"name": "7a_isneed",
+				"label": "Apakah hasil inspeksi dan atau audit sebelum pelaksanaan pekerjaan telah ditindaklanjuti oleh Kontraktor?"
+			},
+			{
+				"name": "7a_isya",
+				"label": ""
+			},
+			{
+				"name": "7a_note",
+				"label": ""
+			},
+			{
+				"name": "7b_isneed",
+				"label": "Apakah tindak lanjut hasil inspeksi dan atau audit tersebut dimonitor dan dikontrol tindaklanjutnya?"
+			},
+			{
+				"name": "7b_isya",
+				"label": ""
+			},
+			{
+				"name": "7b_note",
+				"label": ""
+			},
+			{
+				"name": "8a_isneed",
+				"label": "Apakah Kontraktor telah melaksanakan Induction Training terhadap pekerjanya sebelum melaksanakan pekerjaan?"
+			},
+			{
+				"name": "8a_isya",
+				"label": ""
+			},
+			{
+				"name": "8a_note",
+				"label": ""
+			},
+			{
+				"name": "8b_isneed",
+				"label": "Apakah evaluasi terhadap tingkat pemahaman pekerja terhadap materi Inductiopn Training yang diberikan telah dilakukan?"
+			},
+			{
+				"name": "8b_isya",
+				"label": ""
+			},
+			{
+				"name": "8b_note",
+				"label": ""
+			},
+			{
+				"name": "8c_isneed",
+				"label": "Apakah Kontraktor telah menyediakan pekerja yang bersertifikasi untuk melaksanakan pekerjaan yang secara regulasi disyaratkan untuk bersertifikasi?"
+			},
+			{
+				"name": "8c_isya",
+				"label": ""
+			},
+			{
+				"name": "8c_note",
+				"label": ""
+			},
+			{
+				"name": "8d_isneed",
+				"label": "Apakah kontraktor memiliki program pelatihan HSE terhadap pekerjanya?"
+			},
+			{
+				"name": "8d_isya",
+				"label": ""
+			},
+			{
+				"name": "8d_note",
+				"label": ""
+			},
+			{
+				"name": "8e_isneed",
+				"label": "Apakah materi dalam program pelatihan HSE tersebut meliputi namun tidak terbatas pada :<ul><li>Penjelasan Bahaya dan mitigasi pekerjaan yang akan dilaksanakan?</li><li>Pertolongan pertama dan pacu jantung (CPR)?</li><li>Cara memadamkan api?</li><li>Pengelolaan limbah / sampah hasil kerja?</li><li>Tanggap darurat?</li><li>Komitmen aspek HSE terhadap pekerjaan tersebut?</li><li>Kebersihan & kerapihan lokasi kerja?</li><li>MSDS material yang digunakan?</li><li>Petunjuk kerja aman terhadap pekerjaan critical yang dilaksanakan (contoh : working at height, confined space, welding, radiography, excavation, pekerjaan didalam air, electrical, dll ?</li><li>HSE Regulation?</li><li>Penggunaan PPE / APD?</li></ul>"
+			},
+			{
+				"name": "8e_isya",
+				"label": ""
+			},
+			{
+				"name": "8e_note",
+				"label": ""
+			},
+			{
+				"name": "8f_isneed",
+				"label": "Apakah Kontraktor memiliki system evaluasi terhadap tingkat pemahaman pekerja kontraktor terkait materi training HSE yang diberikan?"
+			},
+			{
+				"name": "8f_isya",
+				"label": ""
+			},
+			{
+				"name": "8f_note",
+				"label": ""
+			},
+			{
+				"name": "8g_isneed",
+				"label": "Apakah seluruh pekerja Kontraktor yang akan melaksanakan pekerjaan sudah dinyatakan sehat berdasarkan hasil Medical Check Up (untuk pekerjaan critical yang mensyaratkan kondisi fit) atau pemeriksaan kesehatan?"
+			},
+			{
+				"name": "8g_isya",
+				"label": ""
+			},
+			{
+				"name": "8g_note",
+				"label": ""
+			},
+			{
+				"name": "9a_isneed",
+				"label": "Apakah Kontraktor telah menyusun HSE performance indicator (KPI HSE Kontraktor) terhadap pekerjaan tersebut?"
+			},
+			{
+				"name": "9a_isya",
+				"label": ""
+			},
+			{
+				"name": "9a_note",
+				"label": ""
+			},
+			{
+				"name": "9b_isneed",
+				"label": "Apakah program dan kinerja HSE yang telah disusun tersebut menjadi bagian dalam pelaporan kinerja internal Kontraktor?"
+			},
+			{
+				"name": "9b_isya",
+				"label": ""
+			},
+			{
+				"name": "9b_note",
+				"label": ""
+			},
+			{
+				"name": "9c_isneed",
+				"label": "Apakah kontraktor memiliki system untuk mengevaluasi pencapaian kinerja HSE Kontraktor serta melakukan upaya-upaya perbaikan?"
+			},
+			{
+				"name": "9c_isya",
+				"label": ""
+			},
+			{
+				"name": "9c_note",
+				"label": ""
+			},
+			{
+				"name": "9d_isneed",
+				"label": "Apakah HSE objective & policy kontraktor terhadap pekerjaan tersebut telah tersedia dan dikomunikasikan kepada seluruh pekerja kontraktor terkait?"
+			},
+			{
+				"name": "9d_isya",
+				"label": ""
+			},
+			{
+				"name": "9d_note",
+				"label": ""
+			},
+			{
+				"name": "9e_isneed",
+				"label": "Apakah Kontraktor telah menyusun struktur organisasi project yang dilengkapi dengan personil yang menjabat beserta tugas dan tanggungjawabnya dalam penerapan aspek HSE?"
+			},
+			{
+				"name": "9e_isya",
+				"label": ""
+			},
+			{
+				"name": "9e_note",
+				"label": ""
+			},
+			{
+				"name": "10a_isneed",
+				"label": "Apakah semua peralatan Kontraktor yang akan dipakai telah memenuhi criteria kelayakan fungsi?"
+			},
+			{
+				"name": "10a_isya",
+				"label": ""
+			},
+			{
+				"name": "10a_note",
+				"label": ""
+			},
+			{
+				"name": "10b_isneed",
+				"label": "Apakah kontraktor telah menyediakan peralatan bantu untuk handling material dan prosedurnya telah tersedia?"
+			},
+			{
+				"name": "10b_isya",
+				"label": ""
+			},
+			{
+				"name": "10b_note",
+				"label": ""
+			},
+			{
+				"name": "10c_isneed",
+				"label": "Apakah material / bahan yang digunakan telah memiliki MSDS (Material Safety Data Sheet) dan dikomunikasikan kepada pekerja terkait?"
+			},
+			{
+				"name": "10c_isya",
+				"label": ""
+			},
+			{
+				"name": "10c_note",
+				"label": ""
+			},
+			{
+				"name": "10d_isneed",
+				"label": "Apakah kontraktor telah memiliki prosedur pengoperasian peralatan terkait yang mengakomodir petunjuk kerja aman serta mengkomunikasikannya kepada pekerja?"
+			},
+			{
+				"name": "10d_isya",
+				"label": ""
+			},
+			{
+				"name": "10d_note",
+				"label": ""
+			},
+			{
+				"name": "10e_isneed",
+				"label": "Apakah Kontraktor telah menyediakan peralatan untuk mengelola limbah / sampah hasil pekerjaan?"
+			},
+			{
+				"name": "10e_isya",
+				"label": ""
+			},
+			{
+				"name": "10e_note",
+				"label": ""
+			},
+			{
+				"name": "10f_isneed",
+				"label": "Apakah Kontraktor telah menyediakan APD / PPE yang dibutuhkan oleh pekerja dengan jumlah yang cukup?"
+			},
+			{
+				"name": "10f_isya",
+				"label": ""
+			},
+			{
+				"name": "10f_note",
+				"label": ""
+			},
+			{
+				"name": "11a_isneed",
+				"label": "Apakah Kontraktor memiliki prosedur pelaporan insiden, accident & investigasi?"
+			},
+			{
+				"name": "11a_isya",
+				"label": ""
+			},
+			{
+				"name": "11a_note",
+				"label": ""
+			},
+			{
+				"name": "11b_isneed",
+				"label": "Apakah Kontraktor memiliki program pelaporan kinerja HSE kepada pihak Pengawas Pertamina?"
+			},
+			{
+				"name": "11b_isya",
+				"label": ""
+			},
+			{
+				"name": "11b_note",
+				"label": ""
+			},
+			{
+				"name": "12a_isneed",
+				"label": "Apakah personil dalam organisasi project Kontraktor (pimpinan tertinggi project hingga pelaksana project) telah memahami tugas dan tanggungjawabnya dalam penerapan aspek HSE?"
+			},
+			{
+				"name": "12a_isya",
+				"label": ""
+			},
+			{
+				"name": "12a_note",
+				"label": ""
+			},
+			{
+				"name": "12b_isneed",
+				"label": "Apakah personil pengawas HSE Kontraktor telah tersedia dengan jumlah yang cukup?"
+			},
+			{
+				"name": "12b_isya",
+				"label": ""
+			},
+			{
+				"name": "12b_note",
+				"label": ""
+			},
+			{
+				"name": "12c_isneed",
+				"label": "Apakah posisi personil HSE dalam struktur organisasi project Kontraktor memiliki bargaining position yang kuat dalam penerapan aspek HSE?"
+			},
+			{
+				"name": "12c_isya",
+				"label": ""
+			},
+			{
+				"name": "12c_note",
+				"label": ""
+			},
+			{
+				"name": "12d_isneed",
+				"label": "Apakah personil HSE telah memenuhi kompetensi minimum & memahami tanggung jawabnya?"
+			},
+			{
+				"name": "12d_isya",
+				"label": ""
+			},
+			{
+				"name": "12d_note",
+				"label": ""
+			}
+		]
+	},
+	{
+		"controller": "WIP",
+		"fields": [
+			{
+				"name": "proyek",
+				"type": "relation",
+				"model": "Proyeks",
+				"field": "nama"
+			},
+			{
+				"name": "progress",
+				"type": "number"
+			},
+			{
+				"name": "lock",
+				"type": "number"
+			},
+			{
+				"name": "1a_isneed",
+				"label": "Seluruh pekerja telah menggunakan APD sesuai dengan persyaratan yang ditentukan"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1b_isneed",
+				"label": "Kondisi APD dalam keadaan baik dan dapat berfungsi"
+			},
+			{
+				"name": "1b_score_max",
+				"label": ""
+			},
+			{
+				"name": "1b_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1b_note",
+				"label": ""
+			},
+			{
+				"name": "1c_isneed",
+				"label": "Kontraktor menyediakan APD bagi seluruh pekerja"
+			},
+			{
+				"name": "1c_score_max",
+				"label": ""
+			},
+			{
+				"name": "1c_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1c_note",
+				"label": ""
+			},
+			{
+				"name": "1d_isneed",
+				"label": "Jumlah APD telah memenuhi kebutuhan proteksi pekerja"
+			},
+			{
+				"name": "1d_score_max",
+				"label": ""
+			},
+			{
+				"name": "1d_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1d_note",
+				"label": ""
+			},
+			{
+				"name": "1e_isneed",
+				"label": "Dilakukan pemeriksaan & evaluasi APD maksimum sebulan sekali"
+			},
+			{
+				"name": "1e_score_max",
+				"label": ""
+			},
+			{
+				"name": "1e_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1e_note",
+				"label": ""
+			},
+			{
+				"name": "2a_isneed",
+				"label": "Pemasangan LOTO telah dikomunikasikan kepada pihak terkait"
+			},
+			{
+				"name": "2a_score_max",
+				"label": ""
+			},
+			{
+				"name": "2a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "2a_note",
+				"label": ""
+			},
+			{
+				"name": "2b_isneed",
+				"label": "Tag Out telah dipasang secara jelas dan terpasang pada pemutus arus atau pada peralatan yang diperbaiki"
+			},
+			{
+				"name": "2b_score_max",
+				"label": ""
+			},
+			{
+				"name": "2b_score_actual",
+				"label": ""
+			},
+			{
+				"name": "2b_note",
+				"label": ""
+			},
+			{
+				"name": "2c_isneed",
+				"label": "Memasang & melepaskan LOTO hanya dilakukan oleh pihak yang berwenang"
+			},
+			{
+				"name": "2c_score_max",
+				"label": ""
+			},
+			{
+				"name": "2c_score_actual",
+				"label": ""
+			},
+			{
+				"name": "2c_note",
+				"label": ""
+			},
+			{
+				"name": "3a_isneed",
+				"label": "HSE sign tersedia di lokasi project"
+			},
+			{
+				"name": "3a_score_max",
+				"label": ""
+			},
+			{
+				"name": "3a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "3a_note",
+				"label": ""
+			},
+			{
+				"name": "3b_isneed",
+				"label": "HSE sign relevan dengan pekerjaan yang sedang dilaksanakan"
+			},
+			{
+				"name": "3b_score_max",
+				"label": ""
+			},
+			{
+				"name": "3b_score_actual",
+				"label": ""
+			},
+			{
+				"name": "3b_note",
+				"label": ""
+			},
+			{
+				"name": "3c_isneed",
+				"label": "HSE sign mudah dilihat oleh pekerja di lokasi tersebut"
+			},
+			{
+				"name": "3c_score_max",
+				"label": ""
+			},
+			{
+				"name": "3c_score_actual",
+				"label": ""
+			},
+			{
+				"name": "3c_note",
+				"label": ""
+			},
+			{
+				"name": "4a_isneed",
+				"label": "Pengalaman minimum 2 tahun dibidang HSE"
+			},
+			{
+				"name": "4a_score_max",
+				"label": ""
+			},
+			{
+				"name": "4a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "4a_note",
+				"label": ""
+			},
+			{
+				"name": "4b_isneed",
+				"label": "Memenuhi kompetensi yang butuhkan"
+			},
+			{
+				"name": "4b_score_max",
+				"label": ""
+			},
+			{
+				"name": "4b_score_actual",
+				"label": ""
+			},
+			{
+				"name": "4b_note",
+				"label": ""
+			},
+			{
+				"name": "4c_isneed",
+				"label": "Memahami tugas dan tanggung jawabnya sebagai pengawas HSE"
+			},
+			{
+				"name": "4c_score_max",
+				"label": ""
+			},
+			{
+				"name": "4c_score_actual",
+				"label": ""
+			},
+			{
+				"name": "4c_note",
+				"label": ""
+			},
+			{
+				"name": "5a_isneed",
+				"label": "Pengalaman minimum 2 tahun dalam project sejenis"
+			},
+			{
+				"name": "5a_score_max",
+				"label": ""
+			},
+			{
+				"name": "5a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "5a_note",
+				"label": ""
+			},
+			{
+				"name": "5b_isneed",
+				"label": "Memenuhi kompetensi yang butuhkan"
+			},
+			{
+				"name": "5b_score_max",
+				"label": ""
+			},
+			{
+				"name": "5b_score_actual",
+				"label": ""
+			},
+			{
+				"name": "5b_note",
+				"label": ""
+			},
+			{
+				"name": "5c_isneed",
+				"label": "Memahami tugas dan tanggung jawabnya sebagai pengawas pekerjaan"
+			},
+			{
+				"name": "5c_score_max",
+				"label": ""
+			},
+			{
+				"name": "5c_score_actual",
+				"label": ""
+			},
+			{
+				"name": "5c_note",
+				"label": ""
+			},
+			{
+				"name": "6a_isneed",
+				"label": "Prosedur keadaan darurat telah disosialisasikan ke seluruh pekerja proyek"
+			},
+			{
+				"name": "6a_score_max",
+				"label": ""
+			},
+			{
+				"name": "6a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "6a_note",
+				"label": ""
+			},
+			{
+				"name": "6b_isneed",
+				"label": "Telah dilakukan simulasi keadaan darurat untuk project tersebut"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "6b_score_actual",
+				"label": ""
+			},
+			{
+				"name": "6b_note",
+				"label": ""
+			},
+			{
+				"name": "6c_isneed",
+				"label": "Jalur evakuasi telah tersedia & jelas"
+			},
+			{
+				"name": "6c_score_max",
+				"label": ""
+			},
+			{
+				"name": "6c_score_actual",
+				"label": ""
+			},
+			{
+				"name": "6c_note",
+				"label": ""
+			},
+			{
+				"name": "6d_isneed",
+				"label": "Alarm keadaan darurat telah tersedia & berfungsi dengan baik"
+			},
+			{
+				"name": "6d_score_max",
+				"label": ""
+			},
+			{
+				"name": "6d_score_actual",
+				"label": ""
+			},
+			{
+				"name": "6d_note",
+				"label": ""
+			},
+			{
+				"name": "7a_isneed",
+				"label": "Tersedia APAR sesuai standard dengan jumlah yang cukup"
+			},
+			{
+				"name": "7a_score_max",
+				"label": ""
+			},
+			{
+				"name": "7a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "7a_note",
+				"label": ""
+			},
+			{
+				"name": "7b_isneed",
+				"label": "Tersedia hydrant sesuai standar dan cukup untuk memadamkan kebakaran"
+			},
+			{
+				"name": "7b_score_max",
+				"label": ""
+			},
+			{
+				"name": "7b_score_actual",
+				"label": ""
+			},
+			{
+				"name": "7b_note",
+				"label": ""
+			},
+			{
+				"name": "7c_isneed",
+				"label": "Tersedia Fire detection dilokasi kerja"
+			},
+			{
+				"name": "7c_score_max",
+				"label": ""
+			},
+			{
+				"name": "7c_score_actual",
+				"label": ""
+			},
+			{
+				"name": "7c_note",
+				"label": ""
+			},
+			{
+				"name": "7d_isneed",
+				"label": "Dilakukan pemeriksaan & pengetesan performance Fire Protection secara rutin"
+			},
+			{
+				"name": "7d_score_max",
+				"label": ""
+			},
+			{
+				"name": "7d_score_actual",
+				"label": ""
+			},
+			{
+				"name": "7d_note",
+				"label": ""
+			},
+			{
+				"name": "7d_isneed",
+				"label": "Pekerja mampu menggunakan fire protection"
+			},
+			{
+				"name": "7d_score_max",
+				"label": ""
+			},
+			{
+				"name": "7d_score_actual",
+				"label": ""
+			},
+			{
+				"name": "7d_note",
+				"label": ""
+			},
+			{
+				"name": "8a_isneed",
+				"label": "Tersedia kotak P3K & obat-obatan sesuai standar dan tidak kadaluarsa"
+			},
+			{
+				"name": "8a_score_max",
+				"label": ""
+			},
+			{
+				"name": "8a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "8a_note",
+				"label": ""
+			},
+			{
+				"name": "8b_isneed",
+				"label": "Tersedia ambulans bila terjadi kondisi darurat"
+			},
+			{
+				"name": "8b_score_max",
+				"label": ""
+			},
+			{
+				"name": "8b_score_actual",
+				"label": ""
+			},
+			{
+				"name": "8b_note",
+				"label": ""
+			},
+			{
+				"name": "8c_isneed",
+				"label": "Terdapat personil terlatih sebagai petugas P3K"
+			},
+			{
+				"name": "8c_score_max",
+				"label": ""
+			},
+			{
+				"name": "8c_score_actual",
+				"label": ""
+			},
+			{
+				"name": "8c_note",
+				"label": ""
+			},
+			{
+				"name": "8d_isneed",
+				"label": "Seluruh pekerja telah diasuransikan / jamsostek"
+			},
+			{
+				"name": "8d_score_max",
+				"label": ""
+			},
+			{
+				"name": "8d_score_actual",
+				"label": ""
+			},
+			{
+				"name": "8d_note",
+				"label": ""
+			},
+			{
+				"name": "8e_isneed",
+				"label": "Memiliki daftar lokasi Puskesmas / RS terdekat"
+			},
+			{
+				"name": "8e_score_max",
+				"label": ""
+			},
+			{
+				"name": "8e_score_actual",
+				"label": ""
+			},
+			{
+				"name": "8e_note",
+				"label": ""
+			},
+			{
+				"name": "8f_isneed",
+				"label": "Menyediakan fasilitas kesehatan / klinik"
+			},
+			{
+				"name": "8f_score_max",
+				"label": ""
+			},
+			{
+				"name": "8f_score_actual",
+				"label": ""
+			},
+			{
+				"name": "8f_note",
+				"label": ""
+			},
+			{
+				"name": "9a_isneed",
+				"label": "Tersedia tempat penampungan limbah B3 di setiap unit kerja"
+			},
+			{
+				"name": "9a_score_max",
+				"label": ""
+			},
+			{
+				"name": "9a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "9a_note",
+				"label": ""
+			},
+			{
+				"name": "9b_isneed",
+				"label": "Identifikasi tempat penampungan limbah B3 telah jelas"
+			},
+			{
+				"name": "9b_score_max",
+				"label": ""
+			},
+			{
+				"name": "9b_score_actual",
+				"label": ""
+			},
+			{
+				"name": "9b_note",
+				"label": ""
+			},
+			{
+				"name": "9c_isneed",
+				"label": "Limbah B3 disimpan maksimum 90 hari"
+			},
+			{
+				"name": "9c_score_max",
+				"label": ""
+			},
+			{
+				"name": "9c_score_actual",
+				"label": ""
+			},
+			{
+				"name": "9c_note",
+				"label": ""
+			},
+			{
+				"name": "9d_isneed",
+				"label": "Tempat penampungan limbah B3 dalam kondisi yang baik <br>(tidak pecah/berlubang) dan terhindar dari masuknya air"
+			},
+			{
+				"name": "9d_score_max",
+				"label": ""
+			},
+			{
+				"name": "9d_score_actual",
+				"label": ""
+			},
+			{
+				"name": "9d_note",
+				"label": ""
+			},
+			{
+				"name": "9e_isneed",
+				"label": "Tersedia peralatan untuk penanggulangan & penanganan tumpahan limbah B3 di unit"
+			},
+			{
+				"name": "9e_score_max",
+				"label": ""
+			},
+			{
+				"name": "9e_score_actual",
+				"label": ""
+			},
+			{
+				"name": "9e_note",
+				"label": ""
+			},
+			{
+				"name": "9f_isneed",
+				"label": "Prosedur penanggulangan dan penanganan tumpahan limbah B3 telah dipahami oleh pekerja"
+			},
+			{
+				"name": "9f_score_max",
+				"label": ""
+			},
+			{
+				"name": "9f_score_actual",
+				"label": ""
+			},
+			{
+				"name": "9f_note",
+				"label": ""
+			},
+			{
+				"name": "9g_isneed",
+				"label": "Memiliki program untuk meminimalisir limbah B3"
+			},
+			{
+				"name": "9g_score_max",
+				"label": ""
+			},
+			{
+				"name": "9g_score_actual",
+				"label": ""
+			},
+			{
+				"name": "9g_note",
+				"label": ""
+			},
+			{
+				"name": "9h_isneed",
+				"label": "Semua limbah yang dibuang telah diidentifikasi serta diregister"
+			},
+			{
+				"name": "9h_score_max",
+				"label": ""
+			},
+			{
+				"name": "9h_score_actual",
+				"label": ""
+			},
+			{
+				"name": "9h_note",
+				"label": ""
+			},
+			{
+				"name": "10a_isneed",
+				"label": "SIKA telah sesuai dengan jenis pekerjaan yang dilakukan"
+			},
+			{
+				"name": "10a_score_max",
+				"label": ""
+			},
+			{
+				"name": "10a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "10a_note",
+				"label": ""
+			},
+			{
+				"name": "10b_isneed",
+				"label": "SIKA masih berlaku"
+			},
+			{
+				"name": "10b_score_max",
+				"label": ""
+			},
+			{
+				"name": "10b_score_actual",
+				"label": ""
+			},
+			{
+				"name": "10b_note",
+				"label": ""
+			},
+			{
+				"name": "10c_isneed",
+				"label": "Dilakukan pengetesan/pemeriksaan terlebih dahulu sebelum SIKA diterbitkan"
+			},
+			{
+				"name": "10c_score_max",
+				"label": ""
+			},
+			{
+				"name": "10c_score_actual",
+				"label": ""
+			},
+			{
+				"name": "10c_note",
+				"label": ""
+			},
+			{
+				"name": "10d_isneed",
+				"label": "Bahaya dan rekomendasi SIKA telah dikomunikasikan ke pekerja yang terkait"
+			},
+			{
+				"name": "10d_score_max",
+				"label": ""
+			},
+			{
+				"name": "10d_score_actual",
+				"label": ""
+			},
+			{
+				"name": "10d_note",
+				"label": ""
+			},
+			{
+				"name": "11a_isneed",
+				"label": "Bahan & peralatan disimpan ditempat yang teratur"
+			},
+			{
+				"name": "11a_score_max",
+				"label": ""
+			},
+			{
+				"name": "11a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "11a_note",
+				"label": ""
+			},
+			{
+				"name": "11b_isneed",
+				"label": "Memisahkan material yang berbahaya, beracun dan mudah terbakar"
+			},
+			{
+				"name": "11b_score_max",
+				"label": ""
+			},
+			{
+				"name": "11b_score_actual",
+				"label": ""
+			},
+			{
+				"name": "11b_note",
+				"label": ""
+			},
+			{
+				"name": "11c_isneed",
+				"label": "Sarana & jalur mobilisasi serta evakuasi tidak terhalang"
+			},
+			{
+				"name": "11c_score_max",
+				"label": ""
+			},
+			{
+				"name": "11c_score_actual",
+				"label": ""
+			},
+			{
+				"name": "11c_note",
+				"label": ""
+			},
+			{
+				"name": "11d_isneed",
+				"label": "Menjaga kebersihan lokasi kerja"
+			},
+			{
+				"name": "11d_score_max",
+				"label": ""
+			},
+			{
+				"name": "11d_score_actual",
+				"label": ""
+			},
+			{
+				"name": "11d_note",
+				"label": ""
+			},
+			{
+				"name": "11e_isneed",
+				"label": "Tidak ada bahan berbahaya & beracun yang berserakan dilokasi jalur mobilisasi"
+			},
+			{
+				"name": "11e_score_max",
+				"label": ""
+			},
+			{
+				"name": "11e_score_actual",
+				"label": ""
+			},
+			{
+				"name": "11e_note",
+				"label": ""
+			},
+			{
+				"name": "12a_isneed",
+				"label": "Sampah dari pekerjaan tersebut telah di kelompokkan berdasarkan pada jenisnya (B3, Anorganik, Organik dan limbah klinis)"
+			},
+			{
+				"name": "12a_score_max",
+				"label": ""
+			},
+			{
+				"name": "12a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "12a_note",
+				"label": ""
+			},
+			{
+				"name": "12b_isneed",
+				"label": "Identifikasi kategori dari limbah tersebut telah dilakukan sesuai dengan jenis limbah yang ada di tempat penampungan limbah tersebut"
+			},
+			{
+				"name": "12b_score_max",
+				"label": ""
+			},
+			{
+				"name": "12b_score_actual",
+				"label": ""
+			},
+			{
+				"name": "12b_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			},
+			{
+				"name": "1a_isneed",
+				"label": "apakah"
+			},
+			{
+				"name": "1a_score_max",
+				"label": ""
+			},
+			{
+				"name": "1a_score_actual",
+				"label": ""
+			},
+			{
+				"name": "1a_note",
+				"label": ""
+			}
+		]
+	},
+	{
+		"controller": "LapBul",
+		"fields": [
+			{
+				"name": "proyek",
+				"type": "relation",
+				"model": "Proyeks",
+				"field": "nama"
+			},
+			{
+				"name": "progress",
+				"type": "number"
+			},
+			{
+				"name": "lock",
+				"type": "number"
+			}
+		]
+	},
+	{
+		"controller": "KPI",
+		"fields": [
+			{
+				"name": "proyek",
+				"type": "relation",
+				"model": "Proyeks",
+				"field": "nama"
+			},
+			{
+				"name": "progress",
+				"type": "number"
+			},
+			{
+				"name": "lock",
+				"type": "number"
+			}
+		]
+	},
+	{
+		"controller": "PenerimaEmail",
+		"fields": [
+			{
+				"name": "email"
+			}
+		]
+	},
+	{
+		"controller": "TemplateEmail",
+		"fields": [
+			{
+				"name": "nama"
+			},
+			{
+				"name": "konten"
+			}
+		]
+	}
+]
