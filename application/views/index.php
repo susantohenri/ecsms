@@ -45,6 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content-header">
       <div class="container">
         <div class="row mb-2">
+          <?php if (!in_array(current_url(), array (site_url(), base_url()))): ?>
           <div class="col-sm-6">
             <h1 class="m-0 text-dark"><?= $page_title ?></h1>
           </div><!-- /.col -->
@@ -59,6 +60,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <?php endif ?>
             </ol>
           </div><!-- /.col -->
+          <?php endif ?>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
