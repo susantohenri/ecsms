@@ -1,10 +1,10 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/dataTables.bootstrap4.css') ?>">
 <div class="col-sm-12">
-    <div class="card card-primary card-outline">
+    <div class="card card-danger card-outline">
         <div class="card-header text-right">
             <?php if (in_array("create_{$current['controller']}", $permission)) : ?>
                 <div class="col-sm-12 text-right">
-                    <a href="<?= site_url($current['controller'] . '/create') ?>" class="btn btn-primary">
+                    <a href="<?= site_url($current['controller'] . '/create') ?>" class="btn btn-danger">
                         <i class="fa fa-plus"></i>&nbsp;Add New <?= $page_title ?>
                     </a>
                 </div>

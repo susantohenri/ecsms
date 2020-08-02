@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>PrototypeApp</title>
+  <title>e-CSMS</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="<?= base_url('assets/css/all.min.css') ?>">
@@ -31,9 +31,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <a href="<?= base_url() ?>" class="navbar-brand">
         <!-- <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8"> -->
-        <H2><span class="brand-text font-weight-light"><b>Prototype</b>App</span></H2>
+        <H2><span class="brand-text font-weight-light">e<b>CSMS</b></span></H2>
+        <small class="brand-text font-weight-light">Contractor Safety Management System</small>
       </a>
-      <a href="<?= site_url('Login/Logout') ?>">Logout</a>
+      <a href="<?= site_url('Login/Logout') ?>" class="text-danger">Logout</a>
     </div>
   </nav>
   <!-- /.navbar -->
@@ -49,11 +50,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
+              <li class="breadcrumb-item"><a href="<?= base_url() ?>" class="text-danger">Home</a></li>
               <?php if (in_array ($page_name, array ('table', 'dashboard'))): ?>
                 <li class="breadcrumb-item active"><?= $page_title ?></li>
               <?php else: ?>
-                <li class="breadcrumb-item"><a href="<?= site_url ($current['controller']) ?>"><?= $page_title ?></a></li>
+                <li class="breadcrumb-item"><a class="text-danger" href="<?= site_url ($current['controller']) ?>"><?= $page_title ?></a></li>
                 <li class="breadcrumb-item active"><?= ucfirst ($page_name) ?></li>
               <?php endif ?>
             </ol>

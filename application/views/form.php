@@ -1,10 +1,10 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/select2.min.css') ?>">
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap-datepicker.css') ?>">
 <form enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
-  <div class="card card-primary card-outline">
+  <div class="card card-danger card-outline">
     <div class="card-header text-right">
       <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
-        <button class="btn btn-info btn-save"><i class="fa fa-save"></i> &nbsp; Save</button>
+        <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Save</button>
       <?php endif ?>
       <?php if (!empty($uuid) && in_array("delete_{$current['controller']}", $permission)) : ?>
         <a href="<?= site_url($current['controller'] . "/delete/$uuid") ?>" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</a>
@@ -68,7 +68,7 @@
   </div>
 
   <?php if (count($subform) > 0) : foreach ($subform as $subfield) : ?>
-      <div class="card card-primary card-outline">
+      <div class="card card-danger card-outline">
         <div class="card-body">
           <fieldset class="form-child" data-controller="<?= $subfield['controller'] ?>" data-uuids="<?= str_replace('"', "'", json_encode($subfield['uuids'])) ?>">
             <legend><?= $subfield['label'] ?></legend>
@@ -76,7 +76,7 @@
               <div class="col-sm-offset-3 col-sm-12">
                 <?php if ((empty($subfield->uuids) && in_array("create_{$subfield['controller']}", $permission)) || (!empty($subfield->uuids) && in_array("update_{$subfield['controller']}", $permission))) : ?>
 
-                  <a class="btn btn-warning btn-add">
+                  <a class="btn btn-info btn-add">
                     <i class="fa fa-plus"></i> &nbsp;Input <?= $subfield['label'] ?>
                   </a>
 
