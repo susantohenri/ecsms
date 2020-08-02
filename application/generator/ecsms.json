@@ -1,6 +1,6 @@
 [
 	{
-		"controller": "Proyek",
+		"controller": "Project",
 		"fields": [
 			{
 				"name": "nama"
@@ -27,13 +27,13 @@
 		],
 		"childs": [
 			{
-				"controller": "PesertaProyek",
+				"controller": "PesertaProject",
 				"label": "Vendor Peserta"
 			}
 		]
 	},
 	{
-		"controller": "PesertaProyek",
+		"controller": "PesertaProject",
 		"fields": [
 			{
 				"name": "vendor",
@@ -47,9 +47,9 @@
 		"controller": "HSE",
 		"fields": [
 			{
-				"name": "proyek",
+				"name": "project",
 				"type": "relation",
-				"model": "Proyeks",
+				"model": "Projects",
 				"field": "nama"
 			},
 			{
@@ -79,7 +79,7 @@
 			},
 			{
 				"name": "1b",
-				"label": "Gambaran umum dan lingkup kerja proyek"
+				"label": "Gambaran umum dan lingkup kerja project"
 			},
 			{
 				"name": "1b_score",
@@ -151,7 +151,7 @@
 			},
 			{
 				"name": "4a",
-				"label": "Memiliki struktur organisasi proyek yang disahkan oleh pimpinan perusahaan"
+				"label": "Memiliki struktur organisasi project yang disahkan oleh pimpinan perusahaan"
 			},
 			{
 				"name": "4a_score",
@@ -160,7 +160,7 @@
 			},
 			{
 				"name": "4b",
-				"label": "Job description masing - masing jabatan sesuai dengan struktur organisasi proyek"
+				"label": "Job description masing - masing jabatan sesuai dengan struktur organisasi project"
 			},
 			{
 				"name": "4b_score",
@@ -169,7 +169,7 @@
 			},
 			{
 				"name": "4c",
-				"label": "Melampirkan surat penunjukan Manager Proyek yang ditandatangani pimpinan tertinggi"
+				"label": "Melampirkan surat penunjukan Manager Project yang ditandatangani pimpinan tertinggi"
 			},
 			{
 				"name": "4c_score",
@@ -187,7 +187,7 @@
 			},
 			{
 				"name": "5a",
-				"label": "Memiliki KPI yang disetujui oleh pimpinan perusahan atau Manager Proyek yang ditunjuk"
+				"label": "Memiliki KPI yang disetujui oleh pimpinan perusahan atau Manager Project yang ditunjuk"
 			},
 			{
 				"name": "5a_score",
@@ -223,7 +223,7 @@
 			},
 			{
 				"name": "6a",
-				"label": "Perencanaan dan program kerja proyek (S-Curve)"
+				"label": "Perencanaan dan program kerja project (S-Curve)"
 			},
 			{
 				"name": "6a_score",
@@ -232,7 +232,7 @@
 			},
 			{
 				"name": "6b",
-				"label": "Terdapat tahapan proyek"
+				"label": "Terdapat tahapan project"
 			},
 			{
 				"name": "6b_score",
@@ -313,7 +313,7 @@
 			},
 			{
 				"name": "7a",
-				"label": "Memiliki data kebutuhan kendaraan yang dioperasikan selama proyek"
+				"label": "Memiliki data kebutuhan kendaraan yang dioperasikan selama project"
 			},
 			{
 				"name": "7a_score",
@@ -466,7 +466,7 @@
 			},
 			{
 				"name": "11a",
-				"label": "Prosedur pelaporan insiden sesuai organisasi dan lokasi proyek yang ditandatangani oleh pimpinan perusahaan / manager proyek"
+				"label": "Prosedur pelaporan insiden sesuai organisasi dan lokasi project yang ditandatangani oleh pimpinan perusahaan / manager project"
 			},
 			{
 				"name": "11a_score",
@@ -601,7 +601,7 @@
 			},
 			{
 				"name": "15c",
-				"label": "Melampirkan hasil MCU (proyek > 6 bulan) atau surat keterangan sehat (proyek < 6 bulan)"
+				"label": "Melampirkan hasil MCU (project > 6 bulan) atau surat keterangan sehat (project < 6 bulan)"
 			},
 			{
 				"name": "15c_score",
@@ -614,9 +614,9 @@
 		"controller": "PJA",
 		"fields": [
 			{
-				"name": "proyek",
+				"name": "project",
 				"type": "relation",
-				"model": "Proyeks",
+				"model": "Projects",
 				"field": "nama"
 			},
 			{
@@ -1347,9 +1347,9 @@
 		"controller": "WIP",
 		"fields": [
 			{
-				"name": "proyek",
+				"name": "project",
 				"type": "relation",
-				"model": "Proyeks",
+				"model": "Projects",
 				"field": "nama"
 			},
 			{
@@ -1686,7 +1686,7 @@
 			{
 				"name": "6a_isneed",
 				"type": "boolean",
-				"label": "Prosedur keadaan darurat telah disosialisasikan ke seluruh pekerja proyek"
+				"label": "Prosedur keadaan darurat telah disosialisasikan ke seluruh pekerja project"
 			},
 			{
 				"name": "6a_score_max",
@@ -4102,9 +4102,9 @@
 		"controller": "LaporanBulanan",
 		"fields": [
 			{
-				"name": "proyek",
+				"name": "project",
 				"type": "relation",
-				"model": "Proyeks",
+				"model": "Projects",
 				"field": "nama"
 			},
 			{
@@ -4296,9 +4296,9 @@
 		"controller": "KPI",
 		"fields": [
 			{
-				"name": "proyek",
+				"name": "project",
 				"type": "relation",
-				"model": "Proyeks",
+				"model": "Projects",
 				"field": "nama"
 			},
 			{

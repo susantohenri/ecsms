@@ -9,18 +9,18 @@ class LaporanBulanans extends MY_Model
 		$this->table = 'laporanbulanan';
 		$this->thead = array(
 			(object) array('mData' => 'orders', 'sTitle' => 'No', 'visible' => false),
-			(object) array('mData' => 'proyek', 'sTitle' => 'Proyek'),
+			(object) array('mData' => 'project', 'sTitle' => 'Project'),
 
 		);
 		$this->form = array(
 			array(
-				'name' => 'proyek',
-				'label' => 'Proyek',
+				'name' => 'project',
+				'label' => 'Project',
 				'options' => array(),
 				'width' => 2,
 				'attributes' => array(
 					array('data-autocomplete' => 'true'),
-					array('data-model' => 'Proyeks'),
+					array('data-model' => 'Projects'),
 					array('data-field' => 'nama')
 				)
 			),
@@ -241,7 +241,7 @@ class LaporanBulanans extends MY_Model
 		$this->datatables
 			->select("{$this->table}.uuid")
 			->select("{$this->table}.orders")
-			->select('laporanbulanan.proyek');
+			->select('laporanbulanan.project');
 		return parent::dt();
 	}
 }

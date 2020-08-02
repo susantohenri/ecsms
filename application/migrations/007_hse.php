@@ -11,7 +11,7 @@ class Migration_hse extends CI_Migration {
         `orders` INT(11) UNIQUE NOT NULL AUTO_INCREMENT,
         `createdAt` datetime DEFAULT NULL,
         `updatedAt` datetime DEFAULT NULL,
-        `proyek` varchar(36) NOT NULL,
+        `project` varchar(36) NOT NULL,
         `vendor` varchar(36) NOT NULL,
         `progress` INT(11) NOT NULL,
         `kunci_data_vendor` TINYINT(1) NOT NULL,
@@ -136,7 +136,7 @@ class Migration_hse extends CI_Migration {
         `15c` varchar(255) NOT NULL,
         `15c_score` TINYINT(1) NOT NULL,
         PRIMARY KEY (`uuid`),
-        KEY `proyek` (`proyek`),
+        KEY `project` (`project`),
         KEY `vendor` (`vendor`)
       ) ROW_FORMAT=DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8
     ");

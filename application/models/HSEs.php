@@ -9,18 +9,18 @@ class HSEs extends MY_Model
 		$this->table = 'hse';
 		$this->thead = array(
 			(object) array('mData' => 'orders', 'sTitle' => 'No', 'visible' => false),
-			(object) array('mData' => 'proyek', 'sTitle' => 'Proyek'),
+			(object) array('mData' => 'project', 'sTitle' => 'Project'),
 
 		);
 		$this->form = array(
 			array(
-				'name' => 'proyek',
-				'label' => 'Proyek',
+				'name' => 'project',
+				'label' => 'Project',
 				'options' => array(),
 				'width' => 2,
 				'attributes' => array(
 					array('data-autocomplete' => 'true'),
-					array('data-model' => 'Proyeks'),
+					array('data-model' => 'Projects'),
 					array('data-field' => 'nama')
 				)
 			),
@@ -65,7 +65,7 @@ class HSEs extends MY_Model
 			array(
 				'name' => '1b',
 				'width' => 2,
-				'label' => 'Gambaran umum dan lingkup kerja proyek',
+				'label' => 'Gambaran umum dan lingkup kerja project',
 			),
 			array(
 				'name' => '1b_score',
@@ -145,7 +145,7 @@ class HSEs extends MY_Model
 			array(
 				'name' => '4a',
 				'width' => 2,
-				'label' => 'Memiliki struktur organisasi proyek yang disahkan oleh pimpinan perusahaan',
+				'label' => 'Memiliki struktur organisasi project yang disahkan oleh pimpinan perusahaan',
 			),
 			array(
 				'name' => '4a_score',
@@ -155,7 +155,7 @@ class HSEs extends MY_Model
 			array(
 				'name' => '4b',
 				'width' => 2,
-				'label' => 'Job description masing - masing jabatan sesuai dengan struktur organisasi proyek',
+				'label' => 'Job description masing - masing jabatan sesuai dengan struktur organisasi project',
 			),
 			array(
 				'name' => '4b_score',
@@ -165,7 +165,7 @@ class HSEs extends MY_Model
 			array(
 				'name' => '4c',
 				'width' => 2,
-				'label' => 'Melampirkan surat penunjukan Manager Proyek yang ditandatangani pimpinan tertinggi',
+				'label' => 'Melampirkan surat penunjukan Manager Project yang ditandatangani pimpinan tertinggi',
 			),
 			array(
 				'name' => '4c_score',
@@ -185,7 +185,7 @@ class HSEs extends MY_Model
 			array(
 				'name' => '5a',
 				'width' => 2,
-				'label' => 'Memiliki KPI yang disetujui oleh pimpinan perusahan atau Manager Proyek yang ditunjuk',
+				'label' => 'Memiliki KPI yang disetujui oleh pimpinan perusahan atau Manager Project yang ditunjuk',
 			),
 			array(
 				'name' => '5a_score',
@@ -225,7 +225,7 @@ class HSEs extends MY_Model
 			array(
 				'name' => '6a',
 				'width' => 2,
-				'label' => 'Perencanaan dan program kerja proyek (S-Curve)',
+				'label' => 'Perencanaan dan program kerja project (S-Curve)',
 			),
 			array(
 				'name' => '6a_score',
@@ -235,7 +235,7 @@ class HSEs extends MY_Model
 			array(
 				'name' => '6b',
 				'width' => 2,
-				'label' => 'Terdapat tahapan proyek',
+				'label' => 'Terdapat tahapan project',
 			),
 			array(
 				'name' => '6b_score',
@@ -325,7 +325,7 @@ class HSEs extends MY_Model
 			array(
 				'name' => '7a',
 				'width' => 2,
-				'label' => 'Memiliki data kebutuhan kendaraan yang dioperasikan selama proyek',
+				'label' => 'Memiliki data kebutuhan kendaraan yang dioperasikan selama project',
 			),
 			array(
 				'name' => '7a_score',
@@ -495,7 +495,7 @@ class HSEs extends MY_Model
 			array(
 				'name' => '11a',
 				'width' => 2,
-				'label' => 'Prosedur pelaporan insiden sesuai organisasi dan lokasi proyek yang ditandatangani oleh pimpinan perusahaan / manager proyek',
+				'label' => 'Prosedur pelaporan insiden sesuai organisasi dan lokasi project yang ditandatangani oleh pimpinan perusahaan / manager project',
 			),
 			array(
 				'name' => '11a_score',
@@ -645,7 +645,7 @@ class HSEs extends MY_Model
 			array(
 				'name' => '15c',
 				'width' => 2,
-				'label' => 'Melampirkan hasil MCU (proyek > 6 bulan) atau surat keterangan sehat (proyek < 6 bulan)',
+				'label' => 'Melampirkan hasil MCU (project > 6 bulan) atau surat keterangan sehat (project < 6 bulan)',
 			),
 			array(
 				'name' => '15c_score',
@@ -661,7 +661,7 @@ class HSEs extends MY_Model
 		$this->datatables
 			->select("{$this->table}.uuid")
 			->select("{$this->table}.orders")
-			->select('hse.proyek');
+			->select('hse.project');
 		return parent::dt();
 	}
 }

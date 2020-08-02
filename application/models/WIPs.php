@@ -9,18 +9,18 @@ class WIPs extends MY_Model
 		$this->table = 'wip';
 		$this->thead = array(
 			(object) array('mData' => 'orders', 'sTitle' => 'No', 'visible' => false),
-			(object) array('mData' => 'proyek', 'sTitle' => 'Proyek'),
+			(object) array('mData' => 'project', 'sTitle' => 'Project'),
 
 		);
 		$this->form = array(
 			array(
-				'name' => 'proyek',
-				'label' => 'Proyek',
+				'name' => 'project',
+				'label' => 'Project',
 				'options' => array(),
 				'width' => 2,
 				'attributes' => array(
 					array('data-autocomplete' => 'true'),
-					array('data-model' => 'Proyeks'),
+					array('data-model' => 'Projects'),
 					array('data-field' => 'nama')
 				)
 			),
@@ -380,7 +380,7 @@ class WIPs extends MY_Model
 			array(
 				'name' => '6a_isneed',
 				'width' => 2,
-				'label' => 'Prosedur keadaan darurat telah disosialisasikan ke seluruh pekerja proyek',
+				'label' => 'Prosedur keadaan darurat telah disosialisasikan ke seluruh pekerja project',
 			),
 			array(
 				'name' => '6a_score_max',
@@ -2926,7 +2926,7 @@ class WIPs extends MY_Model
 		$this->datatables
 			->select("{$this->table}.uuid")
 			->select("{$this->table}.orders")
-			->select('wip.proyek');
+			->select('wip.project');
 		return parent::dt();
 	}
 }

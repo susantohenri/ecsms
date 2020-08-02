@@ -1,12 +1,12 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class Proyeks extends MY_Model
+class Projects extends MY_Model
 {
 
 	function __construct()
 	{
 		parent::__construct();
-		$this->table = 'proyek';
+		$this->table = 'project';
 		$this->thead = array(
 			(object) array('mData' => 'orders', 'sTitle' => 'No', 'visible' => false),
 			(object) array('mData' => 'nama', 'sTitle' => 'Nama'),
@@ -54,8 +54,8 @@ class Proyeks extends MY_Model
 		$this->childs = array(
 			array(
 				'label' => 'Vendor Peserta',
-				'controller' => 'PesertaProyek',
-				'model' => 'PesertaProyeks'
+				'controller' => 'PesertaProject',
+				'model' => 'PesertaProjects'
 			),
 		);
 	}
@@ -65,7 +65,7 @@ class Proyeks extends MY_Model
 		$this->datatables
 			->select("{$this->table}.uuid")
 			->select("{$this->table}.orders")
-			->select('proyek.nama');
+			->select('project.nama');
 		return parent::dt();
 	}
 }

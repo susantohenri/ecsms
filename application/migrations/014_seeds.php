@@ -39,7 +39,7 @@ class Migration_seeds extends CI_Migration
       ));
     }
 
-    foreach (array('User', 'Role', 'Permission', 'Menu', 'Proyek', 'PesertaProyek', 'HSE', 'PJA', 'WIP', 'LaporanBulanan', 'KPI', 'Email', 'Template'/*additionalEntity*/) as $entity) {
+    foreach (array('User', 'Role', 'Permission', 'Menu', 'Project', 'PesertaProject', 'HSE', 'PJA', 'WIP', 'LaporanBulanan', 'KPI', 'Email', 'Template'/*additionalEntity*/) as $entity) {
       foreach (array('index', 'create', 'read', 'update', 'delete') as $action) {
         $this->Permissions->create(array(
           'role' => $admin,
