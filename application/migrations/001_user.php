@@ -9,6 +9,7 @@ class Migration_user extends CI_Migration {
       CREATE TABLE `user` (
         `uuid` varchar(36) NOT NULL,
         `orders` INT(11) UNIQUE NOT NULL AUTO_INCREMENT,
+        `vendor` varchar(255) NOT NULL,
         `username` varchar(255) NOT NULL,
         `password` varchar(255) NOT NULL,
         `role` varchar(36) NOT NULL,

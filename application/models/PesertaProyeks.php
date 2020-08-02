@@ -1,8 +1,10 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class PesertaProyeks extends MY_Model {
+class PesertaProyeks extends MY_Model
+{
 
-  function __construct () {
+  function __construct()
+  {
     parent::__construct();
     $this->table = 'pesertaproyek';
     $this->thead = array(
@@ -10,28 +12,28 @@ class PesertaProyeks extends MY_Model {
       (object) array('mData' => 'vendor', 'sTitle' => 'Vendor'),
 
     );
-    $this->form = array (
-        array (
-		      'name' => 'vendor',
-		      'label'=> 'Vendor',
-		      'options' => array(),
-		      'width' => 2,
-		      'attributes' => array(
-		        array('data-autocomplete' => 'true'),
-		        array('data-model' => 'Vendors'),
-		        array('data-field' => 'nama')
-			    )),
+    $this->form = array(
+      array(
+        'name' => 'vendor',
+        'label' => 'Vendor',
+        'options' => array(),
+        'width' => 2,
+        'attributes' => array(
+          array('data-autocomplete' => 'true'),
+          array('data-model' => 'Vendors'),
+          array('data-field' => 'vendor')
+        )
+      ),
     );
-    $this->childs = array (
-    );
+    $this->childs = array();
   }
 
-  function dt () {
+  function dt()
+  {
     $this->datatables
       ->select("{$this->table}.uuid")
       ->select("{$this->table}.orders")
       ->select('pesertaproyek.vendor');
     return parent::dt();
   }
-
 }

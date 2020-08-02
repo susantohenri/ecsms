@@ -1,8 +1,10 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class PenerimaEmails extends MY_Model {
+class PenerimaEmails extends MY_Model
+{
 
-  function __construct () {
+  function __construct()
+  {
     parent::__construct();
     $this->table = 'penerimaemail';
     $this->thead = array(
@@ -10,23 +12,22 @@ class PenerimaEmails extends MY_Model {
       (object) array('mData' => 'email', 'sTitle' => 'Email'),
 
     );
-    $this->form = array (
-        array (
-				      'name' => 'email',
-				      'width' => 2,
-		      		'label'=> 'Email',
-					  ),
+    $this->form = array(
+      array(
+        'name' => 'email',
+        'width' => 2,
+        'label' => 'Email',
+      ),
     );
-    $this->childs = array (
-    );
+    $this->childs = array();
   }
 
-  function dt () {
+  function dt()
+  {
     $this->datatables
       ->select("{$this->table}.uuid")
       ->select("{$this->table}.orders")
       ->select('penerimaemail.email');
     return parent::dt();
   }
-
 }

@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class Users extends MY_Model
+class HSSEs extends MY_Model
 {
 
   function __construct()
@@ -9,8 +9,7 @@ class Users extends MY_Model
     $this->table = 'user';
     $this->thead = array(
       (object) array('mData' => 'orders', 'sTitle' => 'No', 'visible' => false),
-      (object) array('mData' => 'username', 'sTitle' => 'Username'),
-      (object) array('mData' => 'role_name', 'sTitle' => 'Role'),
+      (object) array('mData' => 'username', 'sTitle' => 'Username')
     );
     $this->form  = array();
 
@@ -21,13 +20,7 @@ class Users extends MY_Model
 
     $this->form[] = array(
       'name' => 'role',
-      'label' => 'Role',
-      'options' => array(),
-      'attributes' => array(
-        array('data-autocomplete' => 'true'),
-        array('data-model' => 'Roles'),
-        array('data-field' => 'name')
-      ),
+      'type' => 'hidden',
     );
 
     $this->form[] = array(
@@ -46,11 +39,15 @@ class Users extends MY_Model
   function delete($uuid)
   {
     $user = $this->findOne($uuid);
-    if ('admin' !== $user['username']) return parent::delete($uuid);
+    if ('HSSE' !== $user['username']) return parent::delete($uuid);
   }
 
   function save($data)
   {
+    $this->load->model('Roles');
+    $HSSE = $this->Roles->findOne(array('name' => 'HSSE'));
+    $data['role'] = $HSSE['uuid'];
+
     if (strlen($data['password']) > 0) {
       if ($data['password'] !== $data['confirm_password']) return array('error' => array('message' => 'Password tidak sesuai'));
       else $data['password'] = md5($data['password']);
@@ -61,6 +58,10 @@ class Users extends MY_Model
 
   function findOne($param)
   {
+    if (!is_array($param)) $param = array("{$this->table}.uuid" => $param);
+    $this->db
+      ->join('role', 'role.uuid = user.role', 'left')
+      ->where('role.name', 'HSSE');
     $record = parent::findOne($param);
     $record['confirm_password'] = '';
     return $record;
@@ -72,8 +73,8 @@ class Users extends MY_Model
       ->select("{$this->table}.uuid")
       ->select("{$this->table}.orders")
       ->select("{$this->table}.username")
-      ->select('role.name as role_name', false)
-      ->join('role', 'role.uuid = user.role', 'left');
+      ->join('role', 'role.uuid = user.role', 'left')
+      ->where('role.name', 'HSSE');
     return parent::dt();
   }
 }
