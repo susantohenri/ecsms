@@ -6,6 +6,16 @@ class Migration_seeds extends CI_Migration
 
   function up()
   {
+
+    $menu_icon = array (
+      'Admin' => 'user-secret',
+      'HSSE' => 'user',
+      'MPE' => 'user-circle',
+      'Vendor' => 'wrench',
+      'PenerimaEmail' => 'envelope-open',
+      'TemplateEmail' => 'envelope'
+    );
+
     $this->load->model(array('Users', 'Roles', 'Permissions', 'Menus'));
     $fas = array('database', 'desktop', 'download', 'ethernet', 'hdd', 'hdd', 'headphones', 'keyboard', 'keyboard', 'laptop', 'memory', 'microchip', 'mobile', 'mobile-alt', 'plug', 'power-off', 'print', 'satellite', 'satellite-dish', 'save', 'save', 'sd-card', 'server', 'sim-card', 'stream', 'tablet', 'tablet-alt', 'tv', 'upload');
 
@@ -20,11 +30,12 @@ class Migration_seeds extends CI_Migration
           'entity' => $role
         ));
       }
+      
       $this->Menus->create(array(
         'role' => $admin,
         'name' => $role,
         'url' => $role,
-        'icon' => $fas[rand(0, count($fas) - 1)]
+        'icon' => $menu_icon[$role]
       ));
     }
 
@@ -36,12 +47,12 @@ class Migration_seeds extends CI_Migration
           'entity' => $entity
         ));
       }
-      if (!in_array($entity, array('Menu', 'Permission', 'Role', 'User'))) $this->Menus->create(array(
-        'role' => $admin,
-        'name' => $entity,
-        'url' => $entity,
-        'icon' => $fas[rand(0, count($fas) - 1)]
-      ));
+      // if (in_array($entity, array_keys($menu_icon))) $this->Menus->create(array(
+      //   'role' => $admin,
+      //   'name' => str_replace('Email', '', $entity),
+      //   'url' => $entity,
+      //   'icon' => $menu_icon[$entity]
+      // ));
     }
 
     $this->Users->create(array(

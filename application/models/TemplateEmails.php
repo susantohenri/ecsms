@@ -22,6 +22,10 @@ class TemplateEmails extends MY_Model
         'name' => 'konten',
         'width' => 2,
         'label' => 'Konten',
+        'type' => 'textarea',
+        'attributes' => array(
+          array('rows' => 15)
+        )
       ),
     );
     $this->childs = array();
