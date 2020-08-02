@@ -1,12 +1,12 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class TemplateEmails extends MY_Model
+class Templates extends MY_Model
 {
 
   function __construct()
   {
     parent::__construct();
-    $this->table = 'templateemail';
+    $this->table = 'template';
     $this->thead = array(
       (object) array('mData' => 'orders', 'sTitle' => 'No', 'visible' => false),
       (object) array('mData' => 'nama', 'sTitle' => 'Nama'),
@@ -36,7 +36,7 @@ class TemplateEmails extends MY_Model
     $this->datatables
       ->select("{$this->table}.uuid")
       ->select("{$this->table}.orders")
-      ->select('templateemail.nama');
+      ->select('template.nama');
     return parent::dt();
   }
 }

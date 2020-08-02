@@ -1,10 +1,10 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class PenerimaEmail extends MY_Controller {
+class Email extends MY_Controller {
 
 	function __construct ()
 	{
-		$this->model = 'PenerimaEmails';
+		$this->model = 'Emails';
 		parent::__construct();
 	}
 

@@ -7,13 +7,13 @@ class Migration_seeds extends CI_Migration
   function up()
   {
 
-    $menu_icon = array (
+    $menu_icon = array(
       'Admin' => 'user-secret',
       'HSSE' => 'user',
       'MPE' => 'user-circle',
       'Vendor' => 'wrench',
-      'PenerimaEmail' => 'envelope-open',
-      'TemplateEmail' => 'envelope'
+      'Email' => 'envelope',
+      'Template' => 'copy'
     );
 
     $this->load->model(array('Users', 'Roles', 'Permissions', 'Menus'));
@@ -30,7 +30,7 @@ class Migration_seeds extends CI_Migration
           'entity' => $role
         ));
       }
-      
+
       $this->Menus->create(array(
         'role' => $admin,
         'name' => $role,
@@ -39,7 +39,7 @@ class Migration_seeds extends CI_Migration
       ));
     }
 
-    foreach (array('User', 'Role', 'Permission', 'Menu', 'Proyek', 'PesertaProyek', 'HSE', 'PJA', 'WIP', 'LaporanBulanan', 'KPI', 'PenerimaEmail', 'TemplateEmail'/*additionalEntity*/) as $entity) {
+    foreach (array('User', 'Role', 'Permission', 'Menu', 'Proyek', 'PesertaProyek', 'HSE', 'PJA', 'WIP', 'LaporanBulanan', 'KPI', 'Email', 'Template'/*additionalEntity*/) as $entity) {
       foreach (array('index', 'create', 'read', 'update', 'delete') as $action) {
         $this->Permissions->create(array(
           'role' => $admin,
@@ -47,13 +47,21 @@ class Migration_seeds extends CI_Migration
           'entity' => $entity
         ));
       }
-      // if (in_array($entity, array_keys($menu_icon))) $this->Menus->create(array(
-      //   'role' => $admin,
-      //   'name' => str_replace('Email', '', $entity),
-      //   'url' => $entity,
-      //   'icon' => $menu_icon[$entity]
-      // ));
     }
+
+    $this->Menus->create(array(
+      'role' => $admin,
+      'name' => 'Email',
+      'url' => 'Email',
+      'icon' => $menu_icon['Email']
+    ));
+
+    $this->Menus->create(array(
+      'role' => $admin,
+      'name' => 'Template',
+      'url' => 'Template',
+      'icon' => $menu_icon['Template']
+    ));
 
     $this->Users->create(array(
       'username' => 'admin',

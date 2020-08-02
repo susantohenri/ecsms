@@ -1,18 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Migration_templateemail extends CI_Migration {
+class Migration_email extends CI_Migration {
 
   function up () {
 
     $this->db->query("
-      CREATE TABLE `templateemail` (
+      CREATE TABLE `email` (
         `uuid` varchar(36) NOT NULL,
         `orders` INT(11) UNIQUE NOT NULL AUTO_INCREMENT,
         `createdAt` datetime DEFAULT NULL,
         `updatedAt` datetime DEFAULT NULL,
-        `nama` varchar(255) NOT NULL,
-        `konten` varchar(255) NOT NULL,
+        `email` varchar(255) NOT NULL,
         PRIMARY KEY (`uuid`)
       ) ROW_FORMAT=DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8
     ");
@@ -20,7 +19,7 @@ class Migration_templateemail extends CI_Migration {
   }
 
   function down () {
-    $this->db->query("DROP TABLE IF EXISTS `templateemail`");
+    $this->db->query("DROP TABLE IF EXISTS `email`");
   }
 
 }
