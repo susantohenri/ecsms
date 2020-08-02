@@ -17,7 +17,7 @@ class PesertaProyeks extends MY_Model
         'name' => 'vendor',
         'label' => 'Vendor',
         'options' => array(),
-        'width' => 2,
+        'width' => 6,
         'attributes' => array(
           array('data-autocomplete' => 'true'),
           array('data-model' => 'Vendors'),

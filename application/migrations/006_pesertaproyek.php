@@ -11,6 +11,7 @@ class Migration_pesertaproyek extends CI_Migration {
         `orders` INT(11) UNIQUE NOT NULL AUTO_INCREMENT,
         `createdAt` datetime DEFAULT NULL,
         `updatedAt` datetime DEFAULT NULL,
+        `proyek` varchar(36) NOT NULL,
         `vendor` varchar(36) NOT NULL,
         PRIMARY KEY (`uuid`),
         KEY `vendor` (`vendor`)

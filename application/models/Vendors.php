@@ -9,7 +9,7 @@ class Vendors extends MY_Model
     $this->table = 'user';
     $this->thead = array(
       (object) array('mData' => 'orders', 'sTitle' => 'No', 'visible' => false),
-      (object) array('mData' => 'username', 'sTitle' => 'Username')
+      (object) array('mData' => 'vendor', 'sTitle' => 'Nama')
     );
     $this->form  = array();
 
@@ -77,7 +77,7 @@ class Vendors extends MY_Model
     $this->datatables
       ->select("{$this->table}.uuid")
       ->select("{$this->table}.orders")
-      ->select("{$this->table}.username")
+      ->select("{$this->table}.vendor")
       ->join('role', 'role.uuid = user.role', 'left')
       ->where('role.name', 'Vendor');
     return parent::dt();

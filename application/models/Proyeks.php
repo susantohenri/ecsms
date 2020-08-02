@@ -40,14 +40,14 @@ class Proyeks extends MY_Model
 				)
 			),
 			array(
-				'name' => 'peserta',
-				'label' => 'Peserta',
+				'name' => 'pemenang',
+				'label' => 'Pemenang',
 				'options' => array(),
 				'width' => 2,
 				'attributes' => array(
 					array('data-autocomplete' => 'true'),
 					array('data-model' => 'Vendors'),
-					array('data-field' => 'vendor')
+					array('data-field' => 'vendor'),
 				)
 			),
 		);
