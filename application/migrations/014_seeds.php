@@ -68,6 +68,16 @@ class Migration_seeds extends CI_Migration
       'password' => md5('admin'),
       'role' => $admin
     ));
+
+    // NO ONE PERMITTED TO CREATE OR DELETE STEPS
+    foreach (array('PesertaProject', 'HSE', 'PJA', 'WIP', 'LaporanBulanan', 'KPI') as $step) {
+      foreach (array('create', 'delete') as $action) {
+        foreach ($this->Permissions->find(array(
+          'entity' => $step,
+          'action' => $action
+        )) as $permission) $this->Permissions->delete($permission->uuid);
+      }
+    }
   }
 
   function down()

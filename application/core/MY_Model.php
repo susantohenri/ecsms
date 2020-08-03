@@ -225,10 +225,13 @@ class MY_Model extends CI_Model
     foreach ($this->childs as $child) {
       $childxmodel = $child['model'];
       $this->load->model($childxmodel);
-      $this->db
-        ->where(array($this->table => $record['uuid']))
-        ->where_not_in('uuid', $savedchilds[$childxmodel])
-        ->delete($this->$childxmodel->table);
+      $childsToDelete = array_filter(
+        $this->$childxmodel->find(array($this->table => $record['uuid'])),
+        function ($record) use ($savedchilds, $childxmodel) {
+          return !in_array($record->uuid, $savedchilds[$childxmodel]);
+        }
+      );
+      foreach ($childsToDelete as $del) $this->$childxmodel->delete($del->uuid);
     }
 
     return $record;
