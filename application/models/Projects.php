@@ -95,6 +95,29 @@ class Projects extends MY_Model
 		return $uuid;
 	}
 
+	function update($record)
+	{
+		$uuid = parent::update($record);
+		$project = $this->findOne($uuid);
+		$this->load->model('LaporanBulanans');
+		$lapBuls = $this->LaporanBulanans->find(array('project' => $uuid));
+		if (count($lapBuls) > $project['jumlah_laporan_bulanan']) {
+			foreach ($lapBuls as $index => $lap) {
+				if ($index + 1 > $project['jumlah_laporan_bulanan']) {
+					$this->LaporanBulanans->delete($lap->uuid);
+				}
+			}
+		} else if (count($lapBuls) < $project['jumlah_laporan_bulanan']) {
+			for ($bulan = count($lapBuls) + 1; $bulan <= (int) $project['jumlah_laporan_bulanan']; $bulan++) {
+				$this->LaporanBulanans->create(array(
+					'project' => $uuid,
+					'bulan' => $bulan
+				));
+			}
+		}
+		return $uuid;
+	}
+
 	function delete($uuid)
 	{
 		$models = array('PJAs', 'LaporanBulanans', 'WIPs', 'KPIs');
