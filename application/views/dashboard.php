@@ -17,7 +17,7 @@
 <div class="col-sm-12">
 	<div class="card card-danger card-outline">
 		<div class="card-header">
-			<a href="" class="btn btn-danger btn-sm">
+			<a href="<?= site_url('Project/create') ?>" class="btn btn-danger btn-sm">
 				<i class="fa fa-plus"></i>
 				Add New Project
 			</a>
