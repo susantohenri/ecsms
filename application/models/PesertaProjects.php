@@ -36,4 +36,28 @@ class PesertaProjects extends MY_Model
       ->select('pesertaproject.vendor');
     return parent::dt();
   }
+
+  function create($data)
+  {
+    $uuid = parent::create($data);
+    $this->load->model('HSEs');
+    $this->HSEs->create(array(
+      'project' => $data['project'],
+      'vendor' => $data['vendor']
+    ));
+    return $uuid;
+  }
+
+  function delete($uuid)
+  {
+    $record = $this->findOne($uuid);
+    $this->load->model('HSEs');
+    foreach ($this->HSEs->find(array(
+      'project' => $record['project'],
+      'vendor' => $record['vendor']
+    )) as $child) {
+      $this->HSEs->delete($child->uuid);
+    }
+    return parent::delete($uuid);
+  }
 }

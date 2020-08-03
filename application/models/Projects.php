@@ -68,4 +68,42 @@ class Projects extends MY_Model
 			->select('project.nama');
 		return parent::dt();
 	}
+
+	function getForm($uuid = false, $isSubform = false)
+	{
+		$form = parent::getForm($uuid, $isSubform);
+		if (!$uuid) {
+			$form = array_filter($form, function ($field) {
+				return 'pemenang' !== $field['name'];
+			});
+		}
+		return $form;
+	}
+
+	function create($data)
+	{
+		$uuid = parent::create($data);
+		$models = array('PJAs', 'LaporanBulanans', 'WIPs', 'KPIs');
+		$this->load->model($models);
+		foreach ($models as $model) {
+			if ('LaporanBulanans' === $model) {
+				for ($bulan = 1; $bulan <= $data['jumlah_laporan_bulanan']; $bulan++) {
+					$this->$model->create(array('project' => $uuid, 'bulan' => $bulan));
+				}
+			} else $this->$model->create(array('project' => $uuid));
+		}
+		return $uuid;
+	}
+
+	function delete($uuid)
+	{
+		$models = array('PJAs', 'LaporanBulanans', 'WIPs', 'KPIs');
+		$this->load->model($models);
+		foreach ($models as $model) {
+			foreach ($this->$model->find(array(
+				'project' => $uuid
+			)) as $record) $this->$model->delete($record->uuid);
+		}
+		return parent::delete($uuid);
+	}
 }
