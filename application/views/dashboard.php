@@ -5,6 +5,30 @@
 	ul.pagination li a.active {
 		background-color: rgba(0,0,0,.03);
 	}
+	.border-info {
+		border: 1px solid #17a2b8;
+		background-color: #fff;
+	}
+	.border-warning {
+		border: 1px solid #ffc107;
+		background-color: #fff;
+	}
+	.border-default {
+		border: 1px solid #007bff;
+		background-color: #fff;
+	}
+	.border-secondary {
+		border: 1px solid #6c757d;
+		background-color: #fff;
+	}
+	.border-teal {
+		border: 1px solid #20c997;
+		background-color: #fff;
+	}
+	.border-danger {
+		border: 1px solid #dc3545;
+		background-color: #fff;
+	}
 </style>
 
 <?php foreach ($menu as $m) : ?>
@@ -49,12 +73,12 @@
 						<th width="25%">Project</th>
 						<th>
 							<div class="row text-center">
-								<div class="col-sm-2">HSE PLAN</div>
-								<div class="col-sm-2">PJA</div>
-								<div class="col-sm-2">LAP BUL</div>
-								<div class="col-sm-2">WIP</div>
-								<div class="col-sm-2">KPI</div>
-								<div class="col-sm-2">FE</div>
+								<div class="col-sm-2 bg-info">HSE PLAN</div>
+								<div class="col-sm-2 bg-warning">PJA</div>
+								<div class="col-sm-2" style="background-color: #007bff;">LAP BUL</div>
+								<div class="col-sm-2 bg-secondary">WIP</div>
+								<div class="col-sm-2 bg-teal">KPI</div>
+								<div class="col-sm-2 bg-danger">FE</div>
 							</div>
 						</th>
 					</tr>

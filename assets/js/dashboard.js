@@ -27,19 +27,19 @@ function drawProjects() {
                         <div class="progress-bar bg-info" role="progressbar" style="width:17%">
                             <a href="">&nbsp;</a>
                         </div>
-                        <div class="progress-bar bg-warning" role="progressbar" style="width:17%">
+                        <div class="progress-bar border-warning" role="progressbar" style="width:17%">
                             <a href="">&nbsp;</a>
                         </div>
-                        <div class="progress-bar bg-default" role="progressbar" style="width:17%">
+                        <div class="progress-bar border-default" role="progressbar" style="width:17%">
                             <a href="">&nbsp;</a>
                         </div>
-                        <div class="progress-bar bg-secondary" role="progressbar" style="width:17%">
+                        <div class="progress-bar border-secondary" role="progressbar" style="width:17%">
                             <a href="">&nbsp;</a>
                         </div>
-                        <div class="progress-bar bg-teal" role="progressbar" style="width:17%">
+                        <div class="progress-bar border-teal" role="progressbar" style="width:17%">
                             <a href="">&nbsp;</a>
                         </div>
-                        <div class="progress-bar bg-danger" role="progressbar" style="width:17%">
+                        <div class="progress-bar border-danger" role="progressbar" style="width:17%">
                             <a href="">&nbsp;</a>
                         </div>
                     </div>

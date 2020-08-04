@@ -69,17 +69,6 @@ class Projects extends MY_Model
 		return parent::dt();
 	}
 
-	function getForm($uuid = false, $isSubform = false)
-	{
-		$form = parent::getForm($uuid, $isSubform);
-		if (!$uuid) {
-			$form = array_filter($form, function ($field) {
-				return 'pemenang' !== $field['name'];
-			});
-		}
-		return $form;
-	}
-
 	function create($data)
 	{
 		if (!isset($data['jumlah_laporan_bulanan'])) $data['jumlah_laporan_bulanan'] = 0;
