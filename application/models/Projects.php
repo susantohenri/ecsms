@@ -41,7 +41,7 @@ class Projects extends MY_Model
 			),
 			array(
 				'name' => 'pemenang',
-				'label' => 'Pemenang',
+				'label' => 'Pemenang Lelang',
 				'options' => array(),
 				'width' => 2,
 				'attributes' => array(
@@ -53,7 +53,7 @@ class Projects extends MY_Model
 		);
 		$this->childs = array(
 			array(
-				'label' => 'Vendor Peserta',
+				'label' => 'Peserta Lelang',
 				'controller' => 'PesertaProject',
 				'model' => 'PesertaProjects'
 			),
@@ -133,27 +133,56 @@ class Projects extends MY_Model
 
 	function dashboard()
 	{
+
+		// FILTER PROJECTS FOR VENDOR for pagination
+		$this->load->model('Roles');
+		$role = $this->Roles->findOne($this->session->userdata('role'));
+		if ('Vendor' === $role['name']) {
+			$vendor_id = $this->session->userdata('uuid');
+			$this->db
+				->join('pesertaproject', 'project.uuid = pesertaproject.project', 'left')
+				->where("(project.pemenang = '{$vendor_id}' OR ((project.pemenang IS NULL OR '' = project.pemenang) AND pesertaproject.vendor = '{$vendor_id}'))");
+		}
+
 		// searching for pagination
 		$search = $this->input->get('search');
 		if (strlen($search) > 0) $this->db->like('project.nama', $search);
+
+		// grouping for pagination
+		$this->db->group_by("{$this->table}.uuid");
+		$this->db->select("{$this->table}.*");
 
 		// pagination
 		$per_page = 10;
 		$count_all = $this->db->count_all_results($this->table);
 		$current_page = $this->input->get('requested_page');
+		$current_page = $current_page ? $current_page : 1 ;
 		$offset = ($current_page - 1) * $per_page;
 		$this->db->offset($offset);
 		$total_page = ceil($count_all / $per_page);
 		$this->db->limit($per_page);
 
+		// FILTER PROJECTS FOR VENDOR for result
+		if ('Vendor' === $role['name']) {
+			$vendor_id = $this->session->userdata('uuid');
+			$this->db
+				->join('pesertaproject', 'project.uuid = pesertaproject.project', 'left')
+				->where("(project.pemenang = '{$vendor_id}' OR ((project.pemenang IS NULL OR '' = project.pemenang) AND pesertaproject.vendor = '{$vendor_id}'))");
+		}
+
 		// searching for result
 		$search = $this->input->get('search');
 		if (strlen($search) > 0) $this->db->like('project.nama', $search);
 
-		// sorting
-		$this->db->order_by('orders', 'asc');
+		// grouping for result
+		$this->db->group_by("{$this->table}.uuid");
 
+		// sorting
+		$this->db->order_by("{$this->table}.orders", 'asc');
+
+		$this->db->select("{$this->table}.*");
 		$result = $this->db->get($this->table)->result();
+		// die($this->db->last_query());
 
 		$number = $offset + 1;
 		$result = array_map(function ($record) use (&$number) {
@@ -161,7 +190,7 @@ class Projects extends MY_Model
 			$number++;
 			return $record;
 		}, $result);
-		return array (
+		return array(
 			'current_page' => $current_page,
 			'total_page' => $total_page,
 			'data' => $result

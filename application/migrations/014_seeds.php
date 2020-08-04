@@ -20,9 +20,11 @@ class Migration_seeds extends CI_Migration
     $fas = array('database', 'desktop', 'download', 'ethernet', 'hdd', 'hdd', 'headphones', 'keyboard', 'keyboard', 'laptop', 'memory', 'microchip', 'mobile', 'mobile-alt', 'plug', 'power-off', 'print', 'satellite', 'satellite-dish', 'save', 'save', 'sd-card', 'server', 'sim-card', 'stream', 'tablet', 'tablet-alt', 'tv', 'upload');
 
     $admin = null;
+    $vendor= null;
     foreach (array('Admin', 'HSSE', 'MPE', 'Vendor') as $role) {
       $roledb = $this->Roles->create(array('name' => $role));
       if ('Admin' === $role) $admin = $roledb;
+      if ('Vendor' === $role) $vendor = $roledb;
       foreach (array('index', 'create', 'read', 'update', 'delete') as $action) {
         $this->Permissions->create(array(
           'role' => $admin,
@@ -78,6 +80,17 @@ class Migration_seeds extends CI_Migration
         )) as $permission) $this->Permissions->delete($permission->uuid);
       }
     }
+    // EXCEPTION FOR SUBFORM
+    $this->Permissions->create(array(
+      'role' => $admin,
+      'action' => 'create',
+      'entity' => 'PesertaProject'
+    ));
+    $this->Permissions->create(array(
+      'role' => $admin,
+      'action' => 'delete',
+      'entity' => 'PesertaProject'
+    ));
 
     // DUMMY
     $this->load->model('Projects');
@@ -100,6 +113,63 @@ class Migration_seeds extends CI_Migration
     ) as $project) {
       $this->Projects->create(array('nama' => $project));
     }
+    // $this->load->model('Vendors');
+    foreach (array(
+      'PT ABM Investama Tbk',
+      'PT Adira Dinamika Multi Finance Tbk',
+      'PT Aneka Tambang (Persero) Tbk',
+      'PT Astra International Tbk',
+      'PT Bank Central Asia Tbk',
+      'PT Bank CIMB Niaga Tbk',
+      'PT Bank Danamon Tbk',
+      'PT Bank International Indonesia Tbk',
+      'PT Bank Mandiri (Persero) Tbk',
+      'PT Bank Negara Indonesia Tbk',
+      'PT Bank NISP Tbk',
+      'PT Bank Rakyat Indonesia Tbk',
+      'PT Bank Tabungan Negara Tbk',
+      'PT BPD Jawa Barat dan Banten Tbk',
+      'PT XL Axiata Tbk',
+      'PT Garuda Indonesia (Persero )Tbk',
+      'PT Indo Tambangraya Megah Tbk',
+      'PT Indosat Tbk',
+      'PT Jasa Marga (Persero) Tbk',
+      'PT Perusahaan Gas Negara Tbk',
+      'PT Semen Indonesia (Persero) Tbk',
+      'PT Tambang Batubara Bukit Asam (Persero) Tbk',
+      'PT Telekomunikasi Indonesia Tbk',
+      'PT Waskita Karya (Persero) Tbk',
+      'PT Wijaya Karya (Persero) Tbk.',
+      'PT AKR Corporindo Tbk',
+      'PT Bank Mega Tbk',
+      'PT Bank Pan Indonesia Tbk',
+      'PT Bank Permata Tbk',
+      'PT Bank Tabungan Pensiunan Negara Tbk',
+      'PT Bumi Resources Tbk',
+      'PT Ciputra Development Tbk',
+      'PT Golden Energy Mines Tbk',
+      'PT Hero Supermarket Tbk',
+      'PT Holcim Indonesia Tbk',
+      'PT Indocement Tunggal Prakasa Tbk',
+      'PT Indofood CBP Sukses Makmur Tbk',
+      'PT Indofood Sukses Makmur Tbk',
+      'PT Kalbe Farma Tbk',
+      'PT Lippo Karawaci Tbk',
+      'PT Pacific Utama Tbk',
+      'PT Pakuwon Jati Tbk',
+      'PT Sumber Alfaria Trijaya Tbk',
+      'PT Surya Citra Media Tbk',
+      'PT Tower Bersama Infrastructure Tbk',
+      'PT Unilever Indonesia Tbk',
+      'PT United Tractors Tbk, PT Vale Indonesia Tbk.'
+    ) as $company) $this->Users->create(
+      array(
+        'vendor' => $company,
+        'username' => rand(),
+        'password' => md5('admin'),
+        'role' => $vendor
+      )
+    );
   }
 
   function down()
