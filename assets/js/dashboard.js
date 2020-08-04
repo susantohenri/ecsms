@@ -24,23 +24,23 @@ function drawProjects() {
                 </td>
                 <td class="col-sm-8">
                     <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" style="width:17%">
-                            <a href="">&nbsp;</a>
+                        <div class="progress-bar border-info" role="progressbar" style="width:17%">
+                            ${project.hse_link ? '<a href="' +project.hse_link+  '">&nbsp;</a>' : ''}
                         </div>
                         <div class="progress-bar border-warning" role="progressbar" style="width:17%">
-                            <a href="">&nbsp;</a>
+                            ${project.pja_link ? '<a href="' +project.pja_link+  '">&nbsp;</a>' : ''}
                         </div>
                         <div class="progress-bar border-default" role="progressbar" style="width:17%">
-                            <a href="">&nbsp;</a>
+                            ${project.lapbul_link ? '<a href="' +project.lapbul_link+  '">&nbsp;</a>' : ''}
                         </div>
                         <div class="progress-bar border-secondary" role="progressbar" style="width:17%">
-                            <a href="">&nbsp;</a>
+                            ${project.wip_link ? '<a href="' +project.wip_link+  '">&nbsp;</a>' : ''}
                         </div>
                         <div class="progress-bar border-teal" role="progressbar" style="width:17%">
-                            <a href="">&nbsp;</a>
+                            ${project.kpi_link ? '<a href="' +project.kpi_link+  '">&nbsp;</a>' : ''}
                         </div>
                         <div class="progress-bar border-danger" role="progressbar" style="width:17%">
-                            <a href="">&nbsp;</a>
+                            ${project.fe_link ? '<a href="' +project.fe_link+  '">&nbsp;</a>' : ''}
                         </div>
                     </div>
                 </td>
@@ -48,12 +48,12 @@ function drawProjects() {
         `
         }
 
+        $(`.table.project tbody`).html(tbody)
+
         var pagenumbers = ''
         for (var page = 1; page <= result.total_page; page++) {
             pagenumbers += `<li class="page-item"><a class="page-link text-danger">${page}</a></li>`
         }
-
-        $(`.table.project tbody`).html(tbody)
         $(`ul.pagination`).html(pagenumbers)
         $(`ul.pagination li a:contains(${result.current_page})`).addClass('active')
         $(`ul.pagination li a`).click(function () {
@@ -61,6 +61,7 @@ function drawProjects() {
             $(this).addClass('active')
             drawProjects()
         })
+
         $('#table_spinner').hide()
     })
 }

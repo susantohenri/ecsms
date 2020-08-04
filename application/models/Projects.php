@@ -170,13 +170,28 @@ class Projects extends MY_Model
 		$this->db->order_by("{$this->table}.orders", 'asc');
 
 		$this->db->select("{$this->table}.*");
+
+		// build link for HSE (multiple vendor)
+		if ('Vendor' === $role['name']) {
+			$vendor_id = $this->session->userdata('uuid');
+			$this->db
+			->select('hse.uuid hse_uuid', false)
+			->join('hse', "{$this->table}.uuid = hse.{$this->table} AND hse.vendor = '{$vendor_id}'", 'left');
+		}
+
 		$result = $this->db->get($this->table)->result();
 		// die($this->db->last_query());
 
 		$number = $offset + 1;
-		$result = array_map(function ($record) use (&$number) {
+		$result = array_map(function ($record) use (&$number, $role) {
 			$record->number = $number;
 			$number++;
+
+			$record->hse_link = site_url('Project/HSE');
+			if ('Vendor' === $role['name']) {
+				$record->hse_link = site_url("HSE/read/{$record->hse_uuid}");
+			}
+
 			return $record;
 		}, $result);
 		return array(

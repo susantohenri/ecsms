@@ -71,6 +71,14 @@ class Migration_seeds extends CI_Migration
       'role' => $admin
     ));
 
+    foreach (array ('HSE') as $updateableByVendors) {
+      $this->Permissions->create(array(
+        'role' => $vendor,
+        'action' => 'update',
+        'entity' => $updateableByVendors
+      ));
+    }
+
     // NO ONE PERMITTED TO CREATE OR DELETE STEPS
     foreach (array('PesertaProject', 'HSE', 'PJA', 'WIP', 'LaporanBulanan', 'KPI') as $step) {
       foreach (array('create', 'delete') as $action) {

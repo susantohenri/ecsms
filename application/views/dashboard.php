@@ -5,29 +5,44 @@
 	ul.pagination li a.active {
 		background-color: rgba(0,0,0,.03);
 	}
-	.border-info {
+	.progress-bar {
+		background-color: #fff;
+	}
+	.progress-bar.border-info {
 		border: 1px solid #17a2b8;
-		background-color: #fff;
 	}
-	.border-warning {
+	.progress-bar.border-info a {
+		background-color: #17a2b8;
+	}
+	.progress-bar.border-warning {
 		border: 1px solid #ffc107;
-		background-color: #fff;
 	}
-	.border-default {
+	.progress-bar.border-warning a {
+		background-color: #ffc107;
+	}
+	.progress-bar.border-default {
 		border: 1px solid #007bff;
-		background-color: #fff;
 	}
-	.border-secondary {
+	.progress-bar.border-default a {
+		background-color: #007bff;
+	}
+	.progress-bar.border-secondary {
 		border: 1px solid #6c757d;
-		background-color: #fff;
 	}
-	.border-teal {
+	.progress-bar.border-secondary a {
+		background-color: #6c757d;
+	}
+	.progress-bar.border-teal {
 		border: 1px solid #20c997;
-		background-color: #fff;
 	}
-	.border-danger {
+	.progress-bar.border-teal a {
+		background-color: #20c997;
+	}
+	.progress-bar.border-danger {
 		border: 1px solid #dc3545;
-		background-color: #fff;
+	}
+	.progress-bar.border-danger a {
+		background-color: #dc3545;
 	}
 </style>
 
