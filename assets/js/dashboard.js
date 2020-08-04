@@ -7,9 +7,10 @@ function drawProjects() {
     var criteria = {
         search: $('[name="table_search"]').val()
     }
-    $.get(`${site_url}Project/dashboard`, criteria, function (projects) {
+    $.get(`${site_url}Project/dashboard`, criteria, function (result) {
+        result = JSON.parse(result)
         var tbody = '';
-        for (project of JSON.parse(projects)) {
+        for (project of result.data) {
             tbody += `
             <tr>
                 <td>

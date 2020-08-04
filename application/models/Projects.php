@@ -82,6 +82,7 @@ class Projects extends MY_Model
 
 	function create($data)
 	{
+		if (!isset($data['jumlah_laporan_bulanan'])) $data['jumlah_laporan_bulanan'] = 0;
 		$uuid = parent::create($data);
 		$models = array('PJAs', 'LaporanBulanans', 'WIPs', 'KPIs');
 		$this->load->model($models);
@@ -132,10 +133,18 @@ class Projects extends MY_Model
 
 	function dashboard()
 	{
+		// pagination
+		$per_page = 5;
+		$count_all = $this->db->count_all_results($this->table);
+		$this->db->limit($per_page);
+
+		// searching
 		$search = $this->input->get('search');
 		if (strlen($search) > 0) $this->db->like('project.nama', $search);
 
+		// sorting
 		$this->db->order_by('orders', 'asc');
+
 		$result = $this->db->get($this->table)->result();
 
 		$number = 1;
@@ -144,6 +153,9 @@ class Projects extends MY_Model
 			$number++;
 			return $record;
 		}, $result);
-		return $result;
+		return array (
+			'count_all' => $count_all,
+			'data' => $result
+		);
 	}
 }
