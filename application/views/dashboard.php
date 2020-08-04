@@ -33,7 +33,7 @@
 			</div>
 		</div>
 		<div class="card-body">
-			<table class="table">
+			<table class="table project">
 				<thead>
 					<tr>
 						<th>#</th>
@@ -51,51 +51,22 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php for ($i = 0; $i < 4; $i++) : ?>
-						<tr>
-							<td>
-								<?= $i + 1 ?>
-							</td>
-							<td>
-								Pemasangan skid injeksi adictive & pewarna di TBBM
-							</td>
-							<td class="col-sm-8">
-								<div class="progress">
-									<div class="progress-bar bg-info" role="progressbar" style="width:17%">
-										<a href="">&nbsp;</a>
-									</div>
-									<div class="progress-bar bg-warning" role="progressbar" style="width:17%">
-										<a href="">&nbsp;</a>
-									</div>
-									<div class="progress-bar bg-default" role="progressbar" style="width:17%">
-										<a href="">&nbsp;</a>
-									</div>
-									<div class="progress-bar bg-secondary" role="progressbar" style="width:17%">
-										<a href="">&nbsp;</a>
-									</div>
-									<div class="progress-bar bg-teal" role="progressbar" style="width:17%">
-										<a href="">&nbsp;</a>
-									</div>
-									<div class="progress-bar bg-danger" role="progressbar" style="width:17%">
-										<a href="">&nbsp;</a>
-									</div>
-								</div>
-
-							</td>
+				</tbody>
+			</table>
 		</div>
-	<?php endfor ?>
-	</tbody>
-	</table>
-	</div>
-	<div class="card-footer">
-		<div class="card-tools">
-			<ul class="pagination pagination-md float-right">
-				<li class="page-item"><a class="page-link text-danger" href="#">«</a></li>
-				<li class="page-item"><a class="page-link text-danger" href="#">1</a></li>
-				<li class="page-item"><a class="page-link text-danger" href="#">2</a></li>
-				<li class="page-item"><a class="page-link text-danger" href="#">3</a></li>
-				<li class="page-item"><a class="page-link text-danger" href="#">»</a></li>
-			</ul>
+		<div class="card-footer">
+			<div class="card-tools">
+				<ul class="pagination pagination-md float-right">
+					<li class="page-item"><a class="page-link text-danger" href="#">«</a></li>
+					<li class="page-item"><a class="page-link text-danger" href="#">1</a></li>
+					<li class="page-item"><a class="page-link text-danger" href="#">2</a></li>
+					<li class="page-item"><a class="page-link text-danger" href="#">3</a></li>
+					<li class="page-item"><a class="page-link text-danger" href="#">»</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="overlay" id="table_spinner">
+			<h2 class="fa fa-spinner fa-spin"></h2>
 		</div>
 	</div>
 </div>

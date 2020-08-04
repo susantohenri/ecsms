@@ -129,4 +129,21 @@ class Projects extends MY_Model
 		}
 		return parent::delete($uuid);
 	}
+
+	function dashboard()
+	{
+		$search = $this->input->get('search');
+		if (strlen($search) > 0) $this->db->like('project.nama', $search);
+
+		$this->db->order_by('orders', 'asc');
+		$result = $this->db->get($this->table)->result();
+
+		$number = 1;
+		$result = array_map(function ($record) use (&$number) {
+			$record->number = $number;
+			$number++;
+			return $record;
+		}, $result);
+		return $result;
+	}
 }

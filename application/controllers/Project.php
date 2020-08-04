@@ -8,39 +8,34 @@ class Project extends MY_Controller
 		$this->model = 'Projects';
 		parent::__construct();
 	}
-	function create()
+
+	public function index()
 	{
 		$model = $this->model;
-		$vars = array();
-		$vars['page_name'] = 'forms/form-project';
-		$vars['form']     = $this->$model->getForm();
-		$vars['subform'] = $this->$model->getFormChild();
-		$vars['uuid'] = '';
-		$vars['js'] = array(
-			'moment.min.js',
-			'bootstrap-datepicker.js',
-			'daterangepicker.min.js',
-			'select2.full.min.js',
-			'form.js'
-		);
-		$this->loadview('index', $vars);
+		if ($post = $this->$model->lastSubmit($this->input->post())) {
+			if (isset($post['delete'])) $this->$model->delete($post['delete']);
+			else {
+				$db_debug = $this->db->db_debug;
+				$this->db->db_debug = FALSE;
+
+				$result = $this->$model->save($post);
+
+				$error = $this->db->error();
+				$this->db->db_debug = $db_debug;
+				if (isset($result['error'])) $error = $result['error'];
+				if (count($error)) {
+					$this->session->set_flashdata('model_error', $error['message']);
+					redirect($this->controller);
+				}
+			}
+		}
+		redirect(base_url());
 	}
 
-	function read($id)
+	function dashboard()
 	{
-		$vars = array();
-		$vars['page_name'] = 'forms/form-project';
-		$model = $this->model;
-		$vars['form'] = $this->$model->getForm($id);
-		$vars['subform'] = $this->$model->getFormChild($id);
-		$vars['uuid'] = $id;
-		$vars['js'] = array(
-			'moment.min.js',
-			'bootstrap-datepicker.js',
-			'daterangepicker.min.js',
-			'select2.full.min.js',
-			'form.js'
-		);
-		$this->loadview('index', $vars);
+		$result = array();
+		$result = $this->Projects->dashboard();
+		echo json_encode($result);
 	}
 }
