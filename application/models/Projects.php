@@ -133,12 +133,20 @@ class Projects extends MY_Model
 
 	function dashboard()
 	{
+		// searching for pagination
+		$search = $this->input->get('search');
+		if (strlen($search) > 0) $this->db->like('project.nama', $search);
+
 		// pagination
-		$per_page = 5;
+		$per_page = 10;
 		$count_all = $this->db->count_all_results($this->table);
+		$current_page = $this->input->get('requested_page');
+		$offset = ($current_page - 1) * $per_page;
+		$this->db->offset($offset);
+		$total_page = ceil($count_all / $per_page);
 		$this->db->limit($per_page);
 
-		// searching
+		// searching for result
 		$search = $this->input->get('search');
 		if (strlen($search) > 0) $this->db->like('project.nama', $search);
 
@@ -147,14 +155,15 @@ class Projects extends MY_Model
 
 		$result = $this->db->get($this->table)->result();
 
-		$number = 1;
+		$number = $offset + 1;
 		$result = array_map(function ($record) use (&$number) {
 			$record->number = $number;
 			$number++;
 			return $record;
 		}, $result);
 		return array (
-			'count_all' => $count_all,
+			'current_page' => $current_page,
+			'total_page' => $total_page,
 			'data' => $result
 		);
 	}

@@ -1,3 +1,12 @@
+<style type="text/css">
+	ul.pagination li a {
+		cursor: pointer;
+	}
+	ul.pagination li a.active {
+		background-color: rgba(0,0,0,.03);
+	}
+</style>
+
 <?php foreach ($menu as $m) : ?>
 
 	<div class="col-sm-2">
@@ -57,11 +66,7 @@
 		<div class="card-footer">
 			<div class="card-tools">
 				<ul class="pagination pagination-md float-right">
-					<li class="page-item"><a class="page-link text-danger" href="#">«</a></li>
-					<li class="page-item"><a class="page-link text-danger" href="#">1</a></li>
-					<li class="page-item"><a class="page-link text-danger" href="#">2</a></li>
-					<li class="page-item"><a class="page-link text-danger" href="#">3</a></li>
-					<li class="page-item"><a class="page-link text-danger" href="#">»</a></li>
+					<li class="page-item"><a class="page-link text-danger active">1</a></li>
 				</ul>
 			</div>
 		</div>

@@ -5,7 +5,8 @@ $('[name="table_search"]').keyup(drawProjects)
 function drawProjects() {
     $('#table_spinner').show()
     var criteria = {
-        search: $('[name="table_search"]').val()
+        search: $('[name="table_search"]').val(),
+        requested_page: $(`ul.pagination li a.active`).text()
     }
     $.get(`${site_url}Project/dashboard`, criteria, function (result) {
         result = JSON.parse(result)
@@ -46,7 +47,20 @@ function drawProjects() {
             </tr>
         `
         }
+
+        var pagenumbers = ''
+        for (var page = 1; page <= result.total_page; page++) {
+            pagenumbers += `<li class="page-item"><a class="page-link text-danger">${page}</a></li>`
+        }
+
         $(`.table.project tbody`).html(tbody)
+        $(`ul.pagination`).html(pagenumbers)
+        $(`ul.pagination li a:contains(${result.current_page})`).addClass('active')
+        $(`ul.pagination li a`).click(function () {
+            $(`ul.pagination li a`).removeClass('active')
+            $(this).addClass('active')
+            drawProjects()
+        })
         $('#table_spinner').hide()
     })
 }
