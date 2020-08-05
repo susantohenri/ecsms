@@ -171,7 +171,7 @@ class MY_Model extends CI_Model
       }
       if (isset($f['multiple'])) $f['value'] = explode(',', $record[$f['name']]);
       else if ($f['name'] === 'password') $f['value'] = '';
-      else $f['value'] = $record[$f['name']];
+      else $f['value'] = isset($record[$f['name']]) ? $record[$f['name']] : '';
     }
     return $this->form;
   }
