@@ -21,7 +21,8 @@ class HSEs extends MY_Model
 				'attributes' => array(
 					array('data-autocomplete' => 'true'),
 					array('data-model' => 'Projects'),
-					array('data-field' => 'nama')
+					array('data-field' => 'nama'),
+					array('disabled' => 'disabled')
 				)
 			),
 			array(
@@ -32,7 +33,8 @@ class HSEs extends MY_Model
 				'attributes' => array(
 					array('data-autocomplete' => 'true'),
 					array('data-model' => 'Vendors'),
-					array('data-field' => 'vendor')
+					array('data-field' => 'vendor'),
+					array('disabled' => 'disabled')
 				)
 			),
 			array(
@@ -40,16 +42,20 @@ class HSEs extends MY_Model
 				'label' => 'Progress',
 				'width' => 2,
 				'attributes' => array(
-					array('data-number' => 'true')
+					array('data-number' => 'true'),
+					array('disabled' => 'disabled')
 				)
 			),
 			array(
-				'name' => 'kunci_data_vendor',
-				'label' => 'Kunci Data Vendor',
+				'name' => 'lock',
+				'label' => 'Lock',
 				'width' => 2,
 				'options' => array(
-					array('text' => 'Ya', 'value' => 'Ya'),
-					array('text' => 'Tidak', 'value' => 'Tidak'),
+					array('text' => 'Ya', 'value' => '1'),
+					array('text' => 'Tidak', 'value' => '0'),
+				),
+				'attributes' => array(
+					array('disabled' => 'disabled')
 				)
 			),
 			array(
@@ -663,5 +669,21 @@ class HSEs extends MY_Model
 			->select("{$this->table}.orders")
 			->select('hse.project');
 		return parent::dt();
+	}
+
+	function create ($data) {
+		if (!isset($data['lock'])) $data['lock'] = 0;
+		return parent::create($data);
+	}
+
+	function getForm($uuid = false, $isSubform = false)
+	{
+		$form = parent::getForm($uuid, $isSubform);
+		if (strlen($this->session->userdata('vendor')) > 0) {
+			$form = array_filter($form, function ($field) {
+				return !in_array($field['name'], array('progress', 'lock'));
+			});
+		}
+		return $form;
 	}
 }

@@ -34,8 +34,12 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'lock',
-				'width' => 2,
 				'label' => 'Lock',
+				'width' => 2,
+				'options' => array(
+					array('text' => 'Ya', 'value' => '1'),
+					array('text' => 'Tidak', 'value' => '0'),
+				)
 			),
 			array(
 				'name' => 'a1',

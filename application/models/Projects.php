@@ -124,9 +124,7 @@ class Projects extends MY_Model
 	{
 
 		// FILTER PROJECTS FOR VENDOR for pagination
-		$this->load->model('Roles');
-		$role = $this->Roles->findOne($this->session->userdata('role'));
-		if ('Vendor' === $role['name']) {
+		if (strlen($this->session->userdata('vendor')) > 0) {
 			$vendor_id = $this->session->userdata('uuid');
 			$this->db
 				->join('pesertaproject', 'project.uuid = pesertaproject.project', 'left')
@@ -145,14 +143,14 @@ class Projects extends MY_Model
 		$per_page = 10;
 		$count_all = $this->db->count_all_results($this->table);
 		$current_page = $this->input->get('requested_page');
-		$current_page = $current_page ? $current_page : 1 ;
+		$current_page = $current_page ? $current_page : 1;
 		$offset = ($current_page - 1) * $per_page;
 		$this->db->offset($offset);
 		$total_page = ceil($count_all / $per_page);
 		$this->db->limit($per_page);
 
 		// FILTER PROJECTS FOR VENDOR for result
-		if ('Vendor' === $role['name']) {
+		if (strlen($this->session->userdata('vendor')) > 0) {
 			$vendor_id = $this->session->userdata('uuid');
 			$this->db
 				->join('pesertaproject', 'project.uuid = pesertaproject.project', 'left')
@@ -172,23 +170,23 @@ class Projects extends MY_Model
 		$this->db->select("{$this->table}.*");
 
 		// build link for HSE (multiple vendor)
-		if ('Vendor' === $role['name']) {
+		if (strlen($this->session->userdata('vendor')) > 0) {
 			$vendor_id = $this->session->userdata('uuid');
 			$this->db
-			->select('hse.uuid hse_uuid', false)
-			->join('hse', "{$this->table}.uuid = hse.{$this->table} AND hse.vendor = '{$vendor_id}'", 'left');
+				->select('hse.uuid hse_uuid', false)
+				->join('hse', "{$this->table}.uuid = hse.{$this->table} AND hse.vendor = '{$vendor_id}'", 'left');
 		}
 
 		$result = $this->db->get($this->table)->result();
 		// die($this->db->last_query());
 
 		$number = $offset + 1;
-		$result = array_map(function ($record) use (&$number, $role) {
+		$result = array_map(function ($record) use (&$number) {
 			$record->number = $number;
 			$number++;
 
 			$record->hse_link = site_url('Project/HSE');
-			if ('Vendor' === $role['name']) {
+			if (strlen($this->session->userdata('vendor')) > 0) {
 				$record->hse_link = site_url("HSE/read/{$record->hse_uuid}");
 			}
 

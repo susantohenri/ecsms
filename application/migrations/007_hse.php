@@ -14,7 +14,7 @@ class Migration_hse extends CI_Migration {
         `project` varchar(36) NOT NULL,
         `vendor` varchar(36) NOT NULL,
         `progress` INT(11) NOT NULL,
-        `kunci_data_vendor` TINYINT(1) NOT NULL,
+        `lock` TINYINT(1) NOT NULL,
         `1a` varchar(255) NOT NULL,
         `1a_score` TINYINT(1) NOT NULL,
         `1b` varchar(255) NOT NULL,
