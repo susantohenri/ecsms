@@ -175,6 +175,10 @@ class Projects extends MY_Model
 			$this->db
 				->select('hse.uuid hse_uuid', false)
 				->join('hse', "{$this->table}.uuid = hse.{$this->table} AND hse.vendor = '{$vendor_id}'", 'left');
+		} else {
+			$this->db
+				->select('hse.uuid hse_uuid', false)
+				->join('hse', "{$this->table}.uuid = hse.{$this->table}", 'left');
 		}
 
 		$result = $this->db->get($this->table)->result();
@@ -185,10 +189,7 @@ class Projects extends MY_Model
 			$record->number = $number;
 			$number++;
 
-			$record->hse_link = site_url('Project/HSE');
-			if (strlen($this->session->userdata('vendor')) > 0) {
-				$record->hse_link = site_url("HSE/read/{$record->hse_uuid}");
-			}
+			if (!is_null($record->hse_uuid)) $record->hse_link = site_url("HSE/read/{$record->hse_uuid}");
 
 			return $record;
 		}, $result);

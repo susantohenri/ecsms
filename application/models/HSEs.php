@@ -25,18 +25,18 @@ class HSEs extends MY_Model
 					array('disabled' => 'disabled')
 				)
 			),
-			array(
-				'name' => 'vendor',
-				'label' => 'Vendor',
-				'options' => array(),
-				'width' => 2,
-				'attributes' => array(
-					array('data-autocomplete' => 'true'),
-					array('data-model' => 'Vendors'),
-					array('data-field' => 'vendor'),
-					array('disabled' => 'disabled')
-				)
-			),
+			// array(
+			// 	'name' => 'vendor',
+			// 	'label' => 'Vendor',
+			// 	'options' => array(),
+			// 	'width' => 2,
+			// 	'attributes' => array(
+			// 		array('data-autocomplete' => 'true'),
+			// 		array('data-model' => 'Vendors'),
+			// 		array('data-field' => 'vendor'),
+			// 		array('disabled' => 'disabled')
+			// 	)
+			// ),
 			array(
 				'name' => 'progress',
 				'label' => 'Progress',
@@ -706,5 +706,17 @@ class HSEs extends MY_Model
 		}
 
 		return $form;
+	}
+
+	function getTabs ($uuid) {
+		$hse = $this->findOne($uuid);
+		return $this->db
+			->select("{$this->table}.uuid")
+			->select('user.vendor')
+			->select("IF({$this->table}.uuid = '{$uuid}', 'active', '') is_active", false)
+			->join('user', "{$this->table}.vendor = user.uuid", 'left')
+			->where("{$this->table}.project", $hse['project'])
+			->get($this->table)
+			->result();
 	}
 }

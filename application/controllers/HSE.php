@@ -32,24 +32,27 @@ class HSE extends MY_Controller
 		redirect(base_url());
 	}
 
-	public function loadview($view, $vars = array())
+	function read($id)
 	{
-		if ($vars['page_name'] === 'form') $vars['page_name'] = 'forms/hse';
-		$vars['error'] = $this->session->flashdata('model_error');
-		$vars['account_type'] = $this->session->userdata('role');
-
-		$page_title = preg_split('#([A-Z][^A-Z]*)#', $this->controller, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
-		$page_title = implode(' ', $page_title);
-		$vars['page_title']   = isset($this->page_title) ? $this->page_title : $page_title;
-
-		if (!isset($vars['form_action'])) $vars['form_action'] = site_url($this->controller);
-		$vars['current'] = array(
-			'model' => $this->model,
-			'controller' => $this->controller
+		$vars = array();
+		$vars['page_name'] = 'form';
+		$model = $this->model;
+		$vars['form'] = $this->$model->getForm($id);
+		$vars['subform'] = $this->$model->getFormChild();
+		$vars['uuid'] = $id;
+		$vars['js'] = array(
+			'moment.min.js',
+			'bootstrap-datepicker.js',
+			'daterangepicker.min.js',
+			'select2.full.min.js',
+			'form.js'
 		);
-
-		$this->load->model('Permissions');
-		if (!isset($vars['permission'])) $vars['permission'] = $this->Permissions->getPermissions();
-		$this->load->view($view, $vars);
+		if (strlen($this->session->userdata('vendor')) > 0) {
+			$vars['page_name'] = 'forms/hse-vendor';
+		} else {
+			$vars['tabs'] = $this->HSEs->getTabs($id);
+			$vars['page_name'] = 'forms/hse-admin';
+		}
+		$this->loadview('index', $vars);
 	}
 }
