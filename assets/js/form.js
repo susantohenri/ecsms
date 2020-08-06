@@ -1,5 +1,5 @@
 window.onload = function () {
-
+  activatePDFViewer()
   formInit($(`[data-controller="${current_controller}"]`))
   $('.main-form').submit(function () {
     $('[data-number]').each (function () {
@@ -111,4 +111,12 @@ function currency (number) {
   var reverse = number.toString().split('').reverse().join(''),
   currency  = reverse.match(/\d{1,3}/g)
   return currency.join(',').split('').reverse().join('')
+}
+
+function activatePDFViewer () {
+  $('[data-pdf]').click(function () {
+    var pdf = $(this).attr('data-pdf')
+    $('#pdf_viewer_modal .modal-body').html(`<embed src="${pdf}" width="800px" height="600px" />`)
+    $('#pdf_viewer_modal').modal('show')
+  })
 }

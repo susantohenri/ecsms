@@ -56,31 +56,40 @@
                 </div>
                 <?php break; ?>
               <?php
-              default: ?>
-                <?php if (in_array($field['name'], array('progress', 'lock'))) : ?>
-                  <div class="form-group row">
-                    <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
-                    <div class="col-sm-9">
+              case 'file': ?>
+                <div class="form-group row">
+                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-6 control-label"><?= $field['label']  ?></label>
+                  <div class="col-sm-4">
+                    <div class="input-group">
                       <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                    </div>
-                  </div>
-                <?php elseif (strpos($field['name'], '_score') < 1) : ?>
-                  <div class="form-group row">
-                    <label style="padding-left: 25px; font-weight: 400" class="col-sm-6 control-label"><?= $field['label']  ?></label>
-                    <div class="col-sm-4">
-                      <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                    </div>
-                  <?php else : ?>
-                    <div class="col-sm-2">
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Score</span>
+                      <?php if (1 == $field['value']) : ?>
+                        <div class="input-group-append">
+                          <a class="btn btn-danger" data-pdf="<?= base_url("upload/{$uuid}-{$field['name']}.pdf") ?>" >Open</a>
                         </div>
-                        <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                      </div>
+                      <?php endif ?>
                     </div>
                   </div>
-                <?php endif ?>
+                  <?php break; ?>
+                <?php
+              case 'text': ?>
+                  <div class="col-sm-2">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Score</span>
+                      </div>
+                      <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                    </div>
+                  </div>
+                </div>
+                <?php break; ?>
+              <?php
+              default: ?>
+                <div class="form-group row">
+                  <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
+                  <div class="col-sm-9">
+                    <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                  </div>
+                </div>
                 <?php break; ?>
             <?php endswitch; ?>
 

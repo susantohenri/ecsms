@@ -760,6 +760,8 @@ class HSEs extends MY_Model
 				if (in_array($field['name'], array('project', 'vendor', 'uuid'))) {
 				} else if (strpos($field['name'], '_score') > -1) {
 					$field['attr'] .= ' disabled = "disabled"';
+				} else if ('text' === $field['type']) {
+					$field['type'] = 'file';
 				}
 				return $field;
 			}, $form);
