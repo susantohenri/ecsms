@@ -17,7 +17,7 @@
         <div class="form-horizontal form-groups">
           <input type="hidden" name="last_submit" value="<?= time() ?>">
 
-          <?php foreach ($form as $field) : ?>
+          <?php foreach ($form as $index => $field) : ?>
 
             <?php switch ($field['type']):
               case 'hidden': ?>
@@ -52,35 +52,36 @@
               case 'label': ?>
                 <hr>
                 <div class="form-group row">
-                  <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
+                  <label class="col-sm-12 control-label"><?= $field['label']  ?></label>
                 </div>
                 <?php break; ?>
               <?php
               default: ?>
-                <?php if (in_array($field['name'], array('progress', 'lock'))) : ?>
-                  <div class="form-group row">
-                    <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
-                    <div class="col-sm-9">
-                      <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
+                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-9 control-label"><?= $field['label']  ?></label>
+                  <div class="col-sm-3">
+                    <div class="btn-group" role="group">
+                      <?php if ($field['show_upload_button']) : ?>
+                        <a class="btn btn-sm btn-warning">
+                          <i class="fa fa-upload"></i>&nbsp;
+                          Upload
+                        </a>
+                      <?php endif ?>
+                      <?php if ($field['show_preview_button']) : ?>
+                        <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
+                          <i class="fa fa-file-pdf"></i>&nbsp;
+                          Preview
+                        </a>
+                      <?php endif ?>
+                      <?php if ($field['show_score']) : ?>
+                        <a class="btn btn-sm btn-secondary">
+                          <i class="fa fa-check"></i>&nbsp;
+                          Score <?= $field['value'] ?>
+                        </a>
+                      <?php endif ?>
                     </div>
                   </div>
-                <?php elseif (strpos($field['name'], '_score') < 1) : ?>
-                  <div class="form-group row">
-                    <label style="padding-left: 25px; font-weight: 400" class="col-sm-6 control-label"><?= $field['label']  ?></label>
-                    <div class="col-sm-4">
-                      <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                    </div>
-                  <?php else : ?>
-                    <div class="col-sm-2">
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Score</span>
-                        </div>
-                        <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                      </div>
-                    </div>
-                  </div>
-                <?php endif ?>
+                </div>
                 <?php break; ?>
             <?php endswitch; ?>
 

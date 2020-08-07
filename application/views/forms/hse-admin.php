@@ -7,7 +7,7 @@
 
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <?php foreach ($tabs as $tab): ?>
+          <?php foreach ($tabs as $tab) : ?>
             <a href="<?= site_url("HSE/read/{$tab->uuid}") ?>" class="text-danger nav-item nav-link <?= $tab->is_active ?>"><?= $tab->vendor ?></a>
           <?php endforeach ?>
         </div>
@@ -15,13 +15,13 @@
       <br>
 
       <div class="text-right">
-      <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
-        <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Save</button>
-      <?php endif ?>
-      <?php if (!empty($uuid) && in_array("delete_{$current['controller']}", $permission)) : ?>
-        <a href="<?= site_url($current['controller'] . "/delete/$uuid") ?>" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</a>
-      <?php endif ?>
-      <a href="<?= site_url($current['controller']) ?>" class="btn btn-warning"><i class="fa fa-arrow-left"></i> &nbsp; Cancel</a>
+        <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
+          <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Save</button>
+        <?php endif ?>
+        <?php if (!empty($uuid) && in_array("delete_{$current['controller']}", $permission)) : ?>
+          <a href="<?= site_url($current['controller'] . "/delete/$uuid") ?>" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</a>
+        <?php endif ?>
+        <a href="<?= site_url($current['controller']) ?>" class="btn btn-warning"><i class="fa fa-arrow-left"></i> &nbsp; Cancel</a>
       </div>
       <br>
 
@@ -29,7 +29,7 @@
         <div class="form-horizontal form-groups">
           <input type="hidden" name="last_submit" value="<?= time() ?>">
 
-          <?php foreach ($form as $field) : ?>
+          <?php foreach ($form as $index => $field) : ?>
 
             <?php switch ($field['type']):
               case 'hidden': ?>
@@ -64,35 +64,35 @@
               case 'label': ?>
                 <hr>
                 <div class="form-group row">
-                  <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
+                  <label class="col-sm-12 control-label"><?= $field['label']  ?></label>
                 </div>
                 <?php break; ?>
               <?php
               default: ?>
-                <?php if (in_array($field['name'], array('progress', 'lock'))) : ?>
-                  <div class="form-group row">
-                    <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
-                    <div class="col-sm-9">
-                      <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                    </div>
-                  </div>
-                <?php elseif (strpos($field['name'], '_score') < 1) : ?>
-                  <div class="form-group row">
-                    <label style="padding-left: 25px; font-weight: 400" class="col-sm-6 control-label"><?= $field['label']  ?></label>
-                    <div class="col-sm-4">
-                      <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                    </div>
-                  <?php else : ?>
-                    <div class="col-sm-2">
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Score</span>
-                        </div>
-                        <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
+                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-9 control-label"><?= $field['label']  ?></label>
+                  <div class="col-sm-3">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <?php if ($field['show_preview_button']) : ?>
+                          <a class="btn btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
+                            <i class="fa fa-file-pdf"></i>&nbsp;
+                            Preview
+                          </a>
+                        <?php endif ?>
+                        <?php if ($field['show_score']) : ?>
+                          <span class="btn btn-secondary">
+                            <i class="fa fa-check"></i>&nbsp;
+                            Score
+                          </span>
+                        <?php endif ?>
                       </div>
+                      <?php if ($field['show_score']) : ?>
+                        <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                      <?php endif ?>
                     </div>
                   </div>
-                <?php endif ?>
+                </div>
                 <?php break; ?>
             <?php endswitch; ?>
 
