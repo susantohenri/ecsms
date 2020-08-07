@@ -110,7 +110,7 @@
 			</div>
 		</div>
 		<div class="overlay" id="table_spinner">
-			<h2 class="fa fa-spinner fa-spin"></h2>
+			<h2 class="fa fa-spinner fa-spin text-danger"></h2>
 		</div>
 	</div>
 </div>

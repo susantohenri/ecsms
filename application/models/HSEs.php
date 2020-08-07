@@ -401,6 +401,8 @@ class HSEs extends MY_Model
 			if (in_array($field['name'], array('project', 'vendor', 'uuid'))) {
 			} else {
 				$field['show_upload_button'] = true;
+				$field['upload_url'] = site_url("HSE/upload/{$uuid}-{$field['name']}");
+
 				$field['show_preview_button'] = false;
 				$field['show_score'] = false;
 

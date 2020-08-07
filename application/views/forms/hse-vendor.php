@@ -58,26 +58,27 @@
               <?php
               default: ?>
                 <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
-                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-9 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-3">
-                    <div class="btn-group" role="group">
+                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-8 control-label"><?= $field['label']  ?></label>
+                  <div class="col-sm-4">
+                    <div class="input-group input-group-sm">
                       <?php if ($field['show_upload_button']) : ?>
-                        <a class="btn btn-sm btn-warning">
-                          <i class="fa fa-upload"></i>&nbsp;
-                          Upload
-                        </a>
+                        <input class="form-control" type="file" accept="application/pdf" onchange="uploadDoc('<?= $field['upload_url'] ?>');" style="font-size:.71rem">
                       <?php endif ?>
                       <?php if ($field['show_preview_button']) : ?>
-                        <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
-                          <i class="fa fa-file-pdf"></i>&nbsp;
-                          Preview
-                        </a>
+                        <div class="input-group-append">
+                          <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
+                            <i class="fa fa-file-pdf"></i>&nbsp;
+                            Preview
+                          </a>
+                        </div>
                       <?php endif ?>
                       <?php if ($field['show_score']) : ?>
-                        <a class="btn btn-sm btn-secondary">
-                          <i class="fa fa-check"></i>&nbsp;
-                          Score <?= $field['value'] ?>
-                        </a>
+                        <div class="input-group-append">
+                          <a class="btn btn-sm btn-secondary">
+                            <i class="fa fa-check"></i>&nbsp;
+                            Score <?= $field['value'] ?>
+                          </a>
+                        </div>
                       <?php endif ?>
                     </div>
                   </div>
@@ -116,3 +117,23 @@
   endif; ?>
 
 </form>
+
+<div id="overlay">
+  <h1 class="fa fa-spinner fa-spin text-danger"></h1>
+</div>
+<style type="text/css">
+  #overlay {
+    padding: 25% 50%;
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    cursor: pointer;
+  }
+</style>

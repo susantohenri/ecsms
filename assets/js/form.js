@@ -112,3 +112,10 @@ function currency (number) {
   currency  = reverse.match(/\d{1,3}/g)
   return currency.join(',').split('').reverse().join('')
 }
+
+function uploadDoc (url) {
+  $('#overlay').show()
+  setTimeout(function () {
+    $('#overlay').hide()
+  }, 800)
+}
