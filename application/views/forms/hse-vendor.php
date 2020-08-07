@@ -62,7 +62,7 @@
                   <div class="col-sm-4">
                     <div class="input-group input-group-sm">
                       <?php if ($field['show_upload_button']) : ?>
-                        <input class="form-control" type="file" accept="application/pdf" onchange="uploadDoc('<?= $field['upload_url'] ?>');" style="font-size:.71rem">
+                        <input class="form-control" type="file" accept="application/pdf" name="<?= $field['name'] ?>" onchange="uploadDoc('<?= $field['upload_url'] ?>');" style="font-size:.71rem">
                       <?php endif ?>
                       <?php if ($field['show_preview_button']) : ?>
                         <div class="input-group-append">

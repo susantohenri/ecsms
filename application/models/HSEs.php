@@ -401,7 +401,7 @@ class HSEs extends MY_Model
 			if (in_array($field['name'], array('project', 'vendor', 'uuid'))) {
 			} else {
 				$field['show_upload_button'] = true;
-				$field['upload_url'] = site_url("HSE/upload/{$uuid}-{$field['name']}");
+				$field['upload_url'] = site_url("HSE/upload/{$uuid}/{$field['name']}");
 
 				$field['show_preview_button'] = false;
 				$field['show_score'] = false;
@@ -431,5 +431,18 @@ class HSEs extends MY_Model
 			->where("{$this->table}.project", $hse['project'])
 			->get($this->table)
 			->result();
+	}
+
+	function upload($uuid, $input)
+	{
+		$location = 'upload';
+		$file_name= "HSE-{$uuid}-{$input}.pdf";
+		$address = "{$location}/{$file_name}";
+		if (file_exists($address)) unlink($address);
+		move_uploaded_file($_FILES['doc']['tmp_name'], $address);
+		return $this->update(array(
+			'uuid' => $uuid,
+			$input => 0
+		));
 	}
 }

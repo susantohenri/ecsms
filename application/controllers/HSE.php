@@ -55,4 +55,8 @@ class HSE extends MY_Controller
 		}
 		$this->loadview('index', $vars);
 	}
+
+	function upload ($uuid, $input) {
+		echo $this->HSEs->upload($uuid, $input);
+	}
 }

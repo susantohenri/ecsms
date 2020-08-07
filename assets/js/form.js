@@ -115,7 +115,19 @@ function currency (number) {
 
 function uploadDoc (url) {
   $('#overlay').show()
-  setTimeout(function () {
-    $('#overlay').hide()
-  }, 800)
+  var url_part = url.split('/')
+  var name = url_part.pop()
+  var formData = new FormData()
+  formData.append('doc', $(`[name="${name}"]`)[0].files[0])
+  $.ajax({
+    url,
+    type : 'POST',
+    data : formData,
+    processData: false,
+    contentType: false,
+    success : function(data) {
+      $('#overlay').hide()
+    }
+  });
+  
 }
