@@ -181,7 +181,13 @@ class Projects extends MY_Model
 				->join('hse', "{$this->table}.uuid = hse.{$this->table}", 'left');
 		}
 
-		$this->db->select('pja.uuid pja_uuid', false)->join('pja', 'pja.project = project.uuid', 'left');
+		$this->db
+			->select('pja.uuid pja_uuid', false)
+			->select('pja.progress pja_progress', false)
+			->join('pja', 'pja.project = project.uuid', 'left');
+		$this->db
+			->select('laporanbulanan.uuid lapbul_uuid', false)
+			->join('laporanbulanan', 'laporanbulanan.project = project.uuid', 'left');
 		$result = $this->db->get($this->table)->result();
 		// die($this->db->last_query());
 		// die(json_encode($result[0]));
@@ -193,6 +199,7 @@ class Projects extends MY_Model
 
 			if (!is_null($record->hse_uuid)) $record->hse_link = site_url("HSE/read/{$record->hse_uuid}");
 			if (strlen($record->pemenang) > 0) $record->pja_link = site_url("PJA/read/{$record->pja_uuid}");
+			if ($record->pja_progress > 0) $record->lapbul_link = site_url("LaporanBulanan/read/{$record->lapbul_uuid}");
 
 			return $record;
 		}, $result);

@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/select2.min.css') ?>">
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap-datepicker.css') ?>">
-<form enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
+<form id="form_pja" enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
   <div class="card card-danger card-outline">
     <div class="card-header text-right">
       <a class="btn btn-danger" href="<?= site_url("PJA/download/{$uuid}") ?>">
@@ -8,7 +8,7 @@
         Download PJA
       </a>
       <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
-        <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Save</button>
+        <a class="btn btn-success btn-save" data-toggle="modal" data-target="#pja_submit_confirm"><i class="fa fa-save"></i> &nbsp; Submit</a>
       <?php endif ?>
       <?php if (!empty($uuid) && in_array("delete_{$current['controller']}", $permission)) : ?>
         <a href="<?= site_url($current['controller'] . "/delete/$uuid") ?>" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</a>
@@ -20,6 +20,7 @@
       <div class="" data-controller="<?= $current['controller'] ?>">
         <div class="form-horizontal form-groups">
           <input type="hidden" name="last_submit" value="<?= time() ?>">
+          <input type="hidden" name="progress" value="1">
 
           <div class="form-group row">
             <div class="col-md-12 text-center">
@@ -116,6 +117,25 @@
   endif; ?>
 
 </form>
+
+<div class="modal fade" id="pja_submit_confirm" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <h4>Apakah Anda Yakin ?</h4>
+      </div>
+      <div class="modal-footer">
+        <a id="submit_form_pja" onclick="$('#form_pja').submit()" class="btn btn-success">Ya</a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div id="overlay">
   <h1 class="fa fa-spinner fa-spin text-danger"></h1>
