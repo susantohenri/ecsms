@@ -208,6 +208,11 @@ class HSEs extends MY_Model
 				'label' => 'j. Daftar peralatan penanggulangan kebakaran',
 			),
 			array(
+				'name' => '',
+				'label' => '7. Transport Safety Management',
+				'type' => 'label'
+			),
+			array(
 				'name' => '7a',
 				'width' => 2,
 				'label' => 'a. Memiliki data kebutuhan kendaraan yang dioperasikan selama project',
@@ -226,6 +231,11 @@ class HSEs extends MY_Model
 				'name' => '7d',
 				'width' => 2,
 				'label' => 'd. Mempunyai checklist pemeriksaan kelayakan kendaraan',
+			),
+			array(
+				'name' => '',
+				'label' => '8. Prosedur Operasi & Standard Keselamatan',
+				'type' => 'label'
 			),
 			array(
 				'name' => '8a',
@@ -253,6 +263,11 @@ class HSEs extends MY_Model
 				'label' => 'e. Daftar standar yang digunakan',
 			),
 			array(
+				'name' => '',
+				'label' => '9. Kompetensi Pekerja yang Terlibat',
+				'type' => 'label'
+			),
+			array(
 				'name' => '9a',
 				'width' => 2,
 				'label' => 'a. Penanggung jawab HSE mempunyai sertifikat nasional  atau internasional yang masih berlaku',
@@ -271,6 +286,11 @@ class HSEs extends MY_Model
 				'name' => '9d',
 				'width' => 2,
 				'label' => 'd. Terdapat program pelatihan pekerja',
+			),
+			array(
+				'name' => '',
+				'label' => '10. HSE Audit / Inspection',
+				'type' => 'label'
 			),
 			array(
 				'name' => '10a',
@@ -293,6 +313,11 @@ class HSEs extends MY_Model
 				'label' => 'd. Program audit',
 			),
 			array(
+				'name' => '',
+				'label' => '11. Prosedur Pelaporan & Investigasi Kecelakaan',
+				'type' => 'label'
+			),
+			array(
 				'name' => '11a',
 				'width' => 2,
 				'label' => 'a. Prosedur pelaporan insiden sesuai organisasi dan lokasi project yang ditandatangani oleh pimpinan perusahaan / manager project',
@@ -311,6 +336,11 @@ class HSEs extends MY_Model
 				'name' => '11d',
 				'width' => 2,
 				'label' => 'd. Prosedur sesuai dengan kondisi di lapangan',
+			),
+			array(
+				'name' => '',
+				'label' => '12. Emergency Response & Procedure',
+				'type' => 'label'
 			),
 			array(
 				'name' => '12a',
@@ -333,6 +363,11 @@ class HSEs extends MY_Model
 				'label' => 'd. Data peralatan P3K sesuai standar',
 			),
 			array(
+				'name' => '',
+				'label' => '13. HSE Communication',
+				'type' => 'label'
+			),
+			array(
 				'name' => '13a',
 				'width' => 2,
 				'label' => 'a. Terdapat program komunikasi HSE',
@@ -341,6 +376,11 @@ class HSEs extends MY_Model
 				'name' => '13b',
 				'width' => 2,
 				'label' => 'b. Item program sesuai KPI',
+			),
+			array(
+				'name' => '',
+				'label' => '14. Pengelolaan Sub Kontraktor',
+				'type' => 'label'
 			),
 			array(
 				'name' => '14a',
@@ -356,6 +396,11 @@ class HSEs extends MY_Model
 				'name' => '14c',
 				'width' => 2,
 				'label' => 'c. Aspek HSE Sub Kontraktor',
+			),
+			array(
+				'name' => '',
+				'label' => '15. Pemeriksaan Kesehatan',
+				'type' => 'label'
 			),
 			array(
 				'name' => '15a',
