@@ -451,10 +451,10 @@ class HSEs extends MY_Model
 				$field['show_preview_button'] = false;
 				$field['show_score'] = false;
 
-				$pdf = "upload/hse-{$uuid}-{$field['name']}.pdf";
+				$pdf = "upload/HSE-{$uuid}-{$field['name']}.pdf";
 				if (file_exists($pdf)) {
 					$field['show_preview_button'] = true;
-					$field['show_score'] = true;
+					$field['show_score'] = $this->session->userdata('vendor') ? false : true;
 					$pdf = base_url($pdf);
 					$field['onclick'] = "document.getElementById(`pdf_viewer_modal_body`).innerHTML=`<embed src='{$pdf}' width='800px' height='600px' />`";
 				}
@@ -481,7 +481,7 @@ class HSEs extends MY_Model
 	function upload($uuid, $input)
 	{
 		$location = 'upload';
-		$file_name= "HSE-{$uuid}-{$input}.pdf";
+		$file_name = "HSE-{$uuid}-{$input}.pdf";
 		$address = "{$location}/{$file_name}";
 		if (file_exists($address)) unlink($address);
 		move_uploaded_file($_FILES['doc']['tmp_name'], $address);
@@ -489,5 +489,10 @@ class HSEs extends MY_Model
 			'uuid' => $uuid,
 			$input => 0
 		));
+	}
+
+	function download($uuid)
+	{
+		return array();
 	}
 }

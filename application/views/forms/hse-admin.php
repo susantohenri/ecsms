@@ -15,8 +15,16 @@
       <br>
 
       <div class="text-right">
+        <a class="btn btn-danger" href="<?= site_url("HSE/download/{$uuid}") ?>">
+          <i class="fa fa-download"></i> &nbsp;
+          Download HSE Plan
+        </a>
+        <a class="btn btn-info">
+          <i class="fa fa-paper-plane"></i> &nbsp;
+          Send Email
+        </a>
         <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
-          <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Save</button>
+          <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Update</button>
         <?php endif ?>
         <?php if (!empty($uuid) && in_array("delete_{$current['controller']}", $permission)) : ?>
           <a href="<?= site_url($current['controller'] . "/delete/$uuid") ?>" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</a>
@@ -77,13 +85,13 @@
                         <?php if ($field['show_preview_button']) : ?>
                           <a class="btn btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
                             <i class="fa fa-file-pdf"></i>&nbsp;
-                            Preview
+                            preview
                           </a>
                         <?php endif ?>
                         <?php if ($field['show_score']) : ?>
                           <span class="btn btn-secondary">
                             <i class="fa fa-check"></i>&nbsp;
-                            Score
+                            score
                           </span>
                         <?php endif ?>
                       </div>
