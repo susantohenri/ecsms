@@ -19,19 +19,14 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Jumlah Tenaga Kerja',
 			),
 			array(
-				'name' => 'a1_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'a2',
 				'width' => 2,
 				'label' => 'Jumlah Jam Kerja',
 			),
 			array(
-				'name' => 'a2_score',
-				'width' => 2,
-				'label' => ' ',
+				'name' => '',
+				'label' => 'Lagging Indicator',
+				'type' => 'label'
 			),
 			array(
 				'name' => 'b1',
@@ -39,19 +34,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Fatality',
 			),
 			array(
-				'name' => 'b1_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'b2',
 				'width' => 2,
 				'label' => 'Lost Time Incident',
-			),
-			array(
-				'name' => 'b2_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'b3',
@@ -59,19 +44,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Insiden berdampak pencemaran lingkungan',
 			),
 			array(
-				'name' => 'b3_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'b4',
 				'width' => 2,
 				'label' => 'Insiden berdampak kebakaran / kerusakan aset',
-			),
-			array(
-				'name' => 'b4_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'b5',
@@ -79,9 +54,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'First Aid',
 			),
 			array(
-				'name' => 'b5_score',
-				'width' => 2,
-				'label' => ' ',
+				'name' => '',
+				'label' => 'Leading Indicator',
+				'type' => 'label'
 			),
 			array(
 				'name' => 'c1',
@@ -89,19 +64,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'HSE Meeting',
 			),
 			array(
-				'name' => 'c1_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'c2',
 				'width' => 2,
 				'label' => 'HSE Talk/ briefing',
-			),
-			array(
-				'name' => 'c2_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'c3',
@@ -109,19 +74,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'HSE Reporting',
 			),
 			array(
-				'name' => 'c3_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'c4',
 				'width' => 2,
 				'label' => 'HSE Management Visit',
-			),
-			array(
-				'name' => 'c4_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'c5',
@@ -129,19 +84,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Closure Action',
 			),
 			array(
-				'name' => 'c5_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'c6',
 				'width' => 2,
 				'label' => 'Inspection/Audit',
-			),
-			array(
-				'name' => 'c6_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'c7',
@@ -149,19 +94,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Kepatuhan terhadap Penggunaan APD',
 			),
 			array(
-				'name' => 'c7_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'c8',
 				'width' => 2,
 				'label' => 'Kepatuhan terhadap Pengelolaan limbah',
-			),
-			array(
-				'name' => 'c8_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'c9',
@@ -169,19 +104,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Kepatuhan terhadap pengelolaan hygiene industry',
 			),
 			array(
-				'name' => 'c9_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'c10',
 				'width' => 2,
 				'label' => 'Kepatuhan terhadap pengelolaan good house keeping',
-			),
-			array(
-				'name' => 'c10_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'c11',
@@ -189,19 +114,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Pelaporan Nearmiss',
 			),
 			array(
-				'name' => 'c11_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'c12',
 				'width' => 2,
 				'label' => 'Pelaporan Safety Non Conformity (Unsafe Act & Unsafe Condition)',
-			),
-			array(
-				'name' => 'c12_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 		);
 		$this->childs = array();

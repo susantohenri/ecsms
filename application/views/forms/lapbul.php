@@ -36,7 +36,7 @@
           </div>
           <hr>
 
-          <?php foreach ($form as $field) : ?>
+          <?php foreach ($form as $index => $field) : ?>
 
             <?php switch ($field['type']):
               case 'hidden': ?>
@@ -68,11 +68,20 @@
                 </div>
                 <?php break; ?>
               <?php
-              default: ?>
+              case 'label': ?>
+                <hr>
                 <div class="form-group row">
-                  <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-9">
-                    <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                  <label class="col-sm-12 control-label"><?= $field['label']  ?></label>
+                </div>
+                <?php break; ?>
+              <?php
+              default: ?>
+                <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
+                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-8 control-label"><?= $field['label']  ?></label>
+                  <div class="col-sm-4">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control" type="file" accept="application/pdf" name="<?= $field['name'] ?>" onchange="uploadDoc('<?= $field['value'] ?>');" style="font-size:.71rem">
+                    </div>
                   </div>
                 </div>
                 <?php break; ?>
