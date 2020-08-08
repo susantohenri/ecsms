@@ -186,8 +186,10 @@ class Projects extends MY_Model
 			->select('pja.progress pja_progress', false)
 			->join('pja', 'pja.project = project.uuid', 'left');
 		$this->db
-			->select('laporanbulanan.uuid lapbul_uuid', false)
-			->join('laporanbulanan', 'laporanbulanan.project = project.uuid', 'left');
+			->select("lapbul.uuid lapbul_uuid", false)
+			->select("CONCAT(CEIL(lapbul.progress / project.jumlah_laporan_bulanan * 100), ' %') lapbul_text", false)
+			->join("(SELECT uuid, project, SUM(laporanbulanan.progress) progress FROM laporanbulanan GROUP BY project) lapbul", "lapbul.project = project.uuid", 'left');
+
 		$result = $this->db->get($this->table)->result();
 		// die($this->db->last_query());
 		// die(json_encode($result[0]));

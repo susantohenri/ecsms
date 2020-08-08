@@ -54,4 +54,8 @@ class LaporanBulanan extends MY_Controller
 
 		$this->loadview('index', $vars);
 	}
+
+	function upload ($uuid, $input) {
+		echo $this->LaporanBulanans->upload($uuid, $input);
+	}
 }

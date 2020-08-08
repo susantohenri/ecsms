@@ -131,6 +131,27 @@ class LaporanBulanans extends MY_Model
 		return parent::dt();
 	}
 
+	function getForm($uuid = false, $isSubform = false)
+	{
+		$form = parent::getForm($uuid, $isSubform);
+		$form = array_map(function ($field) use ($uuid) {
+			$field['show_upload_button'] = $this->session->userdata('vendor') ? true : false;
+			$field['upload_url'] = site_url("LaporanBulanan/upload/{$uuid}/{$field['name']}");
+
+			$field['show_preview_button'] = false;
+
+			$pdf = "upload/LaporanBulanan-{$uuid}-{$field['name']}.pdf";
+			if (file_exists($pdf)) {
+				$field['show_preview_button'] = true;
+				$pdf = base_url($pdf);
+				$field['onclick'] = "document.getElementById(`pdf_viewer_modal_body`).innerHTML=`<embed src='{$pdf}' width='800px' height='600px' />`";
+			}
+			return $field;
+		}, $form);
+
+		return $form;
+	}
+
 	function tabs($uuid)
 	{
 		return array_map(function ($record) use ($uuid) {
@@ -145,6 +166,16 @@ class LaporanBulanans extends MY_Model
 		->order_by('laporanbulanan.bulan', 'asc')
 		->get($this->table)
 		->result());
+	}
+
+	function upload($uuid, $input)
+	{
+		$location = 'upload';
+		$file_name = "LaporanBulanan-{$uuid}-{$input}.pdf";
+		$address = "{$location}/{$file_name}";
+		if (file_exists($address)) unlink($address);
+		move_uploaded_file($_FILES['doc']['tmp_name'], $address);
+		return true;
 	}
 
 	function findForDelete($param = array())
