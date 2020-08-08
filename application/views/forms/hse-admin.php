@@ -37,6 +37,13 @@
         <div class="form-horizontal form-groups">
           <input type="hidden" name="last_submit" value="<?= time() ?>">
 
+          <hr>
+          <div class="form-group row">
+            <div class="col-md-12 text-center">
+              <h3><?= $project_name ?></h3>
+            </div>
+          </div>
+
           <?php foreach ($form as $index => $field) : ?>
 
             <?php switch ($field['type']):

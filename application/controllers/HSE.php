@@ -53,6 +53,7 @@ class HSE extends MY_Controller
 			$vars['tabs'] = $this->HSEs->getTabs($id);
 			$vars['page_name'] = 'forms/hse-admin';
 		}
+		$vars['project_name'] = $this->$model->getProjectName($id);
 		$this->loadview('index', $vars);
 	}
 

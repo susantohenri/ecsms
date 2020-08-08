@@ -181,8 +181,10 @@ class Projects extends MY_Model
 				->join('hse', "{$this->table}.uuid = hse.{$this->table}", 'left');
 		}
 
+		$this->db->select('pja.uuid pja_uuid', false)->join('pja', 'pja.project = project.uuid', 'left');
 		$result = $this->db->get($this->table)->result();
 		// die($this->db->last_query());
+		// die(json_encode($result[0]));
 
 		$number = $offset + 1;
 		$result = array_map(function ($record) use (&$number) {
@@ -190,6 +192,7 @@ class Projects extends MY_Model
 			$number++;
 
 			if (!is_null($record->hse_uuid)) $record->hse_link = site_url("HSE/read/{$record->hse_uuid}");
+			if (strlen($record->pemenang) > 0) $record->pja_link = site_url("PJA/read/{$record->pja_uuid}");
 
 			return $record;
 		}, $result);

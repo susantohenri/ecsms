@@ -3,9 +3,9 @@
 <form enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
   <div class="card card-danger card-outline">
     <div class="card-header text-right">
-      <a class="btn btn-danger" href="<?= site_url("HSE/download/{$uuid}") ?>">
+      <a class="btn btn-danger" href="<?= site_url("PJA/download/{$uuid}") ?>">
         <i class="fa fa-download"></i> &nbsp;
-        Download HSE Plan
+        Download PJA
       </a>
       <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
         <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Save</button>
@@ -34,22 +34,6 @@
                 <input class="form-control" type="<?= $field['type'] ?>" value="<?= $field['value'] ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
                 <?php break; ?>
               <?php
-              case 'select': ?>
-                <div class="form-group row">
-                  <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-9">
-                    <?php if (preg_match('/(multiple)/', $field['attr']) > 0) : ?>
-                      <input type="hidden" name="<?= str_replace('[]', '', $field['name']) ?>">
-                    <?php endif ?>
-                    <select class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                      <?php foreach ($field['options'] as $opt) : ?>
-                        <option <?= $opt['value'] === $field['value'] || (is_array($field['value']) && in_array($opt['value'], $field['value'])) ? 'selected="selected"' : '' ?> value="<?= $opt['value'] ?>"><?= $opt['text'] ?></option>
-                      <?php endforeach ?>
-                    </select>
-                  </div>
-                </div>
-                <?php break; ?>
-              <?php
               case 'textarea': ?>
                 <div class="form-group row">
                   <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
@@ -61,38 +45,43 @@
               <?php
               case 'label': ?>
                 <hr>
-                <div class="form-group row">
+                <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
                   <label class="col-sm-12 control-label"><?= $field['label']  ?></label>
                 </div>
                 <?php break; ?>
               <?php
               default: ?>
-                <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
-                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-8 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-4">
-                    <div class="input-group input-group-sm">
-                      <?php if ($field['show_upload_button']) : ?>
-                        <input class="form-control" type="file" accept="application/pdf" name="<?= $field['name'] ?>" onchange="uploadDoc('<?= $field['upload_url'] ?>');" style="font-size:.71rem">
-                      <?php endif ?>
-                      <?php if ($field['show_preview_button']) : ?>
-                        <div class="input-group-append">
-                          <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
-                            <i class="fa fa-file-pdf"></i>&nbsp;
-                            Preview
-                          </a>
+                <?php if (strpos($field['name'], '_isneed') > -1) : ?>
+                  <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
+                    <label style="padding-left: 25px; font-weight: 400" class="col-sm-5 control-label"><?= $field['label']  ?></label>
+                    <div class="col-sm-2">
+                      <select class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                        <?php foreach ($field['options'] as $opt) : ?>
+                          <option <?= $opt['value'] === $field['value'] || (is_array($field['value']) && in_array($opt['value'], $field['value'])) ? 'selected="selected"' : '' ?> value="<?= $opt['value'] ?>"><?= $opt['text'] ?></option>
+                        <?php endforeach ?>
+                      </select>
+                    </div>
+                  <?php endif ?>
+                  <?php if (strpos($field['name'], '_isya') > -1) : ?>
+                    <div class="col-sm-2">
+                      <select class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                        <?php foreach ($field['options'] as $opt) : ?>
+                          <option <?= $opt['value'] === $field['value'] || (is_array($field['value']) && in_array($opt['value'], $field['value'])) ? 'selected="selected"' : '' ?> value="<?= $opt['value'] ?>"><?= $opt['text'] ?></option>
+                        <?php endforeach ?>
+                      </select>
+                    </div>
+                  <?php endif ?>
+                  <?php if (strpos($field['name'], '_note') > -1) : ?>
+                    <div class="col-sm-3">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Note</span>
                         </div>
-                      <?php endif ?>
-                      <?php if ($field['show_score']) : ?>
-                        <div class="input-group-append">
-                          <a class="btn btn-sm btn-secondary">
-                            <i class="fa fa-check"></i>&nbsp;
-                            Score <?= $field['value'] ?>
-                          </a>
-                        </div>
-                      <?php endif ?>
+                        <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                      </div>
                     </div>
                   </div>
-                </div>
+                <?php endif ?>
                 <?php break; ?>
             <?php endswitch; ?>
 

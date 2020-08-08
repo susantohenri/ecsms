@@ -14,35 +14,6 @@ class HSEs extends MY_Model
 		);
 		$this->form = array(
 			array(
-				'name' => 'project',
-				'label' => 'Project',
-				'options' => array(),
-				'width' => 2,
-				'attributes' => array(
-					array('data-autocomplete' => 'true'),
-					array('data-model' => 'Projects'),
-					array('data-field' => 'nama'),
-					array('disabled' => 'disabled')
-				)
-			),
-			array(
-				'name' => 'progress',
-				'label' => 'Progress',
-				'width' => 2,
-				'attributes' => array(
-					array('data-number' => 'true')
-				)
-			),
-			array(
-				'name' => 'lock',
-				'label' => 'Lock',
-				'width' => 2,
-				'options' => array(
-					array('text' => 'Ya', 'value' => 'Ya'),
-					array('text' => 'Tidak', 'value' => 'Tidak'),
-				)
-			),
-			array(
 				'name' => '',
 				'label' => '1. Data Proyek',
 				'type' => 'label'
@@ -439,25 +410,19 @@ class HSEs extends MY_Model
 	function getForm($uuid = false, $isSubform = false)
 	{
 		$form = parent::getForm($uuid, $isSubform);
-		$form = array_filter($form, function ($field) {
-			return !in_array($field['name'], array('progress', 'lock'));
-		});
 		$form = array_map(function ($field) use ($uuid) {
-			if (in_array($field['name'], array('project', 'vendor', 'uuid'))) {
-			} else {
-				$field['show_upload_button'] = true;
-				$field['upload_url'] = site_url("HSE/upload/{$uuid}/{$field['name']}");
+			$field['show_upload_button'] = true;
+			$field['upload_url'] = site_url("HSE/upload/{$uuid}/{$field['name']}");
 
-				$field['show_preview_button'] = false;
-				$field['show_score'] = false;
+			$field['show_preview_button'] = false;
+			$field['show_score'] = false;
 
-				$pdf = "upload/HSE-{$uuid}-{$field['name']}.pdf";
-				if (file_exists($pdf)) {
-					$field['show_preview_button'] = true;
-					$field['show_score'] = $this->session->userdata('vendor') ? false : true;
-					$pdf = base_url($pdf);
-					$field['onclick'] = "document.getElementById(`pdf_viewer_modal_body`).innerHTML=`<embed src='{$pdf}' width='800px' height='600px' />`";
-				}
+			$pdf = "upload/HSE-{$uuid}-{$field['name']}.pdf";
+			if (file_exists($pdf)) {
+				$field['show_preview_button'] = true;
+				$field['show_score'] = $this->session->userdata('vendor') ? false : true;
+				$pdf = base_url($pdf);
+				$field['onclick'] = "document.getElementById(`pdf_viewer_modal_body`).innerHTML=`<embed src='{$pdf}' width='800px' height='600px' />`";
 			}
 			return $field;
 		}, $form);
@@ -489,6 +454,16 @@ class HSEs extends MY_Model
 			'uuid' => $uuid,
 			$input => 0
 		));
+	}
+
+	function getProjectName($uuid)
+	{
+		$result = $this->db
+			->select('project.nama')
+			->join('project', 'hse.project = project.uuid', 'left')
+			->get_where($this->table, array('hse.uuid' => $uuid))
+			->row_array();
+		return $result['nama'];
 	}
 
 	function download($uuid)
