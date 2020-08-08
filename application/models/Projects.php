@@ -90,7 +90,7 @@ class Projects extends MY_Model
 		$uuid = parent::update($record);
 		$project = $this->findOne($uuid);
 		$this->load->model('LaporanBulanans');
-		$lapBuls = $this->LaporanBulanans->find(array('project' => $uuid));
+		$lapBuls = $this->LaporanBulanans->findForDelete(array('project' => $uuid));
 		if (count($lapBuls) > $project['jumlah_laporan_bulanan']) {
 			foreach ($lapBuls as $index => $lap) {
 				if ($index + 1 > $project['jumlah_laporan_bulanan']) {
@@ -199,7 +199,7 @@ class Projects extends MY_Model
 
 			if (!is_null($record->hse_uuid)) $record->hse_link = site_url("HSE/read/{$record->hse_uuid}");
 			if (strlen($record->pemenang) > 0) $record->pja_link = site_url("PJA/read/{$record->pja_uuid}");
-			if ($record->pja_progress > 0) $record->lapbul_link = site_url("LaporanBulanan/read/{$record->lapbul_uuid}");
+			if ($record->pja_progress > 0 && strlen($record->lapbul_uuid) > 0) $record->lapbul_link = site_url("LaporanBulanan/read/{$record->lapbul_uuid}");
 
 			return $record;
 		}, $result);

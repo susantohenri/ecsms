@@ -14,39 +14,6 @@ class LaporanBulanans extends MY_Model
 		);
 		$this->form = array(
 			array(
-				'name' => 'project',
-				'label' => 'Project',
-				'options' => array(),
-				'width' => 2,
-				'attributes' => array(
-					array('data-autocomplete' => 'true'),
-					array('data-model' => 'Projects'),
-					array('data-field' => 'nama')
-				)
-			),
-			array(
-				'name' => 'bulan',
-				'width' => 2,
-				'label' => 'Bulan',
-			),
-			array(
-				'name' => 'progress',
-				'label' => 'Progress',
-				'width' => 2,
-				'attributes' => array(
-					array('data-number' => 'true')
-				)
-			),
-			array(
-				'name' => 'lock',
-				'label' => 'Lock',
-				'width' => 2,
-				'options' => array(
-					array('text' => 'Ya', 'value' => '1'),
-					array('text' => 'Tidak', 'value' => '0'),
-				)
-			),
-			array(
 				'name' => 'a1',
 				'width' => 2,
 				'label' => 'Jumlah Tenaga Kerja',
@@ -247,5 +214,26 @@ class LaporanBulanans extends MY_Model
 			->select("{$this->table}.orders")
 			->select('laporanbulanan.project');
 		return parent::dt();
+	}
+
+	function tabs($uuid)
+	{
+		return array_map(function ($record) use ($uuid) {
+			$record->is_active = $record->lapbul_uuid === $uuid;
+			return $record;
+		}, $this->db
+		->select('laporanbulanan.uuid lapbul_uuid', false)
+		->select('laporanbulanan.bulan lapbul_bulan', false)
+		->select('project.nama nama_project', false)
+		->join('project', 'laporanbulanan.project = project.uuid', 'left')
+		->where("laporanbulanan.project = (SELECT project FROM laporanbulanan WHERE uuid = '{$uuid}')")
+		->order_by('laporanbulanan.bulan', 'asc')
+		->get($this->table)
+		->result());
+	}
+
+	function findForDelete($param = array())
+	{
+	  return $this->db->order_by('bulan', 'asc')->get_where($this->table, $param)->result();
 	}
 }

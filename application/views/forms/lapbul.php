@@ -6,23 +6,17 @@
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <?php foreach ($tabs as $tab) : ?>
-          <a href="<?= site_url("HSE/read/{$tab->uuid}") ?>" class="nav-item nav-link <?= $tab->is_active ?>"><?= $tab->vendor ?></a>
+          <li class="nav-item">
+            <a href="<?= site_url("LaporanBulanan/read/{$tab->lapbul_uuid}") ?>" class="nav-link <?= $tab->is_active ? 'active' : '' ?>" href="#">Bulan Ke-<?= $tab->lapbul_bulan ?></a>
+          </li>
         <?php endforeach ?>
       </ul>
     </div>
     <div class="card-body">
 
       <div class="text-right">
-        <a class="btn btn-danger" href="<?= site_url("HSE/download/{$uuid}") ?>">
-          <i class="fa fa-download"></i> &nbsp;
-          Download HSE Plan
-        </a>
-        <a class="btn btn-info">
-          <i class="fa fa-paper-plane"></i> &nbsp;
-          Send Email
-        </a>
         <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
-          <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Update</button>
+          <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Save</button>
         <?php endif ?>
         <?php if (!empty($uuid) && in_array("delete_{$current['controller']}", $permission)) : ?>
           <a href="<?= site_url($current['controller'] . "/delete/$uuid") ?>" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</a>
@@ -40,8 +34,9 @@
               <h3><?= $project_name ?></h3>
             </div>
           </div>
+          <hr>
 
-          <?php foreach ($form as $index => $field) : ?>
+          <?php foreach ($form as $field) : ?>
 
             <?php switch ($field['type']):
               case 'hidden': ?>
@@ -73,36 +68,11 @@
                 </div>
                 <?php break; ?>
               <?php
-              case 'label': ?>
-                <hr>
-                <div class="form-group row">
-                  <label class="col-sm-12 control-label"><?= $field['label']  ?></label>
-                </div>
-                <?php break; ?>
-              <?php
               default: ?>
-                <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
-                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-9 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-3">
-                    <div class="input-group input-group-sm">
-                      <div class="input-group-prepend">
-                        <?php if ($field['show_preview_button']) : ?>
-                          <a class="btn btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
-                            <i class="fa fa-file-pdf"></i>&nbsp;
-                            preview
-                          </a>
-                        <?php endif ?>
-                        <?php if ($field['show_score']) : ?>
-                          <span class="btn btn-secondary">
-                            <i class="fa fa-check"></i>&nbsp;
-                            score
-                          </span>
-                        <?php endif ?>
-                      </div>
-                      <?php if ($field['show_score']) : ?>
-                        <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                      <?php endif ?>
-                    </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
+                  <div class="col-sm-9">
+                    <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
                   </div>
                 </div>
                 <?php break; ?>

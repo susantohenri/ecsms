@@ -71,7 +71,7 @@ class Migration_seeds extends CI_Migration
       'role' => $admin
     ));
 
-    foreach (array ('HSE') as $updateableByVendors) {
+    foreach (array ('HSE', 'LaporanBulanan') as $updateableByVendors) {
       $this->Permissions->create(array(
         'role' => $vendor,
         'action' => 'update',
