@@ -401,12 +401,6 @@ class HSEs extends MY_Model
 		return parent::dt();
 	}
 
-	function create($data)
-	{
-		if (!isset($data['lock'])) $data['lock'] = 0;
-		return parent::create($data);
-	}
-
 	function getForm($uuid = false, $isSubform = false)
 	{
 		$form = parent::getForm($uuid, $isSubform);

@@ -189,6 +189,10 @@ class Projects extends MY_Model
 			->select("lapbul.uuid lapbul_uuid", false)
 			->select("CONCAT(CEIL(lapbul.progress / project.jumlah_laporan_bulanan * 100), ' %') lapbul_text", false)
 			->join("(SELECT uuid, project, SUM(laporanbulanan.progress) progress FROM laporanbulanan GROUP BY project) lapbul", "lapbul.project = project.uuid", 'left');
+		$this->db
+			->select('wip.uuid wip_uuid', false)
+			->select('wip.progress wip_progress', false)
+			->join('wip', 'wip.project = project.uuid', 'left');
 
 		$result = $this->db->get($this->table)->result();
 		// die($this->db->last_query());
@@ -202,6 +206,7 @@ class Projects extends MY_Model
 			if (!is_null($record->hse_uuid)) $record->hse_link = site_url("HSE/read/{$record->hse_uuid}");
 			if (strlen($record->pemenang) > 0) $record->pja_link = site_url("PJA/read/{$record->pja_uuid}");
 			if ($record->pja_progress > 0 && strlen($record->lapbul_uuid) > 0) $record->lapbul_link = site_url("LaporanBulanan/read/{$record->lapbul_uuid}");
+			if ('100 %' === $record->lapbul_text) $record->wip_link = site_url("WIP/read/{$record->wip_uuid}");
 
 			return $record;
 		}, $result);
