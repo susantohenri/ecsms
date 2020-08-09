@@ -90,7 +90,7 @@ class Projects extends MY_Model
 		$uuid = parent::update($record);
 		$project = $this->findOne($uuid);
 		$this->load->model('LaporanBulanans');
-		$lapBuls = $this->LaporanBulanans->find(array('project' => $uuid));
+		$lapBuls = $this->LaporanBulanans->findForDelete(array('project' => $uuid));
 		if (count($lapBuls) > $project['jumlah_laporan_bulanan']) {
 			foreach ($lapBuls as $index => $lap) {
 				if ($index + 1 > $project['jumlah_laporan_bulanan']) {
@@ -181,8 +181,26 @@ class Projects extends MY_Model
 				->join('hse', "{$this->table}.uuid = hse.{$this->table}", 'left');
 		}
 
+		$this->db
+			->select('pja.uuid pja_uuid', false)
+			->select('pja.progress pja_progress', false)
+			->join('pja', 'pja.project = project.uuid', 'left');
+		$this->db
+			->select("lapbul.uuid lapbul_uuid", false)
+			->select("CONCAT(CEIL(lapbul.progress / project.jumlah_laporan_bulanan * 100), ' %') lapbul_text", false)
+			->join("(SELECT uuid, project, SUM(laporanbulanan.progress) progress FROM laporanbulanan GROUP BY project) lapbul", "lapbul.project = project.uuid", 'left');
+		$this->db
+			->select('wip.uuid wip_uuid', false)
+			->select('wip.progress wip_progress', false)
+			->join('wip', 'wip.project = project.uuid', 'left');
+		$this->db
+			->select('kpi.uuid kpi_uuid', false)
+			->select('kpi.progress kpi_progress', false)
+			->join('kpi', 'kpi.project = project.uuid', 'left');
+
 		$result = $this->db->get($this->table)->result();
 		// die($this->db->last_query());
+		// die(json_encode($result[0]));
 
 		$number = $offset + 1;
 		$result = array_map(function ($record) use (&$number) {
@@ -190,6 +208,11 @@ class Projects extends MY_Model
 			$number++;
 
 			if (!is_null($record->hse_uuid)) $record->hse_link = site_url("HSE/read/{$record->hse_uuid}");
+			if (strlen($record->pemenang) > 0) $record->pja_link = site_url("PJA/read/{$record->pja_uuid}");
+			if ($record->pja_progress > 0 && strlen($record->lapbul_uuid) > 0) $record->lapbul_link = site_url("LaporanBulanan/read/{$record->lapbul_uuid}");
+			if ('100 %' === $record->lapbul_text) $record->wip_link = site_url("WIP/read/{$record->wip_uuid}");
+			if ($record->wip_progress > 0) $record->kpi_link = site_url("KPI/read/{$record->kpi_uuid}");
+			if ($record->kpi_progress > 0) $record->fe_link = site_url("Project/FE/{$record->uuid}");
 
 			return $record;
 		}, $result);

@@ -53,10 +53,27 @@ class HSE extends MY_Controller
 			$vars['tabs'] = $this->HSEs->getTabs($id);
 			$vars['page_name'] = 'forms/hse-admin';
 		}
+		$vars['project_name'] = $this->$model->getProjectName($id);
 		$this->loadview('index', $vars);
 	}
 
 	function upload ($uuid, $input) {
 		echo $this->HSEs->upload($uuid, $input);
+	}
+
+	function download ($uuid) {
+		$this->load->library('pdf');
+		$this->pdf->setPaper('A4', 'potrait');
+		$this->pdf->filename = 'HSE-Plan.pdf';
+
+		$data = array ('records' => $this->HSEs->download ($uuid));
+		// $this->pdf->load_view('pdf/form_1', $data);
+
+		$this->load->view('pdf/form_1', $data);
+		$html = $this->output->get_output();
+		$this->pdf->load_html($html);
+
+		$this->pdf->render();
+		$this->pdf->stream('HSE-Plan.pdf');
 	}
 }

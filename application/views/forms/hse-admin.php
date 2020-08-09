@@ -2,32 +2,44 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap-datepicker.css') ?>">
 
 <form enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
-  <div class="card card-danger card-outline">
+  <div class="card card-danger">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <?php foreach ($tabs as $tab) : ?>
+          <a href="<?= site_url("HSE/read/{$tab->uuid}") ?>" class="nav-item nav-link <?= $tab->is_active ?>"><?= $tab->vendor ?></a>
+        <?php endforeach ?>
+      </ul>
+    </div>
     <div class="card-body">
 
-      <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <?php foreach ($tabs as $tab) : ?>
-            <a href="<?= site_url("HSE/read/{$tab->uuid}") ?>" class="text-danger nav-item nav-link <?= $tab->is_active ?>"><?= $tab->vendor ?></a>
-          <?php endforeach ?>
-        </div>
-      </nav>
-      <br>
-
       <div class="text-right">
+        <a class="btn btn-danger" href="<?= site_url("HSE/download/{$uuid}") ?>">
+          <i class="fa fa-download"></i> &nbsp;
+          Download HSE Plan
+        </a>
+        <a class="btn btn-info">
+          <i class="fa fa-paper-plane"></i> &nbsp;
+          Send Email
+        </a>
         <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
-          <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Save</button>
+          <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Update</button>
         <?php endif ?>
         <?php if (!empty($uuid) && in_array("delete_{$current['controller']}", $permission)) : ?>
           <a href="<?= site_url($current['controller'] . "/delete/$uuid") ?>" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</a>
         <?php endif ?>
         <a href="<?= site_url($current['controller']) ?>" class="btn btn-warning"><i class="fa fa-arrow-left"></i> &nbsp; Cancel</a>
       </div>
-      <br>
 
       <div class="" data-controller="<?= $current['controller'] ?>">
         <div class="form-horizontal form-groups">
           <input type="hidden" name="last_submit" value="<?= time() ?>">
+
+          <hr>
+          <div class="form-group row">
+            <div class="col-md-12 text-center">
+              <h3><?= $project_name ?></h3>
+            </div>
+          </div>
 
           <?php foreach ($form as $index => $field) : ?>
 
@@ -77,13 +89,13 @@
                         <?php if ($field['show_preview_button']) : ?>
                           <a class="btn btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
                             <i class="fa fa-file-pdf"></i>&nbsp;
-                            Preview
+                            preview
                           </a>
                         <?php endif ?>
                         <?php if ($field['show_score']) : ?>
                           <span class="btn btn-secondary">
                             <i class="fa fa-check"></i>&nbsp;
-                            Score
+                            score
                           </span>
                         <?php endif ?>
                       </div>

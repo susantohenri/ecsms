@@ -14,47 +14,9 @@ class LaporanBulanans extends MY_Model
 		);
 		$this->form = array(
 			array(
-				'name' => 'project',
-				'label' => 'Project',
-				'options' => array(),
-				'width' => 2,
-				'attributes' => array(
-					array('data-autocomplete' => 'true'),
-					array('data-model' => 'Projects'),
-					array('data-field' => 'nama')
-				)
-			),
-			array(
-				'name' => 'bulan',
-				'width' => 2,
-				'label' => 'Bulan',
-			),
-			array(
-				'name' => 'progress',
-				'label' => 'Progress',
-				'width' => 2,
-				'attributes' => array(
-					array('data-number' => 'true')
-				)
-			),
-			array(
-				'name' => 'lock',
-				'label' => 'Lock',
-				'width' => 2,
-				'options' => array(
-					array('text' => 'Ya', 'value' => '1'),
-					array('text' => 'Tidak', 'value' => '0'),
-				)
-			),
-			array(
 				'name' => 'a1',
 				'width' => 2,
 				'label' => 'Jumlah Tenaga Kerja',
-			),
-			array(
-				'name' => 'a1_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'a2',
@@ -62,9 +24,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Jumlah Jam Kerja',
 			),
 			array(
-				'name' => 'a2_score',
-				'width' => 2,
-				'label' => ' ',
+				'name' => '',
+				'label' => 'Lagging Indicator',
+				'type' => 'label'
 			),
 			array(
 				'name' => 'b1',
@@ -72,19 +34,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Fatality',
 			),
 			array(
-				'name' => 'b1_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'b2',
 				'width' => 2,
 				'label' => 'Lost Time Incident',
-			),
-			array(
-				'name' => 'b2_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'b3',
@@ -92,19 +44,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Insiden berdampak pencemaran lingkungan',
 			),
 			array(
-				'name' => 'b3_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'b4',
 				'width' => 2,
 				'label' => 'Insiden berdampak kebakaran / kerusakan aset',
-			),
-			array(
-				'name' => 'b4_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'b5',
@@ -112,9 +54,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'First Aid',
 			),
 			array(
-				'name' => 'b5_score',
-				'width' => 2,
-				'label' => ' ',
+				'name' => '',
+				'label' => 'Leading Indicator',
+				'type' => 'label'
 			),
 			array(
 				'name' => 'c1',
@@ -122,19 +64,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'HSE Meeting',
 			),
 			array(
-				'name' => 'c1_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'c2',
 				'width' => 2,
 				'label' => 'HSE Talk/ briefing',
-			),
-			array(
-				'name' => 'c2_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'c3',
@@ -142,19 +74,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'HSE Reporting',
 			),
 			array(
-				'name' => 'c3_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'c4',
 				'width' => 2,
 				'label' => 'HSE Management Visit',
-			),
-			array(
-				'name' => 'c4_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'c5',
@@ -162,19 +84,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Closure Action',
 			),
 			array(
-				'name' => 'c5_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'c6',
 				'width' => 2,
 				'label' => 'Inspection/Audit',
-			),
-			array(
-				'name' => 'c6_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'c7',
@@ -182,19 +94,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Kepatuhan terhadap Penggunaan APD',
 			),
 			array(
-				'name' => 'c7_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'c8',
 				'width' => 2,
 				'label' => 'Kepatuhan terhadap Pengelolaan limbah',
-			),
-			array(
-				'name' => 'c8_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'c9',
@@ -202,19 +104,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Kepatuhan terhadap pengelolaan hygiene industry',
 			),
 			array(
-				'name' => 'c9_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'c10',
 				'width' => 2,
 				'label' => 'Kepatuhan terhadap pengelolaan good house keeping',
-			),
-			array(
-				'name' => 'c10_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 			array(
 				'name' => 'c11',
@@ -222,19 +114,9 @@ class LaporanBulanans extends MY_Model
 				'label' => 'Pelaporan Nearmiss',
 			),
 			array(
-				'name' => 'c11_score',
-				'width' => 2,
-				'label' => ' ',
-			),
-			array(
 				'name' => 'c12',
 				'width' => 2,
 				'label' => 'Pelaporan Safety Non Conformity (Unsafe Act & Unsafe Condition)',
-			),
-			array(
-				'name' => 'c12_score',
-				'width' => 2,
-				'label' => ' ',
 			),
 		);
 		$this->childs = array();
@@ -247,5 +129,57 @@ class LaporanBulanans extends MY_Model
 			->select("{$this->table}.orders")
 			->select('laporanbulanan.project');
 		return parent::dt();
+	}
+
+	function getForm($uuid = false, $isSubform = false)
+	{
+		$form = parent::getForm($uuid, $isSubform);
+		$form = array_map(function ($field) use ($uuid) {
+			$field['show_upload_button'] = $this->session->userdata('vendor') ? true : false;
+			$field['upload_url'] = site_url("LaporanBulanan/upload/{$uuid}/{$field['name']}");
+
+			$field['show_preview_button'] = false;
+
+			$pdf = "upload/LaporanBulanan-{$uuid}-{$field['name']}.pdf";
+			if (file_exists($pdf)) {
+				$field['show_preview_button'] = true;
+				$pdf = base_url($pdf);
+				$field['onclick'] = "document.getElementById(`pdf_viewer_modal_body`).innerHTML=`<embed src='{$pdf}' width='800px' height='600px' />`";
+			}
+			return $field;
+		}, $form);
+
+		return $form;
+	}
+
+	function tabs($uuid)
+	{
+		return array_map(function ($record) use ($uuid) {
+			$record->is_active = $record->lapbul_uuid === $uuid;
+			return $record;
+		}, $this->db
+		->select('laporanbulanan.uuid lapbul_uuid', false)
+		->select('laporanbulanan.bulan lapbul_bulan', false)
+		->select('project.nama nama_project', false)
+		->join('project', 'laporanbulanan.project = project.uuid', 'left')
+		->where("laporanbulanan.project = (SELECT project FROM laporanbulanan WHERE uuid = '{$uuid}')")
+		->order_by('laporanbulanan.bulan', 'asc')
+		->get($this->table)
+		->result());
+	}
+
+	function upload($uuid, $input)
+	{
+		$location = 'upload';
+		$file_name = "LaporanBulanan-{$uuid}-{$input}.pdf";
+		$address = "{$location}/{$file_name}";
+		if (file_exists($address)) unlink($address);
+		move_uploaded_file($_FILES['doc']['tmp_name'], $address);
+		return true;
+	}
+
+	function findForDelete($param = array())
+	{
+	  return $this->db->order_by('bulan', 'asc')->get_where($this->table, $param)->result();
 	}
 }

@@ -25,6 +25,7 @@
 	}
 	.progress-bar.border-default a {
 		background-color: #007bff;
+		color: white;
 	}
 	.progress-bar.border-secondary {
 		border: 1px solid #6c757d;

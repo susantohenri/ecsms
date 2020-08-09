@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -825,8 +824,7 @@
       </tr>
       <tr>
          <td> </td>
-         <td>c. Melampirkan hasil MCU (proyek > 6 bulan) atau surat keterangan sehat (proyek < 6 bulan) </td>
-         <td class="text-center"> 2 </td>
+         <td>c. Melampirkan hasil MCU (proyek > 6 bulan) atau surat keterangan sehat (proyek < 6 bulan) </td> <td class="text-center"> 2 </td>
          </td>
          <td class="bg-yellow"> </td>
       </tr>

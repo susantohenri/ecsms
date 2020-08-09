@@ -12,7 +12,7 @@ class Migration_template extends CI_Migration {
         `createdAt` datetime DEFAULT NULL,
         `updatedAt` datetime DEFAULT NULL,
         `nama` varchar(255) NOT NULL,
-        `konten` varchar(255) NOT NULL,
+        `konten` TEXT NOT NULL,
         PRIMARY KEY (`uuid`)
       ) ROW_FORMAT=DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8
     ");

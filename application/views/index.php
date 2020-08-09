@@ -20,6 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <style type="text/css">
     a.btn:not([href]):not([tabindex]){color: white}
     .form-child .form-group.row > div {margin: 5px 0}
+    .nav-link.active {color: red !important}
   </style>
 </head>
 <body class="hold-transition layout-top-nav">

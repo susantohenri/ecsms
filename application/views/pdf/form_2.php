@@ -72,10 +72,12 @@
       .ml-3 {
          margin-left: 60px;
       }
-      .note{
+
+      .note {
          width: 500px;
       }
-      .mt{
+
+      .mt {
          margin-top: 100px;
       }
    </style>
@@ -164,7 +166,7 @@
             <p>Auditee, <br>
                Wakil Perusahaan Kontraktor</p>
             <p class="mt">
-            <pre>(                                         )</pre>
+               <pre>(                                         )</pre>
             </p>
          </div>
       </div>

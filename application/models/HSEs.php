@@ -14,35 +14,6 @@ class HSEs extends MY_Model
 		);
 		$this->form = array(
 			array(
-				'name' => 'project',
-				'label' => 'Project',
-				'options' => array(),
-				'width' => 2,
-				'attributes' => array(
-					array('data-autocomplete' => 'true'),
-					array('data-model' => 'Projects'),
-					array('data-field' => 'nama'),
-					array('disabled' => 'disabled')
-				)
-			),
-			array(
-				'name' => 'progress',
-				'label' => 'Progress',
-				'width' => 2,
-				'attributes' => array(
-					array('data-number' => 'true')
-				)
-			),
-			array(
-				'name' => 'lock',
-				'label' => 'Lock',
-				'width' => 2,
-				'options' => array(
-					array('text' => 'Ya', 'value' => 'Ya'),
-					array('text' => 'Tidak', 'value' => 'Tidak'),
-				)
-			),
-			array(
 				'name' => '',
 				'label' => '1. Data Proyek',
 				'type' => 'label'
@@ -208,6 +179,11 @@ class HSEs extends MY_Model
 				'label' => 'j. Daftar peralatan penanggulangan kebakaran',
 			),
 			array(
+				'name' => '',
+				'label' => '7. Transport Safety Management',
+				'type' => 'label'
+			),
+			array(
 				'name' => '7a',
 				'width' => 2,
 				'label' => 'a. Memiliki data kebutuhan kendaraan yang dioperasikan selama project',
@@ -226,6 +202,11 @@ class HSEs extends MY_Model
 				'name' => '7d',
 				'width' => 2,
 				'label' => 'd. Mempunyai checklist pemeriksaan kelayakan kendaraan',
+			),
+			array(
+				'name' => '',
+				'label' => '8. Prosedur Operasi & Standard Keselamatan',
+				'type' => 'label'
 			),
 			array(
 				'name' => '8a',
@@ -253,6 +234,11 @@ class HSEs extends MY_Model
 				'label' => 'e. Daftar standar yang digunakan',
 			),
 			array(
+				'name' => '',
+				'label' => '9. Kompetensi Pekerja yang Terlibat',
+				'type' => 'label'
+			),
+			array(
 				'name' => '9a',
 				'width' => 2,
 				'label' => 'a. Penanggung jawab HSE mempunyai sertifikat nasional  atau internasional yang masih berlaku',
@@ -271,6 +257,11 @@ class HSEs extends MY_Model
 				'name' => '9d',
 				'width' => 2,
 				'label' => 'd. Terdapat program pelatihan pekerja',
+			),
+			array(
+				'name' => '',
+				'label' => '10. HSE Audit / Inspection',
+				'type' => 'label'
 			),
 			array(
 				'name' => '10a',
@@ -293,6 +284,11 @@ class HSEs extends MY_Model
 				'label' => 'd. Program audit',
 			),
 			array(
+				'name' => '',
+				'label' => '11. Prosedur Pelaporan & Investigasi Kecelakaan',
+				'type' => 'label'
+			),
+			array(
 				'name' => '11a',
 				'width' => 2,
 				'label' => 'a. Prosedur pelaporan insiden sesuai organisasi dan lokasi project yang ditandatangani oleh pimpinan perusahaan / manager project',
@@ -311,6 +307,11 @@ class HSEs extends MY_Model
 				'name' => '11d',
 				'width' => 2,
 				'label' => 'd. Prosedur sesuai dengan kondisi di lapangan',
+			),
+			array(
+				'name' => '',
+				'label' => '12. Emergency Response & Procedure',
+				'type' => 'label'
 			),
 			array(
 				'name' => '12a',
@@ -333,6 +334,11 @@ class HSEs extends MY_Model
 				'label' => 'd. Data peralatan P3K sesuai standar',
 			),
 			array(
+				'name' => '',
+				'label' => '13. HSE Communication',
+				'type' => 'label'
+			),
+			array(
 				'name' => '13a',
 				'width' => 2,
 				'label' => 'a. Terdapat program komunikasi HSE',
@@ -341,6 +347,11 @@ class HSEs extends MY_Model
 				'name' => '13b',
 				'width' => 2,
 				'label' => 'b. Item program sesuai KPI',
+			),
+			array(
+				'name' => '',
+				'label' => '14. Pengelolaan Sub Kontraktor',
+				'type' => 'label'
 			),
 			array(
 				'name' => '14a',
@@ -356,6 +367,11 @@ class HSEs extends MY_Model
 				'name' => '14c',
 				'width' => 2,
 				'label' => 'c. Aspek HSE Sub Kontraktor',
+			),
+			array(
+				'name' => '',
+				'label' => '15. Pemeriksaan Kesehatan',
+				'type' => 'label'
 			),
 			array(
 				'name' => '15a',
@@ -385,34 +401,22 @@ class HSEs extends MY_Model
 		return parent::dt();
 	}
 
-	function create($data)
-	{
-		if (!isset($data['lock'])) $data['lock'] = 0;
-		return parent::create($data);
-	}
-
 	function getForm($uuid = false, $isSubform = false)
 	{
 		$form = parent::getForm($uuid, $isSubform);
-		$form = array_filter($form, function ($field) {
-			return !in_array($field['name'], array('progress', 'lock'));
-		});
 		$form = array_map(function ($field) use ($uuid) {
-			if (in_array($field['name'], array('project', 'vendor', 'uuid'))) {
-			} else {
-				$field['show_upload_button'] = true;
-				$field['upload_url'] = site_url("HSE/upload/{$uuid}/{$field['name']}");
+			$field['show_upload_button'] = true;
+			$field['upload_url'] = site_url("HSE/upload/{$uuid}/{$field['name']}");
 
-				$field['show_preview_button'] = false;
-				$field['show_score'] = false;
+			$field['show_preview_button'] = false;
+			$field['show_score'] = false;
 
-				$pdf = "upload/hse-{$uuid}-{$field['name']}.pdf";
-				if (file_exists($pdf)) {
-					$field['show_preview_button'] = true;
-					$field['show_score'] = true;
-					$pdf = base_url($pdf);
-					$field['onclick'] = "document.getElementById(`pdf_viewer_modal_body`).innerHTML=`<embed src='{$pdf}' width='800px' height='600px' />`";
-				}
+			$pdf = "upload/HSE-{$uuid}-{$field['name']}.pdf";
+			if (file_exists($pdf)) {
+				$field['show_preview_button'] = true;
+				$field['show_score'] = $this->session->userdata('vendor') ? false : true;
+				$pdf = base_url($pdf);
+				$field['onclick'] = "document.getElementById(`pdf_viewer_modal_body`).innerHTML=`<embed src='{$pdf}' width='800px' height='600px' />`";
 			}
 			return $field;
 		}, $form);
@@ -436,7 +440,7 @@ class HSEs extends MY_Model
 	function upload($uuid, $input)
 	{
 		$location = 'upload';
-		$file_name= "HSE-{$uuid}-{$input}.pdf";
+		$file_name = "HSE-{$uuid}-{$input}.pdf";
 		$address = "{$location}/{$file_name}";
 		if (file_exists($address)) unlink($address);
 		move_uploaded_file($_FILES['doc']['tmp_name'], $address);
@@ -444,5 +448,20 @@ class HSEs extends MY_Model
 			'uuid' => $uuid,
 			$input => 0
 		));
+	}
+
+	function getProjectName($uuid)
+	{
+		$result = $this->db
+			->select('project.nama')
+			->join('project', 'hse.project = project.uuid', 'left')
+			->get_where($this->table, array('hse.uuid' => $uuid))
+			->row_array();
+		return $result['nama'];
+	}
+
+	function download($uuid)
+	{
+		return array();
 	}
 }

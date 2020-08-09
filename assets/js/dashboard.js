@@ -31,7 +31,7 @@ function drawProjects() {
                             ${project.pja_link ? '<a href="' +project.pja_link+  '">&nbsp;</a>' : ''}
                         </div>
                         <div class="progress-bar border-default" role="progressbar" style="width:17%">
-                            ${project.lapbul_link ? '<a href="' +project.lapbul_link+  '">&nbsp;</a>' : ''}
+                            ${project.lapbul_link ? '<a href="' +project.lapbul_link+  '">' +project.lapbul_text+  '</a>' : ''}
                         </div>
                         <div class="progress-bar border-secondary" role="progressbar" style="width:17%">
                             ${project.wip_link ? '<a href="' +project.wip_link+  '">&nbsp;</a>' : ''}
