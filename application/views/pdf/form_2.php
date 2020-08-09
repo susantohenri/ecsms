@@ -72,10 +72,12 @@
       .ml-3 {
          margin-left: 60px;
       }
-      .note{
+
+      .note {
          width: 500px;
       }
-      .mt{
+
+      .mt {
          margin-top: 100px;
       }
    </style>
@@ -110,7 +112,7 @@
    <table class="table">
       <tr>
          <th class="bg-blue"> NO </th>
-         <th class="bg-blue" colspan="4"> POKOK BAHASAN </th>
+         <th class="bg-blue"> POKOK BAHASAN </th>
          <th class="bg-blue"> Ya </th>
          <th class="bg-blue"> Tidak </th>
          <th class="bg-blue"> Not Need </th>
@@ -118,11 +120,10 @@
       </tr>
       <tr>
          <td rowspan="2"> 1 </td>
-         <td colspan="8" class="bg-gray"> Work Plan (Rencana Kerja) </td>
+         <td colspan="5" class="bg-gray"> Work Plan (Rencana Kerja) </td>
       </tr>
       <tr>
-         <td> a </td>
-         <td colspan="3"> Apakah program HSE sudah masuk dalam rencana kerja kontraktor pelaksana tersebut? </td>
+         <td>a. Apakah program HSE sudah masuk dalam rencana kerja kontraktor pelaksana tersebut? </td>
          <td> </td>
          <td> </td>
          <td> </td>
@@ -130,11 +131,10 @@
       </tr>
       <tr>
          <td rowspan="2"> 2 </td>
-         <td colspan="8" class="bg-gray"> Potensi Bahaya </td>
+         <td colspan="5" class="bg-gray"> Potensi Bahaya </td>
       </tr>
       <tr>
-         <td> a </td>
-         <td colspan="3"> Apakah Kontraktor telah menyusun JHSEA terhadap seluruh tahapan pekerjaan (mulai dari tahapan
+         <td>a. Apakah Kontraktor telah menyusun JHSEA terhadap seluruh tahapan pekerjaan (mulai dari tahapan
             mobilisasi hingga demobilisasi) yang akan dilaksanakan? </td>
          <td> </td>
          <td> </td>
@@ -143,15 +143,13 @@
       </tr>
       <tr>
          <td></td>
-         <td colspan="3">TOTAL NILAI</td>
-         <td></td>
+         <td>TOTAL NILAI</td>
          <td></td>
          <td></td>
       </tr>
       <tr>
          <td></td>
-         <td colspan="3">% TOTAL NILAI</td>
-         <td></td>
+         <td>% TOTAL NILAI</td>
          <td colspan="2"></td>
       </tr>
    </table>
@@ -168,7 +166,7 @@
             <p>Auditee, <br>
                Wakil Perusahaan Kontraktor</p>
             <p class="mt">
-            <pre>(                                         )</pre>
+               <pre>(                                         )</pre>
             </p>
          </div>
       </div>
