@@ -38,4 +38,12 @@ class Project extends MY_Controller
 		$result = $this->Projects->dashboard();
 		echo json_encode($result);
 	}
+
+	function FE($uuid)
+	{
+		$vars = array();
+		$vars['page_name'] = 'forms/fe';
+		$vars['uuid'] = $uuid;
+		$this->loadview('index', $vars);
+	}
 }
