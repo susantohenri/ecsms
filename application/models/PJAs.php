@@ -67,7 +67,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor telah menyusun JHSEA terhadap seluruh tahapan pekerjaan (mulai dari tahapan mobilisasi hingga demobilisasi) yang akan dilaksanakan?',
+				'label' => 'a. Apakah Kontraktor telah menyusun JHSEA terhadap seluruh tahapan pekerjaan (mulai dari tahapan mobilisasi hingga demobilisasi) yang akan dilaksanakan?',
 			),
 			array(
 				'name' => '2a_isya',
@@ -86,7 +86,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah kontraktor telah mengidentifikasi dan menganalisa seluruh pekerjaan yang memiliki potensi bahaya kritis?',
+				'label' => 'b. Apakah kontraktor telah mengidentifikasi dan menganalisa seluruh pekerjaan yang memiliki potensi bahaya kritis?',
 			),
 			array(
 				'name' => '2b_isya',
@@ -105,7 +105,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah kontraktor telah memiliki prosedur operasi (terkait dengan potensi bahaya kritis yang teridentifikasi) dan mengkomunikasikannya sebelum pelaksanaan pekerjaan?',
+				'label' => 'c. Apakah kontraktor telah memiliki prosedur operasi (terkait dengan potensi bahaya kritis yang teridentifikasi) dan mengkomunikasikannya sebelum pelaksanaan pekerjaan?',
 			),
 			array(
 				'name' => '2c_isya',
@@ -124,7 +124,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor memiliki system untuk mengawasi adanya potensi bahaya selama dalam pelaksanaan pekerjaan kontrak (unsafe act & unsafe condition)?',
+				'label' => 'd. Apakah Kontraktor memiliki system untuk mengawasi adanya potensi bahaya selama dalam pelaksanaan pekerjaan kontrak (unsafe act & unsafe condition)?',
 			),
 			array(
 				'name' => '2d_isya',
@@ -148,7 +148,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah pekerja Kontraktor telah memahami prosedur keadaan darurat yang berlaku di lokasi pekerjaan kontrak tersebut?',
+				'label' => 'a. Apakah pekerja Kontraktor telah memahami prosedur keadaan darurat yang berlaku di lokasi pekerjaan kontrak tersebut?',
 			),
 			array(
 				'name' => '3a_isya',
@@ -167,7 +167,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah pekerja kontraktor memahami system pengkomunikasian / pelaporan bila terjadi keadaan darurat?',
+				'label' => 'b. Apakah pekerja kontraktor memahami system pengkomunikasian / pelaporan bila terjadi keadaan darurat?',
 			),
 			array(
 				'name' => '3b_isya',
@@ -186,7 +186,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah kontraktor memiliki Petugas P3K (First Aider) yang terlatih untuk Pertolongan Pertama?',
+				'label' => 'c. Apakah kontraktor memiliki Petugas P3K (First Aider) yang terlatih untuk Pertolongan Pertama?',
 			),
 			array(
 				'name' => '3c_isya',
@@ -205,7 +205,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah kontraktor telah menyediakan perlengkapan P3K yang sesuai untuk diletakan di lokasi kerja?',
+				'label' => 'd. Apakah kontraktor telah menyediakan perlengkapan P3K yang sesuai untuk diletakan di lokasi kerja?',
 			),
 			array(
 				'name' => '3d_isya',
@@ -224,7 +224,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah kontraktor telah memiliki emergency call number bila terjadi kondisi darurat?',
+				'label' => 'e. Apakah kontraktor telah memiliki emergency call number bila terjadi kondisi darurat?',
 			),
 			array(
 				'name' => '3e_isya',
@@ -243,7 +243,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah kontraktor telah menyediakan dokter / Tim Medis?',
+				'label' => 'f. Apakah kontraktor telah menyediakan dokter / Tim Medis?',
 			),
 			array(
 				'name' => '3f_isya',
@@ -257,12 +257,17 @@ class PJAs extends MY_Model
 				'type' => 'text'
 			),
 			array(
+				'name' => '',
+				'label' => '4. HSE Communication & Promotion',
+				'type' => 'label'
+			),
+			array(
 				'name' => '4a_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah kontraktor telah melaksanakan Pre Job HSE meeting sebelum pelaksanaan pekerjaan?',
+				'label' => 'a. Apakah kontraktor telah melaksanakan Pre Job HSE meeting sebelum pelaksanaan pekerjaan?',
 			),
 			array(
 				'name' => '4a_isya',
@@ -281,7 +286,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor telah memiliki program HSE meeting selama pelaksanaan pekerjaan?',
+				'label' => 'b. Apakah Kontraktor telah memiliki program HSE meeting selama pelaksanaan pekerjaan?',
 			),
 			array(
 				'name' => '4b_isya',
@@ -300,7 +305,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor telah memiliki program HSE talk / briefing selama pelaksanaan pekerjaan?',
+				'label' => 'c. Apakah Kontraktor telah memiliki program HSE talk / briefing selama pelaksanaan pekerjaan?',
 			),
 			array(
 				'name' => '4c_isya',
@@ -319,7 +324,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor telah menyiapkan HSE sign / poster / banner/ spanduk terkait dengan pelaksanaan pekerjaan kontrak?',
+				'label' => 'd. Apakah Kontraktor telah menyiapkan HSE sign / poster / banner/ spanduk terkait dengan pelaksanaan pekerjaan kontrak?',
 			),
 			array(
 				'name' => '4d_isya',
@@ -338,7 +343,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah kontraktor memiliki system reward / punishment terhadap pekerja terkait dengan implementasi aspek HSE?',
+				'label' => 'e. Apakah kontraktor memiliki system reward / punishment terhadap pekerja terkait dengan implementasi aspek HSE?',
 			),
 			array(
 				'name' => '4e_isya',
@@ -352,12 +357,17 @@ class PJAs extends MY_Model
 				'type' => 'text'
 			),
 			array(
+				'name' => '',
+				'label' => '5. Perizinan & Kepatuhan Regulasi',
+				'type' => 'label'
+			),
+			array(
 				'name' => '5a_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor sudah memiliki surat ijin kerja aman sebelum pelaksanaan pekerjaan?',
+				'label' => 'a. Apakah Kontraktor sudah memiliki surat ijin kerja aman sebelum pelaksanaan pekerjaan?',
 			),
 			array(
 				'name' => '5a_isya',
@@ -376,7 +386,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah peralatan yang akan digunakan telah disertifikasi (apabila secara regulasi disyaratkan) dan masih berlaku selama pelaksanaan pekerjaan?',
+				'label' => 'b. Apakah peralatan yang akan digunakan telah disertifikasi (apabila secara regulasi disyaratkan) dan masih berlaku selama pelaksanaan pekerjaan?',
 			),
 			array(
 				'name' => '5b_isya',
@@ -395,7 +405,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah ijin dari institusi / badan terkait telah dipenuhi sebelum pelaksanaan pekerjaan?',
+				'label' => 'c. Apakah ijin dari institusi / badan terkait telah dipenuhi sebelum pelaksanaan pekerjaan?',
 			),
 			array(
 				'name' => '5c_isya',
@@ -414,7 +424,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah pekerja kontraktor telah memahami peraturan dan ketentuan aspek HSE yang berlaku dilokasi pelaksanaan pekerjaan kontrak?',
+				'label' => 'd. Apakah pekerja kontraktor telah memahami peraturan dan ketentuan aspek HSE yang berlaku dilokasi pelaksanaan pekerjaan kontrak?',
 			),
 			array(
 				'name' => '5d_isya',
@@ -428,12 +438,17 @@ class PJAs extends MY_Model
 				'type' => 'text'
 			),
 			array(
+				'name' => '',
+				'label' => '6. Inspeksi dan atau Audit HSE',
+				'type' => 'label'
+			),
+			array(
 				'name' => '6a_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor sudah melaksanakan inspeksi dan atau audit HSE sebelum pelaksanaan pekerjaan?',
+				'label' => 'a. Apakah Kontraktor sudah melaksanakan inspeksi dan atau audit HSE sebelum pelaksanaan pekerjaan?',
 			),
 			array(
 				'name' => '6a_isya',
@@ -452,7 +467,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor memiliki program inspeksi HSE rutin dan atau audit HSE selama pelaksanaan pekerjaan?',
+				'label' => 'b. Apakah Kontraktor memiliki program inspeksi HSE rutin dan atau audit HSE selama pelaksanaan pekerjaan?',
 			),
 			array(
 				'name' => '6b_isya',
@@ -471,7 +486,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor memiliki program inspeksi Tim Management Kontraktor terhadap aspek HSE selama pelaksanaan pekerjaan?',
+				'label' => 'c. Apakah Kontraktor memiliki program inspeksi Tim Management Kontraktor terhadap aspek HSE selama pelaksanaan pekerjaan?',
 			),
 			array(
 				'name' => '6c_isya',
@@ -490,7 +505,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor telah menyusun Check list inspeksi HSE untuk pengawasan internal selama pelaksanaan pekerjaan kontrak?',
+				'label' => 'd. Apakah Kontraktor telah menyusun Check list inspeksi HSE untuk pengawasan internal selama pelaksanaan pekerjaan kontrak?',
 			),
 			array(
 				'name' => '6d_isya',
@@ -504,12 +519,17 @@ class PJAs extends MY_Model
 				'type' => 'text'
 			),
 			array(
+				'name' => '',
+				'label' => '7. Tindaklanjut Temuan HSE',
+				'type' => 'label'
+			),
+			array(
 				'name' => '7a_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah hasil inspeksi dan atau audit sebelum pelaksanaan pekerjaan telah ditindaklanjuti oleh Kontraktor?',
+				'label' => 'a. Apakah hasil inspeksi dan atau audit sebelum pelaksanaan pekerjaan telah ditindaklanjuti oleh Kontraktor?',
 			),
 			array(
 				'name' => '7a_isya',
@@ -528,7 +548,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah tindak lanjut hasil inspeksi dan atau audit tersebut dimonitor dan dikontrol tindaklanjutnya?',
+				'label' => 'b. Apakah tindak lanjut hasil inspeksi dan atau audit tersebut dimonitor dan dikontrol tindaklanjutnya?',
 			),
 			array(
 				'name' => '7b_isya',
@@ -542,12 +562,17 @@ class PJAs extends MY_Model
 				'type' => 'text'
 			),
 			array(
+				'name' => '',
+				'label' => '8. Training & Kompetensi HSE',
+				'type' => 'label'
+			),
+			array(
 				'name' => '8a_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor telah melaksanakan Induction Training terhadap pekerjanya sebelum melaksanakan pekerjaan?',
+				'label' => 'a. Apakah Kontraktor telah melaksanakan Induction Training terhadap pekerjanya sebelum melaksanakan pekerjaan?',
 			),
 			array(
 				'name' => '8a_isya',
@@ -566,7 +591,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah evaluasi terhadap tingkat pemahaman pekerja terhadap materi Inductiopn Training yang diberikan telah dilakukan?',
+				'label' => 'b. Apakah evaluasi terhadap tingkat pemahaman pekerja terhadap materi Inductiopn Training yang diberikan telah dilakukan?',
 			),
 			array(
 				'name' => '8b_isya',
@@ -585,7 +610,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor telah menyediakan pekerja yang bersertifikasi untuk melaksanakan pekerjaan yang secara regulasi disyaratkan untuk bersertifikasi?',
+				'label' => 'c. Apakah Kontraktor telah menyediakan pekerja yang bersertifikasi untuk melaksanakan pekerjaan yang secara regulasi disyaratkan untuk bersertifikasi?',
 			),
 			array(
 				'name' => '8c_isya',
@@ -604,7 +629,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah kontraktor memiliki program pelatihan HSE terhadap pekerjanya?',
+				'label' => 'd. Apakah kontraktor memiliki program pelatihan HSE terhadap pekerjanya?',
 			),
 			array(
 				'name' => '8d_isya',
@@ -623,7 +648,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah materi dalam program pelatihan HSE tersebut meliputi namun tidak terbatas pada :<ul><li>Penjelasan Bahaya dan mitigasi pekerjaan yang akan dilaksanakan?</li><li>Pertolongan pertama dan pacu jantung (CPR)?</li><li>Cara memadamkan api?</li><li>Pengelolaan limbah / sampah hasil kerja?</li><li>Tanggap darurat?</li><li>Komitmen aspek HSE terhadap pekerjaan tersebut?</li><li>Kebersihan & kerapihan lokasi kerja?</li><li>MSDS material yang digunakan?</li><li>Petunjuk kerja aman terhadap pekerjaan critical yang dilaksanakan (contoh : working at height, confined space, welding, radiography, excavation, pekerjaan didalam air, electrical, dll ?</li><li>HSE Regulation?</li><li>Penggunaan PPE / APD?</li></ul>',
+				'label' => 'e. Apakah materi dalam program pelatihan HSE tersebut meliputi namun tidak terbatas pada :<ul><li>Penjelasan Bahaya dan mitigasi pekerjaan yang akan dilaksanakan?</li><li>Pertolongan pertama dan pacu jantung (CPR)?</li><li>Cara memadamkan api?</li><li>Pengelolaan limbah / sampah hasil kerja?</li><li>Tanggap darurat?</li><li>Komitmen aspek HSE terhadap pekerjaan tersebut?</li><li>Kebersihan & kerapihan lokasi kerja?</li><li>MSDS material yang digunakan?</li><li>Petunjuk kerja aman terhadap pekerjaan critical yang dilaksanakan (contoh : working at height, confined space, welding, radiography, excavation, pekerjaan didalam air, electrical, dll ?</li><li>HSE Regulation?</li><li>Penggunaan PPE / APD?</li></ul>',
 			),
 			array(
 				'name' => '8e_isya',
@@ -642,7 +667,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor memiliki system evaluasi terhadap tingkat pemahaman pekerja kontraktor terkait materi training HSE yang diberikan?',
+				'label' => 'f. Apakah Kontraktor memiliki system evaluasi terhadap tingkat pemahaman pekerja kontraktor terkait materi training HSE yang diberikan?',
 			),
 			array(
 				'name' => '8f_isya',
@@ -661,7 +686,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah seluruh pekerja Kontraktor yang akan melaksanakan pekerjaan sudah dinyatakan sehat berdasarkan hasil Medical Check Up (untuk pekerjaan critical yang mensyaratkan kondisi fit) atau pemeriksaan kesehatan?',
+				'label' => 'g. Apakah seluruh pekerja Kontraktor yang akan melaksanakan pekerjaan sudah dinyatakan sehat berdasarkan hasil Medical Check Up (untuk pekerjaan critical yang mensyaratkan kondisi fit) atau pemeriksaan kesehatan?',
 			),
 			array(
 				'name' => '8g_isya',
@@ -675,12 +700,17 @@ class PJAs extends MY_Model
 				'type' => 'text'
 			),
 			array(
+				'name' => '',
+				'label' => '9. Komitmen Manajemen Kontraktor',
+				'type' => 'label'
+			),
+			array(
 				'name' => '9a_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor telah menyusun HSE performance indicator (KPI HSE Kontraktor) terhadap pekerjaan tersebut?',
+				'label' => 'a. Apakah Kontraktor telah menyusun HSE performance indicator (KPI HSE Kontraktor) terhadap pekerjaan tersebut?',
 			),
 			array(
 				'name' => '9a_isya',
@@ -699,7 +729,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah program dan kinerja HSE yang telah disusun tersebut menjadi bagian dalam pelaporan kinerja internal Kontraktor?',
+				'label' => 'b. Apakah program dan kinerja HSE yang telah disusun tersebut menjadi bagian dalam pelaporan kinerja internal Kontraktor?',
 			),
 			array(
 				'name' => '9b_isya',
@@ -718,7 +748,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah kontraktor memiliki system untuk mengevaluasi pencapaian kinerja HSE Kontraktor serta melakukan upaya-upaya perbaikan?',
+				'label' => 'c. Apakah kontraktor memiliki system untuk mengevaluasi pencapaian kinerja HSE Kontraktor serta melakukan upaya-upaya perbaikan?',
 			),
 			array(
 				'name' => '9c_isya',
@@ -737,7 +767,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah HSE objective & policy kontraktor terhadap pekerjaan tersebut telah tersedia dan dikomunikasikan kepada seluruh pekerja kontraktor terkait?',
+				'label' => 'd. Apakah HSE objective & policy kontraktor terhadap pekerjaan tersebut telah tersedia dan dikomunikasikan kepada seluruh pekerja kontraktor terkait?',
 			),
 			array(
 				'name' => '9d_isya',
@@ -756,7 +786,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor telah menyusun struktur organisasi project yang dilengkapi dengan personil yang menjabat beserta tugas dan tanggungjawabnya dalam penerapan aspek HSE?',
+				'label' => 'e. Apakah Kontraktor telah menyusun struktur organisasi project yang dilengkapi dengan personil yang menjabat beserta tugas dan tanggungjawabnya dalam penerapan aspek HSE?',
 			),
 			array(
 				'name' => '9e_isya',
@@ -770,12 +800,17 @@ class PJAs extends MY_Model
 				'type' => 'text'
 			),
 			array(
+				'name' => '',
+				'label' => '10. Peralatan/Material',
+				'type' => 'label'
+			),
+			array(
 				'name' => '10a_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah semua peralatan Kontraktor yang akan dipakai telah memenuhi criteria kelayakan fungsi?',
+				'label' => 'a. Apakah semua peralatan Kontraktor yang akan dipakai telah memenuhi criteria kelayakan fungsi?',
 			),
 			array(
 				'name' => '10a_isya',
@@ -794,7 +829,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah kontraktor telah menyediakan peralatan bantu untuk handling material dan prosedurnya telah tersedia?',
+				'label' => 'b. Apakah kontraktor telah menyediakan peralatan bantu untuk handling material dan prosedurnya telah tersedia?',
 			),
 			array(
 				'name' => '10b_isya',
@@ -813,7 +848,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah material / bahan yang digunakan telah memiliki MSDS (Material Safety Data Sheet) dan dikomunikasikan kepada pekerja terkait?',
+				'label' => 'c. Apakah material / bahan yang digunakan telah memiliki MSDS (Material Safety Data Sheet) dan dikomunikasikan kepada pekerja terkait?',
 			),
 			array(
 				'name' => '10c_isya',
@@ -832,7 +867,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah kontraktor telah memiliki prosedur pengoperasian peralatan terkait yang mengakomodir petunjuk kerja aman serta mengkomunikasikannya kepada pekerja?',
+				'label' => 'd. Apakah kontraktor telah memiliki prosedur pengoperasian peralatan terkait yang mengakomodir petunjuk kerja aman serta mengkomunikasikannya kepada pekerja?',
 			),
 			array(
 				'name' => '10d_isya',
@@ -851,7 +886,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor telah menyediakan peralatan untuk mengelola limbah / sampah hasil pekerjaan?',
+				'label' => 'e. Apakah Kontraktor telah menyediakan peralatan untuk mengelola limbah / sampah hasil pekerjaan?',
 			),
 			array(
 				'name' => '10e_isya',
@@ -870,7 +905,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor telah menyediakan APD / PPE yang dibutuhkan oleh pekerja dengan jumlah yang cukup?',
+				'label' => 'f. Apakah Kontraktor telah menyediakan APD / PPE yang dibutuhkan oleh pekerja dengan jumlah yang cukup?',
 			),
 			array(
 				'name' => '10f_isya',
@@ -884,12 +919,17 @@ class PJAs extends MY_Model
 				'type' => 'text'
 			),
 			array(
+				'name' => '',
+				'label' => '11. Pelaporan HSE',
+				'type' => 'label'
+			),
+			array(
 				'name' => '11a_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor memiliki prosedur pelaporan insiden, accident & investigasi?',
+				'label' => 'a. Apakah Kontraktor memiliki prosedur pelaporan insiden, accident & investigasi?',
 			),
 			array(
 				'name' => '11a_isya',
@@ -908,7 +948,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah Kontraktor memiliki program pelaporan kinerja HSE kepada pihak Pengawas Pertamina?',
+				'label' => 'b. Apakah Kontraktor memiliki program pelaporan kinerja HSE kepada pihak Pengawas Pertamina?',
 			),
 			array(
 				'name' => '11b_isya',
@@ -922,12 +962,17 @@ class PJAs extends MY_Model
 				'type' => 'text'
 			),
 			array(
+				'name' => '',
+				'label' => '12. Personil HSE Kontraktor',
+				'type' => 'label'
+			),
+			array(
 				'name' => '12a_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah personil dalam organisasi project Kontraktor (pimpinan tertinggi project hingga pelaksana project) telah memahami tugas dan tanggungjawabnya dalam penerapan aspek HSE?',
+				'label' => 'a. Apakah personil dalam organisasi project Kontraktor (pimpinan tertinggi project hingga pelaksana project) telah memahami tugas dan tanggungjawabnya dalam penerapan aspek HSE?',
 			),
 			array(
 				'name' => '12a_isya',
@@ -946,7 +991,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah personil pengawas HSE Kontraktor telah tersedia dengan jumlah yang cukup?',
+				'label' => 'b. Apakah personil pengawas HSE Kontraktor telah tersedia dengan jumlah yang cukup?',
 			),
 			array(
 				'name' => '12b_isya',
@@ -965,7 +1010,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah posisi personil HSE dalam struktur organisasi project Kontraktor memiliki bargaining position yang kuat dalam penerapan aspek HSE?',
+				'label' => 'c. Apakah posisi personil HSE dalam struktur organisasi project Kontraktor memiliki bargaining position yang kuat dalam penerapan aspek HSE?',
 			),
 			array(
 				'name' => '12c_isya',
@@ -984,7 +1029,7 @@ class PJAs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Apakah personil HSE telah memenuhi kompetensi minimum & memahami tanggung jawabnya?',
+				'label' => 'd. Apakah personil HSE telah memenuhi kompetensi minimum & memahami tanggung jawabnya?',
 			),
 			array(
 				'name' => '12d_isya',
