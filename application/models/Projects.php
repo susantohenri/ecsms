@@ -193,6 +193,10 @@ class Projects extends MY_Model
 			->select('wip.uuid wip_uuid', false)
 			->select('wip.progress wip_progress', false)
 			->join('wip', 'wip.project = project.uuid', 'left');
+		$this->db
+			->select('kpi.uuid kpi_uuid', false)
+			->select('kpi.progress kpi_progress', false)
+			->join('kpi', 'kpi.project = project.uuid', 'left');
 
 		$result = $this->db->get($this->table)->result();
 		// die($this->db->last_query());
@@ -207,6 +211,7 @@ class Projects extends MY_Model
 			if (strlen($record->pemenang) > 0) $record->pja_link = site_url("PJA/read/{$record->pja_uuid}");
 			if ($record->pja_progress > 0 && strlen($record->lapbul_uuid) > 0) $record->lapbul_link = site_url("LaporanBulanan/read/{$record->lapbul_uuid}");
 			if ('100 %' === $record->lapbul_text) $record->wip_link = site_url("WIP/read/{$record->wip_uuid}");
+			if ($record->wip_progress > 0) $record->kpi_link = site_url("KPI/read/{$record->kpi_uuid}");
 
 			return $record;
 		}, $result);

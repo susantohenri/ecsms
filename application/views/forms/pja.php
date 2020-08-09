@@ -1,5 +1,15 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/select2.min.css') ?>">
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap-datepicker.css') ?>">
+<style type="text/css">
+  .select2-container--default .select2-selection--single, .select2-selection .select2-selection--single {
+    height: 32px;
+    padding: 3px 12px;
+    font-size: .875rem;
+  }
+  .select2-container--default .select2-results__option {
+    font-size: .875rem;
+  }
+</style>
 <form id="form_pja" enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
   <div class="card card-danger card-outline">
     <div class="card-header text-right">
@@ -74,7 +84,7 @@
                   <?php endif ?>
                   <?php if (strpos($field['name'], '_note') > -1) : ?>
                     <div class="col-sm-3">
-                      <div class="input-group">
+                      <div class="input-group input-group-sm">
                         <div class="input-group-prepend">
                           <span class="input-group-text">Note</span>
                         </div>

@@ -1,25 +1,11 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/select2.min.css') ?>">
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap-datepicker.css') ?>">
-<style type="text/css">
-  .select2-container--default .select2-selection--single, .select2-selection .select2-selection--single {
-    height: 32px;
-    padding: 3px 12px;
-    font-size: .875rem;
-  }
-  .select2-container--default .select2-results__option {
-    font-size: .875rem;
-  }
-</style>
 <form id="form_wip" enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
   <div class="card card-danger card-outline">
     <div class="card-header text-right">
       <a class="btn btn-danger" href="<?= site_url("WIP/download/{$uuid}") ?>">
         <i class="fa fa-download"></i> &nbsp;
-        Report HSE Work Practice
-      </a>
-      <a class="btn btn-info" href="<?= site_url("WIP/download/{$uuid}") ?>">
-        <i class="fa fa-download"></i> &nbsp;
-        Report HSE Program
+        Download KPI
       </a>
       <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
         <a class="btn btn-success btn-save" data-toggle="modal" data-target="#wip_submit_confirm"><i class="fa fa-save"></i> &nbsp; Submit</a>
@@ -66,32 +52,43 @@
                 <?php break; ?>
               <?php
               default: ?>
-                <?php if (strpos($field['name'], '_isneed') > -1) : ?>
-                  <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
-                    <label style="padding-left: 25px; font-weight: 400" class="col-sm-3 control-label"><?= $field['label']  ?></label>
-                    <div class="col-sm-2">
-                      <select class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                        <?php foreach ($field['options'] as $opt) : ?>
-                          <option <?= $opt['value'] === $field['value'] || (is_array($field['value']) && in_array($opt['value'], $field['value'])) ? 'selected="selected"' : '' ?> value="<?= $opt['value'] ?>"><?= $opt['text'] ?></option>
-                        <?php endforeach ?>
-                      </select>
-                    </div>
-                  <?php endif ?>
-                  <?php if (strpos($field['name'], '_score') > -1) : ?>
+                <?php if (strpos($field['name'], '_target') > -1) : ?>
+                  <div class="form-group row" style="background-color: <?= $index % 4 !== 0 ? '#f9f9f9' : '#fff' ?>;">
+                    <label style="padding-left: 25px; font-weight: 400" class="col-sm-4 control-label"><?= $field['label']  ?></label>
                     <div class="col-sm-2">
                       <div class="input-group input-group-sm">
                         <div class="input-group-prepend">
-                          <span class="input-group-text"><?= $field['label'] ?></span>
+                          <span class="input-group-text">Target</span>
                         </div>
                         <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
                       </div>
                     </div>
                   <?php endif ?>
-                  <?php if (strpos($field['name'], '_note') > -1) : ?>
-                    <div class="col-sm-3">
+                  <?php if (strpos($field['name'], '_actual') > -1 && strpos($field['name'], '_score') < 1) : ?>
+                    <div class="col-sm-2">
                       <div class="input-group input-group-sm">
                         <div class="input-group-prepend">
-                          <span class="input-group-text">Note</span>
+                          <span class="input-group-text">Actual</span>
+                        </div>
+                        <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                      </div>
+                    </div>
+                  <?php endif ?>
+                  <?php if (strpos($field['name'], '_score_max') > -1) : ?>
+                    <div class="col-sm-2">
+                      <div class="input-group input-group-sm">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Score Max</span>
+                        </div>
+                        <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                      </div>
+                    </div>
+                  <?php endif ?>
+                  <?php if (strpos($field['name'], '_score_actual') > -1) : ?>
+                    <div class="col-sm-2">
+                      <div class="input-group input-group-sm">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Score Actual</span>
                         </div>
                         <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
                       </div>
