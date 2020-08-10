@@ -66,7 +66,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Kontraktor menyediakan APD bagi seluruh pekerja',
+				'label' => 'c. Kontraktor menyediakan APD bagi seluruh pekerja',
 			),
 			array(
 				'name' => '1c_score_max',
@@ -87,7 +87,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Jumlah APD telah memenuhi kebutuhan proteksi pekerja',
+				'label' => 'd. Jumlah APD telah memenuhi kebutuhan proteksi pekerja',
 			),
 			array(
 				'name' => '1d_score_max',
@@ -108,7 +108,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Dilakukan pemeriksaan & evaluasi APD maksimum sebulan sekali',
+				'label' => 'e. Dilakukan pemeriksaan & evaluasi APD maksimum sebulan sekali',
 			),
 			array(
 				'name' => '1e_score_max',
@@ -176,7 +176,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Memasang & melepaskan LOTO hanya dilakukan oleh pihak yang berwenang',
+				'label' => 'c. Memasang & melepaskan LOTO hanya dilakukan oleh pihak yang berwenang',
 			),
 			array(
 				'name' => '2c_score_max',
@@ -244,7 +244,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'HSE sign mudah dilihat oleh pekerja di lokasi tersebut',
+				'label' => 'c. HSE sign mudah dilihat oleh pekerja di lokasi tersebut',
 			),
 			array(
 				'name' => '3c_score_max',
@@ -258,6 +258,11 @@ class WIPs extends MY_Model
 				'name' => '3c_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '4. Pengawas HSE Kontraktor untuk project tersebut',
+				'type' => 'label'
 			),
 			array(
 				'name' => '4a_isneed',
@@ -307,7 +312,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Memahami tugas dan tanggung jawabnya sebagai pengawas HSE',
+				'label' => 'c. Memahami tugas dan tanggung jawabnya sebagai pengawas HSE',
 			),
 			array(
 				'name' => '4c_score_max',
@@ -321,6 +326,11 @@ class WIPs extends MY_Model
 				'name' => '4c_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '5. Terdapat pengawas pekerjaan dari kontraktor',
+				'type' => 'label'
 			),
 			array(
 				'name' => '5a_isneed',
@@ -370,7 +380,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Memahami tugas dan tanggung jawabnya sebagai pengawas pekerjaan',
+				'label' => 'c. Memahami tugas dan tanggung jawabnya sebagai pengawas pekerjaan',
 			),
 			array(
 				'name' => '5c_score_max',
@@ -384,6 +394,11 @@ class WIPs extends MY_Model
 				'name' => '5c_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '6. Prosedur keadaan darurat di lokasi pekerjaan',
+				'type' => 'label'
 			),
 			array(
 				'name' => '6a_isneed',
@@ -433,7 +448,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Jalur evakuasi telah tersedia & jelas',
+				'label' => 'c. Jalur evakuasi telah tersedia & jelas',
 			),
 			array(
 				'name' => '6c_score_max',
@@ -454,7 +469,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Alarm keadaan darurat telah tersedia & berfungsi dengan baik',
+				'label' => 'd. Alarm keadaan darurat telah tersedia & berfungsi dengan baik',
 			),
 			array(
 				'name' => '6d_score_max',
@@ -468,6 +483,11 @@ class WIPs extends MY_Model
 				'name' => '6d_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '7. Fire Protection & Detection System',
+				'type' => 'label'
 			),
 			array(
 				'name' => '7a_isneed',
@@ -517,7 +537,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tersedia Fire detection dilokasi kerja',
+				'label' => 'c. Tersedia Fire detection dilokasi kerja',
 			),
 			array(
 				'name' => '7c_score_max',
@@ -538,7 +558,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Dilakukan pemeriksaan & pengetesan performance Fire Protection secara rutin',
+				'label' => 'd. Dilakukan pemeriksaan & pengetesan performance Fire Protection secara rutin',
 			),
 			array(
 				'name' => '7d_score_max',
@@ -559,7 +579,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Pekerja mampu menggunakan fire protection',
+				'label' => 'e. Pekerja mampu menggunakan fire protection',
 			),
 			array(
 				'name' => '7e_score_max',
@@ -573,6 +593,11 @@ class WIPs extends MY_Model
 				'name' => '7e_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '8. Penanganan kecelakaan, sakit & meninggal',
+				'type' => 'label'
 			),
 			array(
 				'name' => '8a_isneed',
@@ -622,7 +647,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Terdapat personil terlatih sebagai petugas P3K',
+				'label' => 'c. Terdapat personil terlatih sebagai petugas P3K',
 			),
 			array(
 				'name' => '8c_score_max',
@@ -643,7 +668,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Seluruh pekerja telah diasuransikan / jamsostek',
+				'label' => 'd. Seluruh pekerja telah diasuransikan / jamsostek',
 			),
 			array(
 				'name' => '8d_score_max',
@@ -664,7 +689,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Memiliki daftar lokasi Puskesmas / RS terdekat',
+				'label' => 'e. Memiliki daftar lokasi Puskesmas / RS terdekat',
 			),
 			array(
 				'name' => '8e_score_max',
@@ -685,7 +710,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Menyediakan fasilitas kesehatan / klinik',
+				'label' => 'f. Menyediakan fasilitas kesehatan / klinik',
 			),
 			array(
 				'name' => '8f_score_max',
@@ -699,6 +724,11 @@ class WIPs extends MY_Model
 				'name' => '8f_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '9. Pengelolaan & Penanganan limbah B3',
+				'type' => 'label'
 			),
 			array(
 				'name' => '9a_isneed',
@@ -748,7 +778,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Limbah B3 disimpan maksimum 90 hari',
+				'label' => 'c. Limbah B3 disimpan maksimum 90 hari',
 			),
 			array(
 				'name' => '9c_score_max',
@@ -769,7 +799,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tempat penampungan limbah B3 dalam kondisi yang baik <br>(tidak pecah/berlubang) dan terhindar dari masuknya air',
+				'label' => 'd. Tempat penampungan limbah B3 dalam kondisi yang baik <br>(tidak pecah/berlubang) dan terhindar dari masuknya air',
 			),
 			array(
 				'name' => '9d_score_max',
@@ -790,7 +820,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tersedia peralatan untuk penanggulangan & penanganan tumpahan limbah B3 di unit',
+				'label' => 'e. Tersedia peralatan untuk penanggulangan & penanganan tumpahan limbah B3 di unit',
 			),
 			array(
 				'name' => '9e_score_max',
@@ -811,7 +841,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Prosedur penanggulangan dan penanganan tumpahan limbah B3 telah dipahami oleh pekerja',
+				'label' => 'f. Prosedur penanggulangan dan penanganan tumpahan limbah B3 telah dipahami oleh pekerja',
 			),
 			array(
 				'name' => '9f_score_max',
@@ -832,7 +862,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Memiliki program untuk meminimalisir limbah B3',
+				'label' => 'g. Memiliki program untuk meminimalisir limbah B3',
 			),
 			array(
 				'name' => '9g_score_max',
@@ -853,7 +883,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Semua limbah yang dibuang telah diidentifikasi serta diregister',
+				'label' => 'h. Semua limbah yang dibuang telah diidentifikasi serta diregister',
 			),
 			array(
 				'name' => '9h_score_max',
@@ -867,6 +897,11 @@ class WIPs extends MY_Model
 				'name' => '9h_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '10. SIKA untuk pekerjaan critical',
+				'type' => 'label'
 			),
 			array(
 				'name' => '10a_isneed',
@@ -916,7 +951,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Dilakukan pengetesan/pemeriksaan terlebih dahulu sebelum SIKA diterbitkan',
+				'label' => 'c. Dilakukan pengetesan/pemeriksaan terlebih dahulu sebelum SIKA diterbitkan',
 			),
 			array(
 				'name' => '10c_score_max',
@@ -937,7 +972,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Bahaya dan rekomendasi SIKA telah dikomunikasikan ke pekerja yang terkait',
+				'label' => 'd. Bahaya dan rekomendasi SIKA telah dikomunikasikan ke pekerja yang terkait',
 			),
 			array(
 				'name' => '10d_score_max',
@@ -951,6 +986,11 @@ class WIPs extends MY_Model
 				'name' => '10d_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '11. Kebersihan & kerapihan lokasi kerja',
+				'type' => 'label'
 			),
 			array(
 				'name' => '11a_isneed',
@@ -1000,7 +1040,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Sarana & jalur mobilisasi serta evakuasi tidak terhalang',
+				'label' => 'c. Sarana & jalur mobilisasi serta evakuasi tidak terhalang',
 			),
 			array(
 				'name' => '11c_score_max',
@@ -1021,7 +1061,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Menjaga kebersihan lokasi kerja',
+				'label' => 'd. Menjaga kebersihan lokasi kerja',
 			),
 			array(
 				'name' => '11d_score_max',
@@ -1042,7 +1082,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tidak ada bahan berbahaya & beracun yang berserakan dilokasi jalur mobilisasi',
+				'label' => 'e. Tidak ada bahan berbahaya & beracun yang berserakan dilokasi jalur mobilisasi',
 			),
 			array(
 				'name' => '11e_score_max',
@@ -1056,6 +1096,11 @@ class WIPs extends MY_Model
 				'name' => '11e_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '12. Pengelolaan sampah/material bekas',
+				'type' => 'label'
 			),
 			array(
 				'name' => '12a_isneed',
@@ -1105,7 +1150,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tempat penampungan limbah dalam kondisi yang baik (tidak bocor / retak / rusak)',
+				'label' => 'c. Tempat penampungan limbah dalam kondisi yang baik (tidak bocor / retak / rusak)',
 			),
 			array(
 				'name' => '12c_score_max',
@@ -1119,6 +1164,11 @@ class WIPs extends MY_Model
 				'name' => '12c_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '13. Keselamatan terhadap paparan material',
+				'type' => 'label'
 			),
 			array(
 				'name' => '13a_isneed',
@@ -1168,7 +1218,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'MSDS material yang digunakan telah dipahami pekerja',
+				'label' => 'c. MSDS material yang digunakan telah dipahami pekerja',
 			),
 			array(
 				'name' => '13c_score_max',
@@ -1182,6 +1232,11 @@ class WIPs extends MY_Model
 				'name' => '13c_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '14. ',
+				'type' => 'label'
 			),
 			array(
 				'name' => '14a_isneed',
@@ -1205,6 +1260,11 @@ class WIPs extends MY_Model
 				'label' => ' ',
 			),
 			array(
+				'name' => '',
+				'label' => '15. ',
+				'type' => 'label'
+			),
+			array(
 				'name' => '15a_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
@@ -1224,6 +1284,11 @@ class WIPs extends MY_Model
 				'name' => '15a_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '16. Keselamatan bekerja dalam kondisi gelap',
+				'type' => 'label'
 			),
 			array(
 				'name' => '16a_isneed',
@@ -1273,7 +1338,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Dilakukan pengawasan yang lebih ketat untuk pekerjaan critical dimalam hari',
+				'label' => 'c. Dilakukan pengawasan yang lebih ketat untuk pekerjaan critical dimalam hari',
 			),
 			array(
 				'name' => '16c_score_max',
@@ -1294,7 +1359,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tidak ada pekerja yang rabun senja',
+				'label' => 'd. Tidak ada pekerja yang rabun senja',
 			),
 			array(
 				'name' => '16d_score_max',
@@ -1308,6 +1373,11 @@ class WIPs extends MY_Model
 				'name' => '16d_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '17. Keselamatan listrik',
+				'type' => 'label'
 			),
 			array(
 				'name' => '17a_isneed',
@@ -1357,7 +1427,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Terdapat tanda bahaya (high voltage) untuk pekerjaan tegangan tinggi',
+				'label' => 'c. Terdapat tanda bahaya (high voltage) untuk pekerjaan tegangan tinggi',
 			),
 			array(
 				'name' => '17c_score_max',
@@ -1378,7 +1448,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tidak ada kabel yang terkelupas',
+				'label' => 'd. Tidak ada kabel yang terkelupas',
 			),
 			array(
 				'name' => '17d_score_max',
@@ -1399,7 +1469,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Kabel listrik dalam kondisi yang bagus dan layak',
+				'label' => 'e. Kabel listrik dalam kondisi yang bagus dan layak',
 			),
 			array(
 				'name' => '17e_score_max',
@@ -1420,7 +1490,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Grounding terpasang dengan baik',
+				'label' => 'f. Grounding terpasang dengan baik',
 			),
 			array(
 				'name' => '17f_score_max',
@@ -1434,6 +1504,11 @@ class WIPs extends MY_Model
 				'name' => '17f_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '18. Penerapan SOP terhadap peralatan operasi',
+				'type' => 'label'
 			),
 			array(
 				'name' => '18a_isneed',
@@ -1483,7 +1558,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'SOP tersedia dan mudah ditemukan dilokasi kerja',
+				'label' => 'c. SOP tersedia dan mudah ditemukan dilokasi kerja',
 			),
 			array(
 				'name' => '18c_score_max',
@@ -1497,6 +1572,11 @@ class WIPs extends MY_Model
 				'name' => '18c_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '19. Keselamatan perkakas tangan (hand tools : grinding, cutting, sawing, bor, dll)',
+				'type' => 'label'
 			),
 			array(
 				'name' => '19a_isneed',
@@ -1546,7 +1626,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Operator menggunakan APD yang disyaratkan',
+				'label' => 'c. Operator menggunakan APD yang disyaratkan',
 			),
 			array(
 				'name' => '19c_score_max',
@@ -1567,7 +1647,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Posisi pengoperasian aman dan nyaman',
+				'label' => 'd. Posisi pengoperasian aman dan nyaman',
 			),
 			array(
 				'name' => '19d_score_max',
@@ -1588,7 +1668,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Safety device terpasang pada peralatan perkakas dan berfungsi',
+				'label' => 'e. Safety device terpasang pada peralatan perkakas dan berfungsi',
 			),
 			array(
 				'name' => '19e_score_max',
@@ -1602,6 +1682,11 @@ class WIPs extends MY_Model
 				'name' => '19e_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '20. Keselamatan Radiasi',
+				'type' => 'label'
 			),
 			array(
 				'name' => '20a_isneed',
@@ -1651,7 +1736,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Diberikan rambu pembatas area radiasi X-ray',
+				'label' => 'c. Diberikan rambu pembatas area radiasi X-ray',
 			),
 			array(
 				'name' => '20c_score_max',
@@ -1665,6 +1750,11 @@ class WIPs extends MY_Model
 				'name' => '20c_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '21. Ventilasi udara',
+				'type' => 'label'
 			),
 			array(
 				'name' => '21a_isneed',
@@ -1709,6 +1799,11 @@ class WIPs extends MY_Model
 				'label' => ' ',
 			),
 			array(
+				'name' => '',
+				'label' => '22. Keselamatan gas bertekanan',
+				'type' => 'label'
+			),
+			array(
 				'name' => '22a_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
@@ -1751,12 +1846,22 @@ class WIPs extends MY_Model
 				'label' => ' ',
 			),
 			array(
+				'name' => '',
+				'label' => '23. Keselamatan pada pekerjaan panas (Pengelasan, Heater, burner, cutter, dll)',
+				'type' => 'label'
+			),
+			array(
+				'name' => '',
+				'label' => 'a. Pengelasan',
+				'type' => 'label'
+			),
+			array(
 				'name' => '23a1_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Welder harus sudah memiliki sertifikasi pengelasan sesuai dengan persyaratan',
+				'label' => 'a. Welder harus sudah memiliki sertifikasi pengelasan sesuai dengan persyaratan',
 			),
 			array(
 				'name' => '23a1_score_max',
@@ -1777,7 +1882,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'penempatan peralatan harus dalam kondisi stabil',
+				'label' => 'b. penempatan peralatan harus dalam kondisi stabil',
 			),
 			array(
 				'name' => '23a2_score_max',
@@ -1798,7 +1903,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Telah dilakukan gas test pada pengelasan',
+				'label' => 'c. Telah dilakukan gas test pada pengelasan',
 			),
 			array(
 				'name' => '23a3_score_max',
@@ -1819,7 +1924,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Terdapat APAR di dekat lokasi welding',
+				'label' => 'd. Terdapat APAR di dekat lokasi welding',
 			),
 			array(
 				'name' => '23a4_score_max',
@@ -1840,7 +1945,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Grounding telah dipasang selama pengelasan',
+				'label' => 'e. Grounding telah dipasang selama pengelasan',
 			),
 			array(
 				'name' => '23a5_score_max',
@@ -1856,12 +1961,17 @@ class WIPs extends MY_Model
 				'label' => ' ',
 			),
 			array(
+				'name' => '',
+				'label' => 'b. burner / cutter',
+				'type' => 'label'
+			),
+			array(
 				'name' => '23b1_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Telah dilakukan gas test sebelum pemotongan dengan burner',
+				'label' => 'a. Telah dilakukan gas test sebelum pemotongan dengan burner',
 			),
 			array(
 				'name' => '23b1_score_max',
@@ -1882,7 +1992,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Terdapat APAR di dekat lokasi pemotongan dengan burner',
+				'label' => 'b. Terdapat APAR di dekat lokasi pemotongan dengan burner',
 			),
 			array(
 				'name' => '23b2_score_max',
@@ -1903,7 +2013,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'apakah',
+				'label' => 'c. apakah',
 			),
 			array(
 				'name' => '23b3_score_max',
@@ -1917,6 +2027,11 @@ class WIPs extends MY_Model
 				'name' => '23b3_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '24. Keselamatan di ruang terbatas',
+				'type' => 'label'
 			),
 			array(
 				'name' => '24a_isneed',
@@ -1966,7 +2081,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Pekerja memiliki competency bekerja di confined space',
+				'label' => 'c. Pekerja memiliki competency bekerja di confined space',
 			),
 			array(
 				'name' => '24c_score_max',
@@ -1982,12 +2097,22 @@ class WIPs extends MY_Model
 				'label' => ' ',
 			),
 			array(
+				'name' => '',
+				'label' => '25. Keselamatan bekerja diketinggian (> 2m)',
+				'type' => 'label'
+			),
+			array(
+				'name' => '',
+				'label' => 'a. Tangga',
+				'type' => 'label'
+			),
+			array(
 				'name' => '25a1_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tangga terbuat dari material yang kuat dan tahan terhadap cuaca',
+				'label' => 'a. Tangga terbuat dari material yang kuat dan tahan terhadap cuaca',
 			),
 			array(
 				'name' => '25a1_score_max',
@@ -2008,7 +2133,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Kondisi tangga masih baik dan layak difungsikan',
+				'label' => 'b. Kondisi tangga masih baik dan layak difungsikan',
 			),
 			array(
 				'name' => '25a2_score_max',
@@ -2029,7 +2154,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tangga diletakkan didasar yang stabil, kuat dan tidak slip',
+				'label' => 'c. Tangga diletakkan didasar yang stabil, kuat dan tidak slip',
 			),
 			array(
 				'name' => '25a3_score_max',
@@ -2050,7 +2175,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Kemiringan tangga sesuai dengan ketentuan keselamatan',
+				'label' => 'd. Kemiringan tangga sesuai dengan ketentuan keselamatan',
 			),
 			array(
 				'name' => '25a4_score_max',
@@ -2071,7 +2196,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tangga diletakkan ditempat yang aman',
+				'label' => 'e. Tangga diletakkan ditempat yang aman',
 			),
 			array(
 				'name' => '25a5_score_max',
@@ -2092,7 +2217,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tangga memiliki railing untuk pegangan',
+				'label' => 'f. Tangga memiliki railing untuk pegangan',
 			),
 			array(
 				'name' => '25a6_score_max',
@@ -2113,7 +2238,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Pekerja menggunakan tangga secara aman',
+				'label' => 'g. Pekerja menggunakan tangga secara aman',
 			),
 			array(
 				'name' => '25a7_score_max',
@@ -2129,12 +2254,17 @@ class WIPs extends MY_Model
 				'label' => ' ',
 			),
 			array(
+				'name' => '',
+				'label' => 'b. Scaffolding',
+				'type' => 'label'
+			),
+			array(
 				'name' => '25b1_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Perancah terbuat dari bahan yang kuat serta tahan terhadap cuaca',
+				'label' => 'a. Perancah terbuat dari bahan yang kuat serta tahan terhadap cuaca',
 			),
 			array(
 				'name' => '25b1_score_max',
@@ -2155,7 +2285,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Perancah memiliki bracing untuk menahan gaya kesamping / goyangan',
+				'label' => 'b. Perancah memiliki bracing untuk menahan gaya kesamping / goyangan',
 			),
 			array(
 				'name' => '25b2_score_max',
@@ -2176,7 +2306,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Telah dilakukan pemeriksaan sebelum & pada saat perancah digunakan',
+				'label' => 'c. Telah dilakukan pemeriksaan sebelum & pada saat perancah digunakan',
 			),
 			array(
 				'name' => '25b3_score_max',
@@ -2197,7 +2327,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tangga naik ke perancah sudah disediakan',
+				'label' => 'd. Tangga naik ke perancah sudah disediakan',
 			),
 			array(
 				'name' => '25b4_score_max',
@@ -2218,7 +2348,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Perancah diletakkan didasar yang kuat dan stabil',
+				'label' => 'e. Perancah diletakkan didasar yang kuat dan stabil',
 			),
 			array(
 				'name' => '25b5_score_max',
@@ -2239,7 +2369,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Pekerja sudah mengantisipasi kemungkinan jatuhnya benda dari pekerjaan ketinggian',
+				'label' => 'f. Pekerja sudah mengantisipasi kemungkinan jatuhnya benda dari pekerjaan ketinggian',
 			),
 			array(
 				'name' => '25b6_score_max',
@@ -2260,7 +2390,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Pekerja yang bekerja diketinggian harus sudah terlatih dan dalam kondisi sehat',
+				'label' => 'g. Pekerja yang bekerja diketinggian harus sudah terlatih dan dalam kondisi sehat',
 			),
 			array(
 				'name' => '25b7_score_max',
@@ -2281,7 +2411,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Scaffolding memiliki railing dan papan pijakan untuk pekerja',
+				'label' => 'h. Scaffolding memiliki railing dan papan pijakan untuk pekerja',
 			),
 			array(
 				'name' => '25b8_score_max',
@@ -2302,7 +2432,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Terdapat instalasi penangkal petir sementara untuk pekerjaan di ketinggian (yang belum tercover oleh sistem penangkal petir yang ada)',
+				'label' => 'i. Terdapat instalasi penangkal petir sementara untuk pekerjaan di ketinggian (yang belum tercover oleh sistem penangkal petir yang ada)',
 			),
 			array(
 				'name' => '25b9_score_max',
@@ -2316,6 +2446,11 @@ class WIPs extends MY_Model
 				'name' => '25b9_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => '26. Penggunaan alat / pesawat angkut secara aman',
+				'type' => 'label'
 			),
 			array(
 				'name' => '26a_isneed',
@@ -2365,7 +2500,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Pengemudi mematuhi rambu-rambu yang ada',
+				'label' => 'c. Pengemudi mematuhi rambu-rambu yang ada',
 			),
 			array(
 				'name' => '26c_score_max',
@@ -2386,7 +2521,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'safety device tersedia pada pesawat / alat angkut & berfungsi',
+				'label' => 'd. safety device tersedia pada pesawat / alat angkut & berfungsi',
 			),
 			array(
 				'name' => '26d_score_max',
@@ -2402,12 +2537,22 @@ class WIPs extends MY_Model
 				'label' => ' ',
 			),
 			array(
+				'name' => '',
+				'label' => '27. Penggunaan alat / pesawat angkat secara aman',
+				'type' => 'label'
+			),
+			array(
+				'name' => '',
+				'label' => 'a. Crane',
+				'type' => 'label'
+			),
+			array(
 				'name' => '27a1_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Operator yang mengoperasikan crane harus memenuhi kompetensi yang ditentukan / memiliki surat ijin operasi',
+				'label' => 'a. Operator yang mengoperasikan crane harus memenuhi kompetensi yang ditentukan / memiliki surat ijin operasi',
 			),
 			array(
 				'name' => '27a1_score_max',
@@ -2428,7 +2573,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tabel kapasitas beban, informasi bahaya khusus telah terpasang di crane',
+				'label' => 'b. Tabel kapasitas beban, informasi bahaya khusus telah terpasang di crane',
 			),
 			array(
 				'name' => '27a2_score_max',
@@ -2449,7 +2594,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Operator dibantu oleh minimal satu orang pemandu / helper saat mengoperasikan',
+				'label' => 'c. Operator dibantu oleh minimal satu orang pemandu / helper saat mengoperasikan',
 			),
 			array(
 				'name' => '27a3_score_max',
@@ -2470,7 +2615,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Daerah yang berada di pada radius putaran crane / dilintasan alat angkat harus diberi rambu dilarang melintas',
+				'label' => 'd. Daerah yang berada di pada radius putaran crane / dilintasan alat angkat harus diberi rambu dilarang melintas',
 			),
 			array(
 				'name' => '27a4_score_max',
@@ -2491,7 +2636,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Kait (hook) memiliki kancing pengaman (safety latches)',
+				'label' => 'e. Kait (hook) memiliki kancing pengaman (safety latches)',
 			),
 			array(
 				'name' => '27a5_score_max',
@@ -2512,7 +2657,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Beban yang diangkat sesuai dengan kapasitas kekuatan sling',
+				'label' => 'f. Beban yang diangkat sesuai dengan kapasitas kekuatan sling',
 			),
 			array(
 				'name' => '27a6_score_max',
@@ -2533,7 +2678,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Melakukan pemeriksaan crane, sling secara periodik',
+				'label' => 'g. Melakukan pemeriksaan crane, sling secara periodik',
 			),
 			array(
 				'name' => '27a7_score_max',
@@ -2554,7 +2699,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Mobil crane berada diatas landasan yang stabil dan dilengkapi tangkai penahan (Boowe Stop)',
+				'label' => 'h. Mobil crane berada diatas landasan yang stabil dan dilengkapi tangkai penahan (Boowe Stop)',
 			),
 			array(
 				'name' => '27a8_score_max',
@@ -2575,7 +2720,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Crane telah disertifikasi & masa sertifikasi masih berlaku',
+				'label' => 'i. Crane telah disertifikasi & masa sertifikasi masih berlaku',
 			),
 			array(
 				'name' => '27a9_score_max',
@@ -2591,12 +2736,17 @@ class WIPs extends MY_Model
 				'label' => ' ',
 			),
 			array(
+				'name' => '',
+				'label' => 'b. Passenger Lift',
+				'type' => 'label'
+			),
+			array(
 				'name' => '27b1_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Telah dilakukan pengetesan semua fungsi listrik sebelum digunakan',
+				'label' => 'a. Telah dilakukan pengetesan semua fungsi listrik sebelum digunakan',
 			),
 			array(
 				'name' => '27b1_score_max',
@@ -2617,7 +2767,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Lokasi erection aman dari kejatuhan benda-benda',
+				'label' => 'b. Lokasi erection aman dari kejatuhan benda-benda',
 			),
 			array(
 				'name' => '27b2_score_max',
@@ -2638,7 +2788,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Pintu masuk / keluar harus dalam keadaan terkunci pada saat lift digunakan',
+				'label' => 'c. Pintu masuk / keluar harus dalam keadaan terkunci pada saat lift digunakan',
 			),
 			array(
 				'name' => '27b3_score_max',
@@ -2659,7 +2809,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Beban penumpang tidak melebihi batas yang diijinkan',
+				'label' => 'd. Beban penumpang tidak melebihi batas yang diijinkan',
 			),
 			array(
 				'name' => '27b4_score_max',
@@ -2675,12 +2825,17 @@ class WIPs extends MY_Model
 				'label' => ' ',
 			),
 			array(
+				'name' => '',
+				'label' => 'c. Excavator',
+				'type' => 'label'
+			),
+			array(
 				'name' => '27c1_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Telah dilakukan pemeriksaan sebelum excavator digunakan',
+				'label' => 'a. Telah dilakukan pemeriksaan sebelum excavator digunakan',
 			),
 			array(
 				'name' => '27c1_score_max',
@@ -2701,7 +2856,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Posisi excavator stabil dan aman dari potensi longsoran',
+				'label' => 'b. Posisi excavator stabil dan aman dari potensi longsoran',
 			),
 			array(
 				'name' => '27c2_score_max',
@@ -2722,7 +2877,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tidak ada orang didalam area jangkauan excavator',
+				'label' => 'c. Tidak ada orang didalam area jangkauan excavator',
 			),
 			array(
 				'name' => '27c3_score_max',
@@ -2738,12 +2893,17 @@ class WIPs extends MY_Model
 				'label' => ' ',
 			),
 			array(
+				'name' => '',
+				'label' => '28. Keselamatan pekerjaan penggalian',
+				'type' => 'label'
+			),
+			array(
 				'name' => '28a1_isneed',
 				'options' => array(
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Memastikan tidak ada pipa / kabel-kabel /gas di lokasi yang akan digali',
+				'label' => 'a. Memastikan tidak ada pipa / kabel-kabel /gas di lokasi yang akan digali',
 			),
 			array(
 				'name' => '28a1_score_max',
@@ -2764,7 +2924,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Terdapat rambu yang menunjukan ada pekerjaan penggalian / lubang',
+				'label' => 'b. Terdapat rambu yang menunjukan ada pekerjaan penggalian / lubang',
 			),
 			array(
 				'name' => '28a2_score_max',
@@ -2785,7 +2945,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Mengantisipasi dampak kerusakan struktur galian',
+				'label' => 'c. Mengantisipasi dampak kerusakan struktur galian',
 			),
 			array(
 				'name' => '28a3_score_max',
@@ -2806,7 +2966,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Penerapan Mitigasi JHSEA',
+				'label' => '1. Penerapan Mitigasi JHSEA',
 			),
 			array(
 				'name' => '1_score_max',
@@ -2827,7 +2987,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'HSE Meeting (sesuai schedule HSE Plan)',
+				'label' => '2. HSE Meeting (sesuai schedule HSE Plan)',
 			),
 			array(
 				'name' => '2_score_max',
@@ -2848,7 +3008,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'HSE Talk / briefing (sesuai schedule HSE Plan)',
+				'label' => '3. HSE Talk / briefing (sesuai schedule HSE Plan)',
 			),
 			array(
 				'name' => '3_score_max',
@@ -2869,7 +3029,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'HSE Training / Induction (sesuai schedule HSE Plan)',
+				'label' => '4. HSE Training / Induction (sesuai schedule HSE Plan)',
 			),
 			array(
 				'name' => '4_score_max',
@@ -2890,7 +3050,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Pelaporan Penerapan HSE ke Pertamina (sesuai schedule HSE Plant)',
+				'label' => '5. Pelaporan Penerapan HSE ke Pertamina (sesuai schedule HSE Plant)',
 			),
 			array(
 				'name' => '5_score_max',
@@ -2911,7 +3071,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Inspeksi HSE secara rutin oleh level pelaksana (mulai dari Pre mobilization hingga mobilization) sesuai schedule HSE Plan)',
+				'label' => '6. Inspeksi HSE secara rutin oleh level pelaksana (mulai dari Pre mobilization hingga mobilization) sesuai schedule HSE Plan)',
 			),
 			array(
 				'name' => '6_score_max',
@@ -2932,7 +3092,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Inspeksi HSE oleh Managemen kontraktor (sesuai schedule HSE Plan)',
+				'label' => '7. Inspeksi HSE oleh Managemen kontraktor (sesuai schedule HSE Plan)',
 			),
 			array(
 				'name' => '7_score_max',
@@ -2953,7 +3113,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Incident / accident reporting',
+				'label' => '8. Incident / accident reporting',
 			),
 			array(
 				'name' => '8_score_max',
@@ -2974,7 +3134,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Investigation report',
+				'label' => '9. Investigation report',
 			),
 			array(
 				'name' => '9_score_max',
@@ -2995,7 +3155,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Pekerja paham terhadap HSE Policy & Objective pekerjaan tersebut',
+				'label' => '10. Pekerja paham terhadap HSE Policy & Objective pekerjaan tersebut',
 			),
 			array(
 				'name' => '10_score_max',
@@ -3016,7 +3176,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Pemeriksaan kesehatan',
+				'label' => '11. Pemeriksaan kesehatan',
 			),
 			array(
 				'name' => '11_score_max',
@@ -3037,7 +3197,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'Tindak lanjut temuan',
+				'label' => '12. Tindak lanjut temuan',
 			),
 			array(
 				'name' => '12_score_max',
