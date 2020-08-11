@@ -401,6 +401,14 @@ class HSEs extends MY_Model
 		return parent::dt();
 	}
 
+	function create ($data)
+	{
+		$uuid = parent::create($data);
+		$this->load->model('Projects');
+		$this->Projects->updateProgress($data['project']);
+		return $uuid;
+	}
+
 	function getForm($uuid = false, $isSubform = false)
 	{
 		$form = parent::getForm($uuid, $isSubform);

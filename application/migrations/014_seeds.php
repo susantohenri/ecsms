@@ -119,7 +119,7 @@ class Migration_seeds extends CI_Migration
       'Penyediaan Paket Perdana Program Konversi Untuk Kapal Penangkap Ikan Bagi Nelayan Sasaran Tahun Anggaran 2019 (Termasuk Pendistribusian dan Pemasangan)',
       'PENGADAAN JASA KONSULTANSI POTENSI ANGIN UNTUK PEMBANGKIT LISTRIK TENAGA BAYU (PLTB)'
     ) as $project) {
-      $this->Projects->create(array('nama' => $project));
+      $this->Projects->create(array('nama' => $project, 'jumlah_laporan_bulanan' => 4));
     }
     // $this->load->model('Vendors');
     foreach (array(

@@ -53,6 +53,10 @@ class MY_Model extends CI_Model
     $record = $this->savechild($record);
     $record['updatedAt'] = date('Y-m-d H:i:s');
     $this->db->where('uuid', $record['uuid'])->update($this->table, $record);
+    if (in_array($this->table, array('hse', 'pja', 'laporanbulanan', 'wip', 'kpi'))) {
+      $this->load->model('Projects');
+      $this->Projects->updateProgress($record['project']);
+    }
     return $record['uuid'];
   }
 

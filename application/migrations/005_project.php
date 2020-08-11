@@ -16,6 +16,7 @@ class Migration_project extends CI_Migration {
         `jangka_waktu` INT(11) NOT NULL,
         `jumlah_laporan_bulanan` INT(11) NOT NULL,
         `pemenang` varchar(36) NOT NULL,
+        `progress` TINYINT(1) NOT NULL,
         PRIMARY KEY (`uuid`),
         KEY `peserta` (`pemenang`)
       ) ROW_FORMAT=DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8
