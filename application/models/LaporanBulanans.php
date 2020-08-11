@@ -131,6 +131,17 @@ class LaporanBulanans extends MY_Model
 		return parent::dt();
 	}
 
+	function delete($uuid)
+	{
+		$lapbul_files = array_filter(scandir('upload'), function ($file_name) use ($uuid) {
+			return strpos($file_name, "LaporanBulanan-{$uuid}-") > -1;
+		});
+		foreach ($lapbul_files as $file) {
+			if (file_exists("upload/{$file}")) unlink("upload/{$file}");
+		}
+		return parent::delete($uuid);
+	}
+
 	function getForm($uuid = false, $isSubform = false)
 	{
 		$form = parent::getForm($uuid, $isSubform);

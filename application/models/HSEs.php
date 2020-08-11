@@ -401,12 +401,23 @@ class HSEs extends MY_Model
 		return parent::dt();
 	}
 
-	function create ($data)
+	function create($data)
 	{
 		$uuid = parent::create($data);
 		$this->load->model('Projects');
 		$this->Projects->updateProgress($data['project']);
 		return $uuid;
+	}
+
+	function delete($uuid)
+	{
+		$hse_files = array_filter(scandir('upload'), function ($file_name) use ($uuid) {
+			return strpos($file_name, "HSE-{$uuid}-") > -1;
+		});
+		foreach ($hse_files as $file) {
+			if (file_exists("upload/{$file}")) unlink("upload/{$file}");
+		}
+		return parent::delete($uuid);
 	}
 
 	function getForm($uuid = false, $isSubform = false)
