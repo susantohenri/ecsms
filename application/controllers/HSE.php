@@ -67,13 +67,15 @@ class HSE extends MY_Controller
 		$this->pdf->filename = 'HSE-Plan.pdf';
 
 		$data = array ('records' => $this->HSEs->download ($uuid));
+		$data['rows'] = $this->HSEs->getForm($uuid);
+		$this->load->view('pdf/form_1', $data);
 		// $this->pdf->load_view('pdf/form_1', $data);
 
-		$this->load->view('pdf/form_1', $data);
-		$html = $this->output->get_output();
-		$this->pdf->load_html($html);
+		// $this->load->view('pdf/form_1', $data);
+		// $html = $this->output->get_output();
+		// $this->pdf->load_html($html);
 
-		$this->pdf->render();
-		$this->pdf->stream('HSE-Plan.pdf');
+		// $this->pdf->render();
+		// $this->pdf->stream('HSE-Plan.pdf');
 	}
 }

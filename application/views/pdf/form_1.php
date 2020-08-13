@@ -28,7 +28,7 @@
       }
 
       th {
-         padding: 10px;
+         padding: 5px;
       }
 
       td {
@@ -83,7 +83,7 @@
    <table class="table">
       <tr>
          <th rowspan="2" class="bg-blue">No</th>
-         <th rowspan="2" class="bg-blue">ELEMEN HSE PLAN YANG DISTARATKAN</th>
+         <th rowspan="2" class="bg-blue">ELEMEN HSE PLAN YANG DISYARATKAN</th>
          <th colspan="2" class="bg-blue">Penilaian per Elemen</th>
          <th colspan="2" class="bg-blue">Pencapaian per Elemen</th>
       </tr>
@@ -93,6 +93,44 @@
          <th class="bg-blue">Score</th>
          <th class="bg-blue">%</th>
       </tr>
+
+      <?php foreach ($rows as $row) : ?>
+         <?php if ('label' === $row['type']) : $label = explode('.', $row['label']) ?>
+            <tr>
+               <td></td>
+               <td></td>
+               <td class=" text-center"></td>
+               <td class=" text-center"></td>
+               <td class=" text-center"></td>
+               <td class=" text-center"></td>
+            </tr>
+            <tr>
+               <td class="bg-gray text-center"><strong><?= $label[0] ?></strong></td>
+               <td class="bg-gray"><strong><?= $label[1] ?></strong></td>
+               <td class="bg-gray"></td>
+               <td class="bg-gray"></td>
+               <td class="bg-gray"></td>
+               <td class="bg-gray"></td>
+            </tr>
+         <?php elseif (0 === strpos($row['label'], 'a. ')) : ?>
+            <tr>
+               <td></td>
+               <td><?= $row['label'] ?></td>
+               <td class="text-center">1</td>
+               <td rowspan="4"></td>
+               <td class="bg-yellow"></td>
+               <td rowspan="4"></td>
+            </tr>
+         <?php else : ?>
+            <tr>
+               <td></td>
+               <td><?= $row['label'] ?></td>
+               <td class="text-center">1</td>
+               <td class="bg-yellow"></td>
+            </tr>
+         <?php endif ?>
+      <?php endforeach ?>
+
       <tr>
          <td class="bg-gray text-center"><strong>1</strong></td>
          <td class="bg-gray"> <strong>Data Proyek</strong> </td>
@@ -116,7 +154,6 @@
          <td>c. Surat kesanggupan untuk melengkapi dokumen pendukung yang habis masa berlakunya setelah
             penetapan pemenang
          </td>
-
       </tr>
       <tr>
          <td></td>
@@ -168,638 +205,6 @@
          <td class="text-center bg-blue-1"><strong>0</strong></td>
          <td class="text-center bg-blue-1">0.0%</td>
       </tr>
-      <!-- <tr>
-         <td class="bg-gray text-center"> <strong>3</strong> </td>
-         <td class="bg-gray" colspan="2"> <strong>Drug & Alcohol Policy</strong> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> a. </td>
-         <td> Memiliki kebijakan Drug & Alcohol secara tertulis </td>
-         <td class="text-center"> 1 </td>
-         <td rowspan="2"> </td>
-         <td class="bg-yellow"> </td>
-         <td rowspan="2"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> b. </td>
-         <td> Kebijakan HSE ditandatangani oleh pejabat yang berwenang </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> </td>
-         <td class="text-center bg-blue-1"> <strong>2</strong> </td>
-         <td class="text-center bg-blue-1"> 5% </td>
-         <td class="text-center bg-blue-1"> <strong>0</strong> </td>
-         <td class="text-center bg-blue-1"> 0.0% </td>
-      </tr>
-      <tr>
-         <td class="bg-gray text-center"> <strong>4</strong> </td>
-         <td class="bg-gray" colspan="2"> <strong>Struktur Organisasi Proyek</strong> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> a. </td>
-         <td> Memiliki struktur organisasi proyek yang disahkan oleh pimpinan perusahaan </td>
-         <td class="text-center"> 2 </td>
-         <td rowspan="4"> </td>
-         <td class="bg-yellow"> </td>
-         <td rowspan="4"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> b. </td>
-         <td> Job description masing - masing jabatan sesuai dengan struktur organisasi proyek </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> c. </td>
-         <td> Melampirkan surat penunjukan Manager Proyek yang ditandatangani pimpinan tertinggi </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> d. </td>
-         <td> Penanggung jawab HSE sudah ditentukan </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> </td>
-         <td class="text-center bg-blue-1"> <strong>8</strong> </td>
-         <td class="text-center bg-blue-1"> 5% </td>
-         <td class="text-center bg-blue-1"> <strong>8</strong> </td>
-         <td class="text-center bg-blue-1"> 0.0% </td>
-      </tr>
-      <tr>
-         <td class="bg-gray text-center"> <strong>5</strong> </td>
-         <td class="bg-gray" colspan="2"> <strong>HSE Performance Indicator (KPI)</strong> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> a. </td>
-         <td> Memiliki KPI yang disetujui oleh pimpinan perusahan atau Manager Proyek yang ditunjuk
-         </td>
-         <td class="text-center"> 1 </td>
-         <td rowspan="4"> </td>
-         <td class="bg-yellow"> </td>
-         <td rowspan="4"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> b. </td>
-         <td> Sesuai format Pertamina </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> c. </td>
-         <td> Menetapkan target leading indicator </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> d. </td>
-         <td> Menetapkan target lagging indicator </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> </td>
-         <td class="text-center bg-blue-1"> <strong>4</strong> </td>
-         <td class="text-center bg-blue-1"> 5% </td>
-         <td class="text-center bg-blue-1"> <strong>0</strong> </td>
-         <td class="text-center bg-blue-1"> 0.0% </td>
-      </tr>
-      <tr>
-         <td class="bg-gray text-center"> <strong>6</strong> </td>
-         <td class="bg-gray" colspan="2"> <strong>Work Site Hazard & Risk Assessment</strong> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> a. </td>
-         <td> Perencanaan dan program kerja proyek (S-Curve) </td>
-         <td class="text-center"> 1 </td>
-         <td rowspan="17"> </td>
-         <td class="bg-yellow"> </td>
-         <td rowspan="17"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> b. </td>
-         <td> Terdapat tahapan proyek </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> c. </td>
-         <td> Terdapat analisa bahaya tiap tahapan </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> d. </td>
-         <td> Terdapat mitigasi yang tepat, meliputi : </td>
-         <td> </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> - peralatan </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> - prosedur </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> - pelatihan </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> - perijinan </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> - pengawasan </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> - alat pelindung diri </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> - fire protection </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> e. </td>
-         <td> Kelengkapan data peralatan kerja </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> f. </td>
-         <td> Perijinan peralatan kerja </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> g. </td>
-         <td> Penanganan zat kimia </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> h. </td>
-         <td> Matriks kebutuhan APD </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> i. </td>
-         <td> Daftar dan jumlah APD </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> j. </td>
-         <td> Daftar peralatan penanggulangan kebakaran </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> </td>
-         <td class="text-center bg-blue-1"> <strong>31</strong> </td>
-         <td class="text-center bg-blue-1"> 25% </td>
-         <td class="text-center bg-blue-1"> <strong>0</strong> </td>
-         <td class="text-center bg-blue-1"> 0.0% </td>
-      </tr>
-      <tr>
-         <td class="bg-gray text-center"> <strong>7</strong> </td>
-         <td class="bg-gray" colspan="2"> <strong>Transport Safety Management</strong> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> a. </td>
-         <td> Memiliki data kebutuhan kendaraan yang dioperasikan selama proyek </td>
-         <td class="text-center"> 1 </td>
-         <td rowspan="4"> </td>
-         <td class="bg-yellow"> </td>
-         <td rowspan="4"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> b. </td>
-         <td> Semua kendaraan memiliki surat ijin yang masih berlaku </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> c. </td>
-         <td> Semua pekerja yang mengoperasikan kendaraan harus memilki surat ijin yang masih berlaku
-         </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> d. </td>
-         <td> Mempunyai checklist pemeriksaan kelayakan kendaraan </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> </td>
-         <td class="text-center bg-blue-1"> <strong>4</strong> </td>
-         <td class="text-center bg-blue-1"> 5% </td>
-         <td class="text-center bg-blue-1"> <strong>0</strong> </td>
-         <td class="text-center bg-blue-1"> 0.0% </td>
-      </tr>
-      <tr>
-         <td class="bg-gray text-center"> <strong>8</strong> </td>
-         <td class="bg-gray" colspan="2"> <strong>Prosedur Operasi & Standard Keselamatan</strong> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> a. </td>
-         <td> Kelengkapan prosedur kerja sesuai dengan pekerjaan yang dilakukan </td>
-         <td class="text-center"> 2 </td>
-         <td rowspan="5"> </td>
-         <td class="bg-yellow"> </td>
-         <td rowspan="5"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> b. </td>
-         <td> Prosedur penggunaan APAR </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> c. </td>
-         <td> Prosedur penggunaan APD </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> d. </td>
-         <td> Prosedur P3K </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> e. </td>
-         <td> Daftar standar yang digunakan </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> </td>
-         <td class="text-center bg-blue-1"> <strong>9</strong> </td>
-         <td class="text-center bg-blue-1"> 10% </td>
-         <td class="text-center bg-blue-1"> <strong>0</strong> </td>
-         <td class="text-center bg-blue-1"> 0.0% </td>
-      </tr>
-      <tr>
-         <td class="bg-gray text-center"> <strong>9</strong> </td>
-         <td class="bg-gray" colspan="2"> <strong>Kompetensi Pekerja yang Terlibat</strong> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> a. </td>
-         <td> Penanggung jawab HSE mempunyai sertifikat nasional atau internasional yang masih berlaku
-         </td>
-         <td class="text-center"> 2 </td>
-         <td rowspan="4"> </td>
-         <td class="bg-yellow"> </td>
-         <td rowspan="4"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> b. </td>
-         <td> Safetyman mempunyai sertifikat dari Migas/Disnaker/AK3 </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> c. </td>
-         <td> Tenaga kerja ahli mempunyai sertifikasi sesuai kompetensi (welder, pekerjaan teknik bawah air, operator alat berat, dll) </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> d. </td>
-         <td> Terdapat program pelatihan pekerja </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> </td>
-         <td class="text-center bg-blue-1"> <strong>7</strong> </td>
-         <td class="text-center bg-blue-1"> 10% </td>
-         <td class="text-center bg-blue-1"> <strong>0</strong> </td>
-         <td class="text-center bg-blue-1"> 0.0% </td>
-      </tr>
-      <tr>
-         <td class="bg-gray text-center"> <strong>10</strong> </td>
-         <td class="bg-gray" colspan="2"> <strong>HSE Audit / Inspection</strong> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> a. </td>
-         <td> Prosedur Audit </td>
-         <td class="text-center"> 2 </td>
-         <td rowspan="4"> </td>
-         <td class="bg-yellow"> </td>
-         <td rowspan="4"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> b. </td>
-         <td> Prosedur Inspeksi </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> c. </td>
-         <td> Program inspeksi </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> d. </td>
-         <td> Program audit </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> </td>
-         <td class="text-center bg-blue-1"> <strong>6</strong> </td>
-         <td class="text-center bg-blue-1"> 5% </td>
-         <td class="text-center bg-blue-1"> <strong>0</strong> </td>
-         <td class="text-center bg-blue-1"> 0.0% </td>
-      </tr>
-      <tr>
-         <td class="bg-gray text-center"> <strong>11</strong> </td>
-         <td class="bg-gray" colspan="2"> <strong>Prosedur Pelaporan & Investigasi Kecelakaan</strong> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> a. </td>
-         <td> Prosedur pelaporan insiden sesuai organisasi dan lokasi proyek yang ditandatangani oleh
-            pimpinan
-            perusahaan / manager proyek </td>
-         <td class="text-center"> 2 </td>
-         <td rowspan="4"> </td>
-         <td class="bg-yellow"> </td>
-         <td rowspan="4"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> b. </td>
-         <td> Terdapat alur pelaporan kepada Direksi Pekerjaan Pertamina </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> c. </td>
-         <td> Prosedur Investigasi Kecelakaan </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> d. </td>
-         <td> Prosedur sesuai dengan kondisi di lapangan </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> </td>
-         <td class="text-center bg-blue-1"> <strong>8</strong> </td>
-         <td class="text-center bg-blue-1"> 5% </td>
-         <td class="text-center bg-blue-1"> <strong>0</strong> </td>
-         <td class="text-center bg-blue-1"> 0.0% </td>
-      </tr>
-      <tr>
-         <td class="bg-gray text-center"> <strong>12</strong> </td>
-         <td class="bg-gray" colspan="2"> <strong>Emergency Response & Procedure</strong> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> a. </td>
-         <td> Prosedur keadaan darurat </td>
-         <td class="text-center"> 2 </td>
-         <td rowspan="4"> </td>
-         <td class="bg-yellow"> </td>
-         <td rowspan="4"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> b. </td>
-         <td> Terdapat organisasi keadaan darurat </td>
-         <td class="text-center"> 2 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> c. </td>
-         <td> Daftar nomor kontak emergency </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> d. </td>
-         <td> Data peralatan P3K sesuai standar </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> </td>
-         <td class="text-center bg-blue-1"> <strong>6</strong> </td>
-         <td class="text-center bg-blue-1"> 5% </td>
-         <td class="text-center bg-blue-1"> <strong>0</strong> </td>
-         <td class="text-center bg-blue-1"> 0.0% </td>
-      </tr>
-      <tr>
-         <td class="bg-gray text-center"> <strong>13</strong> </td>
-         <td class="bg-gray" colspan="2"> <strong>HSE Communication</strong> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> a. </td>
-         <td> Terdapat program komunikasi HSE </td>
-         <td class="text-center"> 1 </td>
-         <td rowspan="2"> </td>
-         <td class="bg-yellow"> </td>
-         <td rowspan="2"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> b. </td>
-         <td> Item program sesuai KPI </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> </td>
-         <td class="text-center bg-blue-1"> <strong>2</strong> </td>
-         <td class="text-center bg-blue-1"> 5% </td>
-         <td class="text-center bg-blue-1"> <strong>0</strong> </td>
-         <td class="text-center bg-blue-1"> 0.0% </td>
-      </tr>
-      <tr>
-         <td class="bg-gray text-center"> <strong>14</strong> </td>
-         <td class="bg-gray" colspan="2"> <strong>Pengelolaan Sub Kontraktor</strong> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-         <td class="bg-gray"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> a. </td>
-         <td> Manajemen Sub Kontraktor </td>
-         <td class="text-center"> 1 </td>
-         <td rowspan="3"> </td>
-         <td class="bg-yellow"> </td>
-         <td rowspan="3"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> b. </td>
-         <td> Kompetensi Sub Kontraktor </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> c. </td>
-         <td> Aspek HSE Sub Kontraktor </td>
-         <td class="text-center"> 1 </td>
-         <td class="bg-yellow"> </td>
-      </tr>
-      <tr>
-         <td> </td>
-         <td> </td>
-         <td> </td>
-         <td class="text-center bg-blue-1"> <strong>3</strong> </td>
-         <td class="text-center bg-blue-1"> 5% </td>
-         <td class="text-center bg-blue-1"> <strong>0</strong> </td>
-         <td class="text-center bg-blue-1"> 0.0% </td>
-      </tr> -->
       <tr>
          <td class="bg-gray text-center"> <strong>15</strong> </td>
          <td class="bg-gray"> <strong>Pemeriksaan Kesehatan</strong> </td>
