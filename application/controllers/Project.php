@@ -32,6 +32,42 @@ class Project extends MY_Controller
 		redirect(base_url());
 	}
 
+	function create()
+	{
+		$model = $this->model;
+		$vars = array();
+		$vars['page_name'] = 'forms/project';
+		$vars['form']     = $this->$model->getForm();
+		$vars['subform'] = $this->$model->getFormChild();
+		$vars['uuid'] = '';
+		$vars['js'] = array(
+			'moment.min.js',
+			'bootstrap-datepicker.js',
+			'daterangepicker.min.js',
+			'select2.full.min.js',
+			'form.js'
+		);
+		$this->loadview('index', $vars);
+	}
+
+	function read($id)
+	{
+		$vars = array();
+		$vars['page_name'] = 'forms/project';
+		$model = $this->model;
+		$vars['form'] = $this->$model->getForm($id);
+		$vars['subform'] = $this->$model->getFormChild($id);
+		$vars['uuid'] = $id;
+		$vars['js'] = array(
+			'moment.min.js',
+			'bootstrap-datepicker.js',
+			'daterangepicker.min.js',
+			'select2.full.min.js',
+			'form.js'
+		);
+		$this->loadview('index', $vars);
+	}
+
 	function dashboard()
 	{
 		$result = array();
