@@ -45,7 +45,7 @@ class Project extends MY_Controller
 			'bootstrap-datepicker.js',
 			'daterangepicker.min.js',
 			'select2.full.min.js',
-			'form.js'
+			'form-project.js'
 		);
 		$this->loadview('index', $vars);
 	}
@@ -63,7 +63,7 @@ class Project extends MY_Controller
 			'bootstrap-datepicker.js',
 			'daterangepicker.min.js',
 			'select2.full.min.js',
-			'form.js'
+			'form-project.js'
 		);
 		$this->loadview('index', $vars);
 	}
