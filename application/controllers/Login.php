@@ -11,6 +11,9 @@ class Login extends CI_Controller {
 			));
 			if (isset ($login['uuid'])) {
 				$this->load->library('session');
+				$this->load->model('Roles');
+				$role = $this->Roles->findOne($login['role']);
+				$login['display_name'] = 'Vendor' === $role['name'] ? $login['vendor'] : $role['name'];
 				$this->session->set_userdata($login);
 				redirect(base_url());
 			}

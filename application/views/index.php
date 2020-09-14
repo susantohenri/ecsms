@@ -35,7 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <H2><span class="brand-text font-weight-light">e<b>CSMS</b></span></H2>
         <small class="brand-text font-weight-light">Contractor Safety Management System</small>
       </a>
-      <a href="<?= site_url('Login/Logout') ?>" class="text-danger">Logout</a>
+      <a href="<?= site_url('Login/Logout') ?>" class="text-danger"><?= $this->session->userdata('display_name') ?>, Logout</a>
     </div>
   </nav>
   <!-- /.navbar -->
