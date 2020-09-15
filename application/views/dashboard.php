@@ -66,10 +66,14 @@
 <div class="col-sm-12">
 	<div class="card card-danger card-outline">
 		<div class="card-header">
+			<?php if (in_array("create_Project", $permission)) : ?>
 			<a href="<?= site_url('Project/create') ?>" class="btn btn-danger btn-sm">
 				<i class="fa fa-plus"></i>
 				Add New Project
 			</a>
+			<?php else: ?>
+			<a>&nbsp;</a>
+			<?php endif ?>
 
 			<div class="card-tools">
 				<div class="input-group input-group-sm" style="width: 150px;">
