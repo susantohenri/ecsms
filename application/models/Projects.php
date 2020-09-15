@@ -108,44 +108,6 @@ class Projects extends MY_Model
 		return $uuid;
 	}
 
-	function updateProgress($uuid)
-	{
-		$project = $this->findOne($uuid);
-
-		if ($project['progress'] < 6) {
-			$this->load->model('KPIs');
-			$kpi = $this->KPIs->findOne(array('project' => $uuid));
-			if ($kpi['progress'] > 0) $project['progress'] = 6;
-		}
-
-		if ($project['progress'] < 5) {
-			$this->load->model('WIPs');
-			$wip = $this->WIPs->findOne(array('project' => $uuid));
-			if ($wip['progress'] > 0) $project['progress'] = 5;
-		}
-
-		if ($project['progress'] < 4 && $project['jumlah_laporan_bulanan'] > 0) {
-			$this->load->model('LaporanBulanans');
-			$bulans = $this->LaporanBulanans->find(array('project' => $uuid, 'progress' => 1));
-			if (count($bulans) >= $project['jumlah_laporan_bulanan']) $project['progress'] = 4;
-		}
-
-		if ($project['progress'] < 3) {
-			$this->load->model('PJAs');
-			$pja = $this->PJAs->findOne(array('project' => $uuid));
-			if ($pja['progress'] > 0) $project['progress'] = 3;
-		}
-
-		if ($project['progress'] <= 1) {
-			$this->load->model('HSEs');
-			$hses = $this->HSEs->find(array('project' => $uuid));
-			if (count($hses) > 0) $project['progress'] = 1;
-			else $project['progress'] = 0;
-		}
-
-		return $this->db->set('progress', $project['progress'])->where('uuid', $uuid)->update($this->table);
-	}
-
 	function save($record)
 	{
 		if (isset($record['pemenang'])) {
@@ -216,7 +178,7 @@ class Projects extends MY_Model
 		$this->db->group_by("{$this->table}.uuid");
 
 		// sorting
-		$this->db->order_by("{$this->table}.progress", 'asc');
+		$this->db->order_by("{$this->table}.orders", 'asc');
 
 		$this->db->select("{$this->table}.*");
 
