@@ -178,7 +178,7 @@ class Projects extends MY_Model
 		$this->db->group_by("{$this->table}.uuid");
 
 		// sorting
-		$this->db->order_by("{$this->table}.orders", 'asc');
+		$this->db->order_by("{$this->table}.orders", 'desc');
 
 		$this->db->select("{$this->table}.*");
 
