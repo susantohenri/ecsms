@@ -10,7 +10,7 @@ class Migration_seeds extends CI_Migration
     $menu_icon = array(
       'Admin' => 'user-secret',
       'HSSE' => 'street-view',
-      'MPE' => 'user-circle',
+      'MPS' => 'user-circle',
       'Vendor' => 'wrench',
       'Email' => 'envelope',
       'Template' => 'copy'
@@ -21,7 +21,7 @@ class Migration_seeds extends CI_Migration
 
     $admin = null;
     $vendor= null;
-    foreach (array('Admin', 'HSSE', 'MPE', 'Vendor') as $role) {
+    foreach (array('Admin', 'HSSE', 'MPS', 'Vendor') as $role) {
       $roledb = $this->Roles->create(array('name' => $role));
       if ('Admin' === $role) $admin = $roledb;
       if ('Vendor' === $role) $vendor = $roledb;

@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class MPEs extends MY_Model
+class MPSs extends MY_Model
 {
 
   function __construct()
@@ -39,14 +39,14 @@ class MPEs extends MY_Model
   function delete($uuid)
   {
     $user = $this->findOne($uuid);
-    if ('MPE' !== $user['username']) return parent::delete($uuid);
+    if ('MPS' !== $user['username']) return parent::delete($uuid);
   }
 
   function save($data)
   {
     $this->load->model('Roles');
-    $MPE = $this->Roles->findOne(array('name' => 'MPE'));
-    $data['role'] = $MPE['uuid'];
+    $MPS = $this->Roles->findOne(array('name' => 'MPS'));
+    $data['role'] = $MPS['uuid'];
 
     if (strlen($data['password']) > 0) {
       if ($data['password'] !== $data['confirm_password']) return array('error' => array('message' => 'Password tidak sesuai'));
@@ -61,7 +61,7 @@ class MPEs extends MY_Model
     if (!is_array($param)) $param = array("{$this->table}.uuid" => $param);
     $this->db
       ->join('role', 'role.uuid = user.role', 'left')
-      ->where('role.name', 'MPE');
+      ->where('role.name', 'MPS');
     $record = parent::findOne($param);
     $record['confirm_password'] = '';
     return $record;
@@ -74,7 +74,7 @@ class MPEs extends MY_Model
       ->select("{$this->table}.orders")
       ->select("{$this->table}.username")
       ->join('role', 'role.uuid = user.role', 'left')
-      ->where('role.name', 'MPE');
+      ->where('role.name', 'MPS');
     return parent::dt();
   }
 }
