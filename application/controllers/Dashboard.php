@@ -10,7 +10,8 @@ class Dashboard extends MY_Controller {
 
 	function index ()
 	{
-	    $vars = array();
+		$vars = array();
+		$vars['breadcrumb'] = array();
 	    $this->load->model('Menus');
 	    $vars['menu'] = $this->Menus->find(array('role' => $this->session->userdata('role')));
 		$vars['page_name'] = 'dashboard';

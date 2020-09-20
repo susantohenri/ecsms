@@ -46,22 +46,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content-header">
       <div class="container">
         <div class="row mb-2">
-          <?php if (!in_array(current_url(), array (site_url(), base_url()))): ?>
           <div class="col-sm-6">
             <h1 class="m-0 text-dark"><?= $page_title ?></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?= base_url() ?>" class="text-danger">Home</a></li>
-              <?php if (in_array ($page_name, array ('table', 'dashboard'))): ?>
-                <li class="breadcrumb-item active"><?= $page_title ?></li>
-              <?php else: ?>
-                <li class="breadcrumb-item"><a class="text-danger" href="<?= site_url ($current['controller']) ?>"><?= $page_title ?></a></li>
-                <li class="breadcrumb-item active">Form</li>
-              <?php endif ?>
+              <?php foreach ($breadcrumb as $crumb): ?>
+                <?php if (false === $crumb['active']): ?>
+                  <li class="breadcrumb-item"><a href="<?= $crumb['href'] ?>" class="text-danger"><?= $crumb['text'] ?></a></li>
+                <?php else: ?>
+                  <li class="breadcrumb-item active"><?= $crumb['text'] ?></li>
+                <?php endif ?>
+              <?php endforeach ?>
             </ol>
           </div><!-- /.col -->
-          <?php endif ?>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>

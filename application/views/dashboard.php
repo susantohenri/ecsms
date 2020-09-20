@@ -48,6 +48,7 @@
 </style>
 
 <?php foreach ($menu as $m) : ?>
+	<?php if (!in_array($m->url, array('Admin', 'HSSE', 'MPS', 'Vendor'))): ?>
 
 	<div class="col-sm-2">
 		<a href="<?= site_url($m->url) ?>">
@@ -61,6 +62,7 @@
 		</a>
 	</div>
 
+	<?php endif ?>
 <?php endforeach; ?>
 
 <div class="col-sm-12">

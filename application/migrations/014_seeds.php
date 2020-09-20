@@ -8,6 +8,7 @@ class Migration_seeds extends CI_Migration
   {
 
     $menu_icon = array(
+      'User' => 'user',
       'Admin' => 'user-secret',
       'HSSE' => 'street-view',
       'MPS' => 'user-circle',
@@ -27,25 +28,27 @@ class Migration_seeds extends CI_Migration
       if (in_array($role, array('Admin', 'HSSE', 'MPS'))) $admins[] = $roledb;
       if ('Admin' === $role) $superadmin = $roledb;
       if ('Vendor' === $role) $vendor = $roledb;
-      foreach (array('index', 'create', 'read', 'update', 'delete') as $action) {
-        foreach ($admins as $admin) {
-          $this->Permissions->create(array(
-            'role' => $admin,
-            'action' => $action,
-            'entity' => $role
-          ));
-        }
-      }
-
-      $this->Menus->create(array(
-        'role' => $superadmin,
-        'name' => $role,
-        'url' => $role,
-        'icon' => $menu_icon[$role]
-      ));
     }
 
-    foreach (array('User', 'Role', 'Permission', 'Menu', 'Project', 'PesertaProject', 'HSE', 'PJA', 'WIP', 'LaporanBulanan', 'KPI', 'Email', 'Template'/*additionalEntity*/) as $entity) {
+    $this->Menus->create(array(
+      'role' => $superadmin,
+      'name' => 'Admin',
+      'url' => 'Admin',
+      'icon' => $menu_icon['Admin']
+    ));
+
+    foreach ($admins as $admin) {
+      foreach (array('User', 'MPS', 'HSSE') as $role) {
+        $this->Menus->create(array(
+          'role' => $admin,
+          'name' => $role,
+          'url' => $role,
+          'icon' => $menu_icon[$role]
+        ));
+      }
+    }
+
+    foreach (array('User', 'HSSE', 'MPS', 'Role', 'Permission', 'Menu', 'Project', 'PesertaProject', 'HSE', 'PJA', 'WIP', 'LaporanBulanan', 'KPI', 'Email', 'Template'/*additionalEntity*/) as $entity) {
       foreach (array('index', 'create', 'read', 'update', 'delete') as $action) {
         foreach ($admins as $admin) {
           $this->Permissions->create(array(

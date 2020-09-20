@@ -35,6 +35,36 @@ class MY_Controller extends CI_Controller {
 
     $this->load->model('Permissions');
     if (!isset ($vars['permission'])) $vars['permission'] = $this->Permissions->getPermissions();
+
+    if (in_array(current_url(), array (site_url(), base_url()))) {
+      $vars['breadcrumb'] = array();
+    } else if (!isset ($vars['breadcrumb'])) {
+      $vars['breadcrumb'] = array();
+      $vars['breadcrumb'][] = array(
+        'href' => base_url(),
+        'text' => 'Home',
+        'active' => false
+      );
+      if (in_array ($vars['page_name'], array ('table', 'dashboard'))) {
+        $vars['breadcrumb'][] = array(
+          'href' => null,
+          'text' => $vars['page_title'],
+          'active' => true
+        );
+      } else if ('form' === $vars['page_name']) {
+        $vars['breadcrumb'][] = array(
+          'href' => site_url($vars['current']['controller']),
+          'text' => $vars['page_title'],
+          'active' => false
+        );
+        $vars['breadcrumb'][] = array(
+          'href' => null,
+          'text' => 'Form',
+          'active' => true
+        );
+      }
+    }
+
     $this->load->view($view, $vars);
   }
 
