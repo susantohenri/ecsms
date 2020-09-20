@@ -36,7 +36,8 @@ class MY_Controller extends CI_Controller {
     $this->load->model('Permissions');
     if (!isset ($vars['permission'])) $vars['permission'] = $this->Permissions->getPermissions();
 
-    if (in_array(current_url(), array (site_url(), base_url()))) {
+    if ('index' !== $view) {
+    } else if (in_array(current_url(), array (site_url(), base_url()))) {
       $vars['breadcrumb'] = array();
     } else if (!isset ($vars['breadcrumb'])) {
       $vars['breadcrumb'] = array();
