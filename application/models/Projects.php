@@ -108,19 +108,6 @@ class Projects extends MY_Model
 		return $uuid;
 	}
 
-	function save($record)
-	{
-		if (isset($record['pemenang'])) {
-			if (!isset($uuid)) $record['progress'] = 2;
-			else {
-				$project = $this->findOne($record['uuid']);
-				if ($project['progress'] < 2 && strlen($record['pemenang']) > 0) $record['progress'] = 2;
-				else if ($project['progress'] == 2 && strlen($record['pemenang']) < 1) $record['progress'] = 1;
-			}
-		}
-		return parent::save($record);
-	}
-
 	function delete($uuid)
 	{
 		$models = array('PJAs', 'LaporanBulanans', 'WIPs', 'KPIs');
