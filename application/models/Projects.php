@@ -209,9 +209,11 @@ class Projects extends MY_Model
 
 			if (!is_null($record->hse_uuid)) $record->hse_link = site_url("HSE/read/{$record->hse_uuid}");
 			if (strlen($record->pemenang) > 0) $record->pja_link = site_url("PJA/read/{$record->pja_uuid}");
-			if ($record->pja_progress > 0 && strlen($record->lapbul_uuid) > 0) $record->lapbul_link = site_url("LaporanBulanan/read/{$record->lapbul_uuid}");
-			if ('100 %' === $record->lapbul_text) $record->wip_link = site_url("WIP/read/{$record->wip_uuid}");
-			if ($record->wip_progress > 0) $record->kpi_link = site_url("KPI/read/{$record->kpi_uuid}");
+			if ($record->pja_progress > 0) {
+				if (strlen($record->lapbul_uuid) > 0) $record->lapbul_link = site_url("LaporanBulanan/read/{$record->lapbul_uuid}");
+				$record->wip_link = site_url("WIP/read/{$record->wip_uuid}");
+			}
+			if ($record->wip_progress > 0 && '100 %' === $record->lapbul_text) $record->kpi_link = site_url("KPI/read/{$record->kpi_uuid}");
 			if ($record->kpi_progress > 0) $record->fe_link = site_url("Project/FE/{$record->uuid}");
 
 			return $record;
