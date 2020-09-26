@@ -16,12 +16,12 @@ class LaporanBulanans extends MY_Model
 			array(
 				'name' => 'a1',
 				'width' => 2,
-				'label' => 'Jumlah Tenaga Kerja',
+				'label' => '1. Jumlah Tenaga Kerja',
 			),
 			array(
 				'name' => 'a2',
 				'width' => 2,
-				'label' => 'Jumlah Jam Kerja',
+				'label' => '2. Jumlah Jam Kerja',
 			),
 			array(
 				'name' => '',
@@ -31,27 +31,27 @@ class LaporanBulanans extends MY_Model
 			array(
 				'name' => 'b1',
 				'width' => 2,
-				'label' => 'Fatality',
+				'label' => '1. Fatality',
 			),
 			array(
 				'name' => 'b2',
 				'width' => 2,
-				'label' => 'Lost Time Incident',
+				'label' => '2. Lost Time Incident',
 			),
 			array(
 				'name' => 'b3',
 				'width' => 2,
-				'label' => 'Insiden berdampak pencemaran lingkungan',
+				'label' => '3. Insiden berdampak pencemaran lingkungan',
 			),
 			array(
 				'name' => 'b4',
 				'width' => 2,
-				'label' => 'Insiden berdampak kebakaran / kerusakan aset',
+				'label' => '4. Insiden berdampak kebakaran / kerusakan aset',
 			),
 			array(
 				'name' => 'b5',
 				'width' => 2,
-				'label' => 'First Aid',
+				'label' => '5. First Aid',
 			),
 			array(
 				'name' => '',
@@ -61,62 +61,62 @@ class LaporanBulanans extends MY_Model
 			array(
 				'name' => 'c1',
 				'width' => 2,
-				'label' => 'HSE Meeting',
+				'label' => '1. HSE Meeting',
 			),
 			array(
 				'name' => 'c2',
 				'width' => 2,
-				'label' => 'HSE Talk/ briefing',
+				'label' => '2. HSE Talk/ briefing',
 			),
 			array(
 				'name' => 'c3',
 				'width' => 2,
-				'label' => 'HSE Reporting',
+				'label' => '3. HSE Reporting',
 			),
 			array(
 				'name' => 'c4',
 				'width' => 2,
-				'label' => 'HSE Management Visit',
+				'label' => '4. HSE Management Visit',
 			),
 			array(
 				'name' => 'c5',
 				'width' => 2,
-				'label' => 'Closure Action',
+				'label' => '5. Closure Action',
 			),
 			array(
 				'name' => 'c6',
 				'width' => 2,
-				'label' => 'Inspection/Audit',
+				'label' => '6. Inspection/Audit',
 			),
 			array(
 				'name' => 'c7',
 				'width' => 2,
-				'label' => 'Kepatuhan terhadap Penggunaan APD',
+				'label' => '7. Kepatuhan terhadap Penggunaan APD',
 			),
 			array(
 				'name' => 'c8',
 				'width' => 2,
-				'label' => 'Kepatuhan terhadap Pengelolaan limbah',
+				'label' => '8. Kepatuhan terhadap Pengelolaan limbah',
 			),
 			array(
 				'name' => 'c9',
 				'width' => 2,
-				'label' => 'Kepatuhan terhadap pengelolaan hygiene industry',
+				'label' => '9. Kepatuhan terhadap pengelolaan hygiene industry',
 			),
 			array(
 				'name' => 'c10',
 				'width' => 2,
-				'label' => 'Kepatuhan terhadap pengelolaan good house keeping',
+				'label' => '10. Kepatuhan terhadap pengelolaan good house keeping',
 			),
 			array(
 				'name' => 'c11',
 				'width' => 2,
-				'label' => 'Pelaporan Nearmiss',
+				'label' => '11. Pelaporan Nearmiss',
 			),
 			array(
 				'name' => 'c12',
 				'width' => 2,
-				'label' => 'Pelaporan Safety Non Conformity (Unsafe Act & Unsafe Condition)',
+				'label' => '12. Pelaporan Safety Non Conformity (Unsafe Act & Unsafe Condition)',
 			),
 		);
 		$this->childs = array();
