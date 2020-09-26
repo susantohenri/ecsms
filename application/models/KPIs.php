@@ -72,7 +72,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'b3_target',
-				'label' => 'Insiden berdampak pencemaran lingkungan',
+				'label' => '3. Insiden berdampak pencemaran lingkungan',
 			),
 			array(
 				'name' => 'b3_actual',
@@ -85,7 +85,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'b4_target',
-				'label' => 'Insiden berdampak kebakaran / kerusakan aset',
+				'label' => '4. Insiden berdampak kebakaran / kerusakan aset',
 			),
 			array(
 				'name' => 'b4_actual',
@@ -98,7 +98,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'b5_target',
-				'label' => 'First Aid',
+				'label' => '5. First Aid',
 			),
 			array(
 				'name' => 'b5_actual',
@@ -142,7 +142,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c3_target',
-				'label' => 'HSE Reporting',
+				'label' => '3. HSE Reporting',
 			),
 			array(
 				'name' => 'c3_actual',
@@ -155,7 +155,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c4_target',
-				'label' => 'HSE Management Visit',
+				'label' => '4. HSE Management Visit',
 			),
 			array(
 				'name' => 'c4_actual',
@@ -168,7 +168,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c5_target',
-				'label' => 'Closure Action',
+				'label' => '5. Closure Action',
 			),
 			array(
 				'name' => 'c5_actual',
@@ -181,7 +181,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c6_target',
-				'label' => 'Inspection/Audit',
+				'label' => '6. Inspection/Audit',
 			),
 			array(
 				'name' => 'c6_actual',
@@ -194,7 +194,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c7_target',
-				'label' => 'Kepatuhan terhadap Penggunaan APD',
+				'label' => '7. Kepatuhan terhadap Penggunaan APD',
 			),
 			array(
 				'name' => 'c7_actual',
@@ -207,7 +207,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c8_target',
-				'label' => 'Kepatuhan terhadap Pengelolaan limbah',
+				'label' => '8. Kepatuhan terhadap Pengelolaan limbah',
 			),
 			array(
 				'name' => 'c8_actual',
@@ -220,7 +220,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c9_target',
-				'label' => 'Kepatuhan terhadap pengelolaan hygiene industry',
+				'label' => '9. Kepatuhan terhadap pengelolaan hygiene industry',
 			),
 			array(
 				'name' => 'c9_actual',
@@ -233,7 +233,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c10_target',
-				'label' => 'Kepatuhan terhadap pengelolaan good house keeping',
+				'label' => '10. Kepatuhan terhadap pengelolaan good house keeping',
 			),
 			array(
 				'name' => 'c10_actual',
