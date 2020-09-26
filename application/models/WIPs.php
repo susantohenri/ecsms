@@ -15,6 +15,11 @@ class WIPs extends MY_Model
 		$this->form = array(
 			array(
 				'name' => '',
+				'label' => 'CHECK LIST INSPEKSI HSE WORK PRACTICE',
+				'type' => 'form-separator'
+			),
+			array(
+				'name' => '',
 				'label' => '1. Kepatuhan penggunaan APD',
 				'type' => 'label'
 			),
@@ -2799,6 +2804,11 @@ class WIPs extends MY_Model
 				'name' => '28a3_note',
 				'width' => 2,
 				'label' => ' ',
+			),
+			array(
+				'name' => '',
+				'label' => 'CHECK LIST INSPEKSI PENERAPAN PROGRAM HSE',
+				'type' => 'form-separator'
 			),
 			array(
 				'name' => '1_isneed',

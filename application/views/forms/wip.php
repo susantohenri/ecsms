@@ -57,17 +57,24 @@
                   </div>
                 </div>
                 <?php break; ?>
-              <?php
-              case 'label': ?>
+                <?php
+              case 'form-separator': ?>
                 <hr>
-                <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
+                <div class="form-group row text-center">
+                  <label class="col-sm-12 control-label"><?= $field['label']  ?></label>
+                </div>
+                <hr>
+                <?php break; ?>
+                <?php
+              case 'label': ?>
+                <div class="form-group row">
                   <label class="col-sm-12 control-label"><?= $field['label']  ?></label>
                 </div>
                 <?php break; ?>
               <?php
               default: ?>
                 <?php if (strpos($field['name'], '_isneed') > -1) : ?>
-                  <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
+                  <div class="form-group row" style="background-color: #f9f9f9">
                     <label style="padding-left: 25px; font-weight: 400" class="col-sm-3 control-label"><?= $field['label']  ?></label>
                     <div class="col-sm-2">
                       <select class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
