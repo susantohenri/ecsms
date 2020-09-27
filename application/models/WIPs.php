@@ -33,6 +33,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '1a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -54,6 +59,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '1b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -75,6 +85,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '1c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -96,6 +111,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '1d_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -117,6 +137,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '1e_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -143,6 +168,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '2a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -164,6 +195,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '2b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -185,6 +221,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '2c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -211,6 +252,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '3a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -232,6 +278,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '3b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -253,6 +304,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '3c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -279,6 +335,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '4a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -300,6 +362,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '4b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -321,6 +389,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '4c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -347,6 +421,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '5a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -368,6 +448,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '5b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -389,6 +475,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '5c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -415,6 +507,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '6a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -436,6 +533,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '6b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -457,6 +560,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '6c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -478,6 +587,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '6d_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -504,6 +619,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '7a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -525,6 +646,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '7b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -546,6 +673,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '7c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -567,6 +700,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '7d_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -588,6 +727,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '7e_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -614,6 +759,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '8a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -635,6 +785,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '8b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -656,6 +811,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '8c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -677,6 +837,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '8d_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -698,6 +864,10 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '8e_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -719,6 +889,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '8f_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -745,6 +920,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '9a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -766,6 +946,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '9b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -787,6 +972,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '9c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -808,6 +998,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '9d_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -829,6 +1024,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '9e_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -850,6 +1050,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '9f_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -871,6 +1076,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '9g_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -892,6 +1102,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '9h_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -918,6 +1133,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '10a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -939,6 +1159,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '10b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -960,6 +1185,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '10c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -981,6 +1211,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '10d_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1007,6 +1242,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '11a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1028,6 +1268,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '11b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1049,6 +1294,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '11c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1070,6 +1320,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '11d_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1091,6 +1346,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '11e_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1117,6 +1377,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '12a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1138,6 +1403,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '12b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1159,6 +1429,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '12c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1185,6 +1460,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '13a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1206,6 +1486,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '13b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1227,6 +1512,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '13c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1253,6 +1543,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '14a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1279,6 +1574,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '15a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1305,6 +1605,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '16a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1326,6 +1631,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '16b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1347,6 +1657,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '16c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1368,6 +1683,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '16d_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1394,6 +1714,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '17a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1415,6 +1740,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '17b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1436,6 +1766,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '17c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1457,6 +1792,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '17d_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1478,6 +1818,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '17e_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1499,6 +1844,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '17f_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1525,6 +1876,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '18a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1546,6 +1903,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '18b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1567,6 +1929,12 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '18c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2'),
+					array('value' => '3', 'text' => '3')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1593,6 +1961,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '19a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1614,6 +1987,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '19b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1635,6 +2013,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '19c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1656,6 +2039,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '19d_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1677,6 +2065,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '19e_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1703,6 +2096,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '20a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1724,6 +2122,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '20b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1745,6 +2148,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '20c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1771,6 +2179,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '21a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1792,6 +2205,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '21b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1818,6 +2236,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '22a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1839,6 +2262,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '22b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1870,6 +2298,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '23a1_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1891,6 +2324,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '23a2_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1912,6 +2350,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '23a3_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1933,6 +2376,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '23a4_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1954,6 +2402,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '23a5_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -1980,6 +2433,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '23b1_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2001,6 +2459,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '23b2_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2022,6 +2485,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '23b3_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2048,6 +2516,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '24a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2069,6 +2542,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '24b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2090,6 +2568,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '24c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2121,6 +2604,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25a1_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2142,6 +2630,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25a2_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2163,6 +2656,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25a3_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2184,6 +2682,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25a4_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2205,6 +2708,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25a5_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2226,6 +2734,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25a6_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2247,6 +2760,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25a7_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2273,6 +2791,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25b1_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2294,6 +2817,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25b2_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2315,6 +2843,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25b3_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2336,6 +2869,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25b4_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2357,6 +2895,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25b5_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2378,6 +2921,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25b6_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2399,6 +2947,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25b7_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2420,6 +2973,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25b8_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2441,6 +2999,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '25b9_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2467,6 +3030,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '26a_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2488,6 +3056,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '26b_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2509,6 +3082,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '26c_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2530,6 +3108,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '26d_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2561,6 +3144,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27a1_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2582,6 +3170,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27a2_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2603,6 +3196,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27a3_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2624,6 +3222,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27a4_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2645,6 +3248,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27a5_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2666,6 +3274,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27a6_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2687,6 +3300,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27a7_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2708,6 +3326,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27a8_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2729,6 +3352,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27a9_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2755,6 +3383,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27b1_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2776,6 +3409,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27b2_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2797,6 +3435,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27b3_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2818,6 +3461,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27b4_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2844,6 +3492,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27c1_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2865,6 +3518,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27c2_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2886,6 +3544,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '27c3_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2912,6 +3575,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '28a1_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2933,6 +3601,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '28a2_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2954,6 +3627,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '28a3_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -2980,6 +3658,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '1_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -3001,6 +3684,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '2_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -3022,6 +3710,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '3_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -3043,6 +3736,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '4_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -3064,6 +3762,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '5_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -3085,6 +3788,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '6_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -3106,6 +3814,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '7_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -3127,6 +3840,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '8_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -3148,6 +3866,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '9_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -3169,6 +3892,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '10_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -3190,6 +3918,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '11_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(
@@ -3211,6 +3944,11 @@ class WIPs extends MY_Model
 			),
 			array(
 				'name' => '12_score_max',
+				'options' => array(
+					array('value' => '0', 'text' => '0'),
+					array('value' => '1', 'text' => '1'),
+					array('value' => '2', 'text' => '2')
+				),
 				'label' => 'Score Max',
 			),
 			array(

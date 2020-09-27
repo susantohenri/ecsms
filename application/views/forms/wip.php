@@ -83,8 +83,20 @@
                         <?php endforeach ?>
                       </select>
                     </div>
-                  <?php endif ?>
-                  <?php if (strpos($field['name'], '_score') > -1) : ?>
+                    <?php elseif (strpos($field['name'], '_score_max') > -1) : ?>
+                    <div class="col-sm-2">
+                      <div class="input-group input-group-sm">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><?= $field['label'] ?></span>
+                        </div>
+                        <select class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                          <?php foreach ($field['options'] as $opt) : ?>
+                            <option <?= $opt['value'] === $field['value'] || (is_array($field['value']) && in_array($opt['value'], $field['value'])) ? 'selected="selected"' : '' ?> value="<?= $opt['value'] ?>"><?= $opt['text'] ?></option>
+                          <?php endforeach ?>
+                        </select>
+                      </div>
+                    </div>
+                    <?php elseif (strpos($field['name'], '_score_actual') > -1) : ?>
                     <div class="col-sm-2">
                       <div class="input-group input-group-sm">
                         <div class="input-group-prepend">
@@ -93,8 +105,7 @@
                         <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
                       </div>
                     </div>
-                  <?php endif ?>
-                  <?php if (strpos($field['name'], '_note') > -1) : ?>
+                  <?php elseif (strpos($field['name'], '_note') > -1) : ?>
                     <div class="col-sm-3">
                       <div class="input-group input-group-sm">
                         <div class="input-group-prepend">
