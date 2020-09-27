@@ -49,17 +49,32 @@
                 <?php break; ?>
               <?php
               case 'select': ?>
-                <div class="form-group row">
-                  <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-9">
-                    <?php if (preg_match('/(multiple)/', $field['attr']) > 0) : ?>
-                      <input type="hidden" name="<?= str_replace('[]', '', $field['name']) ?>">
-                    <?php endif ?>
-                    <select class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                      <?php foreach ($field['options'] as $opt) : ?>
-                        <option <?= $opt['value'] === $field['value'] || (is_array($field['value']) && in_array($opt['value'], $field['value'])) ? 'selected="selected"' : '' ?> value="<?= $opt['value'] ?>"><?= $opt['text'] ?></option>
-                      <?php endforeach ?>
-                    </select>
+                <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
+                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-9 control-label"><?= $field['label']  ?></label>
+                  <div class="col-sm-3">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <?php if ($field['show_preview_button']) : ?>
+                          <a class="btn btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
+                            <i class="fa fa-file-pdf"></i>&nbsp;
+                            preview
+                          </a>
+                        <?php endif ?>
+                        <?php if ($field['show_score']) : ?>
+                          <span class="btn btn-secondary">
+                            <i class="fa fa-check"></i>&nbsp;
+                            score
+                          </span>
+                        <?php endif ?>
+                      </div>
+                      <?php if ($field['show_score']) : ?>
+                        <select class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                          <?php foreach ($field['options'] as $opt) : ?>
+                            <option <?= $opt['value'] === $field['value'] || (is_array($field['value']) && in_array($opt['value'], $field['value'])) ? 'selected="selected"' : '' ?> value="<?= $opt['value'] ?>"><?= $opt['text'] ?></option>
+                          <?php endforeach ?>
+                        </select>
+                      <?php endif ?>
+                    </div>
                   </div>
                 </div>
                 <?php break; ?>

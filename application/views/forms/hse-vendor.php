@@ -35,17 +35,30 @@
                 <?php break; ?>
               <?php
               case 'select': ?>
-                <div class="form-group row">
-                  <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-9">
-                    <?php if (preg_match('/(multiple)/', $field['attr']) > 0) : ?>
-                      <input type="hidden" name="<?= str_replace('[]', '', $field['name']) ?>">
-                    <?php endif ?>
-                    <select class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                      <?php foreach ($field['options'] as $opt) : ?>
-                        <option <?= $opt['value'] === $field['value'] || (is_array($field['value']) && in_array($opt['value'], $field['value'])) ? 'selected="selected"' : '' ?> value="<?= $opt['value'] ?>"><?= $opt['text'] ?></option>
-                      <?php endforeach ?>
-                    </select>
+                <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
+                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-8 control-label"><?= $field['label']  ?></label>
+                  <div class="col-sm-4">
+                    <div class="input-group input-group-sm">
+                      <?php if ($field['show_upload_button']) : ?>
+                        <input class="form-control" type="file" accept="application/pdf" name="<?= $field['name'] ?>" onchange="uploadDoc('<?= $field['upload_url'] ?>');" style="font-size:.71rem">
+                      <?php endif ?>
+                      <?php if ($field['show_preview_button']) : ?>
+                        <div class="input-group-append">
+                          <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
+                            <i class="fa fa-file-pdf"></i>&nbsp;
+                            Preview
+                          </a>
+                        </div>
+                      <?php endif ?>
+                      <?php if ($field['show_score']) : ?>
+                        <div class="input-group-append">
+                          <a class="btn btn-sm btn-secondary">
+                            <i class="fa fa-check"></i>&nbsp;
+                            Score <?= $field['value'] ?>
+                          </a>
+                        </div>
+                      <?php endif ?>
+                    </div>
                   </div>
                 </div>
                 <?php break; ?>
