@@ -3257,6 +3257,15 @@ class WIPs extends MY_Model
 		return $form;
 	}
 
+	function create ($data)
+	{
+		$fields = array_filter($this->form, function ($field) {
+			return strpos($field['name'], '_isneed') > -1;
+		});
+		foreach ($fields as $field) $data[$field['name']] = 1;
+		return parent::create($data);
+	}
+
 	function download($uuid)
 	{
 		return array();
