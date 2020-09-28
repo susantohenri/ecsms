@@ -3254,15 +3254,50 @@ class WIPs extends MY_Model
 				return $field;
 			}, $form);
 		}
+		$form = array_map(function ($field) {
+			if (strpos($field['name'], '_score_max') > -1) $field['attr'] .= ' disabled="disabled"';
+			return $field;
+		}, $form);
 		return $form;
 	}
 
 	function create ($data)
 	{
-		$fields = array_filter($this->form, function ($field) {
+		$isneeds = array_filter($this->form, function ($field) {
 			return strpos($field['name'], '_isneed') > -1;
 		});
-		foreach ($fields as $field) $data[$field['name']] = 1;
+		foreach ($isneeds as $field) $data[$field['name']] = 1;
+
+		$max_scores = array_filter($this->form, function ($field) {
+			return strpos($field['name'], '_score_max') > -1;
+		});
+		foreach ($max_scores as $field) $data[$field['name']] = 2;
+
+		$max3 = array(
+			'2a',
+			'4a',
+			'4b',
+			'4c',
+			'5a',
+			'5b',
+			'5c',
+			'6b',
+			'6c',
+			'6d',
+			'7a',
+			'7b',
+			'7c',
+			'7d',
+			'7e',
+			'8d',
+			'17f',
+			'18a',
+			'18c'
+		);
+		foreach ($max3 as $field) $data["{$field}_score_max"] = 3;
+
+		$data['8e_score_max'] = 1;
+
 		return parent::create($data);
 	}
 
