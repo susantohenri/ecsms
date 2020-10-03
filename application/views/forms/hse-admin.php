@@ -13,21 +13,23 @@
     <div class="card-body">
 
       <div class="text-right">
-        <a class="btn btn-danger" href="<?= site_url("HSE/download/{$uuid}") ?>">
+        <input type="checkbox" name="download-checkbox" class="download-checkbox" style="display: none;">
+        <button class="btn btn-danger" onclick="document.querySelector('.download-checkbox').click()">
           <i class="fa fa-download"></i> &nbsp;
-          Download HSE Plan
-        </a>
-        <a class="btn btn-info">
+          Save & Download
+        </button>
+        <input type="sendmail" name="sendmail-checkbox" class="sendmail-checkbox" style="display: none;">
+        <button class="btn btn-info" onclick="document.querySelector('.sendmail-checkbox').click()">
           <i class="fa fa-paper-plane"></i> &nbsp;
-          Send Email
-        </a>
+          Save & Email
+        </button>
         <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
-          <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Update</button>
+          <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Save Only</button>
         <?php endif ?>
         <?php if (!empty($uuid) && in_array("delete_{$current['controller']}", $permission)) : ?>
           <a href="<?= site_url($current['controller'] . "/delete/$uuid") ?>" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</a>
         <?php endif ?>
-        <a href="<?= site_url($current['controller']) ?>" class="btn btn-warning"><i class="fa fa-arrow-left"></i> &nbsp; Cancel</a>
+        <a href="<?= site_url($current['controller']) ?>" class="btn btn-warning"><i class="fa fa-arrow-left"></i> &nbsp; Back</a>
       </div>
 
       <div class="" data-controller="<?= $current['controller'] ?>">

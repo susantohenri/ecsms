@@ -1,5 +1,10 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
+require 'vendor/autoload.php';
+
+use \PhpOffice\PhpSpreadsheet\IOFactory;
+use \PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 class HSE extends MY_Controller
 {
 
@@ -12,24 +17,21 @@ class HSE extends MY_Controller
 	public function index()
 	{
 		$model = $this->model;
+		$vars = array();
 		if ($post = $this->$model->lastSubmit($this->input->post())) {
 			if (isset($post['delete'])) $this->$model->delete($post['delete']);
-			else {
-				$db_debug = $this->db->db_debug;
-				$this->db->db_debug = FALSE;
-
-				$result = $this->$model->save($post);
-
-				$error = $this->db->error();
-				$this->db->db_debug = $db_debug;
-				if (isset($result['error'])) $error = $result['error'];
-				if (count($error)) {
-					$this->session->set_flashdata('model_error', $error['message']);
-					redirect($this->controller);
-				}
+			else
+			{
+				$download = isset ($post['download-checkbox']);
+				unset($post['download-checkbox']);
+				unset($post['sendmail-checkbox']);
+				$uuid = $this->$model->save($post);
+				if ($download) $vars['download_page'] = site_url("HSE/download/{$uuid}");
 			}
 		}
-		redirect(base_url());
+		$vars['page_name'] = 'redirector';
+		$vars['redirect_page'] = base_url();
+		$this->loadview('index', $vars);
 	}
 
 	function read($id)
@@ -57,11 +59,27 @@ class HSE extends MY_Controller
 		$this->loadview('index', $vars);
 	}
 
-	function upload ($uuid, $input) {
+	function upload($uuid, $input)
+	{
 		echo $this->HSEs->upload($uuid, $input);
 	}
 
-	function download ($uuid) {
 
+	function download($uuid)
+	{
+		$model = $this->model;
+		$cellMap = $this->$model->fillExcel($uuid);
+		$project = $this->$model->getProjectName($uuid);
+		$vendor = $this->$model->getVendorName($uuid);
+
+		$spreadsheet = IOFactory::load('./excels/Form 1 - HSE plan.xlsx');
+
+		$sheet = $spreadsheet->getSheet(1);
+		foreach ($cellMap as $cell => $val) $sheet->setCellValue($cell, $val);
+
+		$writer = new Xlsx($spreadsheet);
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment; filename="' . "HSE - {$project} - {$vendor}.xlsx" . '"');
+		$writer->save('php://output');
 	}
 }

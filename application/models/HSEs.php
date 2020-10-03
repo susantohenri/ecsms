@@ -743,8 +743,27 @@ class HSEs extends MY_Model
 		return $result['nama'];
 	}
 
-	function download($uuid)
+	function getVendorName($uuid)
 	{
-		return array();
+		$result = $this->db
+			->select('user.vendor')
+			->join('user', 'hse.vendor = user.uuid', 'left')
+			->get_where($this->table, array('hse.uuid' => $uuid))
+			->row_array();
+		return $result['vendor'];
+	}
+
+	function fillExcel ($uuid)
+	{
+		$val = $this->findOne($uuid);
+		return array(
+			'F17' => $val['2a'],
+			'F18' => $val['2b'],
+			'F19' => $val['2c'],
+			'F20' => $val['2d'],
+
+			'F23' => $val['3a'],
+			'F24' => $val['3b'],
+		);
 	}
 }
