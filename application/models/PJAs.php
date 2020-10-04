@@ -1,5 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
+require 'vendor/autoload.php';
+use \PhpOffice\PhpSpreadsheet\IOFactory;
+
 class PJAs extends MY_Model
 {
 
@@ -1077,8 +1080,34 @@ class PJAs extends MY_Model
 		return $form;
 	}
 
-	function download($uuid)
+	function excel ($uuid)
 	{
-		return array();
+		$result = array (
+			'title' => '',
+			'spreadsheet' => ''
+		);
+
+		$project = $this->getProjectName($uuid);
+		$result['title'] = "PJA - {$project}";
+
+		$val = $this->findOne($uuid);
+		$cellMap = array(
+			'F14' => $val['1a_isya'] === '1' ? 'YA' : '',
+			'G14' => $val['1a_isya'] === '0' ? 'TIDAK' : '',
+			'H14' => $val['1a_isneed'] === '1' ? 'NEED' : 'NOT NEED',
+			'I14' => $val['1a_note'],
+
+			'F15' => $val['1b_isya'] === '1' ? 'YA' : '',
+			'G15' => $val['1b_isya'] === '0' ? 'TIDAK' : '',
+			'H15' => $val['1b_isneed'] === '1' ? 'NEED' : 'NOT NEED',
+			'I15' => $val['1b_note']
+		);
+
+		$spreadsheet = IOFactory::load('./excels/Form 2 - Checklist Pre Job Activty.xlsx');
+		$sheet = $spreadsheet->getSheet(0);
+		foreach ($cellMap as $cell => $val) $sheet->setCellValue($cell, $val);
+
+		$result['spreadsheet'] = $spreadsheet;
+		return $result;
 	}
 }

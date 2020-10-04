@@ -13,12 +13,13 @@
 <form id="form_pja" enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
   <div class="card card-danger card-outline">
     <div class="card-header text-right">
-      <a class="btn btn-danger" href="<?= site_url("PJA/download/{$uuid}") ?>">
+      <input type="checkbox" name="download-checkbox" class="download-checkbox" style="display: none;">
+      <button class="btn btn-danger" onclick="document.querySelector('.download-checkbox').click()">
         <i class="fa fa-download"></i> &nbsp;
-        Download PJA
-      </a>
+        Save & Download
+      </button>
       <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
-        <a class="btn btn-success btn-save" data-toggle="modal" data-target="#pja_submit_confirm"><i class="fa fa-save"></i> &nbsp; Submit</a>
+        <a class="btn btn-success btn-save" data-toggle="modal" data-target="#pja_submit_confirm"><i class="fa fa-save"></i> &nbsp; Save Only</a>
       <?php endif ?>
       <?php if (!empty($uuid) && in_array("delete_{$current['controller']}", $permission)) : ?>
         <a href="<?= site_url($current['controller'] . "/delete/$uuid") ?>" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</a>
