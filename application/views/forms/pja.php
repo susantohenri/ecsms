@@ -13,11 +13,11 @@
 <form id="form_pja" enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
   <div class="card card-danger card-outline">
     <div class="card-header text-right">
-      <input type="checkbox" name="download-checkbox" class="download-checkbox" style="display: none;">
-      <button class="btn btn-danger" onclick="document.querySelector('.download-checkbox').click()">
+      <input type="checkbox" name="download-button" class="download-button" style="display: none;">
+      <a class="btn btn-danger" onclick="document.querySelector('.download-button').click()" data-toggle="modal" data-target="#pja_submit_confirm">
         <i class="fa fa-download"></i> &nbsp;
         Save & Download
-      </button>
+      </a>
       <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
         <a class="btn btn-success btn-save" data-toggle="modal" data-target="#pja_submit_confirm"><i class="fa fa-save"></i> &nbsp; Save Only</a>
       <?php endif ?>
@@ -129,20 +129,18 @@
 
 </form>
 
-<div class="modal fade" id="pja_submit_confirm" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="pja_submit_confirm" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        &nbsp;
       </div>
       <div class="modal-body text-center">
         <h4>Apakah Anda Yakin ?</h4>
       </div>
       <div class="modal-footer">
         <a id="submit_form_pja" onclick="$('#form_pja').submit()" class="btn btn-success">Ya</a>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="$('.download-button').prop('checked', false)">Tidak</button>
       </div>
     </div>
   </div>

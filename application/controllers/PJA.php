@@ -15,20 +15,33 @@ class PJA extends MY_Controller
 	public function index()
 	{
 		$model = $this->model;
-		$vars = array();
 		if ($post = $this->$model->lastSubmit($this->input->post())) {
 			if (isset($post['delete'])) $this->$model->delete($post['delete']);
 			else
 			{
-				$download = isset ($post['download-checkbox']);
-				unset($post['download-checkbox']);
+				$download = isset ($post['download-button']);
+				$sendmail = isset ($post['sendmail-button']);
+				unset($post['download-button']);
+				unset($post['sendmail-button']);
 				$uuid = $this->$model->save($post);
-				if ($download) $vars['download_page'] = site_url("PJA/download/{$uuid}");
+				if ($download) redirect(site_url("PJA/downloadConfirm/{$uuid}"));
+				if ($sendmail)
+				{
+					$this->load->model('Emails');
+					$excel = $this->{$this->model}->excel($uuid);
+					$subject = $excel['title'];
+
+					ob_start();
+					$writer = new Xlsx($excel['spreadsheet']);
+					$writer->save('php://output');
+					$attachment = ob_get_contents();
+					ob_end_clean();
+
+					$this->Emails->sendmail($subject, $attachment);
+				}
 			}
 		}
-		$vars['page_name'] = 'redirector';
-		$vars['redirect_page'] = base_url();
-		$this->loadview('index', $vars);
+		redirect(base_url());
 	}
 
 	function read($id)
@@ -48,6 +61,13 @@ class PJA extends MY_Controller
 		);
 		$vars['page_name'] = 'forms/pja';
 		$vars['project_name'] = $this->$model->getProjectName($id);
+		$this->loadview('index', $vars);
+	}
+
+	function downloadConfirm ($uuid)
+	{
+		$vars['page_name'] = 'confirm-download';
+		$vars['uuid'] = $uuid;
 		$this->loadview('index', $vars);
 	}
 
