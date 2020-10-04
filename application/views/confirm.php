@@ -7,7 +7,7 @@
             <input type="hidden" name="delete" value="<?= $uuid ?>">
 
             <div class="text-center">
-              <h1>Are you sure ?</h1>
+              <h1>Are you sure to delete ?</h1>
               <button class="btn btn-danger"><i class="fa fa-check"></i> &nbsp; Yes</button>
               <a href="<?= site_url($current['controller']) ?>" class="btn btn-info"><i class="fa fa-arrow-left"></i> &nbsp; No</a>
             </div>

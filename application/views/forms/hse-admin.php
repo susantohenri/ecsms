@@ -13,13 +13,11 @@
     <div class="card-body">
 
       <div class="text-right">
-        <input type="checkbox" name="download-checkbox" class="download-checkbox" style="display: none;">
-        <button class="btn btn-danger" onclick="document.querySelector('.download-checkbox').click()">
+        <button class="btn btn-danger" name="download-button">
           <i class="fa fa-download"></i> &nbsp;
           Save & Download
         </button>
-        <input type="sendmail" name="sendmail-checkbox" class="sendmail-checkbox" style="display: none;">
-        <button class="btn btn-info" onclick="document.querySelector('.sendmail-checkbox').click()">
+        <button class="btn btn-info" name="sendmail-button">
           <i class="fa fa-paper-plane"></i> &nbsp;
           Save & Email
         </button>

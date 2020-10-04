@@ -15,17 +15,16 @@ class HSE extends MY_Controller
 	public function index()
 	{
 		$model = $this->model;
-		$vars = array();
 		if ($post = $this->$model->lastSubmit($this->input->post())) {
 			if (isset($post['delete'])) $this->$model->delete($post['delete']);
 			else
 			{
-				$download = isset ($post['download-checkbox']);
-				$sendmail = isset ($post['sendmail-checkbox']);
-				unset($post['download-checkbox']);
-				unset($post['sendmail-checkbox']);
+				$download = isset ($post['download-button']);
+				$sendmail = isset ($post['sendmail-button']);
+				unset($post['download-button']);
+				unset($post['sendmail-button']);
 				$uuid = $this->$model->save($post);
-				if ($download) $vars['download_page'] = site_url("HSE/download/{$uuid}");
+				if ($download) redirect(site_url("HSE/downloadConfirm/{$uuid}"));
 				if ($sendmail)
 				{
 					$this->load->model('Emails');
@@ -42,9 +41,7 @@ class HSE extends MY_Controller
 				}
 			}
 		}
-		$vars['page_name'] = 'redirector';
-		$vars['redirect_page'] = base_url();
-		$this->loadview('index', $vars);
+		redirect(base_url());
 	}
 
 	function read($id)
@@ -75,6 +72,13 @@ class HSE extends MY_Controller
 	function upload($uuid, $input)
 	{
 		echo $this->HSEs->upload($uuid, $input);
+	}
+
+	function downloadConfirm ($uuid)
+	{
+		$vars['page_name'] = 'confirm-download';
+		$vars['uuid'] = $uuid;
+		$this->loadview('index', $vars);
 	}
 
 	function download($uuid)
