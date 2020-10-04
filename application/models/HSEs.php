@@ -1,5 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
+require 'vendor/autoload.php';
+use \PhpOffice\PhpSpreadsheet\IOFactory;
+
 class HSEs extends MY_Model
 {
 
@@ -743,20 +746,24 @@ class HSEs extends MY_Model
 		return $result['nama'];
 	}
 
-	function getVendorName($uuid)
+	function excel ($uuid)
 	{
-		$result = $this->db
+		$result = array (
+			'title' => '',
+			'spreadsheet' => ''
+		);
+
+		$project = $this->getProjectName($uuid);
+		$findVendor = $this->db
 			->select('user.vendor')
 			->join('user', 'hse.vendor = user.uuid', 'left')
 			->get_where($this->table, array('hse.uuid' => $uuid))
 			->row_array();
-		return $result['vendor'];
-	}
+		$vendor = $findVendor['vendor'];
+		$result['title'] = "HSE - {$project} - {$vendor}";
 
-	function fillExcel ($uuid)
-	{
 		$val = $this->findOne($uuid);
-		return array(
+		$cellMap = array(
 			'F17' => $val['2a'],
 			'F18' => $val['2b'],
 			'F19' => $val['2c'],
@@ -765,5 +772,12 @@ class HSEs extends MY_Model
 			'F23' => $val['3a'],
 			'F24' => $val['3b'],
 		);
+
+		$spreadsheet = IOFactory::load('./excels/Form 1 - HSE plan.xlsx');
+		$sheet = $spreadsheet->getSheet(1);
+		foreach ($cellMap as $cell => $val) $sheet->setCellValue($cell, $val);
+
+		$result['spreadsheet'] = $spreadsheet;
+		return $result;
 	}
 }

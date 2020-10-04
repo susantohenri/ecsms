@@ -1,5 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
+require 'vendor/autoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\SMTP; -- UNCOMMENT FOR DEBUGGING
+
 class Emails extends MY_Model
 {
 
@@ -29,5 +33,38 @@ class Emails extends MY_Model
       ->select("{$this->table}.orders")
       ->select('email.email');
     return parent::dt();
+  }
+
+  function sendmail($subject, $attachment)
+  {
+    $recipients = array_map(function ($record) {
+      return $record->email;
+    }, $this->find());
+
+    $mail = new PHPMailer(true);
+
+    try {
+      // $mail->SMTPDebug = SMTP::DEBUG_SERVER; -- UNCOMMENT FOR DEBUGGING
+      $mail->isSMTP();
+      $mail->Host       = 'srv36.niagahoster.com';
+      $mail->SMTPAuth   = true;
+      $mail->Username   = 'noreply@ecsms.sikembang.com';
+      $mail->Password   = 'NppE%btE#8+Q';
+      $mail->SMTPSecure = 'ssl';
+      $mail->Port       = 465;
+      $mail->setFrom('noreply@ecsms.sikembang.com', 'NoReply');
+
+      foreach ($recipients as $mailAddr) $mail->addAddress($mailAddr);
+      $mail->addStringAttachment($attachment, "{$subject}.xlsx");
+
+      $mail->isHTML(true);
+      $mail->Subject = $subject;
+      $mail->Body    = '&nbsp;';
+      $mail->AltBody = '';
+
+      $mail->send();
+    } catch (Exception $e) {
+      echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
   }
 }

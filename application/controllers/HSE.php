@@ -1,8 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 require 'vendor/autoload.php';
-
-use \PhpOffice\PhpSpreadsheet\IOFactory;
 use \PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class HSE extends MY_Controller
@@ -23,10 +21,25 @@ class HSE extends MY_Controller
 			else
 			{
 				$download = isset ($post['download-checkbox']);
+				$sendmail = isset ($post['sendmail-checkbox']);
 				unset($post['download-checkbox']);
 				unset($post['sendmail-checkbox']);
 				$uuid = $this->$model->save($post);
 				if ($download) $vars['download_page'] = site_url("HSE/download/{$uuid}");
+				if ($sendmail)
+				{
+					$this->load->model('Emails');
+					$excel = $this->{$this->model}->excel($uuid);
+					$subject = $excel['title'];
+
+					ob_start();
+					$writer = new Xlsx($excel['spreadsheet']);
+					$writer->save('php://output');
+					$attachment = ob_get_contents();
+					ob_end_clean();
+
+					$this->Emails->sendmail($subject, $attachment);
+				}
 			}
 		}
 		$vars['page_name'] = 'redirector';
@@ -64,22 +77,13 @@ class HSE extends MY_Controller
 		echo $this->HSEs->upload($uuid, $input);
 	}
 
-
 	function download($uuid)
 	{
-		$model = $this->model;
-		$cellMap = $this->$model->fillExcel($uuid);
-		$project = $this->$model->getProjectName($uuid);
-		$vendor = $this->$model->getVendorName($uuid);
-
-		$spreadsheet = IOFactory::load('./excels/Form 1 - HSE plan.xlsx');
-
-		$sheet = $spreadsheet->getSheet(1);
-		foreach ($cellMap as $cell => $val) $sheet->setCellValue($cell, $val);
-
-		$writer = new Xlsx($spreadsheet);
+		$excel = $this->{$this->model}->excel($uuid);
+		$writer = new Xlsx($excel['spreadsheet']);
 		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-		header('Content-Disposition: attachment; filename="' . "HSE - {$project} - {$vendor}.xlsx" . '"');
+		header('Content-Disposition: attachment; filename="' . "{$excel['title']}.xlsx" . '"');
 		$writer->save('php://output');
 	}
+
 }
