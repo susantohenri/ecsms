@@ -13,21 +13,23 @@
 <form id="form_wip" enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
   <div class="card card-danger card-outline">
     <div class="card-header text-right">
-      <a class="btn btn-danger" href="<?= site_url("WIP/download/{$uuid}") ?>">
+      <input type="checkbox" name="download-practice" class="download-practice" style="display: none;">
+      <a class="btn btn-danger" onclick="document.querySelector('.download-practice').click()" data-toggle="modal" data-target="#wip_submit_confirm">
         <i class="fa fa-download"></i> &nbsp;
-        Report HSE Work Practice
+        Save & Download HSE Work Practice
       </a>
-      <a class="btn btn-info" href="<?= site_url("WIP/download/{$uuid}") ?>">
+      <input type="checkbox" name="download-program" class="download-program" style="display: none;">
+      <a class="btn btn-info" onclick="document.querySelector('.download-program').click()" data-toggle="modal" data-target="#wip_submit_confirm">
         <i class="fa fa-download"></i> &nbsp;
-        Report HSE Program
+        Save & Download HSE Program
       </a>
       <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
-        <a class="btn btn-success btn-save" data-toggle="modal" data-target="#wip_submit_confirm"><i class="fa fa-save"></i> &nbsp; Submit</a>
+        <a class="btn btn-success btn-save" data-toggle="modal" data-target="#wip_submit_confirm"><i class="fa fa-save"></i> &nbsp; Save Only</a>
       <?php endif ?>
       <?php if (!empty($uuid) && in_array("delete_{$current['controller']}", $permission)) : ?>
         <a href="<?= site_url($current['controller'] . "/delete/$uuid") ?>" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</a>
       <?php endif ?>
-      <a href="<?= site_url($current['controller']) ?>" class="btn btn-warning"><i class="fa fa-arrow-left"></i> &nbsp; Cancel</a>
+      <a href="<?= site_url($current['controller']) ?>" class="btn btn-warning"><i class="fa fa-arrow-left"></i> &nbsp; Back</a>
     </div>
     <div class="card-body">
 
@@ -140,20 +142,18 @@
 
 </form>
 
-<div class="modal fade" id="wip_submit_confirm" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="wip_submit_confirm" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        &nbsp;
       </div>
       <div class="modal-body text-center">
         <h4>Apakah Anda Yakin ?</h4>
       </div>
       <div class="modal-footer">
         <a id="submit_form_wip" onclick="$('#form_wip').submit()" class="btn btn-success">Ya</a>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal"onclick="$('.download-practice, .download-program').prop('checked', false)">Tidak</button>
       </div>
     </div>
   </div>

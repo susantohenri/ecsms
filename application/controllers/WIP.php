@@ -14,19 +14,15 @@ class WIP extends MY_Controller
 		$model = $this->model;
 		if ($post = $this->$model->lastSubmit($this->input->post())) {
 			if (isset($post['delete'])) $this->$model->delete($post['delete']);
-			else {
-				$db_debug = $this->db->db_debug;
-				$this->db->db_debug = FALSE;
-
-				$result = $this->$model->save($post);
-
-				$error = $this->db->error();
-				$this->db->db_debug = $db_debug;
-				if (isset($result['error'])) $error = $result['error'];
-				if (count($error)) {
-					$this->session->set_flashdata('model_error', $error['message']);
-					redirect($this->controller);
-				}
+			else
+			{
+				$downloadPractice = isset ($post['download-practice']);
+				$downloadProgram = isset ($post['download-program']);
+				unset($post['download-practice']);
+				unset($post['download-program']);
+				$uuid = $this->$model->save($post);
+				if ($downloadPractice) redirect(site_url("PJA/downloadPracticeConfirm/{$uuid}"));
+				if ($downloadProgram) redirect(site_url("PJA/downloadProgramConfirm/{$uuid}"));
 			}
 		}
 		redirect(base_url());
