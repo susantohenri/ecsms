@@ -9,6 +9,7 @@ class Migration_pja extends CI_Migration {
       CREATE TABLE `pja` (
         `uuid` varchar(36) NOT NULL,
         `orders` INT(11) UNIQUE NOT NULL AUTO_INCREMENT,
+        `acceptedAt` datetime DEFAULT NULL,
         `createdAt` datetime DEFAULT NULL,
         `updatedAt` datetime DEFAULT NULL,
         `project` varchar(36) NOT NULL,

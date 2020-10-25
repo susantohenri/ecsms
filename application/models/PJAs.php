@@ -1058,14 +1058,16 @@ class PJAs extends MY_Model
 		return parent::dt();
 	}
 
-	function getProjectName($uuid)
+	function getProjectDetail($uuid)
 	{
 		$result = $this->db
-			->select('project.nama')
+			->select('project.nama nama_project', false)
+			->select('user.vendor nama_vendor', false)
 			->join('project', 'pja.project = project.uuid', 'left')
+			->join('user', 'user.uuid = project.pemenang', 'left')
 			->get_where($this->table, array('pja.uuid' => $uuid))
 			->row_array();
-		return $result['nama'];
+		return $result;
 	}
 
 	function getForm($uuid = false, $isSubform = false)
@@ -1080,6 +1082,22 @@ class PJAs extends MY_Model
 		return $form;
 	}
 
+	function update ($data)
+	{
+		if (isset ($data['progress']))
+		{
+			if (1 == $data['progress'])
+			{
+				$current = $this->findOne($data['uuid']);
+				if (0 == $current['progress'])
+				{
+					$data['acceptedAt'] = date('Y-m-d H:i:s');
+				}
+			}
+		}
+		return parent::update($data);
+	}
+
 	function excel ($uuid)
 	{
 		$result = array (
@@ -1087,19 +1105,27 @@ class PJAs extends MY_Model
 			'spreadsheet' => ''
 		);
 
-		$project = $this->getProjectName($uuid);
+		$projectDetail = $this->getProjectDetail($uuid);
+		$project = $projectDetail['nama_project'];
+		$vendor = $projectDetail['nama_vendor'];
 		$result['title'] = "PJA - {$project}";
 
 		$val = $this->findOne($uuid);
+		$acceptedAt = date("j F  Y", strtotime($val['acceptedAt']));
 		$cellMap = array(
-			'F14' => $val['1a_isya'] === '1' ? 'YA' : '',
-			'G14' => $val['1a_isya'] === '0' ? 'TIDAK' : '',
-			'H14' => $val['1a_isneed'] === '1' ? 'NEED' : 'NOT NEED',
+			'D6' => ": {$vendor}",
+			'D7' => ": {$project}",
+			'D8' => ": Fuel Terminal Boyolali",
+			'D9' => ": {$acceptedAt}",
+
+			'F14' => $val['1a_isya'] === '1' ? '✓' : '',
+			'G14' => $val['1a_isya'] === '0' ? '✓' : '',
+			'H14' => $val['1a_isneed'] === '1' ? '✓' : '',
 			'I14' => $val['1a_note'],
 
-			'F15' => $val['1b_isya'] === '1' ? 'YA' : '',
-			'G15' => $val['1b_isya'] === '0' ? 'TIDAK' : '',
-			'H15' => $val['1b_isneed'] === '1' ? 'NEED' : 'NOT NEED',
+			'F15' => $val['1b_isya'] === '1' ? '✓' : '',
+			'G15' => $val['1b_isya'] === '0' ? '✓' : '',
+			'H15' => $val['1b_isneed'] === '1' ? '✓' : '',
 			'I15' => $val['1b_note']
 		);
 

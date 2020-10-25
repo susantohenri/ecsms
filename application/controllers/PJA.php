@@ -44,7 +44,8 @@ class PJA extends MY_Controller
 			'form.js'
 		);
 		$vars['page_name'] = 'forms/pja';
-		$vars['project_name'] = $this->$model->getProjectName($id);
+		$project_detail = $this->$model->getProjectDetail($id);
+		$vars['project_name'] = $project_detail['nama_project'];
 		$this->loadview('index', $vars);
 	}
 
