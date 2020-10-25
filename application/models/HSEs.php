@@ -764,6 +764,10 @@ class HSEs extends MY_Model
 
 		$val = $this->findOne($uuid);
 		$cellMap = array(
+			'A5' => "Nama Kontraktor        : {$vendor}",
+			'A6' => "Nama Proyek               : {$project}",
+			'A7' => "Lokasi Proyek               : Fuel Terminal Boyolali",
+
 			'F17' => $val['2a'],
 			'F18' => $val['2b'],
 			'F19' => $val['2c'],
