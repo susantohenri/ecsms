@@ -736,14 +736,15 @@ class HSEs extends MY_Model
 		));
 	}
 
-	function getProjectName($uuid)
+	function getProjectDetail($uuid)
 	{
-		$result = $this->db
-			->select('project.nama')
+		return $this->db
+			->select('project.nama nama_project', false)
+			->select('user.vendor nama_vendor', false)
 			->join('project', 'hse.project = project.uuid', 'left')
+			->join('user', 'hse.vendor = user.uuid', 'left')
 			->get_where($this->table, array('hse.uuid' => $uuid))
 			->row_array();
-		return $result['nama'];
 	}
 
 	function excel ($uuid)
@@ -753,13 +754,9 @@ class HSEs extends MY_Model
 			'spreadsheet' => ''
 		);
 
-		$project = $this->getProjectName($uuid);
-		$findVendor = $this->db
-			->select('user.vendor')
-			->join('user', 'hse.vendor = user.uuid', 'left')
-			->get_where($this->table, array('hse.uuid' => $uuid))
-			->row_array();
-		$vendor = $findVendor['vendor'];
+		$projectDetail = $this->getProjectDetail($uuid);
+		$project = $projectDetail['nama_project'];
+		$vendor = $projectDetail['nama_vendor'];
 		$result['title'] = "HSE - {$project} - {$vendor}";
 
 		$val = $this->findOne($uuid);
