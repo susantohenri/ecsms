@@ -1060,14 +1060,13 @@ class PJAs extends MY_Model
 
 	function getProjectDetail($uuid)
 	{
-		$result = $this->db
+		return $this->db
 			->select('project.nama nama_project', false)
 			->select('user.vendor nama_vendor', false)
 			->join('project', 'pja.project = project.uuid', 'left')
 			->join('user', 'user.uuid = project.pemenang', 'left')
 			->get_where($this->table, array('pja.uuid' => $uuid))
 			->row_array();
-		return $result;
 	}
 
 	function getForm($uuid = false, $isSubform = false)
@@ -1108,7 +1107,7 @@ class PJAs extends MY_Model
 		$projectDetail = $this->getProjectDetail($uuid);
 		$project = $projectDetail['nama_project'];
 		$vendor = $projectDetail['nama_vendor'];
-		$result['title'] = "PJA - {$project}";
+		$result['title'] = "Checklist Pre Job Activty - {$project}";
 
 		$val = $this->findOne($uuid);
 		$acceptedAt = date("j F  Y", strtotime($val['acceptedAt']));

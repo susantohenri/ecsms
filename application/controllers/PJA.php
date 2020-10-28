@@ -52,7 +52,7 @@ class PJA extends MY_Controller
 	function downloadConfirm ($uuid)
 	{
 		$vars['page_name'] = 'confirm-download';
-		$vars['uuid'] = $uuid;
+		$vars['download_link'] = site_url("PJA/download/{$uuid}");
 		$this->loadview('index', $vars);
 	}
 

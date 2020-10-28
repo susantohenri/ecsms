@@ -1,5 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
+require 'vendor/autoload.php';
+use \PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 class WIP extends MY_Controller
 {
 
@@ -21,11 +24,25 @@ class WIP extends MY_Controller
 				unset($post['download-practice']);
 				unset($post['download-program']);
 				$uuid = $this->$model->save($post);
-				if ($downloadPractice) redirect(site_url("PJA/downloadPracticeConfirm/{$uuid}"));
-				if ($downloadProgram) redirect(site_url("PJA/downloadProgramConfirm/{$uuid}"));
+				if ($downloadPractice) redirect(site_url("WIP/downloadPracticeConfirm/{$uuid}"));
+				if ($downloadProgram) redirect(site_url("WIP/downloadProgramConfirm/{$uuid}"));
 			}
 		}
 		redirect(base_url());
+	}
+
+	function downloadPracticeConfirm ($uuid)
+	{
+		$vars['page_name'] = 'confirm-download';
+		$vars['download_link'] = site_url("WIP/downloadPractice/{$uuid}");
+		$this->loadview('index', $vars);
+	}
+
+	function downloadProgramConfirm ($uuid)
+	{
+		$vars['page_name'] = 'confirm-download';
+		$vars['download_link'] = site_url("WIP/downloadProgram/{$uuid}");
+		$this->loadview('index', $vars);
 	}
 
 	function read($id)
@@ -44,24 +61,26 @@ class WIP extends MY_Controller
 			'form.js'
 		);
 		$vars['page_name'] = 'forms/wip';
-		$vars['project_name'] = $this->$model->getProjectName($id);
+		$projectDetail = $this->$model->getProjectDetail($id);
+		$vars['project_name'] = $projectDetail['nama_project'];
 		$this->loadview('index', $vars);
 	}
 
-	function download($uuid)
+	function downloadPractice($uuid)
 	{
-		$this->load->library('pdf');
-		$this->pdf->setPaper('A4', 'potrait');
-		$this->pdf->filename = 'WIP.pdf';
+		$excel = $this->{$this->model}->excelPractice($uuid);
+		$writer = new Xlsx($excel['spreadsheet']);
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment; filename="' . "{$excel['title']}.xlsx" . '"');
+		$writer->save('php://output');
+	}
 
-		$data = array('records' => $this->WIPs->download($uuid));
-		// $this->pdf->load_view('pdf/form_1', $data);
-
-		$this->load->view('pdf/form_2', $data);
-		$html = $this->output->get_output();
-		$this->pdf->load_html($html);
-
-		$this->pdf->render();
-		$this->pdf->stream('WIP.pdf');
+	function downloadProgram($uuid)
+	{
+		$excel = $this->{$this->model}->excelProgram($uuid);
+		$writer = new Xlsx($excel['spreadsheet']);
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment; filename="' . "{$excel['title']}.xlsx" . '"');
+		$writer->save('php://output');
 	}
 }

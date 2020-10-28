@@ -757,7 +757,7 @@ class HSEs extends MY_Model
 		$projectDetail = $this->getProjectDetail($uuid);
 		$project = $projectDetail['nama_project'];
 		$vendor = $projectDetail['nama_vendor'];
-		$result['title'] = "HSE - {$project} - {$vendor}";
+		$result['title'] = "HSE plan - {$project} - {$vendor}";
 
 		$val = $this->findOne($uuid);
 		$cellMap = array(

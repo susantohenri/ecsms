@@ -78,7 +78,7 @@ class HSE extends MY_Controller
 	function downloadConfirm ($uuid)
 	{
 		$vars['page_name'] = 'confirm-download';
-		$vars['uuid'] = $uuid;
+		$vars['download_link'] = site_url("HSE/download/{$uuid}");
 		$this->loadview('index', $vars);
 	}
 

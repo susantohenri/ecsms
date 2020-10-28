@@ -1,5 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
+require 'vendor/autoload.php';
+use \PhpOffice\PhpSpreadsheet\IOFactory;
+
 class WIPs extends MY_Model
 {
 
@@ -3973,14 +3976,15 @@ class WIPs extends MY_Model
 		return parent::dt();
 	}
 
-	function getProjectName($uuid)
+	function getProjectDetail($uuid)
 	{
-		$result = $this->db
-			->select('project.nama')
+		return $this->db
+			->select('project.nama nama_project', false)
+			->select('user.vendor nama_vendor', false)
 			->join('project', 'wip.project = project.uuid', 'left')
+			->join('user', 'user.uuid = project.pemenang', 'left')
 			->get_where($this->table, array('wip.uuid' => $uuid))
 			->row_array();
-		return $result['nama'];
 	}
 
 	function getForm($uuid = false, $isSubform = false)
@@ -4039,8 +4043,97 @@ class WIPs extends MY_Model
 		return parent::create($data);
 	}
 
-	function download($uuid)
+	function update ($data)
 	{
-		return array();
+		if (isset ($data['progress']))
+		{
+			if (1 == $data['progress'])
+			{
+				$current = $this->findOne($data['uuid']);
+				if (0 == $current['progress'])
+				{
+					$data['acceptedAt'] = date('Y-m-d H:i:s');
+				}
+			}
+		}
+		return parent::update($data);
+	}
+
+	function excelPractice ($uuid)
+	{
+		$result = array (
+			'title' => '',
+			'spreadsheet' => ''
+		);
+
+		$projectDetail = $this->getProjectDetail($uuid);
+		$project = $projectDetail['nama_project'];
+		$vendor = $projectDetail['nama_vendor'];
+		$result['title'] = "Check List Inspeksi HSE Work Practice - {$project}";
+
+		$val = $this->findOne($uuid);
+		$acceptedAt = date("j F  Y", strtotime($val['acceptedAt']));
+		$cellMap = array(
+			'D6' => ": {$vendor}",
+			'D7' => ": {$project}",
+			'D8' => ": Fuel Terminal Boyolali",
+			'D9' => ": {$acceptedAt}",
+
+			'E13' => $val['1a_isneed'] === '1' ? '✓' : '',
+			'G13' => $val['1a_isneed'] === '0' ? '✓' : '',
+			'I13' => $val['1a_score_actual'],
+			'J13' => $val['1a_note'],
+
+			'E14' => $val['1b_isneed'] === '1' ? '✓' : '',
+			'G14' => $val['1b_isneed'] === '0' ? '✓' : '',
+			'I14' => $val['1b_score_actual'],
+			'J14' => $val['1b_note'],
+		);
+
+		$spreadsheet = IOFactory::load('./excels/Form 3.1 - Check List Inspeksi HSE Work Practice.xlsx');
+		$sheet = $spreadsheet->getSheet(0);
+		foreach ($cellMap as $cell => $val) $sheet->setCellValue($cell, $val);
+
+		$result['spreadsheet'] = $spreadsheet;
+		return $result;
+	}
+
+	function excelProgram ($uuid)
+	{
+		$result = array (
+			'title' => '',
+			'spreadsheet' => ''
+		);
+
+		$projectDetail = $this->getProjectDetail($uuid);
+		$project = $projectDetail['nama_project'];
+		$vendor = $projectDetail['nama_vendor'];
+		$result['title'] = "Check List Inspeksi Penerapan Program HSE - {$project}";
+
+		$val = $this->findOne($uuid);
+		$acceptedAt = date("j F  Y", strtotime($val['acceptedAt']));
+		$cellMap = array(
+			'C4' => ": {$vendor}",
+			'C5' => ": {$project}",
+			'C6' => ": Fuel Terminal Boyolali",
+			'C7' => ": {$acceptedAt}",
+
+			'D11' => $val['1_isneed'] === '1' ? '✓' : '',
+			'E11' => $val['1_isneed'] === '0' ? '✓' : '',
+			'G11' => $val['1_score_actual'],
+			'H11' => $val['1_note'],
+
+			'D12' => $val['2_isneed'] === '1' ? '✓' : '',
+			'E12' => $val['2_isneed'] === '0' ? '✓' : '',
+			'G12' => $val['2_score_actual'],
+			'H12' => $val['2_note'],
+		);
+
+		$spreadsheet = IOFactory::load('./excels/Form 3.2 - WIP - Check List Inspeksi Penerapan Program HSE.xlsx');
+		$sheet = $spreadsheet->getSheet(0);
+		foreach ($cellMap as $cell => $val) $sheet->setCellValue($cell, $val);
+
+		$result['spreadsheet'] = $spreadsheet;
+		return $result;
 	}
 }
