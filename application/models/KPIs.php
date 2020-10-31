@@ -1,5 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
+require 'vendor/autoload.php';
+use \PhpOffice\PhpSpreadsheet\IOFactory;
+
 class KPIs extends MY_Model
 {
 
@@ -20,11 +23,14 @@ class KPIs extends MY_Model
 			array(
 				'name' => 'a1_actual',
 			),
-			array(
-				'name' => 'a1_score_max',
-			),
+			// array(
+			// 	'name' => 'a1_score_max',
+			// ),
 			array(
 				'name' => 'a1_score_actual',
+				'attributes' => array(
+					array('data-nonscoring' => 'true')
+				)
 			),
 			array(
 				'name' => 'a2_target',
@@ -33,11 +39,14 @@ class KPIs extends MY_Model
 			array(
 				'name' => 'a2_actual',
 			),
-			array(
-				'name' => 'a2_score_max',
-			),
+			// array(
+			// 	'name' => 'a2_score_max',
+			// ),
 			array(
 				'name' => 'a2_score_actual',
+				'attributes' => array(
+					array('data-nonscoring' => 'true')
+				)
 			),
 			array(
 				'name' => '',
@@ -51,11 +60,14 @@ class KPIs extends MY_Model
 			array(
 				'name' => 'b1_actual',
 			),
-			array(
-				'name' => 'b1_score_max',
-			),
+			// array(
+			// 	'name' => 'b1_score_max',
+			// ),
 			array(
 				'name' => 'b1_score_actual',
+				'attributes' => array(
+					array('data-nonscoring' => 'true')
+				)
 			),
 			array(
 				'name' => 'b2_target',
@@ -64,11 +76,14 @@ class KPIs extends MY_Model
 			array(
 				'name' => 'b2_actual',
 			),
-			array(
-				'name' => 'b2_score_max',
-			),
+			// array(
+			// 	'name' => 'b2_score_max',
+			// ),
 			array(
 				'name' => 'b2_score_actual',
+				'attributes' => array(
+					array('data-nonscoring' => 'true')
+				)
 			),
 			array(
 				'name' => 'b3_target',
@@ -77,11 +92,14 @@ class KPIs extends MY_Model
 			array(
 				'name' => 'b3_actual',
 			),
-			array(
-				'name' => 'b3_score_max',
-			),
+			// array(
+			// 	'name' => 'b3_score_max',
+			// ),
 			array(
 				'name' => 'b3_score_actual',
+				'attributes' => array(
+					array('data-nonscoring' => 'true')
+				)
 			),
 			array(
 				'name' => 'b4_target',
@@ -90,11 +108,14 @@ class KPIs extends MY_Model
 			array(
 				'name' => 'b4_actual',
 			),
-			array(
-				'name' => 'b4_score_max',
-			),
+			// array(
+			// 	'name' => 'b4_score_max',
+			// ),
 			array(
 				'name' => 'b4_score_actual',
+				'attributes' => array(
+					array('data-nonscoring' => 'true')
+				)
 			),
 			array(
 				'name' => 'b5_target',
@@ -274,6 +295,22 @@ class KPIs extends MY_Model
 		$this->childs = array();
 	}
 
+	function update ($data)
+	{
+		if (isset ($data['progress']))
+		{
+			if (1 == $data['progress'])
+			{
+				$current = $this->findOne($data['uuid']);
+				if (0 == $current['progress'])
+				{
+					$data['acceptedAt'] = date('Y-m-d H:i:s');
+				}
+			}
+		}
+		return parent::update($data);
+	}
+
 	function dt()
 	{
 		$this->datatables
@@ -300,18 +337,54 @@ class KPIs extends MY_Model
 		return $form;
 	}
 
-	function getProjectName($uuid)
+	function getProjectDetail($uuid)
 	{
-		$result = $this->db
-			->select('project.nama')
+		return $this->db
+			->select('project.nama nama_project', false)
+			->select('user.vendor nama_vendor', false)
 			->join('project', 'kpi.project = project.uuid', 'left')
+			->join('user', 'user.uuid = project.pemenang', 'left')
 			->get_where($this->table, array('kpi.uuid' => $uuid))
 			->row_array();
-		return $result['nama'];
 	}
 
-	function download($uuid)
+	function excel ($uuid)
 	{
-		return array();
+		$result = array (
+			'title' => '',
+			'spreadsheet' => ''
+		);
+
+		$projectDetail = $this->getProjectDetail($uuid);
+		$project = $projectDetail['nama_project'];
+		$vendor = $projectDetail['nama_vendor'];
+		$result['title'] = "KPI HSSE - {$project}";
+
+		$val = $this->findOne($uuid);
+		$acceptedAt = date("j F  Y", strtotime($val['acceptedAt']));
+		$cellMap = array(
+			'C4' => ": {$vendor}",
+			'C5' => ": {$project}",
+			'C6' => ": Fuel Terminal Boyolali",
+			'C7' => ": {$acceptedAt}",
+
+			'D10' => $val['a1_target'],
+			'E10' => $val['a1_actual'],
+
+			'D11' => $val['a2_target'],
+			'E11' => $val['a2_actual'],
+
+			// 'F15' => $val['1b_isya'] === '1' ? '✓' : '',
+			// 'G15' => $val['1b_isya'] === '0' ? '✓' : '',
+			// 'H15' => $val['1b_isneed'] === '1' ? '✓' : '',
+			// 'I15' => $val['1b_note']
+		);
+
+		$spreadsheet = IOFactory::load('./excels/Form 5 - KPI HSSE.xlsx');
+		$sheet = $spreadsheet->getSheet(0);
+		foreach ($cellMap as $cell => $val) $sheet->setCellValue($cell, $val);
+
+		$result['spreadsheet'] = $spreadsheet;
+		return $result;
 	}
 }

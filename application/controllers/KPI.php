@@ -1,5 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
+require 'vendor/autoload.php';
+use \PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 class KPI extends MY_Controller
 {
 
@@ -14,19 +17,12 @@ class KPI extends MY_Controller
 		$model = $this->model;
 		if ($post = $this->$model->lastSubmit($this->input->post())) {
 			if (isset($post['delete'])) $this->$model->delete($post['delete']);
-			else {
-				$db_debug = $this->db->db_debug;
-				$this->db->db_debug = FALSE;
-
-				$result = $this->$model->save($post);
-
-				$error = $this->db->error();
-				$this->db->db_debug = $db_debug;
-				if (isset($result['error'])) $error = $result['error'];
-				if (count($error)) {
-					$this->session->set_flashdata('model_error', $error['message']);
-					redirect($this->controller);
-				}
+			else
+			{
+				$download = isset ($post['download-button']);
+				unset($post['download-button']);
+				$uuid = $this->$model->save($post);
+				if ($download) redirect(site_url("KPI/downloadConfirm/{$uuid}"));
 			}
 		}
 		redirect(base_url());
@@ -48,24 +44,24 @@ class KPI extends MY_Controller
 			'form.js'
 		);
 		$vars['page_name'] = 'forms/kpi';
-		$vars['project_name'] = $this->$model->getProjectName($id);
+		$projectDetail = $this->$model->getProjectDetail($id);
+		$vars['project_name'] = $projectDetail['nama_project'];
+		$this->loadview('index', $vars);
+	}
+
+	function downloadConfirm ($uuid)
+	{
+		$vars['page_name'] = 'confirm-download';
+		$vars['download_link'] = site_url("KPI/download/{$uuid}");
 		$this->loadview('index', $vars);
 	}
 
 	function download($uuid)
 	{
-		$this->load->library('pdf');
-		$this->pdf->setPaper('A4', 'potrait');
-		$this->pdf->filename = 'KPI.pdf';
-
-		$data = array('records' => $this->KPIs->download($uuid));
-		// $this->pdf->load_view('pdf/form_1', $data);
-
-		$this->load->view('pdf/form_2', $data);
-		$html = $this->output->get_output();
-		$this->pdf->load_html($html);
-
-		$this->pdf->render();
-		$this->pdf->stream('KPI.pdf');
+		$excel = $this->{$this->model}->excel($uuid);
+		$writer = new Xlsx($excel['spreadsheet']);
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment; filename="' . "{$excel['title']}.xlsx" . '"');
+		$writer->save('php://output');
 	}
 }
