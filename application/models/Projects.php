@@ -73,7 +73,7 @@ class Projects extends MY_Model
 	{
 		if (!isset($data['jumlah_laporan_bulanan'])) $data['jumlah_laporan_bulanan'] = 0;
 		$uuid = parent::create($data);
-		$models = array('PJAs', 'LaporanBulanans', 'WIPs', 'KPIs');
+		$models = array('PJAs', 'LaporanBulanans', 'WIPs', 'KPIs', 'FEs');
 		$this->load->model($models);
 		foreach ($models as $model) {
 			if ('LaporanBulanans' === $model) {
@@ -197,8 +197,12 @@ class Projects extends MY_Model
 			->select('kpi.uuid kpi_uuid', false)
 			->select('kpi.progress kpi_progress', false)
 			->join('kpi', 'kpi.project = project.uuid', 'left');
+		$this->db
+			->select('fe.uuid fe_uuid', false)
+			->select('fe.progress fe_progress', false)
+			->join('fe', 'fe.project = project.uuid', 'left');
 
-		$result = $this->db->get($this->table)->result();
+			$result = $this->db->get($this->table)->result();
 		// die($this->db->last_query());
 		// die(json_encode($result[0]));
 
@@ -214,7 +218,7 @@ class Projects extends MY_Model
 				$record->wip_link = site_url("WIP/read/{$record->wip_uuid}");
 			}
 			if ($record->wip_progress > 0 && '100 %' === $record->lapbul_text) $record->kpi_link = site_url("KPI/read/{$record->kpi_uuid}");
-			if ($record->kpi_progress > 0) $record->fe_link = site_url("Project/FE/{$record->uuid}");
+			if ($record->kpi_progress > 0) $record->fe_link = site_url("FE/read/{$record->fe_uuid}");
 
 			return $record;
 		}, $result);
