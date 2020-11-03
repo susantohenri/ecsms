@@ -2484,7 +2484,7 @@ class WIPs extends MY_Model
 					array('value' => '1', 'text' => 'Need'),
 					array('value' => '0', 'text' => 'Not Need')
 				),
-				'label' => 'c. apakah',
+				'label' => 'c. Melakukan pemantauan & mengantisipasi damp',
 			),
 			array(
 				'name' => '23b3_score_max',
@@ -4088,6 +4088,656 @@ class WIPs extends MY_Model
 			'G14' => $val['1b_isneed'] === '0' ? '✓' : '',
 			'I14' => $val['1b_score_actual'],
 			'J14' => $val['1b_note'],
+
+			'E15' => $val['1c_isneed'] === '1' ? '✓' : '',
+			'G15' => $val['1c_isneed'] === '0' ? '✓' : '',
+			'I15' => $val['1c_score_actual'],
+			'J15' => $val['1c_note'],
+
+			'E16' => $val['1d_isneed'] === '1' ? '✓' : '',
+			'G16' => $val['1d_isneed'] === '0' ? '✓' : '',
+			'I16' => $val['1d_score_actual'],
+			'J16' => $val['1d_note'],
+
+			'E17' => $val['1e_isneed'] === '1' ? '✓' : '',
+			'G17' => $val['1e_isneed'] === '0' ? '✓' : '',
+			'I17' => $val['1e_score_actual'],
+			'J17' => $val['1e_note'],
+
+			'E19' => $val['2a_isneed'] === '1' ? '✓' : '',
+			'G19' => $val['2a_isneed'] === '0' ? '✓' : '',
+			'I19' => $val['2a_score_actual'],
+			'J19' => $val['2a_note'],
+
+			'E20' => $val['2b_isneed'] === '1' ? '✓' : '',
+			'G20' => $val['2b_isneed'] === '0' ? '✓' : '',
+			'I20' => $val['2b_score_actual'],
+			'J20' => $val['2b_note'],
+
+			'E21' => $val['2c_isneed'] === '1' ? '✓' : '',
+			'G21' => $val['2c_isneed'] === '0' ? '✓' : '',
+			'I21' => $val['2c_score_actual'],
+			'J21' => $val['2c_note'],
+
+			'E23' => $val['3a_isneed'] === '1' ? '✓' : '',
+			'G23' => $val['3a_isneed'] === '0' ? '✓' : '',
+			'I23' => $val['3a_score_actual'],
+			'J23' => $val['3a_note'],
+
+			'E24' => $val['3b_isneed'] === '1' ? '✓' : '',
+			'G24' => $val['3b_isneed'] === '0' ? '✓' : '',
+			'I24' => $val['3b_score_actual'],
+			'J24' => $val['3b_note'],
+
+			'E25' => $val['3c_isneed'] === '1' ? '✓' : '',
+			'G25' => $val['3c_isneed'] === '0' ? '✓' : '',
+			'I25' => $val['3c_score_actual'],
+			'J25' => $val['3c_note'],
+
+			'E27' => $val['4a_isneed'] === '1' ? '✓' : '',
+			'G27' => $val['4a_isneed'] === '0' ? '✓' : '',
+			'I27' => $val['4a_score_actual'],
+			'J27' => $val['4a_note'],
+
+			'E28' => $val['4b_isneed'] === '1' ? '✓' : '',
+			'G28' => $val['4b_isneed'] === '0' ? '✓' : '',
+			'I28' => $val['4b_score_actual'],
+			'J28' => $val['4b_note'],
+
+			'E29' => $val['4c_isneed'] === '1' ? '✓' : '',
+			'G29' => $val['4c_isneed'] === '0' ? '✓' : '',
+			'I29' => $val['4c_score_actual'],
+			'J29' => $val['4c_note'],
+
+			'E31' => $val['5a_isneed'] === '1' ? '✓' : '',
+			'G31' => $val['5a_isneed'] === '0' ? '✓' : '',
+			'I31' => $val['5a_score_actual'],
+			'J31' => $val['5a_note'],
+
+			'E32' => $val['5b_isneed'] === '1' ? '✓' : '',
+			'G32' => $val['5b_isneed'] === '0' ? '✓' : '',
+			'I32' => $val['5b_score_actual'],
+			'J32' => $val['5b_note'],
+
+			'E33' => $val['5c_isneed'] === '1' ? '✓' : '',
+			'G33' => $val['5c_isneed'] === '0' ? '✓' : '',
+			'I33' => $val['5c_score_actual'],
+			'J33' => $val['5c_note'],
+
+			'E35' => $val['6a_isneed'] === '1' ? '✓' : '',
+			'G35' => $val['6a_isneed'] === '0' ? '✓' : '',
+			'I35' => $val['6a_score_actual'],
+			'J35' => $val['6a_note'],
+
+			'E36' => $val['6b_isneed'] === '1' ? '✓' : '',
+			'G36' => $val['6b_isneed'] === '0' ? '✓' : '',
+			'I36' => $val['6b_score_actual'],
+			'J36' => $val['6b_note'],
+
+			'E37' => $val['6c_isneed'] === '1' ? '✓' : '',
+			'G37' => $val['6c_isneed'] === '0' ? '✓' : '',
+			'I37' => $val['6c_score_actual'],
+			'J37' => $val['6c_note'],
+
+			'E38' => $val['6d_isneed'] === '1' ? '✓' : '',
+			'G38' => $val['6d_isneed'] === '0' ? '✓' : '',
+			'I38' => $val['6d_score_actual'],
+			'J38' => $val['6d_note'],
+
+			'E40' => $val['7a_isneed'] === '1' ? '✓' : '',
+			'G40' => $val['7a_isneed'] === '0' ? '✓' : '',
+			'I40' => $val['7a_score_actual'],
+			'J40' => $val['7a_note'],
+
+			'E41' => $val['7b_isneed'] === '1' ? '✓' : '',
+			'G41' => $val['7b_isneed'] === '0' ? '✓' : '',
+			'I41' => $val['7b_score_actual'],
+			'J41' => $val['7b_note'],
+
+			'E42' => $val['7c_isneed'] === '1' ? '✓' : '',
+			'G42' => $val['7c_isneed'] === '0' ? '✓' : '',
+			'I42' => $val['7c_score_actual'],
+			'J42' => $val['7c_note'],
+
+			'E43' => $val['7d_isneed'] === '1' ? '✓' : '',
+			'G43' => $val['7d_isneed'] === '0' ? '✓' : '',
+			'I43' => $val['7d_score_actual'],
+			'J43' => $val['7d_note'],
+
+			'E44' => $val['7e_isneed'] === '1' ? '✓' : '',
+			'G44' => $val['7e_isneed'] === '0' ? '✓' : '',
+			'I44' => $val['7e_score_actual'],
+			'J44' => $val['7e_note'],
+
+			'E46' => $val['8a_isneed'] === '1' ? '✓' : '',
+			'G46' => $val['8a_isneed'] === '0' ? '✓' : '',
+			'I46' => $val['8a_score_actual'],
+			'J46' => $val['8a_note'],
+
+			'E47' => $val['8b_isneed'] === '1' ? '✓' : '',
+			'G47' => $val['8b_isneed'] === '0' ? '✓' : '',
+			'I47' => $val['8b_score_actual'],
+			'J47' => $val['8b_note'],
+
+			'E48' => $val['8c_isneed'] === '1' ? '✓' : '',
+			'G48' => $val['8c_isneed'] === '0' ? '✓' : '',
+			'I48' => $val['8c_score_actual'],
+			'J48' => $val['8c_note'],
+
+			'E49' => $val['8d_isneed'] === '1' ? '✓' : '',
+			'G49' => $val['8d_isneed'] === '0' ? '✓' : '',
+			'I49' => $val['8d_score_actual'],
+			'J49' => $val['8d_note'],
+
+			'E50' => $val['8e_isneed'] === '1' ? '✓' : '',
+			'G50' => $val['8e_isneed'] === '0' ? '✓' : '',
+			'I50' => $val['8e_score_actual'],
+			'J50' => $val['8e_note'],
+
+			'E51' => $val['8f_isneed'] === '1' ? '✓' : '',
+			'G51' => $val['8f_isneed'] === '0' ? '✓' : '',
+			'I51' => $val['8f_score_actual'],
+			'J51' => $val['8f_note'],
+
+			'E53' => $val['9a_isneed'] === '1' ? '✓' : '',
+			'G53' => $val['9a_isneed'] === '0' ? '✓' : '',
+			'I53' => $val['9a_score_actual'],
+			'J53' => $val['9a_note'],
+
+			'E54' => $val['9b_isneed'] === '1' ? '✓' : '',
+			'G54' => $val['9b_isneed'] === '0' ? '✓' : '',
+			'I54' => $val['9b_score_actual'],
+			'J54' => $val['9b_note'],
+
+			'E55' => $val['9c_isneed'] === '1' ? '✓' : '',
+			'G55' => $val['9c_isneed'] === '0' ? '✓' : '',
+			'I55' => $val['9c_score_actual'],
+			'J55' => $val['9c_note'],
+
+			'E56' => $val['9d_isneed'] === '1' ? '✓' : '',
+			'G56' => $val['9d_isneed'] === '0' ? '✓' : '',
+			'I56' => $val['9d_score_actual'],
+			'J56' => $val['9d_note'],
+
+			'E57' => $val['9e_isneed'] === '1' ? '✓' : '',
+			'G57' => $val['9e_isneed'] === '0' ? '✓' : '',
+			'I57' => $val['9e_score_actual'],
+			'J57' => $val['9e_note'],
+
+			'E58' => $val['9f_isneed'] === '1' ? '✓' : '',
+			'G58' => $val['9f_isneed'] === '0' ? '✓' : '',
+			'I58' => $val['9f_score_actual'],
+			'J58' => $val['9f_note'],
+
+			'E59' => $val['9g_isneed'] === '1' ? '✓' : '',
+			'G59' => $val['9g_isneed'] === '0' ? '✓' : '',
+			'I59' => $val['9g_score_actual'],
+			'J59' => $val['9g_note'],
+
+			'E60' => $val['9h_isneed'] === '1' ? '✓' : '',
+			'G60' => $val['9h_isneed'] === '0' ? '✓' : '',
+			'I60' => $val['9h_score_actual'],
+			'J60' => $val['9h_note'],
+
+			'E62' => $val['10a_isneed'] === '1' ? '✓' : '',
+			'G62' => $val['10a_isneed'] === '0' ? '✓' : '',
+			'I62' => $val['10a_score_actual'],
+			'J62' => $val['10a_note'],
+
+			'E63' => $val['10b_isneed'] === '1' ? '✓' : '',
+			'G63' => $val['10b_isneed'] === '0' ? '✓' : '',
+			'I63' => $val['10b_score_actual'],
+			'J63' => $val['10b_note'],
+
+			'E64' => $val['10c_isneed'] === '1' ? '✓' : '',
+			'G64' => $val['10c_isneed'] === '0' ? '✓' : '',
+			'I64' => $val['10c_score_actual'],
+			'J64' => $val['10c_note'],
+
+			'E65' => $val['10d_isneed'] === '1' ? '✓' : '',
+			'G65' => $val['10d_isneed'] === '0' ? '✓' : '',
+			'I65' => $val['10d_score_actual'],
+			'J65' => $val['10d_note'],
+
+			'E67' => $val['11a_isneed'] === '1' ? '✓' : '',
+			'G67' => $val['11a_isneed'] === '0' ? '✓' : '',
+			'I67' => $val['11a_score_actual'],
+			'J67' => $val['11a_note'],
+
+			'E68' => $val['11b_isneed'] === '1' ? '✓' : '',
+			'G68' => $val['11b_isneed'] === '0' ? '✓' : '',
+			'I68' => $val['11b_score_actual'],
+			'J68' => $val['11b_note'],
+
+			'E69' => $val['11c_isneed'] === '1' ? '✓' : '',
+			'G69' => $val['11c_isneed'] === '0' ? '✓' : '',
+			'I69' => $val['11c_score_actual'],
+			'J69' => $val['11c_note'],
+
+			'E70' => $val['11d_isneed'] === '1' ? '✓' : '',
+			'G70' => $val['11d_isneed'] === '0' ? '✓' : '',
+			'I70' => $val['11d_score_actual'],
+			'J70' => $val['11d_note'],
+
+			'E71' => $val['11e_isneed'] === '1' ? '✓' : '',
+			'G71' => $val['11e_isneed'] === '0' ? '✓' : '',
+			'I71' => $val['11e_score_actual'],
+			'J71' => $val['11e_note'],
+
+			'E73' => $val['12a_isneed'] === '1' ? '✓' : '',
+			'G73' => $val['12a_isneed'] === '0' ? '✓' : '',
+			'I73' => $val['12a_score_actual'],
+			'J73' => $val['12a_note'],
+
+			'E74' => $val['12b_isneed'] === '1' ? '✓' : '',
+			'G74' => $val['12b_isneed'] === '0' ? '✓' : '',
+			'I74' => $val['12b_score_actual'],
+			'J74' => $val['12b_note'],
+
+			'E75' => $val['12c_isneed'] === '1' ? '✓' : '',
+			'G75' => $val['12c_isneed'] === '0' ? '✓' : '',
+			'I75' => $val['12c_score_actual'],
+			'J75' => $val['12c_note'],
+
+			'E77' => $val['13a_isneed'] === '1' ? '✓' : '',
+			'G77' => $val['13a_isneed'] === '0' ? '✓' : '',
+			'I77' => $val['13a_score_actual'],
+			'J77' => $val['13a_note'],
+
+			'E78' => $val['13b_isneed'] === '1' ? '✓' : '',
+			'G78' => $val['13b_isneed'] === '0' ? '✓' : '',
+			'I78' => $val['13b_score_actual'],
+			'J78' => $val['13b_note'],
+
+			'E79' => $val['13c_isneed'] === '1' ? '✓' : '',
+			'G79' => $val['13c_isneed'] === '0' ? '✓' : '',
+			'I79' => $val['13c_score_actual'],
+			'J79' => $val['13c_note'],
+
+			'E80' => $val['14a_isneed'] === '1' ? '✓' : '',
+			'G80' => $val['14a_isneed'] === '0' ? '✓' : '',
+			'I80' => $val['14a_score_actual'],
+			'J80' => $val['14a_note'],
+
+			'E81' => $val['15a_isneed'] === '1' ? '✓' : '',
+			'G81' => $val['15a_isneed'] === '0' ? '✓' : '',
+			'I81' => $val['15a_score_actual'],
+			'J81' => $val['15a_note'],
+
+			'E83' => $val['16a_isneed'] === '1' ? '✓' : '',
+			'G83' => $val['16a_isneed'] === '0' ? '✓' : '',
+			'I83' => $val['16a_score_actual'],
+			'J83' => $val['16a_note'],
+
+			'E84' => $val['16b_isneed'] === '1' ? '✓' : '',
+			'G84' => $val['16b_isneed'] === '0' ? '✓' : '',
+			'I84' => $val['16b_score_actual'],
+			'J84' => $val['16b_note'],
+
+			'E85' => $val['16c_isneed'] === '1' ? '✓' : '',
+			'G85' => $val['16c_isneed'] === '0' ? '✓' : '',
+			'I85' => $val['16c_score_actual'],
+			'J85' => $val['16c_note'],
+
+			'E86' => $val['16d_isneed'] === '1' ? '✓' : '',
+			'G86' => $val['16d_isneed'] === '0' ? '✓' : '',
+			'I86' => $val['16d_score_actual'],
+			'J86' => $val['16d_note'],
+
+			'E88' => $val['17a_isneed'] === '1' ? '✓' : '',
+			'G88' => $val['17a_isneed'] === '0' ? '✓' : '',
+			'I88' => $val['17a_score_actual'],
+			'J88' => $val['17a_note'],
+
+			'E89' => $val['17b_isneed'] === '1' ? '✓' : '',
+			'G89' => $val['17b_isneed'] === '0' ? '✓' : '',
+			'I89' => $val['17b_score_actual'],
+			'J89' => $val['17b_note'],
+
+			'E90' => $val['17c_isneed'] === '1' ? '✓' : '',
+			'G90' => $val['17c_isneed'] === '0' ? '✓' : '',
+			'I90' => $val['17c_score_actual'],
+			'J90' => $val['17c_note'],
+
+			'E91' => $val['17d_isneed'] === '1' ? '✓' : '',
+			'G91' => $val['17d_isneed'] === '0' ? '✓' : '',
+			'I91' => $val['17d_score_actual'],
+			'J91' => $val['17d_note'],
+
+			'E92' => $val['17e_isneed'] === '1' ? '✓' : '',
+			'G92' => $val['17e_isneed'] === '0' ? '✓' : '',
+			'I92' => $val['17e_score_actual'],
+			'J92' => $val['17e_note'],
+
+			'E93' => $val['17f_isneed'] === '1' ? '✓' : '',
+			'G93' => $val['17f_isneed'] === '0' ? '✓' : '',
+			'I93' => $val['17f_score_actual'],
+			'J93' => $val['17f_note'],
+
+			'E95' => $val['18a_isneed'] === '1' ? '✓' : '',
+			'G95' => $val['18a_isneed'] === '0' ? '✓' : '',
+			'I95' => $val['18a_score_actual'],
+			'J95' => $val['18a_note'],
+
+			'E96' => $val['18b_isneed'] === '1' ? '✓' : '',
+			'G96' => $val['18b_isneed'] === '0' ? '✓' : '',
+			'I96' => $val['18b_score_actual'],
+			'J96' => $val['18b_note'],
+
+			'E97' => $val['18c_isneed'] === '1' ? '✓' : '',
+			'G97' => $val['18c_isneed'] === '0' ? '✓' : '',
+			'I97' => $val['18c_score_actual'],
+			'J97' => $val['18c_note'],
+
+			'E99' => $val['19a_isneed'] === '1' ? '✓' : '',
+			'G99' => $val['19a_isneed'] === '0' ? '✓' : '',
+			'I99' => $val['19a_score_actual'],
+			'J99' => $val['19a_note'],
+
+			'E100' => $val['19b_isneed'] === '1' ? '✓' : '',
+			'G100' => $val['19b_isneed'] === '0' ? '✓' : '',
+			'I100' => $val['19b_score_actual'],
+			'J100' => $val['19b_note'],
+
+			'E101' => $val['19c_isneed'] === '1' ? '✓' : '',
+			'G101' => $val['19c_isneed'] === '0' ? '✓' : '',
+			'I101' => $val['19c_score_actual'],
+			'J101' => $val['19c_note'],
+
+			'E102' => $val['19d_isneed'] === '1' ? '✓' : '',
+			'G102' => $val['19d_isneed'] === '0' ? '✓' : '',
+			'I102' => $val['19d_score_actual'],
+			'J102' => $val['19d_note'],
+
+			'E103' => $val['19e_isneed'] === '1' ? '✓' : '',
+			'G103' => $val['19e_isneed'] === '0' ? '✓' : '',
+			'I103' => $val['19e_score_actual'],
+			'J103' => $val['19e_note'],
+
+			'E105' => $val['20a_isneed'] === '1' ? '✓' : '',
+			'G105' => $val['20a_isneed'] === '0' ? '✓' : '',
+			'I105' => $val['20a_score_actual'],
+			'J105' => $val['20a_note'],
+
+			'E106' => $val['20b_isneed'] === '1' ? '✓' : '',
+			'G106' => $val['20b_isneed'] === '0' ? '✓' : '',
+			'I106' => $val['20b_score_actual'],
+			'J106' => $val['20b_note'],
+
+			'E107' => $val['20c_isneed'] === '1' ? '✓' : '',
+			'G107' => $val['20c_isneed'] === '0' ? '✓' : '',
+			'I107' => $val['20c_score_actual'],
+			'J107' => $val['20c_note'],
+
+			'E109' => $val['21a_isneed'] === '1' ? '✓' : '',
+			'G109' => $val['21a_isneed'] === '0' ? '✓' : '',
+			'I109' => $val['21a_score_actual'],
+			'J109' => $val['21a_note'],
+
+			'E110' => $val['21b_isneed'] === '1' ? '✓' : '',
+			'G110' => $val['21b_isneed'] === '0' ? '✓' : '',
+			'I110' => $val['21b_score_actual'],
+			'J110' => $val['21b_note'],
+
+			'E112' => $val['22a_isneed'] === '1' ? '✓' : '',
+			'G112' => $val['22a_isneed'] === '0' ? '✓' : '',
+			'I112' => $val['22a_score_actual'],
+			'J112' => $val['22a_note'],
+
+			'E113' => $val['22b_isneed'] === '1' ? '✓' : '',
+			'G113' => $val['22b_isneed'] === '0' ? '✓' : '',
+			'I113' => $val['22b_score_actual'],
+			'J113' => $val['22b_note'],
+
+			'E116' => $val['23a1_isneed'] === '1' ? '✓' : '',
+			'G116' => $val['23a1_isneed'] === '0' ? '✓' : '',
+			'I116' => $val['23a1_score_actual'],
+			'J116' => $val['23a1_note'],
+
+			'E117' => $val['23a2_isneed'] === '1' ? '✓' : '',
+			'G117' => $val['23a2_isneed'] === '0' ? '✓' : '',
+			'I117' => $val['23a2_score_actual'],
+			'J117' => $val['23a2_note'],
+
+			'E118' => $val['23a3_isneed'] === '1' ? '✓' : '',
+			'G118' => $val['23a3_isneed'] === '0' ? '✓' : '',
+			'I118' => $val['23a3_score_actual'],
+			'J118' => $val['23a3_note'],
+
+			'E119' => $val['23a4_isneed'] === '1' ? '✓' : '',
+			'G119' => $val['23a4_isneed'] === '0' ? '✓' : '',
+			'I119' => $val['23a4_score_actual'],
+			'J119' => $val['23a4_note'],
+
+			'E120' => $val['23a5_isneed'] === '1' ? '✓' : '',
+			'G120' => $val['23a5_isneed'] === '0' ? '✓' : '',
+			'I120' => $val['23a5_score_actual'],
+			'J120' => $val['23a5_note'],
+
+			'E122' => $val['23b1_isneed'] === '1' ? '✓' : '',
+			'G122' => $val['23b1_isneed'] === '0' ? '✓' : '',
+			'I122' => $val['23b1_score_actual'],
+			'J122' => $val['23b1_note'],
+
+			'E123' => $val['23b2_isneed'] === '1' ? '✓' : '',
+			'G123' => $val['23b2_isneed'] === '0' ? '✓' : '',
+			'I123' => $val['23b2_score_actual'],
+			'J123' => $val['23b2_note'],
+
+			'E124' => $val['23b3_isneed'] === '1' ? '✓' : '',
+			'G124' => $val['23b3_isneed'] === '0' ? '✓' : '',
+			'I124' => $val['23b3_score_actual'],
+			'J124' => $val['23b3_note'],
+
+			'E126' => $val['24a_isneed'] === '1' ? '✓' : '',
+			'G126' => $val['24a_isneed'] === '0' ? '✓' : '',
+			'I126' => $val['24a_score_actual'],
+			'J126' => $val['24a_note'],
+
+			'E127' => $val['24b_isneed'] === '1' ? '✓' : '',
+			'G127' => $val['24b_isneed'] === '0' ? '✓' : '',
+			'I127' => $val['24b_score_actual'],
+			'J127' => $val['24b_note'],
+
+			'E128' => $val['24c_isneed'] === '1' ? '✓' : '',
+			'G128' => $val['24c_isneed'] === '0' ? '✓' : '',
+			'I128' => $val['24c_score_actual'],
+			'J128' => $val['24c_note'],
+
+			'E131' => $val['25a1_isneed'] === '1' ? '✓' : '',
+			'G131' => $val['25a1_isneed'] === '0' ? '✓' : '',
+			'I131' => $val['25a1_score_actual'],
+			'J131' => $val['25a1_note'],
+
+			'E132' => $val['25a2_isneed'] === '1' ? '✓' : '',
+			'G132' => $val['25a2_isneed'] === '0' ? '✓' : '',
+			'I132' => $val['25a2_score_actual'],
+			'J132' => $val['25a2_note'],
+
+			'E133' => $val['25a3_isneed'] === '1' ? '✓' : '',
+			'G133' => $val['25a3_isneed'] === '0' ? '✓' : '',
+			'I133' => $val['25a3_score_actual'],
+			'J133' => $val['25a3_note'],
+
+			'E134' => $val['25a4_isneed'] === '1' ? '✓' : '',
+			'G134' => $val['25a4_isneed'] === '0' ? '✓' : '',
+			'I134' => $val['25a4_score_actual'],
+			'J134' => $val['25a4_note'],
+
+			'E135' => $val['25a5_isneed'] === '1' ? '✓' : '',
+			'G135' => $val['25a5_isneed'] === '0' ? '✓' : '',
+			'I135' => $val['25a5_score_actual'],
+			'J135' => $val['25a5_note'],
+
+			'E136' => $val['25a6_isneed'] === '1' ? '✓' : '',
+			'G136' => $val['25a6_isneed'] === '0' ? '✓' : '',
+			'I136' => $val['25a6_score_actual'],
+			'J136' => $val['25a6_note'],
+
+			'E137' => $val['25a7_isneed'] === '1' ? '✓' : '',
+			'G137' => $val['25a7_isneed'] === '0' ? '✓' : '',
+			'I137' => $val['25a7_score_actual'],
+			'J137' => $val['25a7_note'],
+
+			'E139' => $val['25b1_isneed'] === '1' ? '✓' : '',
+			'G139' => $val['25b1_isneed'] === '0' ? '✓' : '',
+			'I139' => $val['25b1_score_actual'],
+			'J139' => $val['25b1_note'],
+
+			'E140' => $val['25b2_isneed'] === '1' ? '✓' : '',
+			'G140' => $val['25b2_isneed'] === '0' ? '✓' : '',
+			'I140' => $val['25b2_score_actual'],
+			'J140' => $val['25b2_note'],
+
+			'E141' => $val['25b3_isneed'] === '1' ? '✓' : '',
+			'G141' => $val['25b3_isneed'] === '0' ? '✓' : '',
+			'I141' => $val['25b3_score_actual'],
+			'J141' => $val['25b3_note'],
+
+			'E142' => $val['25b4_isneed'] === '1' ? '✓' : '',
+			'G142' => $val['25b4_isneed'] === '0' ? '✓' : '',
+			'I142' => $val['25b4_score_actual'],
+			'J142' => $val['25b4_note'],
+
+			'E143' => $val['25b5_isneed'] === '1' ? '✓' : '',
+			'G143' => $val['25b5_isneed'] === '0' ? '✓' : '',
+			'I143' => $val['25b5_score_actual'],
+			'J143' => $val['25b5_note'],
+
+			'E144' => $val['25b6_isneed'] === '1' ? '✓' : '',
+			'G144' => $val['25b6_isneed'] === '0' ? '✓' : '',
+			'I144' => $val['25b6_score_actual'],
+			'J144' => $val['25b6_note'],
+
+			'E145' => $val['25b7_isneed'] === '1' ? '✓' : '',
+			'G145' => $val['25b7_isneed'] === '0' ? '✓' : '',
+			'I145' => $val['25b7_score_actual'],
+			'J145' => $val['25b7_note'],
+
+			'E146' => $val['25b8_isneed'] === '1' ? '✓' : '',
+			'G146' => $val['25b8_isneed'] === '0' ? '✓' : '',
+			'I146' => $val['25b8_score_actual'],
+			'J146' => $val['25b8_note'],
+
+			'E147' => $val['25b9_isneed'] === '1' ? '✓' : '',
+			'G147' => $val['25b9_isneed'] === '0' ? '✓' : '',
+			'I147' => $val['25b9_score_actual'],
+			'J147' => $val['25b9_note'],
+
+			'E149' => $val['26a_isneed'] === '1' ? '✓' : '',
+			'G149' => $val['26a_isneed'] === '0' ? '✓' : '',
+			'I149' => $val['26a_score_actual'],
+			'J149' => $val['26a_note'],
+
+			'E150' => $val['26b_isneed'] === '1' ? '✓' : '',
+			'G150' => $val['26b_isneed'] === '0' ? '✓' : '',
+			'I150' => $val['26b_score_actual'],
+			'J150' => $val['26b_note'],
+
+			'E151' => $val['26c_isneed'] === '1' ? '✓' : '',
+			'G151' => $val['26c_isneed'] === '0' ? '✓' : '',
+			'I151' => $val['26c_score_actual'],
+			'J151' => $val['26c_note'],
+
+			'E152' => $val['26d_isneed'] === '1' ? '✓' : '',
+			'G152' => $val['26d_isneed'] === '0' ? '✓' : '',
+			'I152' => $val['26d_score_actual'],
+			'J152' => $val['26d_note'],
+
+			'E155' => $val['27a1_isneed'] === '1' ? '✓' : '',
+			'G155' => $val['27a1_isneed'] === '0' ? '✓' : '',
+			'I155' => $val['27a1_score_actual'],
+			'J155' => $val['27a1_note'],
+
+			'E156' => $val['27a2_isneed'] === '1' ? '✓' : '',
+			'G156' => $val['27a2_isneed'] === '0' ? '✓' : '',
+			'I156' => $val['27a2_score_actual'],
+			'J156' => $val['27a2_note'],
+
+			'E157' => $val['27a3_isneed'] === '1' ? '✓' : '',
+			'G157' => $val['27a3_isneed'] === '0' ? '✓' : '',
+			'I157' => $val['27a3_score_actual'],
+			'J157' => $val['27a3_note'],
+
+			'E158' => $val['27a4_isneed'] === '1' ? '✓' : '',
+			'G158' => $val['27a4_isneed'] === '0' ? '✓' : '',
+			'I158' => $val['27a4_score_actual'],
+			'J158' => $val['27a4_note'],
+
+			'E159' => $val['27a5_isneed'] === '1' ? '✓' : '',
+			'G159' => $val['27a5_isneed'] === '0' ? '✓' : '',
+			'I159' => $val['27a5_score_actual'],
+			'J159' => $val['27a5_note'],
+
+			'E160' => $val['27a6_isneed'] === '1' ? '✓' : '',
+			'G160' => $val['27a6_isneed'] === '0' ? '✓' : '',
+			'I160' => $val['27a6_score_actual'],
+			'J160' => $val['27a6_note'],
+
+			'E161' => $val['27a7_isneed'] === '1' ? '✓' : '',
+			'G161' => $val['27a7_isneed'] === '0' ? '✓' : '',
+			'I161' => $val['27a7_score_actual'],
+			'J161' => $val['27a7_note'],
+
+			'E162' => $val['27a8_isneed'] === '1' ? '✓' : '',
+			'G162' => $val['27a8_isneed'] === '0' ? '✓' : '',
+			'I162' => $val['27a8_score_actual'],
+			'J162' => $val['27a8_note'],
+
+			'E163' => $val['27a9_isneed'] === '1' ? '✓' : '',
+			'G163' => $val['27a9_isneed'] === '0' ? '✓' : '',
+			'I163' => $val['27a9_score_actual'],
+			'J163' => $val['27a9_note'],
+
+			'E165' => $val['27b1_isneed'] === '1' ? '✓' : '',
+			'G165' => $val['27b1_isneed'] === '0' ? '✓' : '',
+			'I165' => $val['27b1_score_actual'],
+			'J165' => $val['27b1_note'],
+
+			'E166' => $val['27b2_isneed'] === '1' ? '✓' : '',
+			'G166' => $val['27b2_isneed'] === '0' ? '✓' : '',
+			'I166' => $val['27b2_score_actual'],
+			'J166' => $val['27b2_note'],
+
+			'E167' => $val['27b3_isneed'] === '1' ? '✓' : '',
+			'G167' => $val['27b3_isneed'] === '0' ? '✓' : '',
+			'I167' => $val['27b3_score_actual'],
+			'J167' => $val['27b3_note'],
+
+			'E168' => $val['27b4_isneed'] === '1' ? '✓' : '',
+			'G168' => $val['27b4_isneed'] === '0' ? '✓' : '',
+			'I168' => $val['27b4_score_actual'],
+			'J168' => $val['27b4_note'],
+
+			'E170' => $val['27c1_isneed'] === '1' ? '✓' : '',
+			'G170' => $val['27c1_isneed'] === '0' ? '✓' : '',
+			'I170' => $val['27c1_score_actual'],
+			'J170' => $val['27c1_note'],
+
+			'E171' => $val['27c2_isneed'] === '1' ? '✓' : '',
+			'G171' => $val['27c2_isneed'] === '0' ? '✓' : '',
+			'I171' => $val['27c2_score_actual'],
+			'J171' => $val['27c2_note'],
+
+			'E172' => $val['27c3_isneed'] === '1' ? '✓' : '',
+			'G172' => $val['27c3_isneed'] === '0' ? '✓' : '',
+			'I172' => $val['27c3_score_actual'],
+			'J172' => $val['27c3_note'],
+
+			'E174' => $val['28a1_isneed'] === '1' ? '✓' : '',
+			'G174' => $val['28a1_isneed'] === '0' ? '✓' : '',
+			'I174' => $val['28a1_score_actual'],
+			'J174' => $val['28a1_note'],
+
+			'E175' => $val['28a2_isneed'] === '1' ? '✓' : '',
+			'G175' => $val['28a2_isneed'] === '0' ? '✓' : '',
+			'I175' => $val['28a2_score_actual'],
+			'J175' => $val['28a2_note'],
+
+			'E176' => $val['28a3_isneed'] === '1' ? '✓' : '',
+			'G176' => $val['28a3_isneed'] === '0' ? '✓' : '',
+			'I176' => $val['28a3_score_actual'],
+			'J176' => $val['28a3_note'],
 		);
 
 		$spreadsheet = IOFactory::load('./excels/Form 3.1 - Check List Inspeksi HSE Work Practice.xlsx');
@@ -4127,6 +4777,56 @@ class WIPs extends MY_Model
 			'E12' => $val['2_isneed'] === '0' ? '✓' : '',
 			'G12' => $val['2_score_actual'],
 			'H12' => $val['2_note'],
+
+			'D13' => $val['3_isneed'] === '1' ? '✓' : '',
+			'E13' => $val['3_isneed'] === '0' ? '✓' : '',
+			'G13' => $val['3_score_actual'],
+			'H13' => $val['3_note'],
+
+			'D14' => $val['4_isneed'] === '1' ? '✓' : '',
+			'E14' => $val['4_isneed'] === '0' ? '✓' : '',
+			'G14' => $val['4_score_actual'],
+			'H14' => $val['4_note'],
+
+			'D15' => $val['5_isneed'] === '1' ? '✓' : '',
+			'E15' => $val['5_isneed'] === '0' ? '✓' : '',
+			'G15' => $val['5_score_actual'],
+			'H15' => $val['5_note'],
+
+			'D16' => $val['6_isneed'] === '1' ? '✓' : '',
+			'E16' => $val['6_isneed'] === '0' ? '✓' : '',
+			'G16' => $val['6_score_actual'],
+			'H16' => $val['6_note'],
+
+			'D17' => $val['7_isneed'] === '1' ? '✓' : '',
+			'E17' => $val['7_isneed'] === '0' ? '✓' : '',
+			'G17' => $val['7_score_actual'],
+			'H17' => $val['7_note'],
+
+			'D18' => $val['8_isneed'] === '1' ? '✓' : '',
+			'E18' => $val['8_isneed'] === '0' ? '✓' : '',
+			'G18' => $val['8_score_actual'],
+			'H18' => $val['8_note'],
+
+			'D19' => $val['9_isneed'] === '1' ? '✓' : '',
+			'E19' => $val['9_isneed'] === '0' ? '✓' : '',
+			'G19' => $val['9_score_actual'],
+			'H19' => $val['9_note'],
+
+			'D20' => $val['10_isneed'] === '1' ? '✓' : '',
+			'E20' => $val['10_isneed'] === '0' ? '✓' : '',
+			'G20' => $val['10_score_actual'],
+			'H20' => $val['10_note'],
+
+			'D21' => $val['11_isneed'] === '1' ? '✓' : '',
+			'E21' => $val['11_isneed'] === '0' ? '✓' : '',
+			'G21' => $val['11_score_actual'],
+			'H21' => $val['11_note'],
+
+			'D22' => $val['12_isneed'] === '1' ? '✓' : '',
+			'E22' => $val['12_isneed'] === '0' ? '✓' : '',
+			'G22' => $val['12_score_actual'],
+			'H22' => $val['12_note'],
 		);
 
 		$spreadsheet = IOFactory::load('./excels/Form 3.2 - WIP - Check List Inspeksi Penerapan Program HSE.xlsx');

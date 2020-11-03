@@ -374,6 +374,70 @@ class KPIs extends MY_Model
 			'D11' => $val['a2_target'],
 			'E11' => $val['a2_actual'],
 
+			'D13' => $val['b1_target'],
+			'E13' => $val['b1_actual'],
+
+			'D14' => $val['b2_target'],
+			'E14' => $val['b2_actual'],
+
+			'D15' => $val['b3_target'],
+			'E15' => $val['b3_actual'],
+
+			'D16' => $val['b4_target'],
+			'E16' => $val['b4_actual'],
+
+			'D17' => $val['b5_target'],
+			'E17' => $val['b5_actual'],
+			'G17' => $val['b5_score_actual'],
+
+			'D19' => $val['c1_target'],
+			'E19' => $val['c1_actual'],
+			'G19' => $val['c1_score_actual'],
+
+			'D20' => $val['c2_target'],
+			'E20' => $val['c2_actual'],
+			'G20' => $val['c2_score_actual'],
+
+			'D21' => $val['c3_target'],
+			'E21' => $val['c3_actual'],
+			'G21' => $val['c3_score_actual'],
+
+			'D22' => $val['c4_target'],
+			'E22' => $val['c4_actual'],
+			'G22' => $val['c4_score_actual'],
+
+			'D23' => $val['c5_target'],
+			'E23' => $val['c5_actual'],
+			'G23' => $val['c5_score_actual'],
+
+			'D24' => $val['c6_target'],
+			'E24' => $val['c6_actual'],
+			'G24' => $val['c6_score_actual'],
+
+			'D25' => $val['c7_target'],
+			'E25' => $val['c7_actual'],
+			'G25' => $val['c7_score_actual'],
+
+			'D26' => $val['c8_target'],
+			'E26' => $val['c8_actual'],
+			'G26' => $val['c8_score_actual'],
+
+			'D27' => $val['c9_target'],
+			'E27' => $val['c9_actual'],
+			'G27' => $val['c9_score_actual'],
+
+			'D28' => $val['c10_target'],
+			'E28' => $val['c10_actual'],
+			'G28' => $val['c10_score_actual'],
+
+			'D29' => $val['c11_target'],
+			'E29' => $val['c11_actual'],
+			'G29' => $val['c11_score_actual'],
+
+			'D30' => $val['c12_target'],
+			'E30' => $val['c12_actual'],
+			'G30' => $val['c12_score_actual'],
+
 			// 'F15' => $val['1b_isya'] === '1' ? '✓' : '',
 			// 'G15' => $val['1b_isya'] === '0' ? '✓' : '',
 			// 'H15' => $val['1b_isneed'] === '1' ? '✓' : '',
