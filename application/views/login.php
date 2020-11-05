@@ -26,7 +26,6 @@
   </div>
   <!-- /.login-logo -->
   <div class="card">
-    <div class="card-header login-card-header text-danger text-center">VENDOR OJO ISO SAVE AND DOWNLOAD TO NDUL, DOWNLOAD WAE !!</div>
     <div class="card-body login-card-body">
       <p class="login-box-msg">Contractor Safety Management System</p>
 
