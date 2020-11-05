@@ -94,6 +94,18 @@ class FEs extends MY_Model
 		$this->childs = array();
 	}
 
+	function getForm($uuid = false, $isSubform = false)
+	{
+		$form = parent::getForm($uuid, $isSubform);
+		if (strlen($this->session->userdata('vendor')) > 0) {
+			$form = array_map(function ($field) {
+				$field['attr'] .= ' disabled="disabled"';
+				return $field;
+			}, $form);
+		}
+		return $form;
+	}
+
 	function dt()
 	{
 		$this->datatables

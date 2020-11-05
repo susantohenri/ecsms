@@ -7,9 +7,6 @@
         <i class="fa fa-download"></i> &nbsp;
         Download HSE Plan
       </a>
-      <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
-        <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Save</button>
-      <?php endif ?>
       <?php if (!empty($uuid) && in_array("delete_{$current['controller']}", $permission)) : ?>
         <a href="<?= site_url($current['controller'] . "/delete/$uuid") ?>" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</a>
       <?php endif ?>
