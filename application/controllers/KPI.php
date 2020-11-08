@@ -46,6 +46,14 @@ class KPI extends MY_Controller
 		$vars['page_name'] = 'forms/kpi';
 		$projectDetail = $this->$model->getProjectDetail($id);
 		$vars['project_name'] = $projectDetail['nama_project'];
+
+		$kpi = $this->$model->findOne($id);
+		$vars['download_label'] = 'Save & Download';
+		if ($this->session->userdata('vendor'))
+		{
+			$vars['download_label'] = '1' === $kpi['progress'] ? 'Download' : false;
+		}
+
 		$this->loadview('index', $vars);
 	}
 

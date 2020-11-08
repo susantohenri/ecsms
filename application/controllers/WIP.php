@@ -63,6 +63,14 @@ class WIP extends MY_Controller
 		$vars['page_name'] = 'forms/wip';
 		$projectDetail = $this->$model->getProjectDetail($id);
 		$vars['project_name'] = $projectDetail['nama_project'];
+
+		$wip = $this->$model->findOne($id);
+		$vars['download_label'] = 'Save & Download';
+		if ($this->session->userdata('vendor'))
+		{
+			$vars['download_label'] = '1' === $wip['progress'] ? 'Download' : false;
+		}
+
 		$this->loadview('index', $vars);
 	}
 

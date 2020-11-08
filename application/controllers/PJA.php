@@ -46,6 +46,14 @@ class PJA extends MY_Controller
 		$vars['page_name'] = 'forms/pja';
 		$project_detail = $this->$model->getProjectDetail($id);
 		$vars['project_name'] = $project_detail['nama_project'];
+
+		$pja = $this->$model->findOne($id);
+		$vars['download_label'] = 'Save & Download';
+		if ($this->session->userdata('vendor'))
+		{
+			$vars['download_label'] = '1' === $pja['progress'] ? 'Download' : false;
+		}
+
 		$this->loadview('index', $vars);
 	}
 
