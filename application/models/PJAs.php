@@ -1049,6 +1049,31 @@ class PJAs extends MY_Model
 		$this->childs = array();
 	}
 
+	function getNilai ($project)
+	{
+		$pja = $this->findOne(array('project' => $project));
+		$form = parent::prepopulate($pja['uuid']);
+
+		$needs = array_map(function ($field) {
+			if (strpos($field['name'], '_isneed') > -1 && '1' === $field['value']) return str_replace('_isneed', '_isya', $field['name']);
+			else return '';
+		}, $form);
+
+		$needs = array_filter($needs, function ($field) {
+			return '' !== $field;
+		});
+
+		$total = count($needs);
+
+		$yes = array_filter($form, function ($field) use ($needs) {
+			return in_array($field['name'], $needs) && '1' === $field['value'];
+		});
+
+		$yes = count($yes);
+
+		return $yes / $total * 100;
+	}
+
 	function dt()
 	{
 		$this->datatables

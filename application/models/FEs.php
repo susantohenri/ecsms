@@ -13,7 +13,6 @@ class FEs extends MY_Model
 		$this->thead = array(
 			(object) array('mData' => 'orders', 'sTitle' => 'No', 'visible' => false),
 			(object) array('mData' => 'project', 'sTitle' => 'Project'),
-
 		);
 		$this->form = array(
 			array(
@@ -44,54 +43,130 @@ class FEs extends MY_Model
 			),
 			array(
 				'name' => 'elemen_1_nilai_awal',
+				'attributes' => array (
+					array ('disabled' => 'disabled')
+				),
 				'label' => '1. Kesiapan saat Pre-Job Activity',
 			),
 			array(
 				'name' => 'elemen_1_bobot',
-				'label' => '',
+				'value' => '20 %',
+				'attributes' => array(
+					array ('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'elemen_1_nilai_akhir',
+				'attributes' => array (
+					array ('disabled' => 'disabled')
+				),
 				'label' => '',
 			),
 			array(
 				'name' => 'elemen_2_nilai_awal',
+				'attributes' => array (
+					array ('disabled' => 'disabled')
+				),
 				'label' => '2. Inspeksi HSE',
 			),
 			array(
 				'name' => 'elemen_2_bobot',
-				'label' => '',
+				'value' => '30 %',
+				'attributes' => array(
+					array ('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'elemen_2_nilai_akhir',
+				'attributes' => array(
+					array ('disabled' => 'disabled')
+				),
 				'label' => '',
 			),
 			array(
 				'name' => 'elemen_3_nilai_awal',
+				'attributes' => array (
+					array ('disabled' => 'disabled')
+				),
 				'label' => '3. Program HSE',
 			),
 			array(
 				'name' => 'elemen_3_bobot',
-				'label' => '',
+				'value' => '35 %',
+				'attributes' => array(
+					array ('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'elemen_3_nilai_akhir',
+				'attributes' => array (
+					array ('disabled' => 'disabled')
+				),
 				'label' => '',
 			),
 			array(
 				'name' => 'elemen_4_nilai_awal',
+				'attributes' => array (
+					array ('disabled' => 'disabled')
+				),
 				'label' => '4. Evaluasi HSE Performance',
 			),
 			array(
 				'name' => 'elemen_4_bobot',
-				'label' => '',
+				'value' => '15 %',
+				'attributes' => array(
+					array ('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'elemen_4_nilai_akhir',
+				'attributes' => array (
+					array ('disabled' => 'disabled')
+				),
 				'label' => '',
 			),
 		);
 		$this->childs = array();
+	}
+
+	function prepopulate($uuid)
+	{
+		$fe = parent::findOne($uuid);
+		$project = $fe['project'];
+		$form = parent::prepopulate(($uuid));
+
+		$bobots = array_filter($form, function ($field) {
+			return strpos($field['name'], '_bobot') > -1;
+		});
+
+		$divider = array();
+		foreach ($bobots as $bobot)
+		{
+			$divider[$bobot['name']] = str_replace(' %', '', $bobot['value']);
+		}
+
+		$this->load->model(array('PJAs'));
+		$nilai_awals = array(
+			'pja' => $this->PJAs->getNilai($project)
+		);
+
+		$nilai_akhirs = array(
+			'pja' => $nilai_awals['pja'] / $divider['elemen_1_bobot']
+		);
+
+		$form = array_map(function ($field) use ($nilai_awals, $nilai_akhirs) {
+			switch ($field['name'])
+			{
+				case 'elemen_1_nilai_awal':
+					$field['value'] = $nilai_awals['pja'] . ' %';
+					break;
+				case 'elemen_1_nilai_akhir':
+					$field['value'] = $nilai_akhirs['pja'] . ' %';
+					break;
+			}
+			return $field;
+		}, $form);
+		return $form;
 	}
 
 	function getForm($uuid = false, $isSubform = false)

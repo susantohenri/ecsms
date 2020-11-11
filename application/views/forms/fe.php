@@ -75,7 +75,7 @@
                     <div class="col-sm-2">
                       <div class="input-group input-group-sm">
                         <div class="input-group-prepend">
-                          <span class="input-group-text">% Nilai</span>
+                          <span class="input-group-text">Nilai</span>
                         </div>
                         <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
                       </div>
@@ -85,7 +85,7 @@
                     <div class="col-sm-2">
                       <div class="input-group input-group-sm">
                         <div class="input-group-prepend">
-                          <span class="input-group-text">% Bobot</span>
+                          <span class="input-group-text">Bobot</span>
                         </div>
                         <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
                       </div>
@@ -95,7 +95,7 @@
                     <div class="col-sm-3">
                       <div class="input-group input-group-sm">
                         <div class="input-group-prepend">
-                          <span class="input-group-text">% Nilai Akhir</span>
+                          <span class="input-group-text">Nilai Akhir</span>
                         </div>
                         <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
                       </div>
