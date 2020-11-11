@@ -1049,10 +1049,9 @@ class PJAs extends MY_Model
 		$this->childs = array();
 	}
 
-	function getNilai ($project)
+	function getHasil ($uuid)
 	{
-		$pja = $this->findOne(array('project' => $project));
-		$form = parent::prepopulate($pja['uuid']);
+		$form = parent::prepopulate($uuid);
 
 		$needs = array_map(function ($field) {
 			if (strpos($field['name'], '_isneed') > -1 && '1' === $field['value']) return str_replace('_isneed', '_isya', $field['name']);
@@ -1070,8 +1069,14 @@ class PJAs extends MY_Model
 		});
 
 		$yes = count($yes);
+		$no = $total - $yes;
 
-		return $yes / $total * 100;
+		return array (
+			'yes' => $yes,
+			'no' => $no,
+			'total' => $total,
+			'percent' => number_format($yes / $total * 100, 2)
+		);
 	}
 
 	function dt()
@@ -1135,12 +1140,16 @@ class PJAs extends MY_Model
 		$result['title'] = "Checklist Pre Job Activty - {$project}";
 
 		$val = $this->findOne($uuid);
+		$hasil = $this->getHasil($val['uuid']);
 		$acceptedAt = date("j F  Y", strtotime($val['acceptedAt']));
 		$cellMap = array(
 			'D6' => ": {$vendor}",
 			'D7' => ": {$project}",
 			'D8' => ": Fuel Terminal Boyolali",
 			'D9' => ": {$acceptedAt}",
+			'F87' => $hasil['yes'],
+			'G87' => $hasil['no'],
+			'F88' => $hasil['percent'],
 
 			'F14' => $val['1a_isya'] === '1' ? '✓' : '',
 			'G14' => $val['1a_isya'] === '0' ? '✓' : '',

@@ -146,12 +146,16 @@ class FEs extends MY_Model
 		}
 
 		$this->load->model(array('PJAs'));
+
+		$pja = $this->PJAs->findOne(array('project' => $project));
+		$hasil_pja = $this->PJAs->getHasil($pja['uuid']);
+
 		$nilai_awals = array(
-			'pja' => $this->PJAs->getNilai($project)
+			'pja' => $hasil_pja['percent']
 		);
 
 		$nilai_akhirs = array(
-			'pja' => $nilai_awals['pja'] / $divider['elemen_1_bobot']
+			'pja' => number_format($nilai_awals['pja'] / $divider['elemen_1_bobot'], 2)
 		);
 
 		$form = array_map(function ($field) use ($nilai_awals, $nilai_akhirs) {
