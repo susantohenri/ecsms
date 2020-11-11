@@ -169,7 +169,8 @@ class MY_Model extends CI_Model
         foreach ($this->$model->findIn('uuid', explode(',', $record[$f['name']])) as $option)
           $f['options'][] = array('text' => $option->$field, 'value' => $option->uuid);
       }
-      if (isset($f['multiple'])) $f['value'] = explode(',', $record[$f['name']]);
+      if (isset ($f['value'])) {}
+      else if (isset($f['multiple'])) $f['value'] = explode(',', $record[$f['name']]);
       else if ($f['name'] === 'password') $f['value'] = '';
       else $f['value'] = isset($record[$f['name']]) ? $record[$f['name']] : '';
     }
