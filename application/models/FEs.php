@@ -145,17 +145,24 @@ class FEs extends MY_Model
 			$divider[$bobot['name']] = str_replace(' %', '', $bobot['value']);
 		}
 
-		$this->load->model(array('PJAs'));
+		$this->load->model(array('PJAs', 'WIPs'));
 
 		$pja = $this->PJAs->findOne(array('project' => $project));
 		$hasil_pja = $this->PJAs->getHasil($pja['uuid']);
 
+		$wip = $this->WIPs->findOne(array('project' => $project));
+		$hasil_wip = $this->WIPs->getHasil($wip['uuid']);
+
 		$nilai_awals = array(
-			'pja' => $hasil_pja['percent']
+			'pja' => $hasil_pja['percent'],
+			'wip_practice' => $hasil_wip['practice']['percent'],
+			'wip_program' => $hasil_wip['program']['percent']
 		);
 
 		$nilai_akhirs = array(
-			'pja' => number_format($nilai_awals['pja'] / $divider['elemen_1_bobot'], 2)
+			'pja' => number_format($nilai_awals['pja'] / $divider['elemen_1_bobot'], 2),
+			'wip_practice' => number_format($nilai_awals['wip_practice'] / $divider['elemen_2_bobot'], 2),
+			'wip_program' => number_format($nilai_awals['wip_program'] / $divider['elemen_3_bobot'], 2)
 		);
 
 		$form = array_map(function ($field) use ($nilai_awals, $nilai_akhirs) {
@@ -166,6 +173,18 @@ class FEs extends MY_Model
 					break;
 				case 'elemen_1_nilai_akhir':
 					$field['value'] = $nilai_akhirs['pja'] . ' %';
+					break;
+				case 'elemen_2_nilai_awal':
+					$field['value'] = $nilai_awals['wip_practice'] . ' %';
+					break;
+				case 'elemen_2_nilai_akhir':
+					$field['value'] = $nilai_akhirs['wip_practice'] . ' %';
+					break;
+				case 'elemen_3_nilai_awal':
+					$field['value'] = $nilai_awals['wip_program'] . ' %';
+					break;
+				case 'elemen_3_nilai_akhir':
+					$field['value'] = $nilai_akhirs['wip_program'] . ' %';
 					break;
 			}
 			return $field;
