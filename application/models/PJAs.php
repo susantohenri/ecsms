@@ -1070,12 +1070,13 @@ class PJAs extends MY_Model
 
 		$yes = count($yes);
 		$no = $total - $yes;
+		$percent = 0 === $total ? 0 : number_format($yes / $total * 100, 2);
 
 		return array (
 			'yes' => $yes,
 			'no' => $no,
 			'total' => $total,
-			'percent' => number_format($yes / $total * 100, 2)
+			'percent' => $percent
 		);
 	}
 

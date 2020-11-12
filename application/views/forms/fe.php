@@ -138,7 +138,7 @@
         <h4>Apakah Anda Yakin ?</h4>
       </div>
       <div class="modal-footer">
-        <a id="submit_form_fe" onclick="$('#form_fe').submit()" class="btn btn-success">Ya</a>
+        <a id="submit_form_fe" onclick="$('#form_fe input').removeAttr('disabled');$('#form_fe').submit()" class="btn btn-success">Ya</a>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
       </div>
     </div>
