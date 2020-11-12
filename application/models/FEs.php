@@ -145,7 +145,7 @@ class FEs extends MY_Model
 			$divider[$bobot['name']] = str_replace(' %', '', $bobot['value']);
 		}
 
-		$this->load->model(array('PJAs', 'WIPs'));
+		$this->load->model(array('PJAs', 'WIPs', 'KPIs'));
 
 		$pja = $this->PJAs->findOne(array('project' => $project));
 		$hasil_pja = $this->PJAs->getHasil($pja['uuid']);
@@ -153,16 +153,21 @@ class FEs extends MY_Model
 		$wip = $this->WIPs->findOne(array('project' => $project));
 		$hasil_wip = $this->WIPs->getHasil($wip['uuid']);
 
+		$kpi = $this->KPIs->findOne(array('project' => $project));
+		$hasil_kpi = $this->KPIs->getHasil($kpi['uuid']);
+
 		$nilai_awals = array(
 			'pja' => $hasil_pja['percent'],
 			'wip_practice' => $hasil_wip['practice']['percent'],
-			'wip_program' => $hasil_wip['program']['percent']
+			'wip_program' => $hasil_wip['program']['percent'],
+			'kpi' => $hasil_kpi
 		);
 
 		$nilai_akhirs = array(
 			'pja' => number_format($nilai_awals['pja'] / $divider['elemen_1_bobot'], 2),
 			'wip_practice' => number_format($nilai_awals['wip_practice'] / $divider['elemen_2_bobot'], 2),
-			'wip_program' => number_format($nilai_awals['wip_program'] / $divider['elemen_3_bobot'], 2)
+			'wip_program' => number_format($nilai_awals['wip_program'] / $divider['elemen_3_bobot'], 2),
+			'kpi' => number_format($nilai_awals['kpi'] / $divider['elemen_4_bobot'], 2)
 		);
 
 		$form = array_map(function ($field) use ($nilai_awals, $nilai_akhirs) {
@@ -185,6 +190,12 @@ class FEs extends MY_Model
 					break;
 				case 'elemen_3_nilai_akhir':
 					$field['value'] = $nilai_akhirs['wip_program'] . ' %';
+					break;
+				case 'elemen_4_nilai_awal':
+					$field['value'] = $nilai_awals['kpi'] . ' %';
+					break;
+				case 'elemen_4_nilai_akhir':
+					$field['value'] = $nilai_akhirs['kpi'] . ' %';
 					break;
 			}
 			return $field;
