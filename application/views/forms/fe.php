@@ -12,6 +12,14 @@
       </a>
       <?php endif ?>
 
+      <?php if ($sendmail_label): ?>
+      <input type="checkbox" name="sendmail-button" class="sendmail-button" style="display: none;">
+      <a class="btn btn-info" onclick="document.querySelector('.sendmail-button').click()" data-toggle="modal" data-target="#fe_submit_confirm">
+        <i class="fa fa-paper-plane"></i> &nbsp;
+        Save & Email
+      </a>
+      <?php endif ?>
+
       <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
         <a class="btn btn-success btn-save" data-toggle="modal" data-target="#fe_submit_confirm"><i class="fa fa-save"></i> &nbsp; Save Only</a>
       <?php endif ?>
@@ -139,7 +147,7 @@
       </div>
       <div class="modal-footer">
         <a id="submit_form_fe" onclick="$('#form_fe input').removeAttr('disabled');$('#form_fe').submit()" class="btn btn-success">Ya</a>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="$('.download-button, .sendmail-button').prop('checked', false)">Tidak</button>
       </div>
     </div>
   </div>

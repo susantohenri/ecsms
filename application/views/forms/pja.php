@@ -13,11 +13,18 @@
 <form id="form_pja" enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
   <div class="card card-danger card-outline">
     <div class="card-header text-right">
-    <?php if ($download_label): ?>
+      <?php if ($download_label): ?>
       <input type="checkbox" name="download-button" class="download-button" style="display: none;">
       <a class="btn btn-danger" onclick="document.querySelector('.download-button').click()" data-toggle="modal" data-target="#pja_submit_confirm">
         <i class="fa fa-download"></i> &nbsp;
         <?= $download_label ?>
+      </a>
+      <?php endif ?>
+      <?php if ($sendmail_label): ?>
+      <input type="checkbox" name="sendmail-button" class="sendmail-button" style="display: none;">
+      <a class="btn btn-info" onclick="document.querySelector('.sendmail-button').click()" data-toggle="modal" data-target="#pja_submit_confirm">
+        <i class="fa fa-paper-plane"></i> &nbsp;
+        Save & Email
       </a>
       <?php endif ?>
       <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
@@ -142,7 +149,7 @@
       </div>
       <div class="modal-footer">
         <a id="submit_form_pja" onclick="$('#form_pja').submit()" class="btn btn-success">Ya</a>
-        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="$('.download-button').prop('checked', false)">Tidak</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="$('.download-button, .sendmail-button').prop('checked', false)">Tidak</button>
       </div>
     </div>
   </div>

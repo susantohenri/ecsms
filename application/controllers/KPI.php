@@ -20,9 +20,25 @@ class KPI extends MY_Controller
 			else
 			{
 				$download = isset ($post['download-button']);
+				$sendmail = isset ($post['sendmail-button']);
 				unset($post['download-button']);
+				unset($post['sendmail-button']);
 				$uuid = $this->$model->save($post);
 				if ($download) redirect(site_url("KPI/downloadConfirm/{$uuid}"));
+				if ($sendmail)
+				{
+					$this->load->model('Emails');
+					$excel = $this->{$this->model}->excel($uuid);
+					$subject = $excel['title'];
+
+					ob_start();
+					$writer = new Xlsx($excel['spreadsheet']);
+					$writer->save('php://output');
+					$attachment = ob_get_contents();
+					ob_end_clean();
+
+					$this->Emails->sendmail($subject, $attachment);
+				}
 			}
 		}
 		redirect(base_url());
@@ -49,9 +65,11 @@ class KPI extends MY_Controller
 
 		$kpi = $this->$model->findOne($id);
 		$vars['download_label'] = 'Save & Download';
+		$vars['sendmail_label'] = 'Save & Send Email';
 		if ($this->session->userdata('vendor'))
 		{
 			$vars['download_label'] = '1' === $kpi['progress'] ? 'Download' : false;
+			$vars['sendmail_label'] = false;
 		}
 
 		$this->loadview('index', $vars);
