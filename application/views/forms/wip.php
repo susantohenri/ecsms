@@ -24,7 +24,7 @@
 
       <?php if ($download_label): ?>
       <input type="checkbox" name="download-program" class="download-program" style="display: none;">
-      <a class="btn btn-info" onclick="document.querySelector('.download-program').click()" data-toggle="modal" data-target="#wip_submit_confirm">
+      <a class="btn btn-primary" onclick="document.querySelector('.download-program').click()" data-toggle="modal" data-target="#wip_submit_confirm">
         <i class="fa fa-download"></i> &nbsp;
         <?= $download_label ?> HSE Program
       </a>
