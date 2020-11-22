@@ -126,6 +126,10 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'b5_score_max',
+				'value'=> 8,
+				'attributes' => array(
+					array('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'b5_score_actual',
@@ -144,6 +148,10 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c1_score_max',
+				'value'=> 7,
+				'attributes' => array(
+					array('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'c1_score_actual',
@@ -157,6 +165,10 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c2_score_max',
+				'value'=> 8,
+				'attributes' => array(
+					array('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'c2_score_actual',
@@ -170,6 +182,10 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c3_score_max',
+				'value'=> 8,
+				'attributes' => array(
+					array('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'c3_score_actual',
@@ -183,6 +199,10 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c4_score_max',
+				'value'=> 7,
+				'attributes' => array(
+					array('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'c4_score_actual',
@@ -196,6 +216,10 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c5_score_max',
+				'value'=> 8,
+				'attributes' => array(
+					array('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'c5_score_actual',
@@ -209,6 +233,10 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c6_score_max',
+				'value'=> 8,
+				'attributes' => array(
+					array('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'c6_score_actual',
@@ -222,6 +250,10 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c7_score_max',
+				'value'=> 8,
+				'attributes' => array(
+					array('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'c7_score_actual',
@@ -235,6 +267,10 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c8_score_max',
+				'value'=> 7,
+				'attributes' => array(
+					array('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'c8_score_actual',
@@ -248,6 +284,10 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c9_score_max',
+				'value'=> 7,
+				'attributes' => array(
+					array('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'c9_score_actual',
@@ -261,6 +301,10 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c10_score_max',
+				'value'=> 8,
+				'attributes' => array(
+					array('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'c10_score_actual',
@@ -274,6 +318,10 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c11_score_max',
+				'value'=> 8,
+				'attributes' => array(
+					array('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'c11_score_actual',
@@ -287,12 +335,32 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c12_score_max',
+				'value'=> 8,
+				'attributes' => array(
+					array('disabled' => 'disabled')
+				)
 			),
 			array(
 				'name' => 'c12_score_actual',
 			)
 		);
 		$this->childs = array();
+	}
+
+	function getHasil ($uuid)
+	{
+		$form = parent::prepopulate($uuid);
+		$score_actuals = array_filter($form, function ($field) {
+			return strpos($field['name'], '_score_actual') > -1;
+		});
+
+		$total_score_actual = 0;
+		foreach ($score_actuals as $score)
+		{
+			$total_score_actual += $score['value'];
+		}
+
+		return $total_score_actual;
 	}
 
 	function update ($data)
@@ -362,11 +430,13 @@ class KPIs extends MY_Model
 
 		$val = $this->findOne($uuid);
 		$acceptedAt = date("j F  Y", strtotime($val['acceptedAt']));
+		$hasil = $this->getHasil($uuid);
 		$cellMap = array(
 			'C4' => ": {$vendor}",
 			'C5' => ": {$project}",
 			'C6' => ": Fuel Terminal Boyolali",
 			'C7' => ": {$acceptedAt}",
+			'G31'=> $hasil,
 
 			'D10' => $val['a1_target'],
 			'E10' => $val['a1_actual'],

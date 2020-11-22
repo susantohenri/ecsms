@@ -55,7 +55,7 @@ class Emails extends MY_Model
       $mail->setFrom('noreply@ecsms.sikembang.com', 'NoReply');
 
       foreach ($recipients as $mailAddr) $mail->addAddress($mailAddr);
-      $mail->addStringAttachment($attachment, "{$subject}.xlsx");
+      $mail->addStringAttachment($attachment, "{$subject}.pdf");
 
       $mail->isHTML(true);
       $mail->Subject = $subject;

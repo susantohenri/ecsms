@@ -1049,6 +1049,37 @@ class PJAs extends MY_Model
 		$this->childs = array();
 	}
 
+	function getHasil ($uuid)
+	{
+		$form = parent::prepopulate($uuid);
+
+		$needs = array_map(function ($field) {
+			if (strpos($field['name'], '_isneed') > -1 && '1' === $field['value']) return str_replace('_isneed', '_isya', $field['name']);
+			else return '';
+		}, $form);
+
+		$needs = array_filter($needs, function ($field) {
+			return '' !== $field;
+		});
+
+		$total = count($needs);
+
+		$yes = array_filter($form, function ($field) use ($needs) {
+			return in_array($field['name'], $needs) && '1' === $field['value'];
+		});
+
+		$yes = count($yes);
+		$no = $total - $yes;
+		$percent = 0 === $total ? 0 : number_format($yes / $total * 100, 2);
+
+		return array (
+			'yes' => $yes,
+			'no' => $no,
+			'total' => $total,
+			'percent' => $percent
+		);
+	}
+
 	function dt()
 	{
 		$this->datatables
@@ -1110,12 +1141,16 @@ class PJAs extends MY_Model
 		$result['title'] = "Checklist Pre Job Activty - {$project}";
 
 		$val = $this->findOne($uuid);
+		$hasil = $this->getHasil($val['uuid']);
 		$acceptedAt = date("j F  Y", strtotime($val['acceptedAt']));
 		$cellMap = array(
 			'D6' => ": {$vendor}",
 			'D7' => ": {$project}",
 			'D8' => ": Fuel Terminal Boyolali",
 			'D9' => ": {$acceptedAt}",
+			'F87' => $hasil['yes'],
+			'G87' => $hasil['no'],
+			'F88' => $hasil['percent'],
 
 			'F14' => $val['1a_isya'] === '1' ? '✓' : '',
 			'G14' => $val['1a_isya'] === '0' ? '✓' : '',

@@ -1,7 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 require 'vendor/autoload.php';
-use \PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use \PhpOffice\PhpSpreadsheet\Writer\Html;
+use Dompdf\Dompdf;
 
 class KPI extends MY_Controller
 {
@@ -20,9 +21,31 @@ class KPI extends MY_Controller
 			else
 			{
 				$download = isset ($post['download-button']);
+				$sendmail = isset ($post['sendmail-button']);
 				unset($post['download-button']);
+				unset($post['sendmail-button']);
 				$uuid = $this->$model->save($post);
 				if ($download) redirect(site_url("KPI/downloadConfirm/{$uuid}"));
+				if ($sendmail)
+				{
+					$this->load->model('Emails');
+					$excel = $this->{$this->model}->excel($uuid);
+					$subject = $excel['title'];
+
+					$writer = new Html($excel['spreadsheet']);
+					$tmp = "FE-{$uuid}.html";
+					$writer->save($tmp);
+					$html = file_get_contents($tmp);
+					unlink($tmp);
+
+					$dompdf = new Dompdf();
+					$dompdf->loadHtml($html);
+					$dompdf->setPaper('A4', 'landscape');
+					$dompdf->render();
+
+					$attachment = $dompdf->output();
+					$this->Emails->sendmail($subject, $attachment);
+				}
 			}
 		}
 		redirect(base_url());
@@ -46,6 +69,16 @@ class KPI extends MY_Controller
 		$vars['page_name'] = 'forms/kpi';
 		$projectDetail = $this->$model->getProjectDetail($id);
 		$vars['project_name'] = $projectDetail['nama_project'];
+
+		$kpi = $this->$model->findOne($id);
+		$vars['download_label'] = 'Save & Download';
+		$vars['sendmail_label'] = 'Save & Send Email';
+		if ($this->session->userdata('vendor'))
+		{
+			$vars['download_label'] = '1' === $kpi['progress'] ? 'Download' : false;
+			$vars['sendmail_label'] = false;
+		}
+
 		$this->loadview('index', $vars);
 	}
 
@@ -59,9 +92,17 @@ class KPI extends MY_Controller
 	function download($uuid)
 	{
 		$excel = $this->{$this->model}->excel($uuid);
-		$writer = new Xlsx($excel['spreadsheet']);
-		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-		header('Content-Disposition: attachment; filename="' . "{$excel['title']}.xlsx" . '"');
-		$writer->save('php://output');
+		$writer = new Html($excel['spreadsheet']);
+
+		$tmp = "FE-{$uuid}.html";
+		$writer->save($tmp);
+		$html = file_get_contents($tmp);
+		unlink($tmp);
+
+		$dompdf = new Dompdf();
+		$dompdf->loadHtml($html);
+		$dompdf->setPaper('A4', 'landscape');
+		$dompdf->render();
+		$dompdf->stream($excel['title']);
 	}
 }

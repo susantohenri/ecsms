@@ -67,6 +67,10 @@ class HSE extends MY_Controller
 		}
 		$projectDetail = $this->$model->getProjectDetail($id);
 		$vars['project_name'] = $projectDetail['nama_project'];
+
+		$hse = $this->$model->findOne($id);
+		$vars['show_download_button'] = '1' === $hse['progress'];
+
 		$this->loadview('index', $vars);
 	}
 

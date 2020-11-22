@@ -1,7 +1,8 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/select2.min.css') ?>">
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap-datepicker.css') ?>">
 
-<form enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
+<form id="form_hse" enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
+  <input type="hidden" name="progress" value="1">
   <div class="card card-danger">
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
@@ -13,16 +14,18 @@
     <div class="card-body">
 
       <div class="text-right">
-        <button class="btn btn-danger" name="download-button">
+        <input type="checkbox" name="download-button" class="download-button" style="display: none;">
+        <a class="btn btn-danger" onclick="document.querySelector('.download-button').click()" data-toggle="modal" data-target="#hse_submit_confirm">
           <i class="fa fa-download"></i> &nbsp;
           Save & Download
-        </button>
-        <button class="btn btn-info" name="sendmail-button">
+        </a>
+        <input type="checkbox" name="sendmail-button" class="sendmail-button" style="display: none;">
+        <a class="btn btn-info" onclick="document.querySelector('.sendmail-button').click()" data-toggle="modal" data-target="#hse_submit_confirm">
           <i class="fa fa-paper-plane"></i> &nbsp;
           Save & Email
-        </button>
+        </a>
         <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
-          <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Save Only</button>
+          <a class="btn btn-success btn-save" data-toggle="modal" data-target="#hse_submit_confirm"><i class="fa fa-save"></i> &nbsp; Save Only</a>
         <?php endif ?>
         <?php if (!empty($uuid) && in_array("delete_{$current['controller']}", $permission)) : ?>
           <a href="<?= site_url($current['controller'] . "/delete/$uuid") ?>" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</a>
@@ -131,26 +134,40 @@
     </div>
   </div>
 
-  <?php if (count($subform) > 0) : foreach ($subform as $subfield) : ?>
-      <div class="card card-danger card-outline">
-        <div class="card-body">
-          <fieldset class="form-child" data-controller="<?= $subfield['controller'] ?>" data-uuids="<?= str_replace('"', "'", json_encode($subfield['uuids'])) ?>">
-            <legend><?= $subfield['label'] ?></legend>
-            <div class="form-group">
-              <div class="col-sm-offset-3 col-sm-12">
-                <?php if ((empty($subfield->uuids) && in_array("create_{$subfield['controller']}", $permission)) || (!empty($subfield->uuids) && in_array("update_{$subfield['controller']}", $permission))) : ?>
-
-                  <a class="btn btn-info btn-add">
-                    <i class="fa fa-plus"></i> &nbsp;Input <?= $subfield['label'] ?>
-                  </a>
-
-                <?php endif ?>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-  <?php endforeach;
-  endif; ?>
-
 </form>
+
+<div class="modal fade" id="hse_submit_confirm" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        &nbsp;
+      </div>
+      <div class="modal-body text-center">
+        <h4>Apakah Anda Yakin ?</h4>
+      </div>
+      <div class="modal-footer">
+        <a id="submit_form_hse" onclick="$('#form_hse').submit()" class="btn btn-success">Ya</a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="$('.download-button, .sendmail-button').prop('checked', false)">Tidak</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="overlay">
+  <h1 class="fa fa-spinner fa-spin text-danger"></h1>
+</div>
+<style type="text/css">
+  #overlay {
+    padding: 25% 50%;
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    cursor: pointer;
+  }
+</style>

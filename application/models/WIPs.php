@@ -3967,6 +3967,87 @@ class WIPs extends MY_Model
 		$this->childs = array();
 	}
 
+	function getHasil ($uuid)
+	{
+		$form = parent::prepopulate($uuid);
+		$split= array_chunk($form, 564);
+		$form_practice = $split[0];
+		$form_program = $split[1];
+
+		// PRACTICE
+		$practice_needs = array_map(function ($field) {
+			if (strpos($field['name'], '_isneed') > -1 && '1' === $field['value']) return str_replace('_isneed', '', $field['name']);
+			else return '';
+		}, $form_practice);
+		$practice_needs = array_filter($practice_needs, function ($field) {
+			return '' !== $field;
+		});
+		$practice_score_max = 0;
+		$practice_score_actual = 0;
+		$practice_needs_score_max = array_map(function ($index) {
+			return "{$index}_score_max";
+		}, $practice_needs);
+		$practice_needs_score_actual = array_map(function ($index) {
+			return "{$index}_score_actual";
+		}, $practice_needs);
+		foreach ($form as $field)
+		{
+			if (in_array($field['name'], $practice_needs_score_max))
+			{
+				$practice_score_max += $field['value'];
+			}
+			if (in_array($field['name'], $practice_needs_score_actual))
+			{
+				$practice_score_actual += $field['value'];
+			}
+		}
+		$hasil_practice = array(
+			'total_score_max' => $practice_score_max,
+			'total_score_actual' => $practice_score_actual,
+			'percent' => number_format(($practice_score_actual / $practice_score_max) * 100, 2)
+		);
+
+		// PROGRAM
+		$program_needs = array_map(function ($field) {
+			if (strpos($field['name'], '_isneed') > -1 && '1' === $field['value']) return str_replace('_isneed', '', $field['name']);
+			else return '';
+		}, $form_program);
+
+		$program_needs = array_filter($program_needs, function ($field) {
+			return '' !== $field;
+		});
+
+		$program_score_max = 0;
+		$program_score_actual = 0;
+		$program_needs_score_max = array_map(function ($index) {
+			return "{$index}_score_max";
+		}, $program_needs);
+		$program_needs_score_actual = array_map(function ($index) {
+			return "{$index}_score_actual";
+		}, $program_needs);
+		foreach ($form as $field)
+		{
+			if (in_array($field['name'], $program_needs_score_max))
+			{
+				$program_score_max += $field['value'];
+			}
+			if (in_array($field['name'], $program_needs_score_actual))
+			{
+				$program_score_actual += $field['value'];
+			}
+		}
+		$hasil_program = array(
+			'total_score_max' => $program_score_max,
+			'total_score_actual' => $program_score_actual,
+			'percent' => number_format(($program_score_actual / $program_score_max) * 100, 2)
+		);
+
+		return array (
+			'practice' => $hasil_practice,
+			'program' => $hasil_program
+		);
+	}
+
 	function dt()
 	{
 		$this->datatables
@@ -4073,11 +4154,15 @@ class WIPs extends MY_Model
 
 		$val = $this->findOne($uuid);
 		$acceptedAt = date("j F  Y", strtotime($val['acceptedAt']));
+		$hasil = $this->getHasil($uuid);
 		$cellMap = array(
 			'D6' => ": {$vendor}",
 			'D7' => ": {$project}",
 			'D8' => ": Fuel Terminal Boyolali",
 			'D9' => ": {$acceptedAt}",
+			'H177'=> $hasil['practice']['total_score_max'],
+			'I177'=> $hasil['practice']['total_score_actual'],
+			'H178'=> $hasil['practice']['percent'],
 
 			'E13' => $val['1a_isneed'] === '1' ? '✓' : '',
 			'G13' => $val['1a_isneed'] === '0' ? '✓' : '',
@@ -4762,11 +4847,15 @@ class WIPs extends MY_Model
 
 		$val = $this->findOne($uuid);
 		$acceptedAt = date("j F  Y", strtotime($val['acceptedAt']));
+		$hasil = $this->getHasil($uuid);
 		$cellMap = array(
 			'C4' => ": {$vendor}",
 			'C5' => ": {$project}",
 			'C6' => ": Fuel Terminal Boyolali",
 			'C7' => ": {$acceptedAt}",
+			'F23' => $hasil['program']['total_score_max'],
+			'G23' => $hasil['program']['total_score_actual'],
+			'F24' => $hasil['program']['percent'],
 
 			'D11' => $val['1_isneed'] === '1' ? '✓' : '',
 			'E11' => $val['1_isneed'] === '0' ? '✓' : '',

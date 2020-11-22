@@ -93,7 +93,7 @@ class Migration_seeds extends CI_Migration
     }
 
     // NO ONE PERMITTED TO CREATE OR DELETE STEPS
-    foreach (array('PesertaProject', 'HSE', 'PJA', 'WIP', 'LaporanBulanan', 'KPI') as $step) {
+    foreach (array('PesertaProject', 'HSE', 'PJA', 'WIP', 'LaporanBulanan', 'KPI', 'FE') as $step) {
       foreach (array('create', 'delete') as $action) {
         foreach ($this->Permissions->find(array(
           'entity' => $step,

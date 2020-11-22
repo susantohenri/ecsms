@@ -3,10 +3,12 @@
 <form enctype='multipart/form-data' action="<?= site_url($current['controller']) ?>" method="POST" class="main-form col-sm-12">
   <div class="card card-danger card-outline">
     <div class="card-header text-right">
+      <?php if ($show_download_button): ?>
       <a class="btn btn-danger" href="<?= site_url("HSE/download/{$uuid}") ?>">
         <i class="fa fa-download"></i> &nbsp;
         Download HSE Plan
       </a>
+      <?php endif ?>
       <?php if ((empty($uuid) && in_array("create_{$current['controller']}", $permission)) || (!empty($uuid) && in_array("update_{$current['controller']}", $permission))) : ?>
         <button class="btn btn-success btn-save"><i class="fa fa-save"></i> &nbsp; Save</button>
       <?php endif ?>
