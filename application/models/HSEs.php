@@ -762,7 +762,7 @@ class HSEs extends MY_Model
 		$val = $this->findOne($uuid);
 		$cellMap = array(
 			'A5' => "Nama Kontraktor        : {$vendor}",
-			'A6' => "Nama Proyek               : {$project}",
+			'A6' => "Nama Proyek                : {$project}",
 			'A7' => "Lokasi Proyek               : Fuel Terminal Boyolali",
 
 			'F17' => $val['2a'],
@@ -772,6 +772,69 @@ class HSEs extends MY_Model
 
 			'F23' => $val['3a'],
 			'F24' => $val['3b'],
+
+			'F27' => $val['4a'],
+			'F28' => $val['4b'],
+			'F29' => $val['4c'],
+			'F30' => $val['4d'],
+
+			'F33' => $val['5a'],
+			'F34' => $val['5b'],
+			'F35' => $val['5c'],
+			'F36' => $val['5d'],
+
+			'F39' => $val['6a'],
+			'F40' => $val['6b'],
+			'F41' => $val['6c'],
+			'F42' => $val['6d'],
+			'F50' => $val['6e'],
+			'F51' => $val['6f'],
+			'F52' => $val['6g'],
+			'F53' => $val['6h'],
+			'F54' => $val['6i'],
+			'F55' => $val['6j'],
+
+			'F58' => $val['7a'],
+			'F59' => $val['7b'],
+			'F60' => $val['7c'],
+			'F61' => $val['7d'],
+
+			'F64' => $val['8a'],
+			'F65' => $val['8b'],
+			'F66' => $val['8c'],
+			'F67' => $val['8d'],
+			'F68' => $val['8e'],
+
+			'F71' => $val['9a'],
+			'F72' => $val['9b'],
+			'F73' => $val['9c'],
+			'F74' => $val['9d'],
+
+			'F77' => $val['10a'],
+			'F78' => $val['10b'],
+			'F79' => $val['10c'],
+			'F80' => $val['10d'],
+
+			'F83' => $val['11a'],
+			'F84' => $val['11b'],
+			'F85' => $val['11c'],
+			'F86' => $val['11d'],
+
+			'F89' => $val['12a'],
+			'F90' => $val['12b'],
+			'F91' => $val['12c'],
+			'F92' => $val['12d'],
+
+			'F95' => $val['13a'],
+			'F96' => $val['13b'],
+
+			'F99' => $val['14a'],
+			'F100' => $val['14b'],
+			'F101' => $val['14c'],
+
+			'F104' => $val['15a'],
+			'F105' => $val['15b'],
+			'F106' => $val['15c'],
 		);
 
 		$spreadsheet = IOFactory::load('./excels/Form 1 - HSE plan.xlsx');
