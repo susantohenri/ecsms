@@ -1,7 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 require 'vendor/autoload.php';
-use \PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use \PhpOffice\PhpSpreadsheet\Writer\Html;
+use Dompdf\Dompdf;
 
 class HSE extends MY_Controller
 {
@@ -31,12 +32,18 @@ class HSE extends MY_Controller
 					$excel = $this->{$this->model}->excel($uuid);
 					$subject = $excel['title'];
 
-					ob_start();
-					$writer = new Xlsx($excel['spreadsheet']);
-					$writer->save('php://output');
-					$attachment = ob_get_contents();
-					ob_end_clean();
+					$writer = new Html($excel['spreadsheet']);
+					$tmp = "HSE-{$uuid}.html";
+					$writer->save($tmp);
+					$html = file_get_contents($tmp);
+					unlink($tmp);
 
+					$dompdf = new Dompdf();
+					$dompdf->loadHtml($html);
+					$dompdf->setPaper('A4', 'potrait');
+					$dompdf->render();
+
+					$attachment = $dompdf->output();
 					$this->Emails->sendmail($subject, $attachment);
 				}
 			}
@@ -89,10 +96,18 @@ class HSE extends MY_Controller
 	function download($uuid)
 	{
 		$excel = $this->{$this->model}->excel($uuid);
-		$writer = new Xlsx($excel['spreadsheet']);
-		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-		header('Content-Disposition: attachment; filename="' . "{$excel['title']}.xlsx" . '"');
-		$writer->save('php://output');
+		$writer = new Html($excel['spreadsheet']);
+
+		$tmp = "HSE-{$uuid}.html";
+		$writer->save($tmp);
+		$html = file_get_contents($tmp);
+		unlink($tmp);
+
+		$dompdf = new Dompdf();
+		$dompdf->loadHtml($html);
+		$dompdf->setPaper('A4', 'potrait');
+		$dompdf->render();
+		$dompdf->stream($excel['title']);
 	}
 
 }
