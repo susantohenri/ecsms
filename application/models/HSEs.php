@@ -761,9 +761,9 @@ class HSEs extends MY_Model
 
 		$val = $this->findOne($uuid);
 		$cellMap = array(
-			'A5' => "Nama Kontraktor        : {$vendor}",
-			'A6' => "Nama Proyek                : {$project}",
-			'A7' => "Lokasi Proyek               : Fuel Terminal Boyolali",
+			'C5' => ": {$vendor}",
+			'C6' => ": {$project}",
+			'C7' => ": Fuel Terminal Boyolali",
 
 			'F17' => $val['2a'],
 			'F18' => $val['2b'],
@@ -838,7 +838,7 @@ class HSEs extends MY_Model
 		);
 
 		$spreadsheet = IOFactory::load('./excels/Form 1 - HSE plan.xlsx');
-		$sheet = $spreadsheet->getSheet(1);
+		$sheet = $spreadsheet->getSheet(0);
 		foreach ($cellMap as $cell => $val) $sheet->setCellValue($cell, $val);
 
 		$result['spreadsheet'] = $spreadsheet;
