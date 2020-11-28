@@ -40,7 +40,7 @@ class HSE extends MY_Controller
 
 					$dompdf = new Dompdf();
 					$dompdf->loadHtml($html);
-					$dompdf->setPaper('A4', 'potrait');
+					$dompdf->setPaper('A4', 'landscape');
 					$dompdf->render();
 
 					$attachment = $dompdf->output();
@@ -105,7 +105,7 @@ class HSE extends MY_Controller
 
 		$dompdf = new Dompdf();
 		$dompdf->loadHtml($html);
-		$dompdf->setPaper('A4', 'potrait');
+		$dompdf->setPaper('A4', 'landscape');
 		$dompdf->render();
 		$dompdf->stream($excel['title']);
 	}
