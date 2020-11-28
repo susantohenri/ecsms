@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 require 'vendor/autoload.php';
-use \PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use Dompdf\Dompdf;
 
 class PJA extends MY_Controller
 {
@@ -28,14 +28,15 @@ class PJA extends MY_Controller
 				if ($sendmail)
 				{
 					$this->load->model('Emails');
-					$excel = $this->{$this->model}->excel($uuid);
-					$subject = $excel['title'];
 
-					ob_start();
-					$writer = new Xlsx($excel['spreadsheet']);
-					$writer->save('php://output');
-					$attachment = ob_get_contents();
-					ob_end_clean();
+					$html = $this->{$this->model}->excelHtml($uuid);
+					$dompdf = new Dompdf();
+					$dompdf->loadHtml($html['html']);
+					$dompdf->setPaper('A4', 'potrait');
+					$dompdf->render();
+
+					$subject = $html['title'];
+					$attachment = $dompdf->output();
 
 					$this->Emails->sendmail($subject, $attachment);
 				}
@@ -84,10 +85,11 @@ class PJA extends MY_Controller
 
 	function download($uuid)
 	{
-		$excel = $this->{$this->model}->excel($uuid);
-		$writer = new Xlsx($excel['spreadsheet']);
-		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-		header('Content-Disposition: attachment; filename="' . "{$excel['title']}.xlsx" . '"');
-		$writer->save('php://output');
+		$html = $this->{$this->model}->excelHtml($uuid);
+		$dompdf = new Dompdf();
+		$dompdf->loadHtml($html['html']);
+		$dompdf->setPaper('A4', 'potrait');
+		$dompdf->render();
+		$dompdf->stream($html['title']);
 	}
 }
