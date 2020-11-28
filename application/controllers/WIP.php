@@ -1,7 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 require 'vendor/autoload.php';
-use \PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use \PhpOffice\PhpSpreadsheet\Writer\Html;
+use Dompdf\Dompdf;
 
 class WIP extends MY_Controller
 {
@@ -94,19 +95,21 @@ class WIP extends MY_Controller
 
 	function downloadPractice($uuid)
 	{
-		$excel = $this->{$this->model}->excelPractice($uuid);
-		$writer = new Xlsx($excel['spreadsheet']);
-		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-		header('Content-Disposition: attachment; filename="' . "{$excel['title']}.xlsx" . '"');
-		$writer->save('php://output');
+		$html = $this->{$this->model}->htmlPractice($uuid);
+		$dompdf = new Dompdf();
+		$dompdf->loadHtml($html['html']);
+		$dompdf->setPaper('A4', 'potrait');
+		$dompdf->render();
+		$dompdf->stream($html['title']);
 	}
 
 	function downloadProgram($uuid)
 	{
-		$excel = $this->{$this->model}->excelProgram($uuid);
-		$writer = new Xlsx($excel['spreadsheet']);
-		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-		header('Content-Disposition: attachment; filename="' . "{$excel['title']}.xlsx" . '"');
-		$writer->save('php://output');
+		$html = $this->{$this->model}->htmlProgram($uuid);
+		$dompdf = new Dompdf();
+		$dompdf->loadHtml($html['html']);
+		$dompdf->setPaper('A4', 'landscape');
+		$dompdf->render();
+		$dompdf->stream($html['title']);
 	}
 }

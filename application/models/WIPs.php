@@ -2,6 +2,7 @@
 
 require 'vendor/autoload.php';
 use \PhpOffice\PhpSpreadsheet\IOFactory;
+use \PhpOffice\PhpSpreadsheet\Writer\Html;
 
 class WIPs extends MY_Model
 {
@@ -4833,6 +4834,26 @@ class WIPs extends MY_Model
 		return $result;
 	}
 
+	function htmlPractice ($uuid)
+	{
+		$excel = $this->excelPractice($uuid);
+		$writer = new Html($excel['spreadsheet']);
+
+		$tmp = "WIP-PRACTICE-{$uuid}.html";
+		$writer->save($tmp);
+		$html = file_get_contents($tmp);
+		unlink($tmp);
+
+		$html = str_replace('✓', '<div style="font-family: DejaVu Sans, sans-serif;">✔</div>
+', $html);
+		$html = str_replace('∑', '<div style="font-family: DejaVu Sans, sans-serif; display:inline">∑</div>', $html);
+
+		return array(
+			'title' => $excel['title'],
+			'html' => $html
+		);
+	}
+
 	function excelProgram ($uuid)
 	{
 		$result = array (
@@ -4924,5 +4945,25 @@ class WIPs extends MY_Model
 
 		$result['spreadsheet'] = $spreadsheet;
 		return $result;
+	}
+
+	function htmlProgram ($uuid)
+	{
+		$excel = $this->excelProgram($uuid);
+		$writer = new Html($excel['spreadsheet']);
+
+		$tmp = "WIP-PROGRAM-{$uuid}.html";
+		$writer->save($tmp);
+		$html = file_get_contents($tmp);
+		unlink($tmp);
+
+		$html = str_replace('✓', '<div style="font-family: DejaVu Sans, sans-serif;">✔</div>
+', $html);
+		$html = str_replace('𝚺', '<div style="font-family: DejaVu Sans, sans-serif; display:inline">∑</div>', $html);
+
+		return array(
+			'title' => $excel['title'],
+			'html' => $html
+		);
 	}
 }
