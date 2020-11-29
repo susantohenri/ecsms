@@ -90,6 +90,6 @@ class PJA extends MY_Controller
 		$dompdf->loadHtml($html['html']);
 		$dompdf->setPaper('A4', 'potrait');
 		$dompdf->render();
-		$dompdf->stream($html['title']);
+		$dompdf->stream($html['title'], array('Attachment' => true));
 	}
 }
