@@ -2,6 +2,7 @@
 
 require 'vendor/autoload.php';
 use \PhpOffice\PhpSpreadsheet\IOFactory;
+use \PhpOffice\PhpSpreadsheet\Writer\Html;
 
 class HSEs extends MY_Model
 {
@@ -844,4 +845,21 @@ class HSEs extends MY_Model
 		$result['spreadsheet'] = $spreadsheet;
 		return $result;
 	}
+
+	function excelHtml ($uuid)
+	{
+		$excel = $this->excel($uuid);
+		$writer = new Html($excel['spreadsheet']);
+
+		$tmp = "HSE-{$uuid}.html";
+		$writer->save($tmp);
+		$html = file_get_contents($tmp);
+		unlink($tmp);
+
+		return array(
+			'title' => $excel['title'],
+			'html' => $html
+		);
+	}
+
 }

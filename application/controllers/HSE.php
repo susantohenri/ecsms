@@ -1,7 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 require 'vendor/autoload.php';
-use \PhpOffice\PhpSpreadsheet\Writer\Html;
 use Dompdf\Dompdf;
 
 class HSE extends MY_Controller
@@ -29,20 +28,14 @@ class HSE extends MY_Controller
 				if ($sendmail)
 				{
 					$this->load->model('Emails');
-					$excel = $this->{$this->model}->excel($uuid);
-					$subject = $excel['title'];
 
-					$writer = new Html($excel['spreadsheet']);
-					$tmp = "HSE-{$uuid}.html";
-					$writer->save($tmp);
-					$html = file_get_contents($tmp);
-					unlink($tmp);
-
+					$html = $this->{$this->model}->excelHtml($uuid);
 					$dompdf = new Dompdf();
-					$dompdf->loadHtml($html);
+					$dompdf->loadHtml($html['html']);
 					$dompdf->setPaper('A4', 'landscape');
 					$dompdf->render();
 
+					$subject = $html['title'];
 					$attachment = $dompdf->output();
 					$this->Emails->sendmail($subject, $attachment);
 				}
@@ -95,19 +88,12 @@ class HSE extends MY_Controller
 
 	function download($uuid)
 	{
-		$excel = $this->{$this->model}->excel($uuid);
-		$writer = new Html($excel['spreadsheet']);
-
-		$tmp = "HSE-{$uuid}.html";
-		$writer->save($tmp);
-		$html = file_get_contents($tmp);
-		unlink($tmp);
-
+		$html = $this->{$this->model}->excelHtml($uuid);
 		$dompdf = new Dompdf();
-		$dompdf->loadHtml($html);
+		$dompdf->loadHtml($html['html']);
 		$dompdf->setPaper('A4', 'landscape');
 		$dompdf->render();
-		$dompdf->stream($excel['title']);
+		$dompdf->stream($html['title'], array('Attachment' => true));
 	}
 
 }
