@@ -99,7 +99,7 @@ class WIP extends MY_Controller
 		$dompdf->loadHtml($html['html']);
 		$dompdf->setPaper('A4', 'potrait');
 		$dompdf->render();
-		$dompdf->stream($html['title'], array('Attachment' => false));
+		$dompdf->stream($html['title'], array('Attachment' => true));
 	}
 
 	function downloadProgram($uuid)
@@ -109,6 +109,6 @@ class WIP extends MY_Controller
 		$dompdf->loadHtml($html['html']);
 		$dompdf->setPaper('A4', 'landscape');
 		$dompdf->render();
-		$dompdf->stream($html['title'], array('Attachment' => false));
+		$dompdf->stream($html['title'], array('Attachment' => true));
 	}
 }
