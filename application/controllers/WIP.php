@@ -1,7 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 require 'vendor/autoload.php';
-use \PhpOffice\PhpSpreadsheet\Writer\Html;
 use Dompdf\Dompdf;
 
 class WIP extends MY_Controller
@@ -100,7 +99,7 @@ class WIP extends MY_Controller
 		$dompdf->loadHtml($html['html']);
 		$dompdf->setPaper('A4', 'potrait');
 		$dompdf->render();
-		$dompdf->stream($html['title']);
+		$dompdf->stream($html['title'], array('Attachment' => false));
 	}
 
 	function downloadProgram($uuid)
@@ -110,6 +109,6 @@ class WIP extends MY_Controller
 		$dompdf->loadHtml($html['html']);
 		$dompdf->setPaper('A4', 'landscape');
 		$dompdf->render();
-		$dompdf->stream($html['title']);
+		$dompdf->stream($html['title'], array('Attachment' => false));
 	}
 }
