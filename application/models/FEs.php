@@ -2,6 +2,7 @@
 
 require 'vendor/autoload.php';
 use \PhpOffice\PhpSpreadsheet\IOFactory;
+use \PhpOffice\PhpSpreadsheet\Writer\Html;
 
 class FEs extends MY_Model
 {
@@ -301,4 +302,24 @@ class FEs extends MY_Model
 		$result['spreadsheet'] = $spreadsheet;
 		return $result;
 	}
+
+	function excelHtml ($uuid)
+	{
+		$excel = $this->excel($uuid);
+		$writer = new Html($excel['spreadsheet']);
+
+		$tmp = "FE-{$uuid}.html";
+		$writer->save($tmp);
+		$html = file_get_contents($tmp);
+		unlink($tmp);
+
+		$html = str_replace('✓', '<div style="font-family: DejaVu Sans, sans-serif;">✔</div>', $html);
+		$html = str_replace('∑', '<div style="font-family: DejaVu Sans, sans-serif; display:inline">∑</div>', $html);
+
+		return array(
+			'title' => $excel['title'],
+			'html' => $html
+		);
+	}
+
 }
