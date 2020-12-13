@@ -535,6 +535,7 @@ class KPIs extends MY_Model
 
 		$html = str_replace('✓', '<div style="font-family: DejaVu Sans, sans-serif;">✔</div>', $html);
 		$html = str_replace('∑', '<div style="font-family: DejaVu Sans, sans-serif; display:inline">∑</div>', $html);
+		$html = str_replace('placeholder-for-three-signs', '(......................................)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(......................................)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(......................................)', $html);
 
 		return array(
 			'title' => $excel['title'],
