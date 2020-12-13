@@ -17,6 +17,11 @@ class Migration_template extends CI_Migration {
       ) ROW_FORMAT=DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8
     ");
 
+    $this->load->model('Templates');
+    foreach (array ('HSE', 'PJA', 'WIP', 'KPI', 'FE') as $module)
+    {
+      $this->Templates->create(array('nama' => $module));
+    }
   }
 
   function down () {

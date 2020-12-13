@@ -4844,8 +4844,7 @@ class WIPs extends MY_Model
 		$html = file_get_contents($tmp);
 		unlink($tmp);
 
-		$html = str_replace('✓', '<div style="font-family: DejaVu Sans, sans-serif;">✔</div>
-', $html);
+		$html = str_replace('✓', '<div style="font-family: DejaVu Sans, sans-serif;">✔</div>', $html);
 		$html = str_replace('∑', '<div style="font-family: DejaVu Sans, sans-serif; display:inline">∑</div>', $html);
 
 		return array(

@@ -35,7 +35,7 @@ class Emails extends MY_Model
     return parent::dt();
   }
 
-  function sendmail($subject, $attachment)
+  function sendmail($subject, $body, $attachments = array())
   {
     $recipients = array_map(function ($record) {
       return $record->email;
@@ -55,11 +55,14 @@ class Emails extends MY_Model
       $mail->setFrom('noreply@ecsms.sikembang.com', 'NoReply');
 
       foreach ($recipients as $mailAddr) $mail->addAddress($mailAddr);
-      $mail->addStringAttachment($attachment, "{$subject}.pdf");
+      foreach ($attachments as $attch)
+      {
+        $mail->addStringAttachment($attch['file_stream'], $attch['file_name']);
+      }
 
       $mail->isHTML(true);
       $mail->Subject = $subject;
-      $mail->Body    = '&nbsp;';
+      $mail->Body    = strlen($body) > 0 ? $body : '&nbsp;';
       $mail->AltBody = '';
 
       $mail->send();

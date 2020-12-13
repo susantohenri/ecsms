@@ -27,7 +27,7 @@ class FE extends MY_Controller
 				if ($download) redirect(site_url("FE/downloadConfirm/{$uuid}"));
 				if ($sendmail)
 				{
-					$this->load->model('Emails');
+					$this->load->model(array('Emails', 'Templates'));
 
 					$html = $this->{$this->model}->excelHtml($uuid);
 					$dompdf = new Dompdf();
@@ -38,7 +38,8 @@ class FE extends MY_Controller
 					$subject = $html['title'];
 					$attachment = $dompdf->output();
 
-					$this->Emails->sendmail($subject, $attachment);
+					$template = $this->Templates->findOne(array('nama' => 'FE'));
+					$this->Emails->sendmail($subject, $template['konten'], array(array('file_stream' => $attachment, 'file_name' => "{$subject}.pdf")));
 				}
 			}
 		}

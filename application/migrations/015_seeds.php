@@ -118,6 +118,9 @@ class Migration_seeds extends CI_Migration
       ));
     }
 
+    // ON ONE ALLOWED TO CREATE, & DELETE EMAIL TEMPLATES
+    $this->db->query("DELETE FROM permission WHERE entity = 'template' AND action IN ('create', 'delete')");
+
     // DUMMY
     $this->load->model('Projects');
     foreach (array(

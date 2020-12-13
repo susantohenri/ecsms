@@ -30,17 +30,32 @@ class WIP extends MY_Controller
 				if ($downloadProgram) redirect(site_url("WIP/downloadProgramConfirm/{$uuid}"));
 				if ($sendmail)
 				{
-					$this->load->model('Emails');
-					$excel = $this->{$this->model}->excel($uuid);
-					$subject = $excel['title'];
+					$this->load->model(array('Emails', 'Templates'));
+					$attachments = array();
 
-					ob_start();
-					$writer = new Xlsx($excel['spreadsheet']);
-					$writer->save('php://output');
-					$attachment = ob_get_contents();
-					ob_end_clean();
+					$htmlPractice = $this->{$this->model}->htmlPractice($uuid);
+					$pdfPractice = new Dompdf();
+					$pdfPractice->loadHtml($htmlPractice['html']);
+					$pdfPractice->setPaper('A4', 'potrait');
+					$pdfPractice->render();
+					$attachments[] = array(
+						'file_stream' => $pdfPractice->output(),
+						'file_name' => "{$htmlPractice['title']}.pdf"
+					);
 
-					$this->Emails->sendmail($subject, $attachment);
+					$htmlProgram = $this->{$this->model}->htmlProgram($uuid);
+					$pdfProgram = new Dompdf();
+					$pdfProgram->loadHtml($htmlProgram['html']);
+					$pdfProgram->setPaper('A4', 'landscape');
+					$pdfProgram->render();
+					$attachments[] = array(
+						'file_stream' => $pdfProgram->output(),
+						'file_name' => "{$htmlProgram['title']}.pdf"
+					);
+
+					$template = $this->Templates->findOne(array('nama' => 'PJA'));
+					$subject = str_replace('Work Practice', '', $htmlPractice['title']);
+					$this->Emails->sendmail($subject, $template['konten'], $attachments);
 				}
 			}
 		}
