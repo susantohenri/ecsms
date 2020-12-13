@@ -18,7 +18,6 @@ class Migration_seeds extends CI_Migration
     );
 
     $this->load->model(array('Users', 'Roles', 'Permissions', 'Menus'));
-    $fas = array('database', 'desktop', 'download', 'ethernet', 'hdd', 'hdd', 'headphones', 'keyboard', 'keyboard', 'laptop', 'memory', 'microchip', 'mobile', 'mobile-alt', 'plug', 'power-off', 'print', 'satellite', 'satellite-dish', 'save', 'save', 'sd-card', 'server', 'sim-card', 'stream', 'tablet', 'tablet-alt', 'tv', 'upload');
 
     $admins = array();
     $superadmin = null;
@@ -84,7 +83,7 @@ class Migration_seeds extends CI_Migration
       'role' => $superadmin
     ));
 
-    foreach (array ('HSE', 'LaporanBulanan', 'KPI') as $updateableByVendors) {
+    foreach (array ('HSE', 'LaporanBulanan') as $updateableByVendors) {
       $this->Permissions->create(array(
         'role' => $vendor,
         'action' => 'update',
