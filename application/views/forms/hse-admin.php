@@ -58,13 +58,13 @@
                     <div class="input-group input-group-sm">
                       <div class="input-group-prepend">
                         <?php if ($field['show_preview_button']) : ?>
-                          <a class="btn btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
+                          <span class="input-group-text bg-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>" style="cursor: pointer;">
                             <i class="fa fa-file-pdf"></i>&nbsp;
                             preview
-                          </a>
+                          </span>
                         <?php endif ?>
                         <?php if ($field['show_score']) : ?>
-                          <span class="btn btn-secondary">
+                          <span class="input-group-text">
                             <i class="fa fa-check"></i>&nbsp;
                             score
                           </span>
