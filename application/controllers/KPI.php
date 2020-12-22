@@ -59,7 +59,7 @@ class KPI extends MY_Controller
 			'bootstrap-datepicker.js',
 			'daterangepicker.min.js',
 			'select2.full.min.js',
-			'form.js'
+			'form.js?x0x0=000'
 		);
 		$vars['page_name'] = 'forms/kpi';
 		$projectDetail = $this->$model->getProjectDetail($id);
@@ -92,5 +92,10 @@ class KPI extends MY_Controller
 		$dompdf->setPaper('A4', 'landscape');
 		$dompdf->render();
 		$dompdf->stream($html['title'], array('Attachment' => true));
+	}
+
+	function upload($uuid, $input)
+	{
+		echo $this->{$this->model}->upload($uuid, $input);
 	}
 }

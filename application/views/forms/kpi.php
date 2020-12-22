@@ -67,7 +67,7 @@
               default: ?>
                 <?php if (strpos($field['name'], '_target') > -1) : ?>
                   <div class="form-group row" style="background-color: <?= $index % 4 !== 0 ? '#f9f9f9' : '#fff' ?>;">
-                    <label style="padding-left: 25px; font-weight: 400" class="col-sm-4 control-label"><?= $field['label']  ?></label>
+                    <label style="padding-left: 25px; font-weight: 400" class="col-sm-3 control-label"><?= $field['label']  ?></label>
                     <div class="col-sm-2">
                       <div class="input-group input-group-sm">
                         <div class="input-group-prepend">
@@ -98,7 +98,6 @@
                     </div>
                   <?php endif ?>
                   <?php if (strpos($field['name'], '_score_actual') > -1) : ?>
-                    <?php if (!strpos($field['attr'], 'data-nonscoring="true"')) : ?>
                     <div class="col-sm-2">
                       <div class="input-group input-group-sm">
                         <div class="input-group-prepend">
@@ -107,10 +106,36 @@
                         <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
                       </div>
                     </div>
-                    <?php endif ?>
-                  </div>
                 <?php endif ?>
-                <?php break; ?>
+                <?php if (strpos($field['name'], '_doc') > -1) : ?>
+
+                  <?php if ($field['show_as_single_btn']): ?>
+                      <?php if ($field['show_preview_btn']): ?>
+                        <a class="col-sm-1 btn btn-sm btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['preview_onclick'] ?>" ><i class="fa fa-file-pdf"></i>&nbsp; preview</a>
+                      <?php endif ?>
+                    <?php else: ?>
+                      <div class="dropdown col-sm-1">
+                        <button class="btn btn-sm btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-pdf"></i>&nbsp; doc</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <?php if ($field['show_upload_btn']): ?>
+                            <a class="dropdown-item" onclick="$('#<?= $field['name'] ?>').click()"><i class="fa fa-upload"></i>&nbsp; Upload</a>
+                            <input type="file" accept="application/pdf" id="<?= $field['name'] ?>" style="display: none" onchange="<?= $field['upload_onchange'] ?>">
+                            <input type="hidden" name="<?= $field['name'] ?>" value="<?= $field['value'] ?>">
+                          <?php endif ?>
+                          <?php if ($field['show_preview_btn']): ?>
+                            <a class="dropdown-item" href="#"><i class="fa fa-eye"></i>&nbsp; Preview</a>
+                          <?php endif ?>
+                          <?php if ($field['show_delete_btn']): ?>
+                            <a class="dropdown-item" href="#"><i class="fa fa-trash"></i>&nbsp; Delete</a>
+                          <?php endif ?>
+                        </div>
+                      </div>
+                    <?php endif ?>
+
+                  </div>
+
+                <?php endif ?>
+              <?php break; ?>
             <?php endswitch; ?>
 
           <?php endforeach ?>

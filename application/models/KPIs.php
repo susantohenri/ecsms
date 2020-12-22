@@ -25,13 +25,10 @@ class KPIs extends MY_Model
 				'name' => 'a1_actual',
 			),
 			// array(
-			// 	'name' => 'a1_score_max',
+			// 	'name' => 'a1_score_actual',
 			// ),
 			array(
-				'name' => 'a1_score_actual',
-				'attributes' => array(
-					array('data-nonscoring' => 'true')
-				)
+				'name' => 'a1_doc'
 			),
 			array(
 				'name' => 'a2_target',
@@ -41,13 +38,10 @@ class KPIs extends MY_Model
 				'name' => 'a2_actual',
 			),
 			// array(
-			// 	'name' => 'a2_score_max',
+			// 	'name' => 'a2_score_actual',
 			// ),
 			array(
-				'name' => 'a2_score_actual',
-				'attributes' => array(
-					array('data-nonscoring' => 'true')
-				)
+				'name' => 'a2_doc'
 			),
 			array(
 				'name' => '',
@@ -62,13 +56,10 @@ class KPIs extends MY_Model
 				'name' => 'b1_actual',
 			),
 			// array(
-			// 	'name' => 'b1_score_max',
+			// 	'name' => 'b1_score_actual',
 			// ),
 			array(
-				'name' => 'b1_score_actual',
-				'attributes' => array(
-					array('data-nonscoring' => 'true')
-				)
+				'name' => 'b1_doc'
 			),
 			array(
 				'name' => 'b2_target',
@@ -78,13 +69,10 @@ class KPIs extends MY_Model
 				'name' => 'b2_actual',
 			),
 			// array(
-			// 	'name' => 'b2_score_max',
+			// 	'name' => 'b2_score_actual',
 			// ),
 			array(
-				'name' => 'b2_score_actual',
-				'attributes' => array(
-					array('data-nonscoring' => 'true')
-				)
+				'name' => 'b2_doc'
 			),
 			array(
 				'name' => 'b3_target',
@@ -94,13 +82,10 @@ class KPIs extends MY_Model
 				'name' => 'b3_actual',
 			),
 			// array(
-			// 	'name' => 'b3_score_max',
+			// 	'name' => 'b3_score_actual',
 			// ),
 			array(
-				'name' => 'b3_score_actual',
-				'attributes' => array(
-					array('data-nonscoring' => 'true')
-				)
+				'name' => 'b3_doc'
 			),
 			array(
 				'name' => 'b4_target',
@@ -110,13 +95,10 @@ class KPIs extends MY_Model
 				'name' => 'b4_actual',
 			),
 			// array(
-			// 	'name' => 'b4_score_max',
+			// 	'name' => 'b4_score_actual',
 			// ),
 			array(
-				'name' => 'b4_score_actual',
-				'attributes' => array(
-					array('data-nonscoring' => 'true')
-				)
+				'name' => 'b4_doc'
 			),
 			array(
 				'name' => 'b5_target',
@@ -134,6 +116,9 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'b5_score_actual',
+			),
+			array(
+				'name' => 'b5_doc',
 			),
 			array(
 				'name' => '',
@@ -158,6 +143,9 @@ class KPIs extends MY_Model
 				'name' => 'c1_score_actual',
 			),
 			array(
+				'name' => 'c1_doc',
+			),
+			array(
 				'name' => 'c2_target',
 				'label' => '2. HSE Talk/ briefing',
 			),
@@ -173,6 +161,9 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c2_score_actual',
+			),
+			array(
+				'name' => 'c2_doc',
 			),
 			array(
 				'name' => 'c3_target',
@@ -192,6 +183,9 @@ class KPIs extends MY_Model
 				'name' => 'c3_score_actual',
 			),
 			array(
+				'name' => 'c3_doc',
+			),
+			array(
 				'name' => 'c4_target',
 				'label' => '4. HSE Management Visit',
 			),
@@ -207,6 +201,9 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c4_score_actual',
+			),
+			array(
+				'name' => 'c4_doc',
 			),
 			array(
 				'name' => 'c5_target',
@@ -226,6 +223,9 @@ class KPIs extends MY_Model
 				'name' => 'c5_score_actual',
 			),
 			array(
+				'name' => 'c5_doc',
+			),
+			array(
 				'name' => 'c6_target',
 				'label' => '6. Inspection/Audit',
 			),
@@ -241,6 +241,9 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c6_score_actual',
+			),
+			array(
+				'name' => 'c6_doc',
 			),
 			array(
 				'name' => 'c7_target',
@@ -260,6 +263,9 @@ class KPIs extends MY_Model
 				'name' => 'c7_score_actual',
 			),
 			array(
+				'name' => 'c7_doc',
+			),
+			array(
 				'name' => 'c8_target',
 				'label' => '8. Kepatuhan terhadap Pengelolaan limbah',
 			),
@@ -275,6 +281,9 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c8_score_actual',
+			),
+			array(
+				'name' => 'c8_doc',
 			),
 			array(
 				'name' => 'c9_target',
@@ -294,6 +303,9 @@ class KPIs extends MY_Model
 				'name' => 'c9_score_actual',
 			),
 			array(
+				'name' => 'c9_doc',
+			),
+			array(
 				'name' => 'c10_target',
 				'label' => '10. Kepatuhan terhadap pengelolaan good house keeping',
 			),
@@ -309,6 +321,9 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c10_score_actual',
+			),
+			array(
+				'name' => 'c10_doc',
 			),
 			array(
 				'name' => 'c11_target',
@@ -328,6 +343,9 @@ class KPIs extends MY_Model
 				'name' => 'c11_score_actual',
 			),
 			array(
+				'name' => 'c11_doc',
+			),
+			array(
 				'name' => 'c12_target',
 				'label' => '12. Pelaporan Safety Non Conformity (Unsafe Act & Unsafe Condition)',
 			),
@@ -343,6 +361,9 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c12_score_actual',
+			),
+			array(
+				'name' => 'c12_doc',
 			)
 		);
 		$this->childs = array();
@@ -377,6 +398,7 @@ class KPIs extends MY_Model
 				}
 			}
 		}
+
 		return parent::update($data);
 	}
 
@@ -389,10 +411,27 @@ class KPIs extends MY_Model
 		return parent::dt();
 	}
 
+	private function getDoc ($uuid, $field)
+	{
+		$temporary_dir = 'tmp';
+		$storage_dir = 'upload';
+		$doc_name = "KPI-{$uuid}-{$field}.pdf";
+		$address = "{$storage_dir}/{$doc_name}";
+		$temporary = "{$temporary_dir}/{$doc_name}";
+
+		return array(
+			'file_name' => $doc_name,
+			'location' => $address,
+			'temporary' => $temporary
+		);
+	}
+
 	function getForm($uuid = false, $isSubform = false)
 	{
+		$is_vendor = false;
 		$form = parent::getForm($uuid, $isSubform);
 		if (strlen($this->session->userdata('vendor')) > 0) {
+			$is_vendor = true;
 			$form = array_map(function ($field) {
 				if (strpos($field['name'], '_target') > -1) {
 					$field['attr'] .= ' disabled="disabled"';
@@ -403,7 +442,42 @@ class KPIs extends MY_Model
 				return $field;
 			}, $form);
 		}
+
+		$form = array_map(function ($field) use ($uuid, $is_vendor) {
+			if (strpos($field['name'], '_doc') > -1)
+			{
+				$field['show_as_single_btn'] = false;
+				$field['show_preview_btn'] = false;
+				$field['show_upload_btn'] = false;
+				$field['show_delete_btn'] = false;
+
+				$doc = $this->getDoc($uuid, $field['name']);
+				$is_exists = '1' === $field['value'];
+
+				$field['show_as_single_btn'] = !$is_vendor;
+				$field['show_preview_btn'] = $is_exists;
+				$field['show_upload_btn'] = $is_vendor;
+				$field['show_delete_btn'] = $is_vendor && $is_exists;
+
+				$site_url = site_url();
+				$field['upload_onchange'] = "uploadDoc('{$site_url}/KPI/upload/{$uuid}/{$field['name']}');\"";
+
+				$pdf = base_url($doc['location']);
+				$field['preview_onclick'] = "document.getElementById(`pdf_viewer_modal_body`).innerHTML=`<embed src='{$pdf}' width='800px' height='600px' />`";
+			}
+			return $field;
+		}, $form);
+
 		return $form;
+	}
+
+	function upload($uuid, $field)
+	{
+		$doc = $this->getDoc($uuid, $field);
+		$temporary = $doc['temporary'];
+		if (file_exists($temporary)) unlink($temporary);
+		move_uploaded_file($_FILES['doc']['tmp_name'], $temporary);
+		return true;
 	}
 
 	function getProjectDetail($uuid)
