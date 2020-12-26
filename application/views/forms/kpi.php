@@ -67,7 +67,7 @@
               default: ?>
                 <?php if (strpos($field['name'], '_target') > -1) : ?>
                   <div class="form-group row" style="background-color: <?= $index % 4 !== 0 ? '#f9f9f9' : '#fff' ?>;">
-                    <label style="padding-left: 25px; font-weight: 400" class="col-sm-4 control-label"><?= $field['label']  ?></label>
+                    <label style="padding-left: 25px; font-weight: 400" class="col-sm-3 control-label"><?= $field['label']  ?></label>
                     <div class="col-sm-2">
                       <div class="input-group input-group-sm">
                         <div class="input-group-prepend">
@@ -108,8 +108,34 @@
                       </div>
                     </div>
                     <?php endif ?>
+                  <!-- </div> -->
+                <?php endif ?>
+                <?php if (strpos($field['name'], '_doc') > -1) : ?>
+
+                  <?php if ($field['show_as_single_btn']): ?>
+                      <?php if ($field['show_preview_btn']): ?>
+                        <a class="col-sm-1 btn btn-sm btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['preview_onclick'] ?>" ><i class="fa fa-file-pdf"></i>&nbsp; preview</a>
+                      <?php endif ?>
+                    <?php else: ?>
+                      <div class="dropdown col-sm-1">
+                        <button class="btn btn-sm btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-pdf"></i>&nbsp; doc</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <?php if ($field['show_upload_btn']): ?>
+                            <a class="dropdown-item" onclick="$('#<?= $field['name'] ?>').click()"><i class="fa fa-upload"></i>&nbsp; Upload</a>
+                            <input type="hidden" name="<?= $field['name'] ?>" value="<?= $field['value'] ?>">
+                          <?php endif ?>
+                          <?php if ($field['show_preview_btn']): ?>
+                            <a class="dropdown-item" href="#"><i class="fa fa-eye"></i>&nbsp; Preview</a>
+                          <?php endif ?>
+                          <?php if ($field['show_delete_btn']): ?>
+                            <a class="dropdown-item" href="#"><i class="fa fa-trash"></i>&nbsp; Delete</a>
+                          <?php endif ?>
+                        </div>
+                      </div>
+                    <?php endif ?>
                   </div>
                 <?php endif ?>
+
                 <?php break; ?>
             <?php endswitch; ?>
 
@@ -120,28 +146,6 @@
 
     </div>
   </div>
-
-  <?php if (count($subform) > 0) : foreach ($subform as $subfield) : ?>
-      <div class="card card-danger card-outline">
-        <div class="card-body">
-          <fieldset class="form-child" data-controller="<?= $subfield['controller'] ?>" data-uuids="<?= str_replace('"', "'", json_encode($subfield['uuids'])) ?>">
-            <legend><?= $subfield['label'] ?></legend>
-            <div class="form-group">
-              <div class="col-sm-offset-3 col-sm-12">
-                <?php if ((empty($subfield->uuids) && in_array("create_{$subfield['controller']}", $permission)) || (!empty($subfield->uuids) && in_array("update_{$subfield['controller']}", $permission))) : ?>
-
-                  <a class="btn btn-info btn-add">
-                    <i class="fa fa-plus"></i> &nbsp;Input <?= $subfield['label'] ?>
-                  </a>
-
-                <?php endif ?>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-  <?php endforeach;
-  endif; ?>
 
 </form>
 

@@ -15,6 +15,7 @@ class KPI extends MY_Controller
 	public function index()
 	{
 		$model = $this->model;
+		$last_submit = $post['last_submit'];
 		if ($post = $this->$model->lastSubmit($this->input->post())) {
 			if (isset($post['delete'])) $this->$model->delete($post['delete']);
 			else
@@ -24,6 +25,7 @@ class KPI extends MY_Controller
 				unset($post['download-button']);
 				unset($post['sendmail-button']);
 				$uuid = $this->$model->save($post);
+				$this->$model->submitUloadedDocs($last_submit);
 				if ($download) redirect(site_url("KPI/downloadConfirm/{$uuid}"));
 				if ($sendmail)
 				{
@@ -93,4 +95,10 @@ class KPI extends MY_Controller
 		$dompdf->render();
 		$dompdf->stream($html['title'], array('Attachment' => true));
 	}
+
+	function upload($uuid, $input)
+	{
+		echo $this->{$this->model}->upload($uuid, $input);
+	}
+
 }

@@ -4,6 +4,7 @@ class Login extends CI_Controller {
 
 	function index () {
 		if ($post = $this->input->post()) {
+			$this->cleanUpTemporaryFileUpload();
 			$this->load->model('Users');
 			$login = $this->Users->findOne(array(
 				'username' => $post['username'],
@@ -19,6 +20,21 @@ class Login extends CI_Controller {
 			}
 		}
 		$this->load->view('login');
+	}
+
+	private function cleanUpTemporaryFileUpload ()
+	{
+		$age_limit = 2;// hours
+		$temporary_dir = 'tmp';
+		$now = time();
+		foreach (scandir($temporary_dir) as $file_name)
+		{
+			$split_name = explode('-', $file_name);
+			$since = $split_name[0];
+			if (!is_int($since)) continue;
+			$hour_ago = floor(($now - $since) / 3600);
+			if ($hour_ago > $age_limit) unlink("{$temporary_dir}/$file_name");
+		}
 	}
 
 	function Migrate ($version = null) {

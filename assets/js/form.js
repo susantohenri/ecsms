@@ -119,6 +119,7 @@ function uploadDoc (url) {
   var name = url_part.pop()
   var formData = new FormData()
   formData.append('doc', $(`[name="${name}"]`)[0].files[0])
+  formData.append('last_submit', $('[name="last_submit"]').val())
   $.ajax({
     url,
     type : 'POST',
