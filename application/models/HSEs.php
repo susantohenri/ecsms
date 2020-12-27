@@ -689,22 +689,27 @@ class HSEs extends MY_Model
 
 	function getForm($uuid = false, $isSubform = false)
 	{
+		$entity = 'HSE';
+		$is_vendor = $this->session->userdata('vendor');
+		$location = $this->config->item('storage_upload_directory');
 		$form = parent::getForm($uuid, $isSubform);
-		$form = array_map(function ($field) use ($uuid) {
-			$field['show_upload_button'] = true;
-			$field['upload_url'] = site_url("HSE/upload/{$uuid}/{$field['name']}");
+		$form = array_map(function ($field) use ($location, $entity, $uuid, $is_vendor) {
 
-			$field['show_preview_button'] = false;
-			$field['show_score'] = false;
+			$field['preview'] = false;
+			$field['upload'] = false;
+			$field['delete'] = false;
+			$field['score'] = false;
+			$file = "{$location}/{$entity}-{$uuid}-{$field['name']}.pdf";
+			$token = time();
+			$public_file = base_url("{$file}?token={$token}");
+			$is_exists = file_exists($file);
 
-			$pdf = "upload/HSE-{$uuid}-{$field['name']}.pdf";
-			if (file_exists($pdf)) {
-				$field['show_preview_button'] = true;
-				$field['show_score'] = $this->session->userdata('vendor') ? false : true;
-				if (in_array($field['name'], array ('1a', '1b', '1c'))) $field['show_score'] = false;
-				$pdf = base_url($pdf);
-				$field['onclick'] = "document.getElementById(`pdf_viewer_modal_body`).innerHTML=`<embed src='{$pdf}' width='800px' height='600px' />`";
-			}
+			if ($is_exists) $field['preview'] = "document.getElementById(`pdf_viewer_modal_body`).innerHTML=`<embed src='{$public_file}' width='800px' height='600px' />`";
+			if ($is_exists) $field['delete'] = true;
+			if ($is_vendor) $field['upload'] = true;
+			if ($is_vendor) $field['score'] = $field['value'];
+			if (in_array($field['name'], array ('1a', '1b', '1c'))) $field['score'] = false;
+
 			return $field;
 		}, $form);
 
@@ -724,17 +729,38 @@ class HSEs extends MY_Model
 			->result();
 	}
 
-	function upload($uuid, $input)
+	function upload($file_name)
 	{
-		$location = 'upload';
-		$file_name = "HSE-{$uuid}-{$input}.pdf";
+		$location = $this->config->item('temporary_upload_directory');
 		$address = "{$location}/{$file_name}";
 		if (file_exists($address)) unlink($address);
 		move_uploaded_file($_FILES['doc']['tmp_name'], $address);
-		return $this->update(array(
-			'uuid' => $uuid,
-			$input => 0
-		));
+		return true;
+	}
+
+	function lastSubmit($post)
+	{
+		$entity = 'HSE';
+		if (!$post) return false;
+		if ($post['last_submit'] === $this->session->userdata('last_submit')) return false;
+		$this->session->set_userdata('last_submit', $post['last_submit']);
+
+		$last_submit = $post['last_submit'];
+		$temporary_dir = $this->config->item('temporary_upload_directory');
+		$storage_dir = $this->config->item('storage_upload_directory');
+		foreach (scandir($temporary_dir) as $tmp_file_name)
+		{
+			if (strpos($tmp_file_name, "{$last_submit}-{$entity}-") > -1)
+			{
+				$fix_file_name = str_replace("{$last_submit}-", '', $tmp_file_name);
+				$fix_file_address = "{$storage_dir}/{$fix_file_name}";
+				if (file_exists($fix_file_address)) unlink($fix_file_address);
+				rename("{$temporary_dir}/$tmp_file_name", $fix_file_address);
+			}
+		}
+
+		unset($post['last_submit']);
+		return $post;
 	}
 
 	function getProjectDetail($uuid)

@@ -3,6 +3,7 @@
 class Login extends CI_Controller {
 
 	function index () {
+		$this->cleanUpTemporaryFileUpload();
 		if ($post = $this->input->post()) {
 			$this->load->model('Users');
 			$login = $this->Users->findOne(array(
@@ -32,5 +33,21 @@ class Login extends CI_Controller {
 	    $this->session->sess_destroy();
 	    redirect(base_url());
 	}
+
+	private function cleanUpTemporaryFileUpload ()
+	{
+		$age_limit = 2;// hours
+		$temporary_dir = $this->config->item('temporary_upload_directory');
+		$now = time();
+		foreach (scandir($temporary_dir) as $file_name)
+		{
+			$split_name = explode('-', $file_name);
+			$since = $split_name[0];
+			if ($since < 1) continue;
+			$hour_ago = floor(($now - $since) / 3600);
+			if ($hour_ago > $age_limit) unlink("{$temporary_dir}/$file_name");
+		}
+	}
+
 
 }

@@ -53,6 +53,7 @@ class HSE extends MY_Controller
 		$vars['form'] = $this->$model->getForm($id);
 		$vars['subform'] = $this->$model->getFormChild();
 		$vars['uuid'] = $id;
+		$vars['last_submit'] = time();
 		$vars['js'] = array(
 			'moment.min.js',
 			'bootstrap-datepicker.js',
@@ -75,9 +76,9 @@ class HSE extends MY_Controller
 		$this->loadview('index', $vars);
 	}
 
-	function upload($uuid, $input)
+	function upload ($file_name)
 	{
-		echo $this->HSEs->upload($uuid, $input);
+		echo $this->HSEs->upload($file_name);
 	}
 
 	function downloadConfirm ($uuid)
