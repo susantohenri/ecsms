@@ -52,7 +52,7 @@
                     <?php endif ?>
 
                     <?php if ($field['delete']): ?>
-                    <a class="btn btn-sm btn-danger" style="height: 32px;">Delete</a>
+                    <a class="btn btn-sm btn-danger" style="height: 32px;" onclick="uploadDeletionDoc('<?= implode("-", array($last_submit, 'HSE', $uuid, $field['name'], 'delete')) ?>.pdf')">Delete</a>
                     <?php endif ?>
 
                   </div>

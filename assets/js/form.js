@@ -139,3 +139,20 @@ function uploadDoc (file_name) {
     })
   })
 }
+
+function uploadDeletionDoc (file_name)
+{
+  const splitname = file_name.split('-')
+  const entity = splitname[1]
+  $('#overlay').show()
+  $.ajax({
+    url: `${site_url}/${entity}/upload/${file_name}`,
+    type : 'POST',
+    processData: false,
+    contentType: false,
+    success : function(data) {
+      $('#overlay').hide()
+      $(`[onclick="uploadDeletionDoc('${file_name}')"]`).html('<i class="fa fa-check"></i>&nbsp;Delete')
+    }
+  })
+}

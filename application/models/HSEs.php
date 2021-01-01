@@ -733,8 +733,17 @@ class HSEs extends MY_Model
 	{
 		$location = $this->config->item('temporary_upload_directory');
 		$address = "{$location}/{$file_name}";
-		if (file_exists($address)) unlink($address);
-		move_uploaded_file($_FILES['doc']['tmp_name'], $address);
+		if (!$_FILES)// MEANS REQUEST DOC DELETION
+		{
+			$myfile = fopen($address, "w") or die("Unable to open file!");
+			fwrite($myfile, ' ');
+			fclose($myfile);
+		}
+		else
+		{
+			if (file_exists($address)) unlink($address);
+			move_uploaded_file($_FILES['doc']['tmp_name'], $address);
+		}
 		return true;
 	}
 
@@ -748,6 +757,21 @@ class HSEs extends MY_Model
 		$last_submit = $post['last_submit'];
 		$temporary_dir = $this->config->item('temporary_upload_directory');
 		$storage_dir = $this->config->item('storage_upload_directory');
+
+		// DELETE REQUESTED DOCS
+		foreach (scandir($temporary_dir) as $tmp_file_name)
+		{
+			if (strpos($tmp_file_name, "{$last_submit}-{$entity}-") > -1 && strpos($tmp_file_name, "-delete") > -1)
+			{
+				$fix_file_name = str_replace("{$last_submit}-", '', $tmp_file_name);
+				$fix_file_name = str_replace("-delete", '', $fix_file_name);
+				$fix_file_address = "{$storage_dir}/{$fix_file_name}";
+				if (file_exists($fix_file_address)) unlink($fix_file_address);
+				unlink("{$temporary_dir}/{$tmp_file_name}");
+			}
+		}
+
+		// MOVE UPLOADED FOCS
 		foreach (scandir($temporary_dir) as $tmp_file_name)
 		{
 			if (strpos($tmp_file_name, "{$last_submit}-{$entity}-") > -1)
