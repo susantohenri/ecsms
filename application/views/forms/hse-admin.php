@@ -44,85 +44,48 @@
             </div>
           </div>
 
+          <?php $oddEven = 0 ?>
           <?php foreach ($form as $index => $field) : ?>
 
             <?php switch ($field['type']):
               case 'hidden': ?>
                 <input class="form-control" type="<?= $field['type'] ?>" value="<?= $field['value'] ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
                 <?php break; ?>
-              <?php
-              case 'select': ?>
-                <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
-                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-9 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-3">
-                    <div class="input-group input-group-sm">
-                      <div class="input-group-prepend">
-                        <?php if ($field['show_preview_button']) : ?>
-                          <span class="input-group-text bg-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>" style="cursor: pointer;">
-                            <i class="fa fa-file-pdf"></i>&nbsp;
-                            preview
-                          </span>
-                        <?php endif ?>
-                        <?php if ($field['show_score']) : ?>
-                          <span class="input-group-text">
-                            <i class="fa fa-check"></i>&nbsp;
-                            score
-                          </span>
-                        <?php endif ?>
-                      </div>
-                      <?php if ($field['show_score']) : ?>
-                        <select class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                          <?php foreach ($field['options'] as $opt) : ?>
-                            <option <?= $opt['value'] === $field['value'] || (is_array($field['value']) && in_array($opt['value'], $field['value'])) ? 'selected="selected"' : '' ?> value="<?= $opt['value'] ?>"><?= $opt['text'] ?></option>
-                          <?php endforeach ?>
-                        </select>
-                      <?php endif ?>
-                    </div>
-                  </div>
-                </div>
-                <?php break; ?>
-              <?php
-              case 'textarea': ?>
-                <div class="form-group row">
-                  <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-9">
-                    <textarea class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>><?= $field['value'] ?></textarea>
-                  </div>
-                </div>
-                <?php break; ?>
-              <?php
+                <?php
               case 'label': ?>
                 <hr>
-                <div class="form-group row">
+                <?php $oddEven++ ?>
+                <div class="form-group row" style="background-color: <?= $oddEven % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
                   <label class="col-sm-12 control-label"><?= $field['label']  ?></label>
                 </div>
                 <?php break; ?>
-              <?php
-              default: ?>
-                <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
-                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-9 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-3">
+              <?php case 'select': ?>
+                <?php $oddEven++ ?>
+                <div class="form-group row" style="background-color: <?= $oddEven % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
+                  <label class="col-sm-9 control-label" style="padding-left: 25px; font-weight: 400"><?= $field['label']  ?></label>
+
+                  <div class="col-sm-1">
+                    <?php if ($field['preview']): ?>
+                      <a class="btn btn-warning" onclick="<?= $field['preview'] ?>" data-toggle="modal" data-target="#pdf_viewer_modal">Preview</a> &nbsp;
+                    <?php endif ?>
+                  </div>
+
+                  <div class="col-sm-2">
                     <div class="input-group input-group-sm">
                       <div class="input-group-prepend">
-                        <?php if ($field['show_preview_button']) : ?>
-                          <a class="btn btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
-                            <i class="fa fa-file-pdf"></i>&nbsp;
-                            preview
-                          </a>
-                        <?php endif ?>
-                        <?php if ($field['show_score']) : ?>
-                          <span class="btn btn-secondary">
-                            <i class="fa fa-check"></i>&nbsp;
-                            score
-                          </span>
-                        <?php endif ?>
+                        <span class="input-group-text">Score</span>
                       </div>
-                      <?php if ($field['show_score']) : ?>
-                        <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                      <?php endif ?>
+                      <select class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                        <?php foreach ($field['options'] as $opt) : ?>
+                          <option <?= $opt['value'] === $field['value'] || (is_array($field['value']) && in_array($opt['value'], $field['value'])) ? 'selected="selected"' : '' ?> value="<?= $opt['value'] ?>"><?= $opt['text'] ?></option>
+                        <?php endforeach ?>
+                      </select>
                     </div>
                   </div>
+
                 </div>
+                <?php break; ?>
+              <?php default: ?>
                 <?php break; ?>
             <?php endswitch; ?>
 
