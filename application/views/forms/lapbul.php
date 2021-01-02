@@ -26,7 +26,7 @@
 
       <div class="" data-controller="<?= $current['controller'] ?>">
         <div class="form-horizontal form-groups">
-          <input type="hidden" name="last_submit" value="<?= time() ?>">
+          <input type="hidden" name="last_submit" value="<?= $last_submit ?>">
           <input type="hidden" name="progress" value="1">
 
           <hr>
@@ -44,31 +44,6 @@
                 <input class="form-control" type="<?= $field['type'] ?>" value="<?= $field['value'] ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
                 <?php break; ?>
               <?php
-              case 'select': ?>
-                <div class="form-group row">
-                  <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-9">
-                    <?php if (preg_match('/(multiple)/', $field['attr']) > 0) : ?>
-                      <input type="hidden" name="<?= str_replace('[]', '', $field['name']) ?>">
-                    <?php endif ?>
-                    <select class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                      <?php foreach ($field['options'] as $opt) : ?>
-                        <option <?= $opt['value'] === $field['value'] || (is_array($field['value']) && in_array($opt['value'], $field['value'])) ? 'selected="selected"' : '' ?> value="<?= $opt['value'] ?>"><?= $opt['text'] ?></option>
-                      <?php endforeach ?>
-                    </select>
-                  </div>
-                </div>
-                <?php break; ?>
-              <?php
-              case 'textarea': ?>
-                <div class="form-group row">
-                  <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-9">
-                    <textarea class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>><?= $field['value'] ?></textarea>
-                  </div>
-                </div>
-                <?php break; ?>
-              <?php
               case 'label': ?>
                 <hr>
                 <div class="form-group row">
@@ -78,28 +53,29 @@
               <?php
               default: ?>
                 <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
-                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-8 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-4">
-                    <div class="input-group input-group-sm">
-                      <div class="input-group-prepend">
-                        <a class="btn btn-sm btn-secondary">
-                          Realisasi
-                        </a>
-                      </div>
-                      <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                      <?php if ($field['show_upload_button']) : ?>
-                        <input class="form-control" type="file" accept="application/pdf" name="<?= $field['name'] ?>_doc" onchange="uploadDoc('<?= $field['upload_url'] ?>/<?= $field['name'] ?>_doc');" style="font-size:.71rem">
-                      <?php endif ?>
-                      <?php if ($field['show_preview_button']) : ?>
-                        <div class="input-group-append">
-                          <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
-                            <i class="fa fa-file-pdf"></i>&nbsp;
-                            Preview
-                          </a>
-                        </div>
-                      <?php endif ?>
-                    </div>
+                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-7 control-label"><?= $field['label']  ?></label>
+
+                  <div class="col-sm-3 text-right">
+                    <?php if ($field['upload']): ?>
+                    <a class="btn btn-sm btn-success" style="height: 32px;" onclick="uploadDoc('<?= implode("-", array($last_submit, 'LaporanBulanan', $uuid, $field['name'])) ?>.pdf')">Upload</a>
+                    <?php endif ?>
+
+                    <?php if ($field['preview']): ?>
+                    <a class="btn btn-sm btn-warning" style="height: 32px;" onclick="<?= $field['preview'] ?>" data-toggle="modal" data-target="#pdf_viewer_modal">Preview</a>
+                    <?php endif ?>
+
+                    <?php if ($field['delete']): ?>
+                    <a class="btn btn-sm btn-danger" style="height: 32px;" onclick="uploadDeletionDoc('<?= implode("-", array($last_submit, 'LaporanBulanan', $uuid, $field['name'], 'delete')) ?>.pdf')">Delete</a>
+                    <?php endif ?>
                   </div>
+
+                  <div class="input-group input-group-sm col-sm-2">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Realisasi</span>
+                    </div>
+                    <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                  </div>
+
                 </div>
                 <?php break; ?>
             <?php endswitch; ?>
@@ -111,28 +87,6 @@
 
     </div>
   </div>
-
-  <?php if (count($subform) > 0) : foreach ($subform as $subfield) : ?>
-      <div class="card card-danger card-outline">
-        <div class="card-body">
-          <fieldset class="form-child" data-controller="<?= $subfield['controller'] ?>" data-uuids="<?= str_replace('"', "'", json_encode($subfield['uuids'])) ?>">
-            <legend><?= $subfield['label'] ?></legend>
-            <div class="form-group">
-              <div class="col-sm-offset-3 col-sm-12">
-                <?php if ((empty($subfield->uuids) && in_array("create_{$subfield['controller']}", $permission)) || (!empty($subfield->uuids) && in_array("update_{$subfield['controller']}", $permission))) : ?>
-
-                  <a class="btn btn-info btn-add">
-                    <i class="fa fa-plus"></i> &nbsp;Input <?= $subfield['label'] ?>
-                  </a>
-
-                <?php endif ?>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-  <?php endforeach;
-  endif; ?>
 
 </form>
 
