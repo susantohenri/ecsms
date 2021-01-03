@@ -74,6 +74,7 @@ class KPI extends MY_Controller
 			$vars['sendmail_label'] = false;
 		}
 
+		$vars['last_submit'] = time();
 		$this->loadview('index', $vars);
 	}
 
@@ -92,5 +93,9 @@ class KPI extends MY_Controller
 		$dompdf->setPaper('A4', 'landscape');
 		$dompdf->render();
 		$dompdf->stream($html['title'], array('Attachment' => true));
+	}
+
+	function upload ($filename) {
+		echo $this->KPIs->upload($filename);
 	}
 }

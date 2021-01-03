@@ -23,15 +23,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'a1_actual',
-			),
-			// array(
-			// 	'name' => 'a1_score_max',
-			// ),
-			array(
-				'name' => 'a1_score_actual',
-				'attributes' => array(
-					array('data-nonscoring' => 'true')
-				)
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'a2_target',
@@ -39,15 +31,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'a2_actual',
-			),
-			// array(
-			// 	'name' => 'a2_score_max',
-			// ),
-			array(
-				'name' => 'a2_score_actual',
-				'attributes' => array(
-					array('data-nonscoring' => 'true')
-				)
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => '',
@@ -60,15 +44,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'b1_actual',
-			),
-			// array(
-			// 	'name' => 'b1_score_max',
-			// ),
-			array(
-				'name' => 'b1_score_actual',
-				'attributes' => array(
-					array('data-nonscoring' => 'true')
-				)
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'b2_target',
@@ -76,15 +52,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'b2_actual',
-			),
-			// array(
-			// 	'name' => 'b2_score_max',
-			// ),
-			array(
-				'name' => 'b2_score_actual',
-				'attributes' => array(
-					array('data-nonscoring' => 'true')
-				)
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'b3_target',
@@ -92,15 +60,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'b3_actual',
-			),
-			// array(
-			// 	'name' => 'b3_score_max',
-			// ),
-			array(
-				'name' => 'b3_score_actual',
-				'attributes' => array(
-					array('data-nonscoring' => 'true')
-				)
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'b4_target',
@@ -108,15 +68,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'b4_actual',
-			),
-			// array(
-			// 	'name' => 'b4_score_max',
-			// ),
-			array(
-				'name' => 'b4_score_actual',
-				'attributes' => array(
-					array('data-nonscoring' => 'true')
-				)
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'b5_target',
@@ -124,9 +76,11 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'b5_actual',
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'b5_score_max',
+				'label'=> 'Score Max',
 				'value'=> 8,
 				'attributes' => array(
 					array('disabled' => 'disabled')
@@ -134,6 +88,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'b5_score_actual',
+				'label'=> 'Score Actual'
 			),
 			array(
 				'name' => '',
@@ -146,9 +101,11 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c1_actual',
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'c1_score_max',
+				'label'=> 'Score Max',
 				'value'=> 7,
 				'attributes' => array(
 					array('disabled' => 'disabled')
@@ -156,6 +113,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c1_score_actual',
+				'label'=> 'Score Actual'
 			),
 			array(
 				'name' => 'c2_target',
@@ -163,9 +121,11 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c2_actual',
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'c2_score_max',
+				'label'=> 'Score Max',
 				'value'=> 8,
 				'attributes' => array(
 					array('disabled' => 'disabled')
@@ -173,6 +133,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c2_score_actual',
+				'label'=> 'Score Actual'
 			),
 			array(
 				'name' => 'c3_target',
@@ -180,9 +141,11 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c3_actual',
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'c3_score_max',
+				'label'=> 'Score Max',
 				'value'=> 8,
 				'attributes' => array(
 					array('disabled' => 'disabled')
@@ -190,6 +153,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c3_score_actual',
+				'label'=> 'Score Actual'
 			),
 			array(
 				'name' => 'c4_target',
@@ -197,9 +161,11 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c4_actual',
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'c4_score_max',
+				'label'=> 'Score Max',
 				'value'=> 7,
 				'attributes' => array(
 					array('disabled' => 'disabled')
@@ -207,6 +173,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c4_score_actual',
+				'label'=> 'Score Actual'
 			),
 			array(
 				'name' => 'c5_target',
@@ -214,9 +181,11 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c5_actual',
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'c5_score_max',
+				'label'=> 'Score Max',
 				'value'=> 8,
 				'attributes' => array(
 					array('disabled' => 'disabled')
@@ -224,6 +193,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c5_score_actual',
+				'label'=> 'Score Actual'
 			),
 			array(
 				'name' => 'c6_target',
@@ -231,9 +201,11 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c6_actual',
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'c6_score_max',
+				'label'=> 'Score Max',
 				'value'=> 8,
 				'attributes' => array(
 					array('disabled' => 'disabled')
@@ -241,6 +213,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c6_score_actual',
+				'label'=> 'Score Actual'
 			),
 			array(
 				'name' => 'c7_target',
@@ -248,9 +221,11 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c7_actual',
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'c7_score_max',
+				'label'=> 'Score Max',
 				'value'=> 8,
 				'attributes' => array(
 					array('disabled' => 'disabled')
@@ -258,6 +233,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c7_score_actual',
+				'label'=> 'Score Actual'
 			),
 			array(
 				'name' => 'c8_target',
@@ -265,9 +241,11 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c8_actual',
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'c8_score_max',
+				'label'=> 'Score Max',
 				'value'=> 7,
 				'attributes' => array(
 					array('disabled' => 'disabled')
@@ -275,6 +253,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c8_score_actual',
+				'label'=> 'Score Actual'
 			),
 			array(
 				'name' => 'c9_target',
@@ -282,9 +261,11 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c9_actual',
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'c9_score_max',
+				'label'=> 'Score Max',
 				'value'=> 7,
 				'attributes' => array(
 					array('disabled' => 'disabled')
@@ -292,6 +273,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c9_score_actual',
+				'label'=> 'Score Actual'
 			),
 			array(
 				'name' => 'c10_target',
@@ -299,9 +281,11 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c10_actual',
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'c10_score_max',
+				'label'=> 'Score Max',
 				'value'=> 8,
 				'attributes' => array(
 					array('disabled' => 'disabled')
@@ -309,6 +293,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c10_score_actual',
+				'label'=> 'Score Actual'
 			),
 			array(
 				'name' => 'c11_target',
@@ -316,9 +301,11 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c11_actual',
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'c11_score_max',
+				'label'=> 'Score Max',
 				'value'=> 8,
 				'attributes' => array(
 					array('disabled' => 'disabled')
@@ -326,6 +313,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c11_score_actual',
+				'label'=> 'Score Actual'
 			),
 			array(
 				'name' => 'c12_target',
@@ -333,9 +321,11 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c12_actual',
+				'label'=> 'Actual'
 			),
 			array(
 				'name' => 'c12_score_max',
+				'label'=> 'Score Max',
 				'value'=> 8,
 				'attributes' => array(
 					array('disabled' => 'disabled')
@@ -343,6 +333,7 @@ class KPIs extends MY_Model
 			),
 			array(
 				'name' => 'c12_score_actual',
+				'label'=> 'Score Actual'
 			)
 		);
 		$this->childs = array();
@@ -391,19 +382,111 @@ class KPIs extends MY_Model
 
 	function getForm($uuid = false, $isSubform = false)
 	{
+		$entity = 'KPI';
+		$is_vendor = $this->session->userdata('vendor');
+		$location = $this->config->item('storage_upload_directory');
 		$form = parent::getForm($uuid, $isSubform);
-		if (strlen($this->session->userdata('vendor')) > 0) {
-			$form = array_map(function ($field) {
+		$form = array_map(function ($field) use ($location, $entity, $uuid, $is_vendor) {
+			if ($is_vendor)
+			{
 				if (strpos($field['name'], '_target') > -1) {
 					$field['attr'] .= ' disabled="disabled"';
 				}
 				if (strpos($field['name'], '_max') > -1) {
 					$field['attr'] .= ' disabled="disabled"';
 				}
-				return $field;
-			}, $form);
-		}
+			}
+
+			$field['is_first'] = strpos($field['name'], '_target') > -1;
+			$field['is_last'] = strpos($field['name'], '_score_actual') > -1;
+			if (in_array($field['name'], array(
+				'a1_actual',
+				'a2_actual',
+				'b1_actual',
+				'b2_actual',
+				'b3_actual',
+				'b4_actual',
+			)))
+			{
+				$field['is_last'] = true;
+			}
+
+			if ($field['is_first'])
+			{
+				$field['preview'] = false;
+				$field['upload'] = false;
+				$field['delete'] = false;
+				$file = "{$location}/{$entity}-{$uuid}-{$field['name']}.pdf";
+				$token = time();
+				$public_file = base_url("{$file}?token={$token}");
+				$is_exists = file_exists($file);
+	
+				if ($is_exists) $field['preview'] = "document.getElementById(`pdf_viewer_modal_body`).innerHTML=`<embed src='{$public_file}' width='800px' height='600px' />`";
+				if ($is_exists) $field['delete'] = true;
+				if ($is_vendor) $field['upload'] = true;
+			}
+
+			return $field;
+		}, $form);
 		return $form;
+	}
+
+	function upload($file_name)
+	{
+		$location = $this->config->item('temporary_upload_directory');
+		$address = "{$location}/{$file_name}";
+		if (!$_FILES)// MEANS REQUEST DOC DELETION
+		{
+			$myfile = fopen($address, "w") or die("Unable to open file!");
+			fwrite($myfile, ' ');
+			fclose($myfile);
+		}
+		else
+		{
+			if (file_exists($address)) unlink($address);
+			move_uploaded_file($_FILES['doc']['tmp_name'], $address);
+		}
+		return true;
+	}
+
+	function lastSubmit($post)
+	{
+		$entity = 'KPI';
+		if (!$post) return false;
+		if ($post['last_submit'] === $this->session->userdata('last_submit')) return false;
+		$this->session->set_userdata('last_submit', $post['last_submit']);
+
+		$last_submit = $post['last_submit'];
+		$temporary_dir = $this->config->item('temporary_upload_directory');
+		$storage_dir = $this->config->item('storage_upload_directory');
+
+		// DELETE REQUESTED DOCS
+		foreach (scandir($temporary_dir) as $tmp_file_name)
+		{
+			if (strpos($tmp_file_name, "{$last_submit}-{$entity}-") > -1 && strpos($tmp_file_name, "-delete") > -1)
+			{
+				$fix_file_name = str_replace("{$last_submit}-", '', $tmp_file_name);
+				$fix_file_name = str_replace("-delete", '', $fix_file_name);
+				$fix_file_address = "{$storage_dir}/{$fix_file_name}";
+				if (file_exists($fix_file_address)) unlink($fix_file_address);
+				unlink("{$temporary_dir}/{$tmp_file_name}");
+			}
+		}
+
+		// MOVE UPLOADED FOCS
+		foreach (scandir($temporary_dir) as $tmp_file_name)
+		{
+			if (strpos($tmp_file_name, "{$last_submit}-{$entity}-") > -1)
+			{
+				$fix_file_name = str_replace("{$last_submit}-", '', $tmp_file_name);
+				$fix_file_address = "{$storage_dir}/{$fix_file_name}";
+				if (file_exists($fix_file_address)) unlink($fix_file_address);
+				rename("{$temporary_dir}/$tmp_file_name", $fix_file_address);
+			}
+		}
+
+		unset($post['last_submit']);
+		return $post;
 	}
 
 	function getProjectDetail($uuid)
