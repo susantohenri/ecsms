@@ -32,7 +32,7 @@
 
       <div class="" data-controller="<?= $current['controller'] ?>">
         <div class="form-horizontal form-groups">
-          <input type="hidden" name="last_submit" value="<?= time() ?>">
+          <input type="hidden" name="last_submit" value="<?= $last_submit ?>">
           <input type="hidden" name="progress" value="1">
 
           <div class="form-group row">
@@ -65,52 +65,57 @@
                 <?php break; ?>
               <?php
               default: ?>
-                <?php if (strpos($field['name'], '_target') > -1) : ?>
+                <?php if ($field['is_first']) : ?>
                   <div class="form-group row" style="background-color: <?= $index % 4 !== 0 ? '#f9f9f9' : '#fff' ?>;">
-                    <label style="padding-left: 25px; font-weight: 400" class="col-sm-4 control-label"><?= $field['label']  ?></label>
-                    <div class="col-sm-2">
-                      <div class="input-group input-group-sm">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Target</span>
+                    <label style="padding-left: 25px; font-weight: 400" class="col-sm-3 control-label"><?= $field['label']  ?></label>
+                    <div class="col-sm-3 text-right">
+                      <?php if ($field['upload']): ?>
+                      <a class="btn btn-sm btn-success" style="height: 32px;" onclick="uploadDoc('<?= implode("-", array($last_submit, 'KPI', $uuid, $field['name'])) ?>.pdf')">Upload</a>
+                      <?php endif ?>
+
+                      <?php if ($field['preview']): ?>
+                      <a class="btn btn-sm btn-warning" style="height: 32px;" onclick="<?= $field['preview'] ?>" data-toggle="modal" data-target="#pdf_viewer_modal">Preview</a>
+                      <?php endif ?>
+
+                      <?php if ($field['delete']): ?>
+                      <a class="btn btn-sm btn-danger" style="height: 32px;" onclick="uploadDeletionDoc('<?= implode("-", array($last_submit, 'KPI', $uuid, $field['name'], 'delete')) ?>.pdf')">Delete</a>
+                      <?php endif ?>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <div class="input-group input-group-sm">
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text">Target</span>
+                              </div>
+                              <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                          </div>
                         </div>
-                        <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                <?php endif ?>
+                <?php if (!$field['is_first'] && !$field['is_last']): ?>
+                        <div class="col-sm-3">
+                          <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><?= $field['label'] ?></span>
+                            </div>
+                            <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                          </div>
+                        </div>
+                <?php endif ?>
+                <?php if ($field['is_last']): ?>
+                        <div class="col-sm-3">
+                          <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><?= $field['label'] ?></span>
+                            </div>
+                            <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  <?php endif ?>
-                  <?php if (strpos($field['name'], '_actual') > -1 && strpos($field['name'], '_score') < 1) : ?>
-                    <div class="col-sm-2">
-                      <div class="input-group input-group-sm">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Actual</span>
-                        </div>
-                        <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                      </div>
-                    </div>
-                  <?php endif ?>
-                  <?php if (strpos($field['name'], '_score_max') > -1) : ?>
-                    <div class="col-sm-2">
-                      <div class="input-group input-group-sm">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Score Max</span>
-                        </div>
-                        <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                      </div>
-                    </div>
-                  <?php endif ?>
-                  <?php if (strpos($field['name'], '_score_actual') > -1) : ?>
-                    <?php if (!strpos($field['attr'], 'data-nonscoring="true"')) : ?>
-                    <div class="col-sm-2">
-                      <div class="input-group input-group-sm">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Score Actual</span>
-                        </div>
-                        <input class="form-control" type="<?= $field['type'] ?>" value="<?= htmlentities($field['value']) ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
-                      </div>
-                    </div>
-                    <?php endif ?>
                   </div>
                 <?php endif ?>
-                <?php break; ?>
+              <?php break; ?>
             <?php endswitch; ?>
 
           <?php endforeach ?>

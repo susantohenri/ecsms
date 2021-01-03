@@ -52,10 +52,11 @@ class LaporanBulanan extends MY_Controller
 		$vars['tabs'] = $this->$model->tabs($id);
 		$vars['project_name'] = $vars['tabs'][0]->nama_project;
 
+		$vars['last_submit'] = time();
 		$this->loadview('index', $vars);
 	}
 
-	function upload ($uuid, $input) {
-		echo $this->LaporanBulanans->upload($uuid, $input);
+	function upload ($filename) {
+		echo $this->LaporanBulanans->upload($filename);
 	}
 }

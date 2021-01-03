@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$config['temporary_upload_directory'] = 'tmp';
+$config['storage_upload_directory'] = 'upload';
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -23,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/app/';
+$config['base_url'] = 'http://localhost/ecsms/';
 
 /*
 |--------------------------------------------------------------------------

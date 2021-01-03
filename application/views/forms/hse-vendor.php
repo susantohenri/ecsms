@@ -21,7 +21,7 @@
 
       <div class="" data-controller="<?= $current['controller'] ?>">
         <div class="form-horizontal form-groups">
-          <input type="hidden" name="last_submit" value="<?= time() ?>">
+          <input type="hidden" name="last_submit" value="<?= $last_submit ?>">
 
           <div class="form-group row">
             <div class="col-md-12 text-center">
@@ -29,6 +29,7 @@
             </div>
           </div>
 
+          <?php $oddEven = 0 ?>
           <?php foreach ($form as $index => $field) : ?>
 
             <?php switch ($field['type']):
@@ -37,76 +38,32 @@
                 <?php break; ?>
               <?php
               case 'select': ?>
-                <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
-                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-8 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-4">
-                    <div class="input-group input-group-sm">
-                      <?php if ($field['show_upload_button']) : ?>
-                        <input class="form-control" type="file" accept="application/pdf" name="<?= $field['name'] ?>" onchange="uploadDoc('<?= $field['upload_url'] ?>');" style="font-size:.71rem">
-                      <?php endif ?>
-                      <?php if ($field['show_preview_button']) : ?>
-                        <div class="input-group-append">
-                          <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
-                            <i class="fa fa-file-pdf"></i>&nbsp;
-                            Preview
-                          </a>
-                        </div>
-                      <?php endif ?>
-                      <?php if ($field['show_score']) : ?>
-                        <div class="input-group-append">
-                          <a class="btn btn-sm btn-secondary">
-                            <i class="fa fa-check"></i>&nbsp;
-                            Score <?= $field['value'] ?>
-                          </a>
-                        </div>
-                      <?php endif ?>
-                    </div>
-                  </div>
-                </div>
-                <?php break; ?>
-              <?php
-              case 'textarea': ?>
-                <div class="form-group row">
-                  <label class="col-sm-3 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-9">
-                    <textarea class="form-control" name="<?= $field['name'] ?>" <?= $field['attr'] ?>><?= $field['value'] ?></textarea>
+                <?php $oddEven++ ?>
+                <div class="form-group row" style="background-color: <?= $oddEven % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
+                  <label class="col-sm-9 control-label" style="padding-left: 25px; font-weight: 400"><?= $field['label']  ?></label>
+                  <div class="col-sm-3 text-right">
+
+                    <?php if ($field['upload']): ?>
+                    <a class="btn btn-sm btn-success" style="height: 32px;" onclick="uploadDoc('<?= implode("-", array($last_submit, 'HSE', $uuid, $field['name'])) ?>.pdf')">Upload</a> &nbsp;
+                    <?php endif ?>
+
+                    <?php if ($field['preview']): ?>
+                    <a class="btn btn-sm btn-warning" style="height: 32px;" onclick="<?= $field['preview'] ?>" data-toggle="modal" data-target="#pdf_viewer_modal">Preview</a> &nbsp;
+                    <?php endif ?>
+
+                    <?php if ($field['delete']): ?>
+                    <a class="btn btn-sm btn-danger" style="height: 32px;" onclick="uploadDeletionDoc('<?= implode("-", array($last_submit, 'HSE', $uuid, $field['name'], 'delete')) ?>.pdf')">Delete</a>
+                    <?php endif ?>
+
                   </div>
                 </div>
                 <?php break; ?>
               <?php
               case 'label': ?>
                 <hr>
-                <div class="form-group row">
+                <?php $oddEven++ ?>
+                <div class="form-group row" style="background-color: <?= $oddEven % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
                   <label class="col-sm-12 control-label"><?= $field['label']  ?></label>
-                </div>
-                <?php break; ?>
-              <?php
-              default: ?>
-                <div class="form-group row" style="background-color: <?= $index % 2 === 1 ? '#f9f9f9' : '#fff' ?>;">
-                  <label style="padding-left: 25px; font-weight: 400" class="col-sm-8 control-label"><?= $field['label']  ?></label>
-                  <div class="col-sm-4">
-                    <div class="input-group input-group-sm">
-                      <?php if ($field['show_upload_button']) : ?>
-                        <input class="form-control" type="file" accept="application/pdf" name="<?= $field['name'] ?>" onchange="uploadDoc('<?= $field['upload_url'] ?>');" style="font-size:.71rem">
-                      <?php endif ?>
-                      <?php if ($field['show_preview_button']) : ?>
-                        <div class="input-group-append">
-                          <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#pdf_viewer_modal" onclick="<?= $field['onclick'] ?>">
-                            <i class="fa fa-file-pdf"></i>&nbsp;
-                            Preview
-                          </a>
-                        </div>
-                      <?php endif ?>
-                      <?php if ($field['show_score']) : ?>
-                        <div class="input-group-append">
-                          <a class="btn btn-sm btn-secondary">
-                            <i class="fa fa-check"></i>&nbsp;
-                            Score <?= $field['value'] ?>
-                          </a>
-                        </div>
-                      <?php endif ?>
-                    </div>
-                  </div>
                 </div>
                 <?php break; ?>
             <?php endswitch; ?>
@@ -118,28 +75,6 @@
 
     </div>
   </div>
-
-  <?php if (count($subform) > 0) : foreach ($subform as $subfield) : ?>
-      <div class="card card-danger card-outline">
-        <div class="card-body">
-          <fieldset class="form-child" data-controller="<?= $subfield['controller'] ?>" data-uuids="<?= str_replace('"', "'", json_encode($subfield['uuids'])) ?>">
-            <legend><?= $subfield['label'] ?></legend>
-            <div class="form-group">
-              <div class="col-sm-offset-3 col-sm-12">
-                <?php if ((empty($subfield->uuids) && in_array("create_{$subfield['controller']}", $permission)) || (!empty($subfield->uuids) && in_array("update_{$subfield['controller']}", $permission))) : ?>
-
-                  <a class="btn btn-info btn-add">
-                    <i class="fa fa-plus"></i> &nbsp;Input <?= $subfield['label'] ?>
-                  </a>
-
-                <?php endif ?>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-  <?php endforeach;
-  endif; ?>
 
 </form>
 

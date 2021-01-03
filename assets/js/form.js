@@ -113,21 +113,46 @@ function currency (number) {
   return currency.join(',').split('').reverse().join('')
 }
 
-function uploadDoc (url) {
+function uploadDoc (file_name) {
+  const splitname = file_name.split('-')
+  const entity = splitname[1]
+  const docUploader = `docUploader`
+  const html = `<input type="file" accept="application/pdf" style="display: none" id="${docUploader}">`
+  $(`#${docUploader}`).remove()
+  $('body').append(html)
+  $(`#${docUploader}`).click()
+  $(`#${docUploader}`).change(function () {
+    $('#overlay').show()
+    var formData = new FormData()
+    formData.append('doc', $(`#${docUploader}`)[0].files[0])
+    $.ajax({
+      url: `${site_url}/${entity}/upload/${file_name}`,
+      type : 'POST',
+      data : formData,
+      processData: false,
+      contentType: false,
+      success : function(data) {
+        $('#overlay').hide()
+        $(`#${docUploader}`).remove()
+        $(`[onclick="uploadDoc('${file_name}')"]`).html('<i class="fa fa-check"></i>&nbsp;Upload')
+      }
+    })
+  })
+}
+
+function uploadDeletionDoc (file_name)
+{
+  const splitname = file_name.split('-')
+  const entity = splitname[1]
   $('#overlay').show()
-  var url_part = url.split('/')
-  var name = url_part.pop()
-  var formData = new FormData()
-  formData.append('doc', $(`[name="${name}"]`)[0].files[0])
   $.ajax({
-    url,
+    url: `${site_url}/${entity}/upload/${file_name}`,
     type : 'POST',
-    data : formData,
     processData: false,
     contentType: false,
     success : function(data) {
       $('#overlay').hide()
+      $(`[onclick="uploadDeletionDoc('${file_name}')"]`).html('<i class="fa fa-check"></i>&nbsp;Delete')
     }
-  });
-  
+  })
 }
